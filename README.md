@@ -1,2 +1,2 @@
 # Notator
-musicXML File Writer for sclang
+musicXML File Writer for SuperCollider
