@@ -1,0 +1,1049 @@
+TITLE:: PitchClassSet
+summary:: Pitch Class Set
+categories:: Notator
+related:: Reference/ScoreGuideline, Classes/SPN
+
+​
+DESCRIPTION::
+This is a emphasis::Pitch Class Set:: implementation. Quarter tones are supported for the name system used in LilyPond and the musician-friendly naming convention. The sixteenth tones are supported for its own style code::\ez::.
+subsection:: Twelve-tone Support
+
+table::
+##Standard notation || Syntactic sugar||Result in the Post window
+##​
+code::
+PitchClassSet.lily(1)
+PitchClassSet.lily(1.0)
+PitchClassSet.lily[1]
+PitchClassSet.lily[1.0]
+::
+||
+No syntactic sugar
+||
+teletype::
+-> [ cs, df, bx ]
+::
+##
+code::
+PitchClassSet.mus(1)
+PitchClassSet.mus(1.0)
+PitchClassSet.mus[1]
+PitchClassSet.mus[1.0]
+
+::
+||
+No syntactic sugar
+||
+teletype::
+-> [ c♯, d♭, b𝄪 ]
+::
+##
+code::
+PitchClassSet.ez(1)
+PitchClassSet.ez(1.0)
+PitchClassSet.ez[1]
+PitchClassSet.ez[1.0]
+::
+||
+No syntactic sugar
+||
+teletype::
+-> [ cs, df, bS ]
+::
+##​
+code::
+PitchClassSet.getName(11.0)
+PitchClassSet.getName(11)
+PitchClassSet.getName(\e)
+::
+||
+code::
+11.0.pitchClassName
+11.pitchClassName
+\e.pitchClassName
+::
+||
+teletype::
+-> [ b, ax, cf, b♮, a𝄪, c♭, bn, b, aS, cf ]
+::
+##​
+code::
+PitchClassSet.getValue(\e)
+PitchClassSet.getValue(\ff)
+::
+||
+code::
+\e.pitchClassNum
+\ff.pitchClassNum
+::
+||
+teletype::
+-> 4
+::
+::
+
+
+
+
+
+
+subsection:: Microtonal Support
+
+Decimals are not rounded. LilyPond style names and musician-friendly names are only supported up to quarter notes. See the link::#examples#Example Section of this help document:::
+
+definitionlist::
+
+##Quarter tones||
+
+table::
+##Standard notation || Syntactic sugar||Result in the Post window
+##​
+code::
+PitchClassSet.getValue(\btqs)
+PitchClassSet.getValue(\bQ)
+::
+||
+code::
+\cqs.pitchClassNum
+\cq.pitchClassNum
+::
+||
+teletype::
+-> 0.5
+::
+##
+code::
+PitchClassSet.getName(10.5)
+PitchClassSet.getName('t.5')
+PitchClassSet.getName(\t5)
+::
+||
+code::
+10.5.pitchClassName
+'t.5'.pitchClassName
+\t5.pitchClassName
+::
+||
+teletype::
+-> [ bqf, atqs, ctqf, cffqs, b ¼↓ , a♯ ¼↑ , b♭ ¼↑ , c♭ ¼↓ , c𝄫 ¼↑ , bu, aQ, cU, cFq ]
+::
+::
+
+## Sixteenth tones||
+
+table::
+##Standard notation || Syntactic sugar||Result in the Post window
+##​
+code::
+PitchClassSet.getName(0.125)
+::
+||
+code::
+0.125.pitchClassName
+::
+||
+teletype::
+-> [ c1_16 ]
+::
+##
+code::
+PitchClassSet.getName(0.25)
+::
+||
+code::
+0.25.pitchClassName
+::
+||
+teletype::
+-> [ c1_8 ]
+::
+##​
+code::
+PitchClassSet.getName(0.375)
+::
+||
+code::
+0.375.pitchClassName
+::
+||
+teletype::
+-> [ c3_16 ]
+::
+##
+code::
+PitchClassSet.getName(0.625)
+::
+||
+code::
+0.625.pitchClassName
+::
+||
+teletype::
+-> [ c5_16 ]
+::
+##​
+code::
+PitchClassSet.getName(0.75)
+::
+||
+code::
+0.75.pitchClassName
+::
+||
+teletype::
+-> [ c3_8 ]
+::
+##
+code::
+PitchClassSet.getName(0.875)
+::
+||
+code::
+0.875.pitchClassName
+::
+||
+teletype::
+-> [ c7_16 ]
+::
+::
+::
+
+
+
+
+
+​
+subsection::Full list of pitch class names with all styles
+
+table::
+## Pitch class integer notation
+
+with numerical alternative
+
+(floats: microtonal)
+
+|| Pitch class name per style
+
+##
+code::
+0
+::
+code::
+0.0
+::||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ c, bs, dff ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c♮, b♯, d𝄫 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cn, c, bs, dF ]::
+
+##
+code::
+0.125
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ c1_16 ]::
+
+##
+code::
+0.25
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ c1_8 ]::
+
+##
+code::
+0.375
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ c3_16 ]::
+
+##
+code::
+0.5
+::||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ cqs, btqs, dtqf, dffqs, bxqf ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c ¼↑ , c♯ ¼↓ , b♯ ¼↑ , d♭ ¼↓ , d𝄫 ¼↑ , b𝄪 ¼↓  ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cq, bQ, dU, dFq, bSu ]::
+
+##
+code::
+0.625
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ c5_16 ]::
+
+##
+code::
+0.75
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ c3_8 ]::
+
+##
+code::
+0.875
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ c7_16 ]::
+
+##
+code::
+1
+::
+code::
+1.0
+::||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ cs, df, bx ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c♯, d♭, b𝄪 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cs, df, bS ]::
+
+##
+code::
+1.125
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ c9_16 ]::
+
+##
+code::
+1.25
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ c5_8 ]::
+
+##
+code::
+1.375
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ dm5_16 ]::
+
+##
+code::
+1.5
+::||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ dqf, ctqs, bxqs, cxqf, effqf ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d ¼↓ , d♭ ¼↑ , c♯ ¼↑ , b𝄪 ¼↑ , c𝄪 ¼↓ , e𝄫 ¼↓  ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ du, cQ, bSq, cSu, eFu ]::
+
+##
+code::
+1.625
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ dm3_16 ]::
+
+##
+code::
+1.75
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ dm1_8 ]::
+
+##
+code::
+1.875
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ dm1_16 ]::
+
+##
+code::
+2
+::
+code::
+2.0
+::||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ d, cx, eff ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d♮, c𝄪, e𝄫 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ dn, d, cS, eF ]::
+
+##
+code::
+2.125
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ d1_16 ]::
+
+##
+code::
+2.25
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ d1_8 ]::
+
+##
+code::
+2.375
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ d3_16 ]::
+
+##
+code::
+2.5
+::||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ dqs, etqf, fffqf, cxqs, effqs ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d ¼↑ , d♯ ¼↓ , e♭ ¼↓ , f𝄫 ¼↓ , c𝄪 ¼↑ , e𝄫 ¼↑  ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ dq, eU, fFu, cSq, eFq ]::
+
+##
+code::
+2.625
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ d5_16 ]::
+
+##
+code::
+2.75
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ d3_8 ]::
+
+##
+code::
+2.875
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ d7_16 ]::
+
+##
+code::
+3
+::
+code::
+3.0
+::||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ ds, ef, fff ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d♯, e♭, f𝄫 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ ds, ef, fF ]::
+
+##
+code::
+3.125
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ d9_16 ]::
+
+##
+code::
+3.25
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ d5_8 ]::
+
+##
+code::
+3.375
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ em5_16 ]::
+
+##
+code::
+3.5
+::||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ eqf, dtqs, ftqf, fffqs ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e♮ ¼↓ , e♭ ¼↑ , d♯ ¼↑ , f♭ ¼↓ , f𝄫 ¼↑  ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ eu, dQ, fU, fFq ]::
+
+##
+code::
+3.625
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ em3_16 ]::
+
+##
+code::
+3.75
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ em1_8 ]::
+
+##
+code::
+3.875
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ em1_16 ]::
+
+##
+code::
+4
+::
+code::
+4.0
+::||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ e, ff, dx ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e♮, f♭, d𝄪 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ en, e, ff, dS ]::
+
+##
+code::
+4.125
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ e1_16 ]::
+
+##
+code::
+4.25
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ e1_8 ]::
+
+##
+code::
+4.375
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ e3_16 ]::
+
+##
+code::
+4.5
+::||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ eqs, fqf, dxqs, gffqf ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e ¼↑ , f ¼↓ , f♭ ¼↑ , e♯ ¼↓ , d𝄪 ¼↑ , g𝄫 ¼↓  ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ eq, fu, dSq, gFu ]::
+
+##
+code::
+4.625
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fm3_16 ]::
+
+##
+code::
+4.75
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fm1_8 ]::
+
+##
+code::
+4.875
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fm1_16 ]::
+
+##
+code::
+5
+::
+code::
+5.0
+::||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ f, es, gff ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f♮, e♯, g𝄫 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fn, f, es, gF ]::
+
+##
+code::
+5.125
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ f1_16 ]::
+
+##
+code::
+5.25
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ f1_8 ]::
+
+##
+code::
+5.375
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ f3_16 ]::
+
+##
+code::
+5.5
+::||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ fqs, etqs, gtqf, gffqs, exqf ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f ¼↑ , e♯ ¼↑ , f♯ ¼↓ , g♭ ¼↓ , g𝄫 ¼↑ , e𝄪 ¼↓  ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fq, eQ, gU, gFq, eSu ]::
+
+##
+code::
+5.625
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ f5_16 ]::
+
+##
+code::
+5.75
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ f3_8 ]::
+
+##
+code::
+5.875
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ f7_16 ]::
+
+##
+code::
+6
+::
+code::
+6.0
+::||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ fs, gf, ex ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f♯, g♭, e𝄪 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fs, gf, eS ]::
+
+##
+code::
+6.125
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ f9_16 ]::
+
+##
+code::
+6.25
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ f5_8 ]::
+
+##
+code::
+6.375
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gu, fQ, eSq, fSu, aFu ]::
+
+##
+code::
+6.5
+::||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ gqf, ftqs, exqs, fxqf, affqf ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g ¼↓ , f♯ ¼↑ , g♭ ¼↑ , e𝄪 ¼↑ , f𝄪 ¼↓ , a𝄫 ¼↓  ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gu, fQ, eSq, fSu, aFu ]::
+
+##
+code::
+6.625
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gm3_16 ]::
+
+##
+code::
+6.75
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gm1_8 ]::
+
+##
+code::
+6.875
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gm1_16 ]::
+
+##
+code::
+7
+::
+code::
+7.0
+::||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ g, fx, aff ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g♮, f𝄪, a𝄫 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gn, g, fS, aF ]::
+
+##
+code::
+7.125
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ g1_16 ]::
+
+##
+code::
+7.25
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ g1_8 ]::
+
+##
+code::
+7.375
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ g3_16 ]::
+
+##
+code::
+7.5
+::||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ gqs, atqf, fxqs, affqs ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g ¼↑ , a♭ ¼↓ , g♯ ¼↓ , f𝄪 ¼↑ , a𝄫 ¼↑  ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gq, aU, fSq, aFq ]::
+
+##
+code::
+7.625
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ g5_16 ]::
+
+##
+code::
+7.75
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ g3_8 ]::
+
+##
+code::
+7.875
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ g7_16 ]::
+
+##
+code::
+8
+::
+code::
+8.0
+::||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ gs, af ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g♯, a♭ ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gs, af ]::
+
+##
+code::
+8.125
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ g9_16 ]::
+
+##
+code::
+8.25
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ g5_8 ]::
+
+##
+code::
+8.375
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ am5_16 ]::
+
+##
+code::
+8.5
+::||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ aqf, gtqs, gxqf, bffqf ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a ¼↓ , g♯ ¼↑ , a♭ ¼↑ , g𝄪 ¼↓ , b𝄫 ¼↓  ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ au, gQ, gSu, bFu ]::
+
+##
+code::
+8.625
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ am3_16 ]::
+
+##
+code::
+8.75
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ am1_8 ]::
+
+##
+code::
+8.875
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ am1_16 ]::
+
+##
+code::
+9
+::
+code::
+9.0
+::||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ a, gx, bff ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a♮, g𝄪, b𝄫 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ an, a, gS, bF ]::
+
+##
+code::
+9.125
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ a1_16 ]::
+
+##
+code::
+9.25
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ a1_8 ]::
+
+##
+code::
+9.375
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ a3_16 ]::
+
+##
+code::
+9.5
+::||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ aqs, btqf, gxqs, bffqs, cffqf ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a ¼↑ , b♭ ¼↓ , a♯ ¼↓ , g𝄪 ¼↑ , b𝄫 ¼↑ , c𝄫 ¼↓  ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ aq, bU, gSq, bFq, cFu ]::
+
+##
+code::
+9.625
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ a5_16 ]::
+
+##
+code::
+9.75
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ a3_8 ]::
+
+##
+code::
+9.875
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ a7_16 ]::
+
+##
+code::
+10
+::
+code::
+10.0
+::
+code::
+\t
+::||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ as, bf, cff ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a♯, b♭, c𝄫 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ as, bf, cF ]::
+
+##
+code::
+10.125
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ a9_16 ]::
+
+##
+code::
+10.25
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ a5_8 ]::
+
+##
+code::
+10.375
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bm5_16 ]::
+
+##
+code::
+10.5
+::
+code::
+\t5
+::code::
+'t.5'
+::||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ bqf, atqs, ctqf, cffqs ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ b ¼↓ , a♯ ¼↑ , b♭ ¼↑ , c♭ ¼↓ , c𝄫 ¼↑  ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bu, aQ, cU, cFq ]::
+
+##
+code::
+10.625
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bm3_16 ]::
+
+##
+code::
+10.75
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bm1_8 ]::
+
+##
+code::
+10.875
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bm1_16 ]::
+
+##
+code::
+11
+::
+code::
+11.0
+::
+code::
+\e
+::||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ b, ax, cf ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ b♮, a𝄪, c♭ ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bn, b, aS, cf ]::
+
+##
+code::
+11.125
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ b1_16 ]::
+
+##
+code::
+11.25
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ b1_8 ]::
+
+##
+code::
+11.375
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ b3_16 ]::
+
+##
+code::
+11.5
+::
+code::
+\e5
+::
+code::
+'e.5'
+::||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ bqs, cqf, axqs, dffqf ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ b ¼↑ , c ¼↓ , c♭ ¼↑ , b♯ ¼↓ , a𝄪 ¼↑ , d𝄫 ¼↓  ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bq, cu, aSq, dFu ]::
+
+
+##
+code::
+11.625
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cm3_16 ]::
+
+##
+code::
+11.75
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cm1_8 ]::
+
+##
+code::
+11.875
+::||
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cm1_16 ]::
+::
+
+
+CLASSMETHODS::
+​​
+METHOD:: ez
+returns
+list::
+##pitch class set in a simpler naming convention than LilyPond style as events if pitchClassNum is omitted.
+##pitch class name of the given pitch class number if pichClssNum is specified.
+::
+​
+METHOD:: lily
+returns
+list::
+##LilyPond pitch naming style pitch class set as events if pitchClassNum is omitted.
+##pitch class name of the given pitch class number if pichClssNum is specified.
+::
+
+METHOD:: getName
+returns the pitch class name and its enharmonically-respelled ones as an array from the given pitch class number.
+
+argument:: which
+Pitch class number from code::0:: to code::11.5::. code::\t:: can be used for code::10::; code::\e:: for code::11::; code::\t5:: and code::'t.5':: for code::10.5::; code::\e5:: and code::'e.5':: for code::11.5::. ​
+
+METHOD:: getValue
+returns the pitch class number from the given pitch class number.
+
+argument:: which
+Pitch class name in any style listed in the link::#Full list of pitch class names with all styles::
+​
+METHOD:: mus
+​​​returns
+list::
+##musician-friendly naming style pitch class set as events if pitchClassNum is omitted.
+##pitch class name of the given pitch class number if pichClssNum is specified.
+::
+
+INSTANCEMETHODS::
+​
+​
+EXAMPLES::
+
+​subsection::Pitch class numerical notation is not rounded:
+
+code::
+PitchClassSet.lily(0)   // -> [ c, bs, dff ]
+PitchClassSet.mus(0.2)  // -> nil
+PitchClassSet.ez(0.4)   // -> nil
+PitchClassSet.lily(0.5) // -> [ cqs, btqs, dtqf, dffqs, bxqf ]
+PitchClassSet.mus(0.6)  // -> nil
+PitchClassSet.ez(0.8)   // -> nil
+::
+
+code::
+0.3.pitchClassName      // -> nil
+0.5.pitchClassName      // -> [ cqs, btqs, dtqf, dffqs, bxqf, c ¼↑ , c♯ ¼↓ , b♯ ¼↑ , d♭ ¼↓ , d𝄫 ¼↑ , b𝄪 ¼↓ , cq, bQ, dU, dFq, bSu ]
+0.7.pitchClassName      // -> nil
+::
+
+
+subsection::LilyPond naming style pitch class set:
+
+code::
+Post <<< PitchClassSet.lily
+PitchClassSet.lily.class
+PitchClassSet.lily.size
+PitchClassSet.lily.do { |item| item.postln }
+::
+
+subsection::Musician-friendly naming style pitch class set:
+
+code::
+Post <<< PitchClassSet.mus
+PitchClassSet.mus.class
+PitchClassSet.mus.size
+PitchClassSet.mus.do { |item| item.postln }
+::
+
+subsection::Simple naming Style (ez style) pitch class set:
+code::
+Post <<< PitchClassSet.ez
+PitchClassSet.ez.class
+PitchClassSet.ez.size
+PitchClassSet.ez.do { |item| item.postln }
+::
+
+subsection::Get all the naming styles from PitchClassSet
+code::
+(
+((0, 0.125 .. 10.0) ++ [\t, 10.125, 10.25, 10.375, \t5, 't.5', 10.625, 10.75, 10.875, 11.0, \e, 11.125, 11.25, 11.375, 11.5, \e5, 'e.5', 11.625, 11.75, 11.875] ++ (0..11)).do { |index|
+	(index.asString + " PitchClassSet.lily(" ++ index ++ "):" + PitchClassSet.lily(index)).postln;
+	(index.asString + " PitchClassSet.mus(" ++ index ++ "):" + PitchClassSet.mus(index)).postln;
+	(index.asString + " PitchClassSet.ez(" ++ index ++ "):" + PitchClassSet.ez(index)).postln;
+	"".postln
+}
+)
+::

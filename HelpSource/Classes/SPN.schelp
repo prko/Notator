@@ -1,0 +1,2485 @@
+TITLE:: SPN
+summary:: Scientific Pitch Notation
+categories:: Notator
+related:: Reference/ScoreGuideline, Classes/PitchClassSet, Classes/Notator
+
+DESCRIPTION::
+This is an implementation of emphasis::Scientific Pitch Notation:: (SPN).
+For the name system used in LilyPond (N.B.: the octave number follows the SPN.) and the musician-friendly naming convention, quarter tones are supported. For its own style \ez, sixteenth tones are supported.
+
+In scientific pitch notation, middle A at teletype::440 Hz:: is defined as teletype::A4::. It is identical to the teletype::middle A:: at teletype::440 Hz:: of teletype::A4:: on Roland instruments, but 1 octave higher than the teletype::middle A:: at teletype::440 Hz:: of teletype::A3:: on Yahaha instruments. A4 in scientific notation is identical to teletype::A1:: or teletype::A':: in emphasis::Helmholtz Pitch Notation::.
+
+table::
+##strong::References:::
+
+list::
+
+##link::https://en.wikipedia.org/wiki/Scientific_pitch_notation::
+
+code::
+"https://en.wikipedia.org/wiki/Scientific_pitch_notation".openOS
+::
+##link::https://en.wikipedia.org/wiki/Helmholtz_pitch_notation::
+
+code::
+"https://en.wikipedia.org/wiki/Helmholtz_pitch_notation".openOS
+::
+::
+::
+
+Examples:
+
+table::
+##Standard notation || Syntactic sugar||Result in the Post window
+##
+code::
+SPN.cps(440)
+::
+code::
+SPN.cps(440, \lily)
+::
+code::
+SPN.cps(440, \mus)
+::
+code::
+SPN.cps(440, \ez)
+::
+||
+code::
+440.cpsspn
+::
+code::
+440.cpsspn(\lily)
+::
+code::
+440.cpsspn(\mus)
+::
+code::
+440.cpsspn(\ez)
+::
+||
+teletype::
+-> [ a4, gx4, bff4 ]
+::
+teletype::
+-> [ a4, gx4, bff4 ]
+::
+teletype::
+-> [ a♮4, g𝄪4, b𝄫4 ]
+::
+teletype::
+-> [ an4, a4, gS4, bF4 ]
+::
+##
+code::
+SPN.midi(69)
+::
+code::
+SPN.midi(69, \lily)
+::
+code::
+SPN.midi(69, \mus)
+::
+code::
+SPN.midi(69, \ez)
+::
+||
+code::
+69.midispn
+::
+code::
+69.midispn(\lily)
+::
+code::
+69.midispn(\mus)
+::
+code::
+69.midispn(\ez)
+::
+||
+teletype::
+-> [ a4, gx4, bff4 ]
+::
+teletype::
+-> [ a4, gx4, bff4 ]
+::
+teletype::
+-> [ a♮4, g𝄪4, b𝄫4 ]
+::
+teletype::
+-> [ an4, a4, gS4, bF4 ]
+::
+##
+code::
+SPN.getValue(\a4, \all)
+::
+code::
+SPN.getValue(\gx4, \midi)
+::
+code::
+SPN.getValue(\bff4, \cps)
+::
+||
+code::
+\a4.all
+::
+code::
+\gx4.midi
+::
+code::
+\bff4.cps
+::
+||
+teletype::
+-> ( 'midi': 69.0, 'cps': 440.0 )
+::
+teletype::
+-> 69.0
+::
+teletype::
+-> 440.0
+::
+::
+
+Decimals are rounded to the nearest sixteenth-tone in the \ez style, and to the nearest quarter-tone in the \lily style and the \mus style. See the link::#examples#Example Section of this help document):::
+
+table::
+##Standard notation || Syntactic sugar||Result in the Post window
+##
+code::
+SPN.cps(452.89298412314)
+::
+code::
+SPN.cps(452.89298412314, \lily)
+::
+code::
+SPN.cps(452.89298412314, \mus)
+::
+code::
+SPN.cps(452.89298412314, \ez)
+::
+||
+code::
+452.89298412314.cpsspn
+::
+code::
+452.89298412314.cpsspn(\lily)
+::
+code::
+452.89298412314.cpsspn(\mus)
+::
+code::
+452.89298412314.cpsspn(\ez)
+::
+||
+teletype::
+-> [ aqs4, btqf4, gxqs4, bffqs4, cffqf5 ]
+::
+teletype::
+-> [ aqs4, btqf4, gxqs4, bffqs4, cffqf5 ]
+::
+teletype::
+-> [ a ¼↑ 4, b♭ ¼↓ 4, a♯ ¼↓ 4, g𝄪 ¼↑ 4, b𝄫 ¼↑ 4, c𝄫 ¼↓5 ]
+::
+teletype::
+-> [ aq4, bU4, gSq4, bFq4, cFu5 ]
+::
+##
+code::
+SPN.midi(69.5)
+::
+code::
+SPN.midi(69.5, \lily)
+::
+code::
+SPN.midi(69.5, \mus)
+::
+code::
+SPN.midi(69.5, \ez)
+::
+||
+code::
+69.5.midispn
+::
+code::
+69.5.midispn(\lily)
+::
+code::
+69.5.midispn(\mus)
+::
+code::
+69.5.midispn(\ez)
+::
+||
+teletype::
+-> [ aqs4, btqf4, gxqs4, bffqs4, cffqf5 ]
+::
+teletype::
+-> [ aqs4, btqf4, gxqs4, bffqs4, cffqf5 ]
+::
+teletype::
+-> [ a ¼↑ 4, b♭ ¼↓ 4, a♯ ¼↓ 4, g𝄪 ¼↑ 4, b𝄫 ¼↑ 4, c𝄫 ¼↓5 ]
+::
+teletype::
+-> [ aq4, bU4, gSq4, bFq4, cFu5 ]
+::
+##
+code::
+SPN.getValue(\aqs4, \all)
+::
+code::
+SPN.getValue(\btqf4, \midi)
+::
+code::
+SPN.getValue(\gxqs4, \cps)
+::
+||
+code::
+\aqs4.all
+::
+code::
+\btqf4.midi
+::
+code::
+\gxqs4.cps
+::
+||
+teletype::
+-> ( 'midi': 69.5, 'cps': 452.89298412314 )
+::
+teletype::
+-> 69.5
+::
+teletype::
+-> 452.89298412314
+::
+::
+
+subsection::Full list of quartertones in scientific notation with all styles
+
+For sixteenth-tone symbols, please refer to link::Classes/PitchClassSet#Microtonal Support:: and link::Classes/PitchClassSet#Full list of pitch class names with all styles::.
+
+table::
+## MIDI pitch
+
+number || Frequency in Hz || Scientific pitch notation per style
+
+##
+0.0||8.1757989156437||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ c-1, bs-2, dff-1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c♮-1, b♯-2, d𝄫-1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cn-1, c-1, bs-2, dF-1 ]::
+
+##
+0.5||8.4153681102195||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ cqs-1, btqs-2, dtqf-1, dffqs-1, bxqf-2 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c ¼↑ -1, c♯ ¼↓ -1, b♯ ¼↑-2, d♭ ¼↓ -1, d𝄫 ¼↑ -1, b𝄪 ¼↓-2 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cq-1, bQ-2, dU-1, dFq-1, bSu-2 ]::
+
+##
+1.0||8.6619572180273||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ cs-1, df-1, bx-2 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c♯-1, d♭-1, b𝄪-2 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cs-1, df-1, bS-2 ]::
+
+##
+1.5||8.9157719382257||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ dqf-1, ctqs-1, bxqs-2, cxqf-1, effqf-1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d ¼↓ -1, d♭ ¼↑ -1, c♯ ¼↑ -1, b𝄪 ¼↑-2, c𝄪 ¼↓ -1, e𝄫 ¼↓ -1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ du-1, cQ-1, bSq-2, cSu-1, eFu-1 ]::
+
+##
+2.0||9.177023997419||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ d-1, cx-1, eff-1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d♮-1, c𝄪-1, e𝄫-1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ dn-1, d-1, cS-1, eF-1 ]::
+
+##
+2.5||9.4459313262744||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ dqs-1, etqf-1, fffqf-1, cxqs-1, effqs-1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d ¼↑ -1, d♯ ¼↓ -1, e♭ ¼↓ -1, f𝄫 ¼↓ -1, c𝄪 ¼↑ -1, e𝄫 ¼↑ -1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ dq-1, eU-1, fFu-1, cSq-1, eFq-1 ]::
+
+##
+3.0||9.722718241315||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ ds-1, ef-1, fff-1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d♯-1, e♭-1, f𝄫-1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ ds-1, ef-1, fF-1 ]::
+
+##
+3.5||10.00761563204||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ eqf-1, dtqs-1, ftqf-1, fffqs-1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e♮ ¼↓ -1, e♭ ¼↑ -1, d♯ ¼↑ -1, f♭ ¼↓ -1, f𝄫 ¼↑ -1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ eu-1, dQ-1, fU-1, fFq-1 ]::
+
+##
+4.0||10.300861153527||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ e-1, ff-1, dx-1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e♮-1, f♭-1, d𝄪-1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ en-1, e-1, ff-1, dS-1 ]::
+
+##
+4.5||10.60269942468||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ eqs-1, fqf-1, dxqs-1, gffqf-1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e ¼↑ -1, f ¼↓ -1, f♭ ¼↑ -1, e♯ ¼↓ -1, d𝄪 ¼↑ -1, g𝄫 ¼↓ -1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ eq-1, fu-1, dSq-1, gFu-1 ]::
+
+##
+5.0||10.913382232281||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ f-1, es-1, gff-1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f♮-1, e♯-1, g𝄫-1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fn-1, f-1, es-1, gF-1 ]::
+
+##
+5.5||11.233168741033||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ fqs-1, etqs-1, gtqf-1, gffqs-1, exqf-1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f ¼↑ -1, e♯ ¼↑ -1, f♯ ¼↓ -1, g♭ ¼↓ -1, g𝄫 ¼↑ -1, e𝄪 ¼↓ -1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fq-1, eQ-1, gU-1, gFq-1, eSu-1 ]::
+
+##
+6.0||11.562325709739||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ fs-1, gf-1, ex-1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f♯-1, g♭-1, e𝄪-1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fs-1, gf-1, eS-1 ]::
+
+##
+6.5||11.901127713834||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ gqf-1, ftqs-1, exqs-1, fxqf-1, affqf-1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g ¼↓ -1, f♯ ¼↑ -1, g♭ ¼↑ -1, e𝄪 ¼↑ -1, f𝄪 ¼↓ -1, a𝄫 ¼↓ -1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gu-1, fQ-1, eSq-1, fSu-1, aFu-1 ]::
+
+##
+7.0||12.24985737443||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ g-1, fx-1, aff-1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g♮-1, f𝄪-1, a𝄫-1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gn-1, g-1, fS-1, aF-1 ]::
+
+##
+7.5||12.608805594064||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ gqs-1, atqf-1, fxqs-1, affqs-1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g ¼↑ -1, a♭ ¼↓ -1, g♯ ¼↓ -1, f𝄪 ¼↑ -1, a𝄫 ¼↑ -1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gq-1, aU-1, fSq-1, aFq-1 ]::
+
+##
+8.0||12.978271799373||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ gs-1, af-1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g♯-1, a♭-1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gs-1, af-1 ]::
+
+##
+8.5||13.358564190862||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ aqf-1, gtqs-1, gxqf-1, bffqf-1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a ¼↓ -1, g♯ ¼↑ -1, a♭ ¼↑ -1, g𝄪 ¼↓ -1, b𝄫 ¼↓ -1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ au-1, gQ-1, gSu-1, bFu-1 ]::
+
+##
+9.0||13.75||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ a-1, gx-1, bff-1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a♮-1, g𝄪-1, b𝄫-1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ an-1, a-1, gS-1, bF-1 ]::
+
+##
+9.5||14.152905753848||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ aqs-1, btqf-1, gxqs-1, bffqs-1, cffqf0 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a ¼↑ -1, b♭ ¼↓ -1, a♯ ¼↓ -1, g𝄪 ¼↑ -1, b𝄫 ¼↑ -1, c𝄫 ¼↓0 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ aq-1, bU-1, gSq-1, bFq-1, cFu0 ]::
+
+##
+10.0||14.56761754744||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ as-1, bf-1, cff0 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a♯-1, b♭-1, c𝄫0 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ as-1, bf-1, cF0 ]::
+
+##
+10.5||14.994481324147||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ bqf-1, atqs-1, ctqf0, cffqs0 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ b ¼↓ -1, a♯ ¼↑ -1, b♭ ¼↑ -1, c♭ ¼↓0, c𝄫 ¼↑0 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bu-1, aQ-1, cU0, cFq0 ]::
+
+##
+11.0||15.433853164254||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ b-1, ax-1, cf0 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ b♮-1, a𝄪-1, c♭0 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bn-1, b-1, aS-1, cf0 ]::
+
+##
+11.5||15.886099581994||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ bqs-1, cqf0, axqs-1, dffqf0 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ b ¼↑ -1, c ¼↓0, c♭ ¼↑0, b♯ ¼↓ -1, a𝄪 ¼↑ -1, d𝄫 ¼↓0 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bq-1, cu0, aSq-1, dFu0 ]::
+
+##
+12.0||16.351597831287||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ c0, bs-1, dff0 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c♮0, b♯-1, d𝄫0 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cn0, c0, bs-1, dF0 ]::
+
+##
+12.5||16.830736220439||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ cqs0, btqs-1, dtqf0, dffqs0, bxqf-1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c ¼↑ 0, c♯ ¼↓ 0, b♯ ¼↑-1, d♭ ¼↓ 0, d𝄫 ¼↑ 0, b𝄪 ¼↓-1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cq0, bQ-1, dU0, dFq0, bSu-1 ]::
+
+##
+13.0||17.323914436055||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ cs0, df0, bx-1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c♯0, d♭0, b𝄪-1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cs0, df0, bS-1 ]::
+
+##
+13.5||17.831543876451||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ dqf0, ctqs0, bxqs-1, cxqf0, effqf0 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d ¼↓ 0, d♭ ¼↑ 0, c♯ ¼↑ 0, b𝄪 ¼↑-1, c𝄪 ¼↓ 0, e𝄫 ¼↓ 0 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ du0, cQ0, bSq-1, cSu0, eFu0 ]::
+
+##
+14.0||18.354047994838||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ d0, cx0, eff0 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d♮0, c𝄪0, e𝄫0 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ dn0, d0, cS0, eF0 ]::
+
+##
+14.5||18.891862652549||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ dqs0, etqf0, fffqf0, cxqs0, effqs0 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d ¼↑ 0, d♯ ¼↓ 0, e♭ ¼↓ 0, f𝄫 ¼↓ 0, c𝄪 ¼↑ 0, e𝄫 ¼↑ 0 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ dq0, eU0, fFu0, cSq0, eFq0 ]::
+
+##
+15.0||19.44543648263||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ ds0, ef0, fff0 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d♯0, e♭0, f𝄫0 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ ds0, ef0, fF0 ]::
+
+##
+15.5||20.01523126408||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ eqf0, dtqs0, ftqf0, fffqs0 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e♮ ¼↓ 0, e♭ ¼↑ 0, d♯ ¼↑ 0, f♭ ¼↓ 0, f𝄫 ¼↑ 0 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ eu0, dQ0, fU0, fFq0 ]::
+
+##
+16.0||20.601722307054||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ e0, ff0, dx0 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e♮0, f♭0, d𝄪0 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ en0, e0, ff0, dS0 ]::
+
+##
+16.5||21.205398849359||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ eqs0, fqf0, dxqs0, gffqf0 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e ¼↑ 0, f ¼↓ 0, f♭ ¼↑ 0, e♯ ¼↓ 0, d𝄪 ¼↑ 0, g𝄫 ¼↓ 0 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ eq0, fu0, dSq0, gFu0 ]::
+
+##
+17.0||21.826764464563||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ f0, es0, gff0 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f♮0, e♯0, g𝄫0 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fn0, f0, es0, gF0 ]::
+
+##
+17.5||22.466337482065||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ fqs0, etqs0, gtqf0, gffqs0, exqf0 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f ¼↑ 0, e♯ ¼↑ 0, f♯ ¼↓ 0, g♭ ¼↓ 0, g𝄫 ¼↑ 0, e𝄪 ¼↓ 0 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fq0, eQ0, gU0, gFq0, eSu0 ]::
+
+##
+18.0||23.124651419477||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ fs0, gf0, ex0 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f♯0, g♭0, e𝄪0 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fs0, gf0, eS0 ]::
+
+##
+18.5||23.802255427669||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ gqf0, ftqs0, exqs0, fxqf0, affqf0 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g ¼↓ 0, f♯ ¼↑ 0, g♭ ¼↑ 0, e𝄪 ¼↑ 0, f𝄪 ¼↓ 0, a𝄫 ¼↓ 0 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gu0, fQ0, eSq0, fSu0, aFu0 ]::
+
+##
+19.0||24.499714748859||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ g0, fx0, aff0 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g♮0, f𝄪0, a𝄫0 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gn0, g0, fS0, aF0 ]::
+
+##
+19.5||25.217611188128||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ gqs0, atqf0, fxqs0, affqs0 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g ¼↑ 0, a♭ ¼↓ 0, g♯ ¼↓ 0, f𝄪 ¼↑ 0, a𝄫 ¼↑ 0 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gq0, aU0, fSq0, aFq0 ]::
+
+##
+20.0||25.956543598747||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ gs0, af0 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g♯0, a♭0 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gs0, af0 ]::
+
+##
+20.5||26.717128381724||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ aqf0, gtqs0, gxqf0, bffqf0 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a ¼↓ 0, g♯ ¼↑ 0, a♭ ¼↑ 0, g𝄪 ¼↓ 0, b𝄫 ¼↓ 0 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ au0, gQ0, gSu0, bFu0 ]::
+
+##
+21.0||27.5||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ a0, gx0, bff0 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a♮0, g𝄪0, b𝄫0 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ an0, a0, gS0, bF0 ]::
+
+##
+21.5||28.305811507696||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ aqs0, btqf0, gxqs0, bffqs0, cffqf1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a ¼↑ 0, b♭ ¼↓ 0, a♯ ¼↓ 0, g𝄪 ¼↑ 0, b𝄫 ¼↑ 0, c𝄫 ¼↓1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ aq0, bU0, gSq0, bFq0, cFu1 ]::
+
+##
+22.0||29.135235094881||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ as0, bf0, cff1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a♯0, b♭0, c𝄫1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ as0, bf0, cF1 ]::
+
+##
+22.5||29.988962648295||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ bqf0, atqs0, ctqf1, cffqs1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ b ¼↓ 0, a♯ ¼↑ 0, b♭ ¼↑ 0, c♭ ¼↓1, c𝄫 ¼↑1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bu0, aQ0, cU1, cFq1 ]::
+
+##
+23.0||30.867706328508||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ b0, ax0, cf1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ b♮0, a𝄪0, c♭1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bn0, b0, aS0, cf1 ]::
+
+##
+23.5||31.772199163988||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ bqs0, cqf1, axqs0, dffqf1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ b ¼↑ 0, c ¼↓1, c♭ ¼↑1, b♯ ¼↓ 0, a𝄪 ¼↑ 0, d𝄫 ¼↓1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bq0, cu1, aSq0, dFu1 ]::
+
+##
+24.0||32.703195662575||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ c1, bs0, dff1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c♮1, b♯0, d𝄫1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cn1, c1, bs0, dF1 ]::
+
+##
+24.5||33.661472440878||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ cqs1, btqs0, dtqf1, dffqs1, bxqf0 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c ¼↑ 1, c♯ ¼↓ 1, b♯ ¼↑0, d♭ ¼↓ 1, d𝄫 ¼↑ 1, b𝄪 ¼↓0 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cq1, bQ0, dU1, dFq1, bSu0 ]::
+
+##
+25.0||34.647828872109||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ cs1, df1, bx0 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c♯1, d♭1, b𝄪0 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cs1, df1, bS0 ]::
+
+##
+25.5||35.663087752903||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ dqf1, ctqs1, bxqs0, cxqf1, effqf1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d ¼↓ 1, d♭ ¼↑ 1, c♯ ¼↑ 1, b𝄪 ¼↑0, c𝄪 ¼↓ 1, e𝄫 ¼↓ 1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ du1, cQ1, bSq0, cSu1, eFu1 ]::
+
+##
+26.0||36.708095989676||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ d1, cx1, eff1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d♮1, c𝄪1, e𝄫1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ dn1, d1, cS1, eF1 ]::
+
+##
+26.5||37.783725305097||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ dqs1, etqf1, fffqf1, cxqs1, effqs1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d ¼↑ 1, d♯ ¼↓ 1, e♭ ¼↓ 1, f𝄫 ¼↓ 1, c𝄪 ¼↑ 1, e𝄫 ¼↑ 1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ dq1, eU1, fFu1, cSq1, eFq1 ]::
+
+##
+27.0||38.89087296526||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ ds1, ef1, fff1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d♯1, e♭1, f𝄫1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ ds1, ef1, fF1 ]::
+
+##
+27.5||40.03046252816||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ eqf1, dtqs1, ftqf1, fffqs1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e♮ ¼↓ 1, e♭ ¼↑ 1, d♯ ¼↑ 1, f♭ ¼↓ 1, f𝄫 ¼↑ 1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ eu1, dQ1, fU1, fFq1 ]::
+
+##
+28.0||41.203444614109||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ e1, ff1, dx1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e♮1, f♭1, d𝄪1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ en1, e1, ff1, dS1 ]::
+
+##
+28.5||42.410797698718||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ eqs1, fqf1, dxqs1, gffqf1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e ¼↑ 1, f ¼↓ 1, f♭ ¼↑ 1, e♯ ¼↓ 1, d𝄪 ¼↑ 1, g𝄫 ¼↓ 1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ eq1, fu1, dSq1, gFu1 ]::
+
+##
+29.0||43.653528929125||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ f1, es1, gff1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f♮1, e♯1, g𝄫1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fn1, f1, es1, gF1 ]::
+
+##
+29.5||44.93267496413||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ fqs1, etqs1, gtqf1, gffqs1, exqf1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f ¼↑ 1, e♯ ¼↑ 1, f♯ ¼↓ 1, g♭ ¼↓ 1, g𝄫 ¼↑ 1, e𝄪 ¼↓ 1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fq1, eQ1, gU1, gFq1, eSu1 ]::
+
+##
+30.0||46.249302838954||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ fs1, gf1, ex1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f♯1, g♭1, e𝄪1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fs1, gf1, eS1 ]::
+
+##
+30.5||47.604510855338||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ gqf1, ftqs1, exqs1, fxqf1, affqf1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g ¼↓ 1, f♯ ¼↑ 1, g♭ ¼↑ 1, e𝄪 ¼↑ 1, f𝄪 ¼↓ 1, a𝄫 ¼↓ 1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gu1, fQ1, eSq1, fSu1, aFu1 ]::
+
+##
+31.0||48.999429497719||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ g1, fx1, aff1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g♮1, f𝄪1, a𝄫1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gn1, g1, fS1, aF1 ]::
+
+##
+31.5||50.435222376257||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ gqs1, atqf1, fxqs1, affqs1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g ¼↑ 1, a♭ ¼↓ 1, g♯ ¼↓ 1, f𝄪 ¼↑ 1, a𝄫 ¼↑ 1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gq1, aU1, fSq1, aFq1 ]::
+
+##
+32.0||51.913087197493||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ gs1, af1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g♯1, a♭1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gs1, af1 ]::
+
+##
+32.5||53.434256763448||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ aqf1, gtqs1, gxqf1, bffqf1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a ¼↓ 1, g♯ ¼↑ 1, a♭ ¼↑ 1, g𝄪 ¼↓ 1, b𝄫 ¼↓ 1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ au1, gQ1, gSu1, bFu1 ]::
+
+##
+33.0||55.0||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ a1, gx1, bff1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a♮1, g𝄪1, b𝄫1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ an1, a1, gS1, bF1 ]::
+
+##
+33.5||56.611623015392||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ aqs1, btqf1, gxqs1, bffqs1, cffqf2 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a ¼↑ 1, b♭ ¼↓ 1, a♯ ¼↓ 1, g𝄪 ¼↑ 1, b𝄫 ¼↑ 1, c𝄫 ¼↓2 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ aq1, bU1, gSq1, bFq1, cFu2 ]::
+
+##
+34.0||58.270470189761||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ as1, bf1, cff2 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a♯1, b♭1, c𝄫2 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ as1, bf1, cF2 ]::
+
+##
+34.5||59.977925296589||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ bqf1, atqs1, ctqf2, cffqs2 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ b ¼↓ 1, a♯ ¼↑ 1, b♭ ¼↑ 1, c♭ ¼↓2, c𝄫 ¼↑2 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bu1, aQ1, cU2, cFq2 ]::
+
+##
+35.0||61.735412657016||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ b1, ax1, cf2 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ b♮1, a𝄪1, c♭2 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bn1, b1, aS1, cf2 ]::
+
+##
+35.5||63.544398327975||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ bqs1, cqf2, axqs1, dffqf2 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ b ¼↑ 1, c ¼↓2, c♭ ¼↑2, b♯ ¼↓ 1, a𝄪 ¼↑ 1, d𝄫 ¼↓2 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bq1, cu2, aSq1, dFu2 ]::
+
+##
+36.0||65.40639132515||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ c2, bs1, dff2 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c♮2, b♯1, d𝄫2 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cn2, c2, bs1, dF2 ]::
+
+##
+36.5||67.322944881756||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ cqs2, btqs1, dtqf2, dffqs2, bxqf1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c ¼↑ 2, c♯ ¼↓ 2, b♯ ¼↑1, d♭ ¼↓ 2, d𝄫 ¼↑ 2, b𝄪 ¼↓1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cq2, bQ1, dU2, dFq2, bSu1 ]::
+
+##
+37.0||69.295657744218||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ cs2, df2, bx1 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c♯2, d♭2, b𝄪1 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cs2, df2, bS1 ]::
+
+##
+37.5||71.326175505806||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ dqf2, ctqs2, bxqs1, cxqf2, effqf2 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d ¼↓ 2, d♭ ¼↑ 2, c♯ ¼↑ 2, b𝄪 ¼↑1, c𝄪 ¼↓ 2, e𝄫 ¼↓ 2 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ du2, cQ2, bSq1, cSu2, eFu2 ]::
+
+##
+38.0||73.416191979352||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ d2, cx2, eff2 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d♮2, c𝄪2, e𝄫2 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ dn2, d2, cS2, eF2 ]::
+
+##
+38.5||75.567450610195||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ dqs2, etqf2, fffqf2, cxqs2, effqs2 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d ¼↑ 2, d♯ ¼↓ 2, e♭ ¼↓ 2, f𝄫 ¼↓ 2, c𝄪 ¼↑ 2, e𝄫 ¼↑ 2 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ dq2, eU2, fFu2, cSq2, eFq2 ]::
+
+##
+39.0||77.78174593052||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ ds2, ef2, fff2 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d♯2, e♭2, f𝄫2 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ ds2, ef2, fF2 ]::
+
+##
+39.5||80.06092505632||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ eqf2, dtqs2, ftqf2, fffqs2 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e♮ ¼↓ 2, e♭ ¼↑ 2, d♯ ¼↑ 2, f♭ ¼↓ 2, f𝄫 ¼↑ 2 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ eu2, dQ2, fU2, fFq2 ]::
+
+##
+40.0||82.406889228217||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ e2, ff2, dx2 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e♮2, f♭2, d𝄪2 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ en2, e2, ff2, dS2 ]::
+
+##
+40.5||84.821595397437||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ eqs2, fqf2, dxqs2, gffqf2 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e ¼↑ 2, f ¼↓ 2, f♭ ¼↑ 2, e♯ ¼↓ 2, d𝄪 ¼↑ 2, g𝄫 ¼↓ 2 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ eq2, fu2, dSq2, gFu2 ]::
+
+##
+41.0||87.307057858251||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ f2, es2, gff2 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f♮2, e♯2, g𝄫2 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fn2, f2, es2, gF2 ]::
+
+##
+41.5||89.86534992826||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ fqs2, etqs2, gtqf2, gffqs2, exqf2 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f ¼↑ 2, e♯ ¼↑ 2, f♯ ¼↓ 2, g♭ ¼↓ 2, g𝄫 ¼↑ 2, e𝄪 ¼↓ 2 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fq2, eQ2, gU2, gFq2, eSu2 ]::
+
+##
+42.0||92.498605677909||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ fs2, gf2, ex2 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f♯2, g♭2, e𝄪2 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fs2, gf2, eS2 ]::
+
+##
+42.5||95.209021710676||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ gqf2, ftqs2, exqs2, fxqf2, affqf2 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g ¼↓ 2, f♯ ¼↑ 2, g♭ ¼↑ 2, e𝄪 ¼↑ 2, f𝄪 ¼↓ 2, a𝄫 ¼↓ 2 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gu2, fQ2, eSq2, fSu2, aFu2 ]::
+
+##
+43.0||97.998858995437||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ g2, fx2, aff2 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g♮2, f𝄪2, a𝄫2 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gn2, g2, fS2, aF2 ]::
+
+##
+43.5||100.87044475251||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ gqs2, atqf2, fxqs2, affqs2 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g ¼↑ 2, a♭ ¼↓ 2, g♯ ¼↓ 2, f𝄪 ¼↑ 2, a𝄫 ¼↑ 2 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gq2, aU2, fSq2, aFq2 ]::
+
+##
+44.0||103.82617439499||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ gs2, af2 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g♯2, a♭2 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gs2, af2 ]::
+
+##
+44.5||106.8685135269||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ aqf2, gtqs2, gxqf2, bffqf2 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a ¼↓ 2, g♯ ¼↑ 2, a♭ ¼↑ 2, g𝄪 ¼↓ 2, b𝄫 ¼↓ 2 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ au2, gQ2, gSu2, bFu2 ]::
+
+##
+45.0||110.0||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ a2, gx2, bff2 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a♮2, g𝄪2, b𝄫2 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ an2, a2, gS2, bF2 ]::
+
+##
+45.5||113.22324603078||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ aqs2, btqf2, gxqs2, bffqs2, cffqf3 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a ¼↑ 2, b♭ ¼↓ 2, a♯ ¼↓ 2, g𝄪 ¼↑ 2, b𝄫 ¼↑ 2, c𝄫 ¼↓3 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ aq2, bU2, gSq2, bFq2, cFu3 ]::
+
+##
+46.0||116.54094037952||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ as2, bf2, cff3 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a♯2, b♭2, c𝄫3 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ as2, bf2, cF3 ]::
+
+##
+46.5||119.95585059318||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ bqf2, atqs2, ctqf3, cffqs3 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ b ¼↓ 2, a♯ ¼↑ 2, b♭ ¼↑ 2, c♭ ¼↓3, c𝄫 ¼↑3 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bu2, aQ2, cU3, cFq3 ]::
+
+##
+47.0||123.47082531403||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ b2, ax2, cf3 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ b♮2, a𝄪2, c♭3 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bn2, b2, aS2, cf3 ]::
+
+##
+47.5||127.08879665595||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ bqs2, cqf3, axqs2, dffqf3 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ b ¼↑ 2, c ¼↓3, c♭ ¼↑3, b♯ ¼↓ 2, a𝄪 ¼↑ 2, d𝄫 ¼↓3 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bq2, cu3, aSq2, dFu3 ]::
+
+##
+48.0||130.8127826503||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ c3, bs2, dff3 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c♮3, b♯2, d𝄫3 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cn3, c3, bs2, dF3 ]::
+
+##
+48.5||134.64588976351||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ cqs3, btqs2, dtqf3, dffqs3, bxqf2 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c ¼↑ 3, c♯ ¼↓ 3, b♯ ¼↑2, d♭ ¼↓ 3, d𝄫 ¼↑ 3, b𝄪 ¼↓2 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cq3, bQ2, dU3, dFq3, bSu2 ]::
+
+##
+49.0||138.59131548844||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ cs3, df3, bx2 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c♯3, d♭3, b𝄪2 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cs3, df3, bS2 ]::
+
+##
+49.5||142.65235101161||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ dqf3, ctqs3, bxqs2, cxqf3, effqf3 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d ¼↓ 3, d♭ ¼↑ 3, c♯ ¼↑ 3, b𝄪 ¼↑2, c𝄪 ¼↓ 3, e𝄫 ¼↓ 3 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ du3, cQ3, bSq2, cSu3, eFu3 ]::
+
+##
+50.0||146.8323839587||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ d3, cx3, eff3 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d♮3, c𝄪3, e𝄫3 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ dn3, d3, cS3, eF3 ]::
+
+##
+50.5||151.13490122039||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ dqs3, etqf3, fffqf3, cxqs3, effqs3 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d ¼↑ 3, d♯ ¼↓ 3, e♭ ¼↓ 3, f𝄫 ¼↓ 3, c𝄪 ¼↑ 3, e𝄫 ¼↑ 3 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ dq3, eU3, fFu3, cSq3, eFq3 ]::
+
+##
+51.0||155.56349186104||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ ds3, ef3, fff3 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d♯3, e♭3, f𝄫3 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ ds3, ef3, fF3 ]::
+
+##
+51.5||160.12185011264||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ eqf3, dtqs3, ftqf3, fffqs3 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e♮ ¼↓ 3, e♭ ¼↑ 3, d♯ ¼↑ 3, f♭ ¼↓ 3, f𝄫 ¼↑ 3 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ eu3, dQ3, fU3, fFq3 ]::
+
+##
+52.0||164.81377845643||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ e3, ff3, dx3 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e♮3, f♭3, d𝄪3 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ en3, e3, ff3, dS3 ]::
+
+##
+52.5||169.64319079487||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ eqs3, fqf3, dxqs3, gffqf3 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e ¼↑ 3, f ¼↓ 3, f♭ ¼↑ 3, e♯ ¼↓ 3, d𝄪 ¼↑ 3, g𝄫 ¼↓ 3 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ eq3, fu3, dSq3, gFu3 ]::
+
+##
+53.0||174.6141157165||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ f3, es3, gff3 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f♮3, e♯3, g𝄫3 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fn3, f3, es3, gF3 ]::
+
+##
+53.5||179.73069985652||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ fqs3, etqs3, gtqf3, gffqs3, exqf3 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f ¼↑ 3, e♯ ¼↑ 3, f♯ ¼↓ 3, g♭ ¼↓ 3, g𝄫 ¼↑ 3, e𝄪 ¼↓ 3 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fq3, eQ3, gU3, gFq3, eSu3 ]::
+
+##
+54.0||184.99721135582||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ fs3, gf3, ex3 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f♯3, g♭3, e𝄪3 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fs3, gf3, eS3 ]::
+
+##
+54.5||190.41804342135||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ gqf3, ftqs3, exqs3, fxqf3, affqf3 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g ¼↓ 3, f♯ ¼↑ 3, g♭ ¼↑ 3, e𝄪 ¼↑ 3, f𝄪 ¼↓ 3, a𝄫 ¼↓ 3 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gu3, fQ3, eSq3, fSu3, aFu3 ]::
+
+##
+55.0||195.99771799087||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ g3, fx3, aff3 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g♮3, f𝄪3, a𝄫3 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gn3, g3, fS3, aF3 ]::
+
+##
+55.5||201.74088950503||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ gqs3, atqf3, fxqs3, affqs3 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g ¼↑ 3, a♭ ¼↓ 3, g♯ ¼↓ 3, f𝄪 ¼↑ 3, a𝄫 ¼↑ 3 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gq3, aU3, fSq3, aFq3 ]::
+
+##
+56.0||207.65234878997||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ gs3, af3 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g♯3, a♭3 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gs3, af3 ]::
+
+##
+56.5||213.73702705379||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ aqf3, gtqs3, gxqf3, bffqf3 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a ¼↓ 3, g♯ ¼↑ 3, a♭ ¼↑ 3, g𝄪 ¼↓ 3, b𝄫 ¼↓ 3 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ au3, gQ3, gSu3, bFu3 ]::
+
+##
+57.0||220.0||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ a3, gx3, bff3 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a♮3, g𝄪3, b𝄫3 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ an3, a3, gS3, bF3 ]::
+
+##
+57.5||226.44649206157||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ aqs3, btqf3, gxqs3, bffqs3, cffqf4 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a ¼↑ 3, b♭ ¼↓ 3, a♯ ¼↓ 3, g𝄪 ¼↑ 3, b𝄫 ¼↑ 3, c𝄫 ¼↓4 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ aq3, bU3, gSq3, bFq3, cFu4 ]::
+
+##
+58.0||233.08188075904||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ as3, bf3, cff4 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a♯3, b♭3, c𝄫4 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ as3, bf3, cF4 ]::
+
+##
+58.5||239.91170118636||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ bqf3, atqs3, ctqf4, cffqs4 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ b ¼↓ 3, a♯ ¼↑ 3, b♭ ¼↑ 3, c♭ ¼↓4, c𝄫 ¼↑4 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bu3, aQ3, cU4, cFq4 ]::
+
+##
+59.0||246.94165062806||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ b3, ax3, cf4 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ b♮3, a𝄪3, c♭4 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bn3, b3, aS3, cf4 ]::
+
+##
+59.5||254.1775933119||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ bqs3, cqf4, axqs3, dffqf4 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ b ¼↑ 3, c ¼↓4, c♭ ¼↑4, b♯ ¼↓ 3, a𝄪 ¼↑ 3, d𝄫 ¼↓4 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bq3, cu4, aSq3, dFu4 ]::
+
+##
+60.0||261.6255653006||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ c4, bs3, dff4 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c♮4, b♯3, d𝄫4 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cn4, c4, bs3, dF4 ]::
+
+##
+60.5||269.29177952702||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ cqs4, btqs3, dtqf4, dffqs4, bxqf3 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c ¼↑ 4, c♯ ¼↓ 4, b♯ ¼↑3, d♭ ¼↓ 4, d𝄫 ¼↑ 4, b𝄪 ¼↓3 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cq4, bQ3, dU4, dFq4, bSu3 ]::
+
+##
+61.0||277.18263097687||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ cs4, df4, bx3 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c♯4, d♭4, b𝄪3 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cs4, df4, bS3 ]::
+
+##
+61.5||285.30470202322||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ dqf4, ctqs4, bxqs3, cxqf4, effqf4 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d ¼↓ 4, d♭ ¼↑ 4, c♯ ¼↑ 4, b𝄪 ¼↑3, c𝄪 ¼↓ 4, e𝄫 ¼↓ 4 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ du4, cQ4, bSq3, cSu4, eFu4 ]::
+
+##
+62.0||293.66476791741||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ d4, cx4, eff4 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d♮4, c𝄪4, e𝄫4 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ dn4, d4, cS4, eF4 ]::
+
+##
+62.5||302.26980244078||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ dqs4, etqf4, fffqf4, cxqs4, effqs4 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d ¼↑ 4, d♯ ¼↓ 4, e♭ ¼↓ 4, f𝄫 ¼↓ 4, c𝄪 ¼↑ 4, e𝄫 ¼↑ 4 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ dq4, eU4, fFu4, cSq4, eFq4 ]::
+
+##
+63.0||311.12698372208||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ ds4, ef4, fff4 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d♯4, e♭4, f𝄫4 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ ds4, ef4, fF4 ]::
+
+##
+63.5||320.24370022528||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ eqf4, dtqs4, ftqf4, fffqs4 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e♮ ¼↓ 4, e♭ ¼↑ 4, d♯ ¼↑ 4, f♭ ¼↓ 4, f𝄫 ¼↑ 4 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ eu4, dQ4, fU4, fFq4 ]::
+
+##
+64.0||329.62755691287||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ e4, ff4, dx4 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e♮4, f♭4, d𝄪4 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ en4, e4, ff4, dS4 ]::
+
+##
+64.5||339.28638158975||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ eqs4, fqf4, dxqs4, gffqf4 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e ¼↑ 4, f ¼↓ 4, f♭ ¼↑ 4, e♯ ¼↓ 4, d𝄪 ¼↑ 4, g𝄫 ¼↓ 4 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ eq4, fu4, dSq4, gFu4 ]::
+
+##
+65.0||349.228231433||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ f4, es4, gff4 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f♮4, e♯4, g𝄫4 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fn4, f4, es4, gF4 ]::
+
+##
+65.5||359.46139971304||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ fqs4, etqs4, gtqf4, gffqs4, exqf4 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f ¼↑ 4, e♯ ¼↑ 4, f♯ ¼↓ 4, g♭ ¼↓ 4, g𝄫 ¼↑ 4, e𝄪 ¼↓ 4 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fq4, eQ4, gU4, gFq4, eSu4 ]::
+
+##
+66.0||369.99442271163||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ fs4, gf4, ex4 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f♯4, g♭4, e𝄪4 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fs4, gf4, eS4 ]::
+
+##
+66.5||380.8360868427||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ gqf4, ftqs4, exqs4, fxqf4, affqf4 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g ¼↓ 4, f♯ ¼↑ 4, g♭ ¼↑ 4, e𝄪 ¼↑ 4, f𝄪 ¼↓ 4, a𝄫 ¼↓ 4 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gu4, fQ4, eSq4, fSu4, aFu4 ]::
+
+##
+67.0||391.99543598175||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ g4, fx4, aff4 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g♮4, f𝄪4, a𝄫4 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gn4, g4, fS4, aF4 ]::
+
+##
+67.5||403.48177901006||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ gqs4, atqf4, fxqs4, affqs4 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g ¼↑ 4, a♭ ¼↓ 4, g♯ ¼↓ 4, f𝄪 ¼↑ 4, a𝄫 ¼↑ 4 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gq4, aU4, fSq4, aFq4 ]::
+
+##
+68.0||415.30469757995||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ gs4, af4 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g♯4, a♭4 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gs4, af4 ]::
+
+##
+68.5||427.47405410759||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ aqf4, gtqs4, gxqf4, bffqf4 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a ¼↓ 4, g♯ ¼↑ 4, a♭ ¼↑ 4, g𝄪 ¼↓ 4, b𝄫 ¼↓ 4 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ au4, gQ4, gSu4, bFu4 ]::
+
+##
+69.0||440.0||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ a4, gx4, bff4 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a♮4, g𝄪4, b𝄫4 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ an4, a4, gS4, bF4 ]::
+
+##
+69.5||452.89298412314||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ aqs4, btqf4, gxqs4, bffqs4, cffqf5 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a ¼↑ 4, b♭ ¼↓ 4, a♯ ¼↓ 4, g𝄪 ¼↑ 4, b𝄫 ¼↑ 4, c𝄫 ¼↓5 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ aq4, bU4, gSq4, bFq4, cFu5 ]::
+
+##
+70.0||466.16376151809||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ as4, bf4, cff5 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a♯4, b♭4, c𝄫5 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ as4, bf4, cF5 ]::
+
+##
+70.5||479.82340237271||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ bqf4, atqs4, ctqf5, cffqs5 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ b ¼↓ 4, a♯ ¼↑ 4, b♭ ¼↑ 4, c♭ ¼↓5, c𝄫 ¼↑5 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bu4, aQ4, cU5, cFq5 ]::
+
+##
+71.0||493.88330125612||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ b4, ax4, cf5 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ b♮4, a𝄪4, c♭5 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bn4, b4, aS4, cf5 ]::
+
+##
+71.5||508.3551866238||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ bqs4, cqf5, axqs4, dffqf5 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ b ¼↑ 4, c ¼↓5, c♭ ¼↑5, b♯ ¼↓ 4, a𝄪 ¼↑ 4, d𝄫 ¼↓5 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bq4, cu5, aSq4, dFu5 ]::
+
+##
+72.0||523.2511306012||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ c5, bs4, dff5 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c♮5, b♯4, d𝄫5 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cn5, c5, bs4, dF5 ]::
+
+##
+72.5||538.58355905405||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ cqs5, btqs4, dtqf5, dffqs5, bxqf4 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c ¼↑ 5, c♯ ¼↓ 5, b♯ ¼↑4, d♭ ¼↓ 5, d𝄫 ¼↑ 5, b𝄪 ¼↓4 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cq5, bQ4, dU5, dFq5, bSu4 ]::
+
+##
+73.0||554.36526195374||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ cs5, df5, bx4 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c♯5, d♭5, b𝄪4 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cs5, df5, bS4 ]::
+
+##
+73.5||570.60940404644||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ dqf5, ctqs5, bxqs4, cxqf5, effqf5 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d ¼↓ 5, d♭ ¼↑ 5, c♯ ¼↑ 5, b𝄪 ¼↑4, c𝄪 ¼↓ 5, e𝄫 ¼↓ 5 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ du5, cQ5, bSq4, cSu5, eFu5 ]::
+
+##
+74.0||587.32953583482||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ d5, cx5, eff5 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d♮5, c𝄪5, e𝄫5 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ dn5, d5, cS5, eF5 ]::
+
+##
+74.5||604.53960488156||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ dqs5, etqf5, fffqf5, cxqs5, effqs5 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d ¼↑ 5, d♯ ¼↓ 5, e♭ ¼↓ 5, f𝄫 ¼↓ 5, c𝄪 ¼↑ 5, e𝄫 ¼↑ 5 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ dq5, eU5, fFu5, cSq5, eFq5 ]::
+
+##
+75.0||622.25396744416||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ ds5, ef5, fff5 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d♯5, e♭5, f𝄫5 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ ds5, ef5, fF5 ]::
+
+##
+75.5||640.48740045056||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ eqf5, dtqs5, ftqf5, fffqs5 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e♮ ¼↓ 5, e♭ ¼↑ 5, d♯ ¼↑ 5, f♭ ¼↓ 5, f𝄫 ¼↑ 5 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ eu5, dQ5, fU5, fFq5 ]::
+
+##
+76.0||659.25511382574||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ e5, ff5, dx5 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e♮5, f♭5, d𝄪5 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ en5, e5, ff5, dS5 ]::
+
+##
+76.5||678.57276317949||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ eqs5, fqf5, dxqs5, gffqf5 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e ¼↑ 5, f ¼↓ 5, f♭ ¼↑ 5, e♯ ¼↓ 5, d𝄪 ¼↑ 5, g𝄫 ¼↓ 5 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ eq5, fu5, dSq5, gFu5 ]::
+
+##
+77.0||698.45646286601||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ f5, es5, gff5 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f♮5, e♯5, g𝄫5 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fn5, f5, es5, gF5 ]::
+
+##
+77.5||718.92279942608||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ fqs5, etqs5, gtqf5, gffqs5, exqf5 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f ¼↑ 5, e♯ ¼↑ 5, f♯ ¼↓ 5, g♭ ¼↓ 5, g𝄫 ¼↑ 5, e𝄪 ¼↓ 5 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fq5, eQ5, gU5, gFq5, eSu5 ]::
+
+##
+78.0||739.98884542327||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ fs5, gf5, ex5 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f♯5, g♭5, e𝄪5 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fs5, gf5, eS5 ]::
+
+##
+78.5||761.67217368541||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ gqf5, ftqs5, exqs5, fxqf5, affqf5 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g ¼↓ 5, f♯ ¼↑ 5, g♭ ¼↑ 5, e𝄪 ¼↑ 5, f𝄪 ¼↓ 5, a𝄫 ¼↓ 5 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gu5, fQ5, eSq5, fSu5, aFu5 ]::
+
+##
+79.0||783.9908719635||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ g5, fx5, aff5 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g♮5, f𝄪5, a𝄫5 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gn5, g5, fS5, aF5 ]::
+
+##
+79.5||806.96355802011||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ gqs5, atqf5, fxqs5, affqs5 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g ¼↑ 5, a♭ ¼↓ 5, g♯ ¼↓ 5, f𝄪 ¼↑ 5, a𝄫 ¼↑ 5 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gq5, aU5, fSq5, aFq5 ]::
+
+##
+80.0||830.60939515989||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ gs5, af5 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g♯5, a♭5 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gs5, af5 ]::
+
+##
+80.5||854.94810821517||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ aqf5, gtqs5, gxqf5, bffqf5 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a ¼↓ 5, g♯ ¼↑ 5, a♭ ¼↑ 5, g𝄪 ¼↓ 5, b𝄫 ¼↓ 5 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ au5, gQ5, gSu5, bFu5 ]::
+
+##
+81.0||880.0||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ a5, gx5, bff5 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a♮5, g𝄪5, b𝄫5 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ an5, a5, gS5, bF5 ]::
+
+##
+81.5||905.78596824627||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ aqs5, btqf5, gxqs5, bffqs5, cffqf6 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a ¼↑ 5, b♭ ¼↓ 5, a♯ ¼↓ 5, g𝄪 ¼↑ 5, b𝄫 ¼↑ 5, c𝄫 ¼↓6 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ aq5, bU5, gSq5, bFq5, cFu6 ]::
+
+##
+82.0||932.32752303618||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ as5, bf5, cff6 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a♯5, b♭5, c𝄫6 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ as5, bf5, cF6 ]::
+
+##
+82.5||959.64680474543||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ bqf5, atqs5, ctqf6, cffqs6 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ b ¼↓ 5, a♯ ¼↑ 5, b♭ ¼↑ 5, c♭ ¼↓6, c𝄫 ¼↑6 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bu5, aQ5, cU6, cFq6 ]::
+
+##
+83.0||987.76660251225||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ b5, ax5, cf6 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ b♮5, a𝄪5, c♭6 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bn5, b5, aS5, cf6 ]::
+
+##
+83.5||1016.7103732476||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ bqs5, cqf6, axqs5, dffqf6 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ b ¼↑ 5, c ¼↓6, c♭ ¼↑6, b♯ ¼↓ 5, a𝄪 ¼↑ 5, d𝄫 ¼↓6 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bq5, cu6, aSq5, dFu6 ]::
+
+##
+84.0||1046.5022612024||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ c6, bs5, dff6 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c♮6, b♯5, d𝄫6 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cn6, c6, bs5, dF6 ]::
+
+##
+84.5||1077.1671181081||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ cqs6, btqs5, dtqf6, dffqs6, bxqf5 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c ¼↑ 6, c♯ ¼↓ 6, b♯ ¼↑5, d♭ ¼↓ 6, d𝄫 ¼↑ 6, b𝄪 ¼↓5 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cq6, bQ5, dU6, dFq6, bSu5 ]::
+
+##
+85.0||1108.7305239075||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ cs6, df6, bx5 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c♯6, d♭6, b𝄪5 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cs6, df6, bS5 ]::
+
+##
+85.5||1141.2188080929||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ dqf6, ctqs6, bxqs5, cxqf6, effqf6 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d ¼↓ 6, d♭ ¼↑ 6, c♯ ¼↑ 6, b𝄪 ¼↑5, c𝄪 ¼↓ 6, e𝄫 ¼↓ 6 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ du6, cQ6, bSq5, cSu6, eFu6 ]::
+
+##
+86.0||1174.6590716696||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ d6, cx6, eff6 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d♮6, c𝄪6, e𝄫6 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ dn6, d6, cS6, eF6 ]::
+
+##
+86.5||1209.0792097631||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ dqs6, etqf6, fffqf6, cxqs6, effqs6 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d ¼↑ 6, d♯ ¼↓ 6, e♭ ¼↓ 6, f𝄫 ¼↓ 6, c𝄪 ¼↑ 6, e𝄫 ¼↑ 6 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ dq6, eU6, fFu6, cSq6, eFq6 ]::
+
+##
+87.0||1244.5079348883||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ ds6, ef6, fff6 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d♯6, e♭6, f𝄫6 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ ds6, ef6, fF6 ]::
+
+##
+87.5||1280.9748009011||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ eqf6, dtqs6, ftqf6, fffqs6 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e♮ ¼↓ 6, e♭ ¼↑ 6, d♯ ¼↑ 6, f♭ ¼↓ 6, f𝄫 ¼↑ 6 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ eu6, dQ6, fU6, fFq6 ]::
+
+##
+88.0||1318.5102276515||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ e6, ff6, dx6 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e♮6, f♭6, d𝄪6 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ en6, e6, ff6, dS6 ]::
+
+##
+88.5||1357.145526359||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ eqs6, fqf6, dxqs6, gffqf6 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e ¼↑ 6, f ¼↓ 6, f♭ ¼↑ 6, e♯ ¼↓ 6, d𝄪 ¼↑ 6, g𝄫 ¼↓ 6 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ eq6, fu6, dSq6, gFu6 ]::
+
+##
+89.0||1396.912925732||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ f6, es6, gff6 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f♮6, e♯6, g𝄫6 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fn6, f6, es6, gF6 ]::
+
+##
+89.5||1437.8455988522||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ fqs6, etqs6, gtqf6, gffqs6, exqf6 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f ¼↑ 6, e♯ ¼↑ 6, f♯ ¼↓ 6, g♭ ¼↓ 6, g𝄫 ¼↑ 6, e𝄪 ¼↓ 6 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fq6, eQ6, gU6, gFq6, eSu6 ]::
+
+##
+90.0||1479.9776908465||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ fs6, gf6, ex6 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f♯6, g♭6, e𝄪6 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fs6, gf6, eS6 ]::
+
+##
+90.5||1523.3443473708||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ gqf6, ftqs6, exqs6, fxqf6, affqf6 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g ¼↓ 6, f♯ ¼↑ 6, g♭ ¼↑ 6, e𝄪 ¼↑ 6, f𝄪 ¼↓ 6, a𝄫 ¼↓ 6 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gu6, fQ6, eSq6, fSu6, aFu6 ]::
+
+##
+91.0||1567.981743927||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ g6, fx6, aff6 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g♮6, f𝄪6, a𝄫6 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gn6, g6, fS6, aF6 ]::
+
+##
+91.5||1613.9271160402||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ gqs6, atqf6, fxqs6, affqs6 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g ¼↑ 6, a♭ ¼↓ 6, g♯ ¼↓ 6, f𝄪 ¼↑ 6, a𝄫 ¼↑ 6 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gq6, aU6, fSq6, aFq6 ]::
+
+##
+92.0||1661.2187903198||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ gs6, af6 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g♯6, a♭6 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gs6, af6 ]::
+
+##
+92.5||1709.8962164303||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ aqf6, gtqs6, gxqf6, bffqf6 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a ¼↓ 6, g♯ ¼↑ 6, a♭ ¼↑ 6, g𝄪 ¼↓ 6, b𝄫 ¼↓ 6 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ au6, gQ6, gSu6, bFu6 ]::
+
+##
+93.0||1760.0||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ a6, gx6, bff6 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a♮6, g𝄪6, b𝄫6 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ an6, a6, gS6, bF6 ]::
+
+##
+93.5||1811.5719364925||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ aqs6, btqf6, gxqs6, bffqs6, cffqf7 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a ¼↑ 6, b♭ ¼↓ 6, a♯ ¼↓ 6, g𝄪 ¼↑ 6, b𝄫 ¼↑ 6, c𝄫 ¼↓7 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ aq6, bU6, gSq6, bFq6, cFu7 ]::
+
+##
+94.0||1864.6550460724||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ as6, bf6, cff7 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a♯6, b♭6, c𝄫7 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ as6, bf6, cF7 ]::
+
+##
+94.5||1919.2936094909||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ bqf6, atqs6, ctqf7, cffqs7 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ b ¼↓ 6, a♯ ¼↑ 6, b♭ ¼↑ 6, c♭ ¼↓7, c𝄫 ¼↑7 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bu6, aQ6, cU7, cFq7 ]::
+
+##
+95.0||1975.5332050245||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ b6, ax6, cf7 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ b♮6, a𝄪6, c♭7 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bn6, b6, aS6, cf7 ]::
+
+##
+95.5||2033.4207464952||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ bqs6, cqf7, axqs6, dffqf7 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ b ¼↑ 6, c ¼↓7, c♭ ¼↑7, b♯ ¼↓ 6, a𝄪 ¼↑ 6, d𝄫 ¼↓7 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bq6, cu7, aSq6, dFu7 ]::
+
+##
+96.0||2093.0045224048||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ c7, bs6, dff7 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c♮7, b♯6, d𝄫7 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cn7, c7, bs6, dF7 ]::
+
+##
+96.5||2154.3342362162||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ cqs7, btqs6, dtqf7, dffqs7, bxqf6 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c ¼↑ 7, c♯ ¼↓ 7, b♯ ¼↑6, d♭ ¼↓ 7, d𝄫 ¼↑ 7, b𝄪 ¼↓6 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cq7, bQ6, dU7, dFq7, bSu6 ]::
+
+##
+97.0||2217.461047815||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ cs7, df7, bx6 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c♯7, d♭7, b𝄪6 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cs7, df7, bS6 ]::
+
+##
+97.5||2282.4376161858||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ dqf7, ctqs7, bxqs6, cxqf7, effqf7 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d ¼↓ 7, d♭ ¼↑ 7, c♯ ¼↑ 7, b𝄪 ¼↑6, c𝄪 ¼↓ 7, e𝄫 ¼↓ 7 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ du7, cQ7, bSq6, cSu7, eFu7 ]::
+
+##
+98.0||2349.3181433393||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ d7, cx7, eff7 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d♮7, c𝄪7, e𝄫7 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ dn7, d7, cS7, eF7 ]::
+
+##
+98.5||2418.1584195262||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ dqs7, etqf7, fffqf7, cxqs7, effqs7 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d ¼↑ 7, d♯ ¼↓ 7, e♭ ¼↓ 7, f𝄫 ¼↓ 7, c𝄪 ¼↑ 7, e𝄫 ¼↑ 7 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ dq7, eU7, fFu7, cSq7, eFq7 ]::
+
+##
+99.0||2489.0158697766||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ ds7, ef7, fff7 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d♯7, e♭7, f𝄫7 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ ds7, ef7, fF7 ]::
+
+##
+99.5||2561.9496018022||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ eqf7, dtqs7, ftqf7, fffqs7 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e♮ ¼↓ 7, e♭ ¼↑ 7, d♯ ¼↑ 7, f♭ ¼↓ 7, f𝄫 ¼↑ 7 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ eu7, dQ7, fU7, fFq7 ]::
+
+##
+100.0||2637.020455303||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ e7, ff7, dx7 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e♮7, f♭7, d𝄪7 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ en7, e7, ff7, dS7 ]::
+
+##
+100.5||2714.291052718||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ eqs7, fqf7, dxqs7, gffqf7 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e ¼↑ 7, f ¼↓ 7, f♭ ¼↑ 7, e♯ ¼↓ 7, d𝄪 ¼↑ 7, g𝄫 ¼↓ 7 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ eq7, fu7, dSq7, gFu7 ]::
+
+##
+101.0||2793.825851464||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ f7, es7, gff7 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f♮7, e♯7, g𝄫7 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fn7, f7, es7, gF7 ]::
+
+##
+101.5||2875.6911977043||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ fqs7, etqs7, gtqf7, gffqs7, exqf7 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f ¼↑ 7, e♯ ¼↑ 7, f♯ ¼↓ 7, g♭ ¼↓ 7, g𝄫 ¼↑ 7, e𝄪 ¼↓ 7 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fq7, eQ7, gU7, gFq7, eSu7 ]::
+
+##
+102.0||2959.9553816931||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ fs7, gf7, ex7 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f♯7, g♭7, e𝄪7 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fs7, gf7, eS7 ]::
+
+##
+102.5||3046.6886947416||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ gqf7, ftqs7, exqs7, fxqf7, affqf7 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g ¼↓ 7, f♯ ¼↑ 7, g♭ ¼↑ 7, e𝄪 ¼↑ 7, f𝄪 ¼↓ 7, a𝄫 ¼↓ 7 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gu7, fQ7, eSq7, fSu7, aFu7 ]::
+
+##
+103.0||3135.963487854||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ g7, fx7, aff7 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g♮7, f𝄪7, a𝄫7 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gn7, g7, fS7, aF7 ]::
+
+##
+103.5||3227.8542320804||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ gqs7, atqf7, fxqs7, affqs7 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g ¼↑ 7, a♭ ¼↓ 7, g♯ ¼↓ 7, f𝄪 ¼↑ 7, a𝄫 ¼↑ 7 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gq7, aU7, fSq7, aFq7 ]::
+
+##
+104.0||3322.4375806396||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ gs7, af7 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g♯7, a♭7 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gs7, af7 ]::
+
+##
+104.5||3419.7924328607||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ aqf7, gtqs7, gxqf7, bffqf7 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a ¼↓ 7, g♯ ¼↑ 7, a♭ ¼↑ 7, g𝄪 ¼↓ 7, b𝄫 ¼↓ 7 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ au7, gQ7, gSu7, bFu7 ]::
+
+##
+105.0||3520.0||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ a7, gx7, bff7 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a♮7, g𝄪7, b𝄫7 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ an7, a7, gS7, bF7 ]::
+
+##
+105.5||3623.1438729851||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ aqs7, btqf7, gxqs7, bffqs7, cffqf8 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a ¼↑ 7, b♭ ¼↓ 7, a♯ ¼↓ 7, g𝄪 ¼↑ 7, b𝄫 ¼↑ 7, c𝄫 ¼↓8 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ aq7, bU7, gSq7, bFq7, cFu8 ]::
+
+##
+106.0||3729.3100921447||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ as7, bf7, cff8 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a♯7, b♭7, c𝄫8 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ as7, bf7, cF8 ]::
+
+##
+106.5||3838.5872189817||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ bqf7, atqs7, ctqf8, cffqs8 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ b ¼↓ 7, a♯ ¼↑ 7, b♭ ¼↑ 7, c♭ ¼↓8, c𝄫 ¼↑8 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bu7, aQ7, cU8, cFq8 ]::
+
+##
+107.0||3951.066410049||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ b7, ax7, cf8 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ b♮7, a𝄪7, c♭8 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bn7, b7, aS7, cf8 ]::
+
+##
+107.5||4066.8414929904||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ bqs7, cqf8, axqs7, dffqf8 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ b ¼↑ 7, c ¼↓8, c♭ ¼↑8, b♯ ¼↓ 7, a𝄪 ¼↑ 7, d𝄫 ¼↓8 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bq7, cu8, aSq7, dFu8 ]::
+
+##
+108.0||4186.0090448096||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ c8, bs7, dff8 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c♮8, b♯7, d𝄫8 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cn8, c8, bs7, dF8 ]::
+
+##
+108.5||4308.6684724324||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ cqs8, btqs7, dtqf8, dffqs8, bxqf7 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c ¼↑ 8, c♯ ¼↓ 8, b♯ ¼↑7, d♭ ¼↓ 8, d𝄫 ¼↑ 8, b𝄪 ¼↓7 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cq8, bQ7, dU8, dFq8, bSu7 ]::
+
+##
+109.0||4434.92209563||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ cs8, df8, bx7 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c♯8, d♭8, b𝄪7 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cs8, df8, bS7 ]::
+
+##
+109.5||4564.8752323716||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ dqf8, ctqs8, bxqs7, cxqf8, effqf8 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d ¼↓ 8, d♭ ¼↑ 8, c♯ ¼↑ 8, b𝄪 ¼↑7, c𝄪 ¼↓ 8, e𝄫 ¼↓ 8 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ du8, cQ8, bSq7, cSu8, eFu8 ]::
+
+##
+110.0||4698.6362866785||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ d8, cx8, eff8 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d♮8, c𝄪8, e𝄫8 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ dn8, d8, cS8, eF8 ]::
+
+##
+110.5||4836.3168390525||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ dqs8, etqf8, fffqf8, cxqs8, effqs8 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d ¼↑ 8, d♯ ¼↓ 8, e♭ ¼↓ 8, f𝄫 ¼↓ 8, c𝄪 ¼↑ 8, e𝄫 ¼↑ 8 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ dq8, eU8, fFu8, cSq8, eFq8 ]::
+
+##
+111.0||4978.0317395533||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ ds8, ef8, fff8 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d♯8, e♭8, f𝄫8 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ ds8, ef8, fF8 ]::
+
+##
+111.5||5123.8992036045||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ eqf8, dtqs8, ftqf8, fffqs8 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e♮ ¼↓ 8, e♭ ¼↑ 8, d♯ ¼↑ 8, f♭ ¼↓ 8, f𝄫 ¼↑ 8 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ eu8, dQ8, fU8, fFq8 ]::
+
+##
+112.0||5274.0409106059||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ e8, ff8, dx8 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e♮8, f♭8, d𝄪8 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ en8, e8, ff8, dS8 ]::
+
+##
+112.5||5428.582105436||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ eqs8, fqf8, dxqs8, gffqf8 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e ¼↑ 8, f ¼↓ 8, f♭ ¼↑ 8, e♯ ¼↓ 8, d𝄪 ¼↑ 8, g𝄫 ¼↓ 8 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ eq8, fu8, dSq8, gFu8 ]::
+
+##
+113.0||5587.6517029281||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ f8, es8, gff8 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f♮8, e♯8, g𝄫8 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fn8, f8, es8, gF8 ]::
+
+##
+113.5||5751.3823954087||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ fqs8, etqs8, gtqf8, gffqs8, exqf8 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f ¼↑ 8, e♯ ¼↑ 8, f♯ ¼↓ 8, g♭ ¼↓ 8, g𝄫 ¼↑ 8, e𝄪 ¼↓ 8 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fq8, eQ8, gU8, gFq8, eSu8 ]::
+
+##
+114.0||5919.9107633862||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ fs8, gf8, ex8 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f♯8, g♭8, e𝄪8 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fs8, gf8, eS8 ]::
+
+##
+114.5||6093.3773894832||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ gqf8, ftqs8, exqs8, fxqf8, affqf8 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g ¼↓ 8, f♯ ¼↑ 8, g♭ ¼↑ 8, e𝄪 ¼↑ 8, f𝄪 ¼↓ 8, a𝄫 ¼↓ 8 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gu8, fQ8, eSq8, fSu8, aFu8 ]::
+
+##
+115.0||6271.926975708||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ g8, fx8, aff8 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g♮8, f𝄪8, a𝄫8 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gn8, g8, fS8, aF8 ]::
+
+##
+115.5||6455.7084641609||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ gqs8, atqf8, fxqs8, affqs8 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g ¼↑ 8, a♭ ¼↓ 8, g♯ ¼↓ 8, f𝄪 ¼↑ 8, a𝄫 ¼↑ 8 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gq8, aU8, fSq8, aFq8 ]::
+
+##
+116.0||6644.8751612791||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ gs8, af8 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g♯8, a♭8 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gs8, af8 ]::
+
+##
+116.5||6839.5848657214||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ aqf8, gtqs8, gxqf8, bffqf8 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a ¼↓ 8, g♯ ¼↑ 8, a♭ ¼↑ 8, g𝄪 ¼↓ 8, b𝄫 ¼↓ 8 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ au8, gQ8, gSu8, bFu8 ]::
+
+##
+117.0||7040.0||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ a8, gx8, bff8 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a♮8, g𝄪8, b𝄫8 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ an8, a8, gS8, bF8 ]::
+
+##
+117.5||7246.2877459702||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ aqs8, btqf8, gxqs8, bffqs8, cffqf9 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a ¼↑ 8, b♭ ¼↓ 8, a♯ ¼↓ 8, g𝄪 ¼↑ 8, b𝄫 ¼↑ 8, c𝄫 ¼↓9 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ aq8, bU8, gSq8, bFq8, cFu9 ]::
+
+##
+118.0||7458.6201842894||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ as8, bf8, cff9 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ a♯8, b♭8, c𝄫9 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ as8, bf8, cF9 ]::
+
+##
+118.5||7677.1744379634||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ bqf8, atqs8, ctqf9, cffqs9 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ b ¼↓ 8, a♯ ¼↑ 8, b♭ ¼↑ 8, c♭ ¼↓9, c𝄫 ¼↑9 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bu8, aQ8, cU9, cFq9 ]::
+
+##
+119.0||7902.132820098||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ b8, ax8, cf9 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ b♮8, a𝄪8, c♭9 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bn8, b8, aS8, cf9 ]::
+
+##
+119.5||8133.6829859808||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ bqs8, cqf9, axqs8, dffqf9 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ b ¼↑ 8, c ¼↓9, c♭ ¼↑9, b♯ ¼↓ 8, a𝄪 ¼↑ 8, d𝄫 ¼↓9 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ bq8, cu9, aSq8, dFu9 ]::
+
+##
+120.0||8372.0180896192||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ c9, bs8, dff9 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c♮9, b♯8, d𝄫9 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cn9, c9, bs8, dF9 ]::
+
+##
+120.5||8617.3369448648||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ cqs9, btqs8, dtqf9, dffqs9, bxqf8 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c ¼↑ 9, c♯ ¼↓ 9, b♯ ¼↑8, d♭ ¼↓ 9, d𝄫 ¼↑ 9, b𝄪 ¼↓8 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cq9, bQ8, dU9, dFq9, bSu8 ]::
+
+##
+121.0||8869.8441912599||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ cs9, df9, bx8 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ c♯9, d♭9, b𝄪8 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ cs9, df9, bS8 ]::
+
+##
+121.5||9129.7504647431||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ dqf9, ctqs9, bxqs8, cxqf9, effqf9 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d ¼↓ 9, d♭ ¼↑ 9, c♯ ¼↑ 9, b𝄪 ¼↑8, c𝄪 ¼↓ 9, e𝄫 ¼↓ 9 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ du9, cQ9, bSq8, cSu9, eFu9 ]::
+
+##
+122.0||9397.272573357||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ d9, cx9, eff9 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d♮9, c𝄪9, e𝄫9 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ dn9, d9, cS9, eF9 ]::
+
+##
+122.5||9672.6336781049||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ dqs9, etqf9, fffqf9, cxqs9, effqs9 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d ¼↑ 9, d♯ ¼↓ 9, e♭ ¼↓ 9, f𝄫 ¼↓ 9, c𝄪 ¼↑ 9, e𝄫 ¼↑ 9 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ dq9, eU9, fFu9, cSq9, eFq9 ]::
+
+##
+123.0||9956.0634791066||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ ds9, ef9, fff9 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ d♯9, e♭9, f𝄫9 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ ds9, ef9, fF9 ]::
+
+##
+123.5||10247.798407209||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ eqf9, dtqs9, ftqf9, fffqs9 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e♮ ¼↓ 9, e♭ ¼↑ 9, d♯ ¼↑ 9, f♭ ¼↓ 9, f𝄫 ¼↑ 9 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ eu9, dQ9, fU9, fFq9 ]::
+
+##
+124.0||10548.081821212||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ e9, ff9, dx9 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e♮9, f♭9, d𝄪9 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ en9, e9, ff9, dS9 ]::
+
+##
+124.5||10857.164210872||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ eqs9, fqf9, dxqs9, gffqf9 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ e ¼↑ 9, f ¼↓ 9, f♭ ¼↑ 9, e♯ ¼↓ 9, d𝄪 ¼↑ 9, g𝄫 ¼↓ 9 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ eq9, fu9, dSq9, gFu9 ]::
+
+##
+125.0||11175.303405856||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ f9, es9, gff9 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f♮9, e♯9, g𝄫9 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fn9, f9, es9, gF9 ]::
+
+##
+125.5||11502.764790817||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ fqs9, etqs9, gtqf9, gffqs9, exqf9 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f ¼↑ 9, e♯ ¼↑ 9, f♯ ¼↓ 9, g♭ ¼↓ 9, g𝄫 ¼↑ 9, e𝄪 ¼↓ 9 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fq9, eQ9, gU9, gFq9, eSu9 ]::
+
+##
+126.0||11839.821526772||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ fs9, gf9, ex9 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ f♯9, g♭9, e𝄪9 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ fs9, gf9, eS9 ]::
+
+##
+126.5||12186.754778966||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ gqf9, ftqs9, exqs9, fxqf9, affqf9 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g ¼↓ 9, f♯ ¼↑ 9, g♭ ¼↑ 9, e𝄪 ¼↑ 9, f𝄪 ¼↓ 9, a𝄫 ¼↓ 9 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gu9, fQ9, eSq9, fSu9, aFu9 ]::
+
+##
+127.0||12543.853951416||
+teletype::\lily::soft:: :: - soft:: ::teletype::[ g9, fx9, aff9 ]::
+
+teletype::\mus::soft::  :: - soft:: ::teletype::[ g♮9, f𝄪9, a𝄫9 ]::
+
+teletype::\ez::soft::   :: - soft:: ::teletype::[ gn9, g9, fS9, aF9 ]::
+::
+
+
+CLASSMETHODS::
+
+METHOD:: cps
+
+returns the pitch name and its enharmonically-respelled pitch names as an array from the given frequency in Hz.
+
+note::
+Using the following shorcut is recommended:
+code::
+440.cpsspn       // -> [ a4, gx4, bff4 ]
+440.cpsspn(\mus) // -> [ a♮4, g𝄪4, b𝄫4 ]
+440.cpsspn(\ez)  // -> [ an4, a4, gS4, bF4 ]
+::
+::
+
+argument:: freq
+
+Frequency in Hertz.
+
+argument:: style
+
+Pitch notation style.
+
+list::
+##code::\lily::
+
+LilyPond style note name. Octave numbers follow the scientific pitch notation.
+teletype::
+-> [ a4, gx4, bff4 ]
+::
+##code::\mus::
+
+Musician-friendly name.
+teletype::
+-> [ a♮4, g𝄪4, b𝄫4 ]
+::
+##code::\ez::
+
+A simpler naming convention than LilyPond.
+teletype::
+-> [ an4, a4, gS4, bF4 ]
+::
+::
+
+
+
+METHOD:: midi
+
+returns the pitch name and its enharmonically-respelled pitch names as an array from the given MIDI pitch number.
+
+note::
+Using the following shorcut is recommended:
+code::
+69.midispn       // [ a4, gx4, bff4 ]
+69.midispn(\mus) // -> [ a♮4, g𝄪4, b𝄫4 ]
+69.midispn(\ez)  // -> [ an4, a4, gS4, bF4 ]
+::
+::
+
+argument:: midiPitch
+
+MIDI pitch number. Float is accepted to represent a microtonal change.
+
+argument:: style
+
+Please refer to the same argument of the method code::.cps:::
+
+
+METHOD:: getValue
+
+returns the corresponding MIDI pitch number, frequency in Hz or both from the given pitch name.
+
+note::
+Using the following shorcut is recommended:
+code::
+\a4.all  // -> ( 'midi': 69.0, 'cps': 440.0 )
+\a4.cps  // -> 261.6255653006
+\a4.midi // -> 60.0
+::
+::
+
+argument:: which
+Pitch any style listed in the link::#Full list of SPN with all styles:::
+argument:: mappingSwitch
+
+decides whether to get its MIDI pitch number, its frequency in Hz, or both.
+
+list::
+##code::\all::
+
+returns its MIDI pitch number and frequency in Hz as an event:
+teletype::
+-> ( 'midi': 69.0, 'cps': 440.0 )
+::
+
+##code::\midi::
+
+returns its MIDI pitch number:
+
+teletype::
+-> 60.0
+::
+
+##code::\cps::
+
+returns its frequency in Hz:
+
+teletype::
+-> 261.6255653006
+::
+::
+
+
+INSTANCEMETHODS::
+
+
+EXAMPLES::
+
+subsection::Rounding MIDI pitch number:
+code::
+SPN.midi(69)          // -> [ a4, gx4, bff4 ]
+SPN.midi(69.1)        // -> [ a4, gx4, bff4 ]
+SPN.midi(69.1, \ez)   // -> [ a1_164 ]
+SPN.midi(69.2)        // -> [ a4, gx4, bff4 ]
+SPN.midi(69.2, \ez)   // -> [ a1_84 ]
+SPN.midi(69.3)        // -> [ aqs4, btqf4, gxqs4, bffqs4, cffqf5 ]
+SPN.midi(69.3, \ez)   // -> [ a1_84 ]
+SPN.midi(69.4)        // -> [ aqs4, btqf4, gxqs4, bffqs4, cffqf5 ]
+SPN.midi(69.4, \ez)   // -> [ a3_164 ]
+SPN.midi(69.5)        // -> [ aqs4, btqf4, gxqs4, bffqs4, cffqf5 ]
+SPN.midi(69.6)        // -> [ aqs4, btqf4, gxqs4, bffqs4, cffqf5 ]
+SPN.midi(69.6, \ez)   // -> [ a5_164 ]
+SPN.midi(69.7)        // -> [ aqs4, btqf4, gxqs4, bffqs4, cffqf5 ]
+SPN.midi(69.7, \ez)   // -> [ a5_164 ]
+SPN.midi(69.8)        // -> [ as4, bf4, cff5 ]
+SPN.midi(69.8, \ez)   // -> [ a3_84 ]
+SPN.midi(69.9)        // -> [ as4, bf4, cff5 ]
+SPN.midi(69.9, \ez)   // -> [ a7_164 ]
+SPN.midi(70.0)        // -> [ as4, bf4, cff5 ]
+
+SPN.midi(69,   \mus)  // -> [ a♮4, g𝄪4, b𝄫4 ]
+SPN.midi(69.1, \mus)  // -> [ a♮4, g𝄪4, b𝄫4 ]
+SPN.midi(69.4, \mus)  // -> [ a ¼↑ 4, b♭ ¼↓ 4, a♯ ¼↓ 4, g𝄪 ¼↑ 4, b𝄫 ¼↑ 4, c𝄫 ¼↓5 ]
+SPN.midi(69.5, \mus)  // -> [ a ¼↑ 4, b♭ ¼↓ 4, a♯ ¼↓ 4, g𝄪 ¼↑ 4, b𝄫 ¼↑ 4, c𝄫 ¼↓5 ]
+SPN.midi(69.6, \mus)  // -> [ a ¼↑ 4, b♭ ¼↓ 4, a♯ ¼↓ 4, g𝄪 ¼↑ 4, b𝄫 ¼↑ 4, c𝄫 ¼↓5 ]
+SPN.midi(69.9, \mus)  // -> [ a♯4, b♭4, c𝄫5 ]
+SPN.midi(70.0, \mus)  // -> [ a♯4, b♭4, c𝄫5 ]
+::
+
+subsection::Rounding frequency
+code::
+SPN.cps(106)          // -> [ a2, gx2, bff2 ]
+SPN.cps(107)          // -> [ aqf2, gtqs2, gxqf2, bffqf2 ]
+SPN.cps(107, \mus)    // -> [ a ¼↓ 2, g♯ ¼↑ 2, a♭ ¼↑ 2, g𝄪 ¼↓ 2, b𝄫 ¼↓ 2 ]
+SPN.cps(107, \ez)     // -> [ au2, gQ2, gSu2, bFu2 ]
+SPN.cps(108)          // -> [ aqf2, gtqs2, gxqf2, bffqf2 ]
+SPN.cps(108, \mus)    // -> [ a ¼↓ 2, g♯ ¼↑ 2, a♭ ¼↑ 2, g𝄪 ¼↓ 2, b𝄫 ¼↓ 2 ]
+SPN.cps(108, \ez)     // -> [ am3_162 ]
+SPN.cps(109)          // -> [ a2, gx2, bff2 ]
+SPN.cps(109, \mus)    // -> [ a♮2, g𝄪2, b𝄫2 ]
+SPN.cps(109, \ez)     // -> [ am1_162 ]
+SPN.cps(110)          // -> [ aqs2, btqf2, gxqs2, bffqs2, cffqf3 ]
+::
+
+subsection::Get all the naming styles with the MIDI pitch number and the frequency in Hz from SPN
+code::
+(
+(0, 0.125 .. 127).do { |midinote|
+	(
+		midinote.asString ++ ":\t\t" ++ midinote.midicps
+		++ "\n\t\t\t" ++ SPN.midi(midinote)
+		++ "\n\t\t\t" ++ SPN.midi(midinote, \mus)
+		++ "\n\t\t\t" ++ SPN.midi(midinote, \ez)
+	).postln
+}
+)
+::
