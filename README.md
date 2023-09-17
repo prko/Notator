@@ -1,5 +1,5 @@
 # Notator
-musicXML File Writer for SuperCollider
+musicXML File Writer for SuperCollider with the rewrite feature of the given sclang code to play it via scserver
 
 
 ## Description
