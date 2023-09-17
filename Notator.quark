@@ -1,5 +1,5 @@
 (
-  name : "Notator",
+  name: "Notator",
   summary: "musicXML File Writer for SuperCollider with the rewrite feature of the given sclang code to play it via scserver",
   version: "0.0.1",
   schelp: "Notator.schelp",
