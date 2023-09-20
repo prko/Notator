@@ -3199,10 +3199,6 @@ table::
 ##
 The rendered score in Dorico 4 Pro:
 
-image::resources/notes_and_chords Dorico 4.svg::
-||
-The rendered score in MuseScore 4:
-
-image::resources/notes_and_chords MuseScore 4 @102dpi.png::
+image::resources/articulations.svg::
 ::
 ::
