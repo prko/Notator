@@ -33,8 +33,32 @@ Notator {
 				testArrayItemParser = {
 					var rhythmParser;
 					("testArrayItem:" + testArrayItem ++ ";" + "testArrayIndex:" + testArrayIndex).postln;
-					("thisEntryHasChord:" + thisEntryHasChord).postln;
-					("^([2-9]|_|m|l|b|w|h|q|e|x|t|i|s)|^[0-9]{1,3}\\.{0,3}$".quote ++ ".matchRegexp(testArrayItem)" + "^([2-9]|_|m|l|b|w|h|q|e|x|t|i|s)|^[0-9]{1,3}\\.{0,3}$".matchRegexp(testArrayItem)).postln;
+					("testArrayItem[0]:" + testArrayItem[0] + testArrayItem[0].class).postln;
+
+					("stringToParse[0] == $t && (testArrayIndex == 0 || (testArrayIndex == 1)):" + (stringToParse[0] == $t && (testArrayIndex == 0 || (testArrayIndex == 1)))).postln;
+					("stringToParse[0] == $t && (testArrayIndex == 2):" + (stringToParse[0] == $t && (testArrayIndex == 2))).postln;
+					("testArrayItem[0] == $|:" + (testArrayItem[0] == $|)).postln;
+					("testArrayItem[0] == $\\:" + (testArrayItem[0] == $\\)).postln;
+					("testArrayIndex == 0 && thisEntryHasChord:" + (testArrayIndex == 0 && thisEntryHasChord)).postln;
+					("("++"^([a-g]|[0-9])((m|)(tq|q|)(s|S|ss|x|f|ff|F|Q|U|u|n)|)(((m|)1|3|5|7|9|11|13|15_8|16)|)(m|)[0-9]$".quote ++ ")
+.matchRegexp(testArrayItem)
+&& (testArrayIndex == 0)
+&& thisEntryHasChord.not
+&& (testArrayItem[0] != $|)
+&& (testArrayItem[0] != $\\)" + (("^([a-g]|[0-9])((m|)(tq|q|)(s|S|ss|x|f|ff|F|Q|U|u|n)|)(((m|)1|3|5|7|9|11|13|15_8|16)|)(m|)[0-9]$")
+							.matchRegexp(testArrayItem)
+							&& (testArrayIndex == 0)
+							&& thisEntryHasChord.not
+							&& (testArrayItem[0] != $|)
+							&& (testArrayItem[0] != $\\))).postln;
+					("(testArrayIndex == 1) &&
+" ++ "^([2-9]|_|m|l|b|w|h|q|e|x|t|i|y)|^[0-9]{1,3}\\.{0,3}$".quote ++".matchRegexp(testArrayItem):" + ((testArrayIndex == 1) &&
+							"^([2-9]|_|m|l|b|w|h|q|e|x|t|i|y)|^[0-9]{1,3}\\.{0,3}$".matchRegexp(testArrayItem))).postln;
+					("(testArrayItem.size == 1  &&  (testArrayItem[0] != $f)) ||  (testArrayItem[0] != $F  &&  testArrayItem[0] != $/):" + ((testArrayItem.size == 1  &&  (testArrayItem[0] != $f))  ||  (testArrayItem[0] != $F  &&  testArrayItem[0] != $/))).postln;
+
+
+					("^(s|f|p|w)".quote ++ ".matchRegexp(testArrayItem) || (testArrayItem[0] == $F && (testArrayItem.size == 1):" + ("^(s|f|p|w)".matchRegexp(testArrayItem) || (testArrayItem[0] == $F && (testArrayItem.size == 1)))).postln;
+					(" testArrayItem[0] == $/ :" +  (testArrayItem[0] == $/) ).postln;
 
 					rhythmParser = { |input|
 						("input:" + input).postln;
@@ -100,7 +124,8 @@ Notator {
 									anItem.asFloat
 								} {
 									("anItem non-Number:" + anItem).postln;
-									anItem.asSymbol }
+									anItem.asSymbol
+								}
 							}
 						}
 						{
@@ -109,8 +134,7 @@ Notator {
 							&& (testArrayIndex == 0)
 							&& thisEntryHasChord.not
 							&& (testArrayItem[0] != $|)
-							&& (testArrayItem[0] != $\\)
-						} {
+							&& (testArrayItem[0] != $\\) } {
 							"single pitch\n".postln;
 							("testArrayItem:" + testArrayItem).postln;
 							("testArrayItem.class:" + testArrayItem.class).postln;
@@ -125,7 +149,7 @@ Notator {
 							"this is not a tuplet\n".postln;
 							thisItem.asSymbol
 						}
-						{ (testArrayItem.size == 1  &&  (testArrayItem[0] != $f))  ||  (testArrayItem[0] != $F) } {
+						{ (testArrayItem.size == 1  &&  (testArrayItem[0] != $f))  ||  (testArrayItem[0] != $F  &&  testArrayItem[0] != $/) } {
 							var thisItem = testArrayItem
 							.replace(".", "s")  .replace("!", "S")  .replace(">", "a")  .replace("^", "A")  .replace("-", "o")  .replace("_", "O")
 							.replace("(", "u")  .replace(")", "U")  .replace("~", "j")  .replace("`", "J");
@@ -205,8 +229,8 @@ Notator {
 									}
 								)
 							};
-							// "tuplet detected\n".postln;
-							// "tuplet parsed\n".postln;
+							"tuplet detected\n".postln;
+							"tuplet parsed\n".postln;
 							if (testArrayItem[1] == $/) {
 								tupletParser.(testArrayItem[1..])
 							} {
@@ -235,7 +259,7 @@ Notator {
 		musicXMLfile = File(musicXMLfilePath, "w");
 
 		scdfilePath = musicXMLfilePath.splitext[0] ++ ".scd";
-		scdfile = File(scdfilePath, "w");
+		scdfile = File(scdfilePath, "w+");
 
 		q = { |text| text.asString.quote };
 
@@ -264,10 +288,10 @@ Notator {
 		dynamicMIDIvelocityPairs = (ffff: 115, fff: 103, ff:91, F:79, f:79, mf: 67, mp: 55, p: 43, pp: 31, ppp: 19, pppp: 7, sf: 96);
 		dynamicTranscriber = { |dynamic|
 			dynamic.asString
-			.replace("F4", "ffff") .replace("F3", "fff") .replace("F2", "ff") .replace("F", "f")
-			.replace("s4", "ffff") .replace("s3", "fff") .replace("s2", "ff") .replace("s1", "f")
-			.replace("P4", "pppp") .replace("P3", "ppp") .replace("P2", "pp") .replace("P1", "p")
-			.replace("q4", "pppp") .replace("q3", "ppp") .replace("q2", "pp") .replace("q1", "p")
+			.replace("F4", "ffff") .replace("F3", "fff") .replace("F2", "ff") .replace("F1", "f") .replace("F", "f") .replace("F0", "mf")
+			.replace("s4", "ffff") .replace("s3", "fff") .replace("s2", "ff") .replace("s1", "f")                    .replace("s0", "mf")
+			.replace("p4", "pppp") .replace("p3", "ppp") .replace("p2", "pp") .replace("p1", "p")                    .replace("p0", "mp")
+			.replace("q4", "pppp") .replace("q3", "ppp") .replace("q2", "pp") .replace("q1", "p")                    .replace("q0", "mp")
 			.asSymbol
 		};
 
@@ -389,14 +413,15 @@ Notator {
 		"      <encoding-date>" ++ Date.localtime.format("%Y-%m-%d") ++ "</encoding-date>\n" ++
 		"    </encoding>\n" ++
 		"  </identification>\n" ++
-		/*		"  <defaults>\n" ++
+
+		"  <defaults>\n" ++
 		"      <scaling>\n" ++
 		"         <millimeters>6.35</millimeters>\n" ++
 		"         <tenths>40</tenths>\n" ++
 		"      </scaling>\n" ++
 		"      <page-layout>\n" ++
-		"         <page-height>400</page-height>\n" ++
-		"         <page-width>700</page-width>\n" ++
+		"         <page-height>1870.8661417323</page-height>\n" ++
+		"         <page-width>1322.8346456693</page-width>\n" ++
 		"         <page-margins type=" ++ q.("both") ++ ">\n" ++
 		"            <left-margin>20</left-margin>\n" ++
 		"            <right-margin>20</right-margin>\n" ++
@@ -413,7 +438,7 @@ Notator {
 		"         <top-system-distance>10</top-system-distance>\n" ++
 		"      </system-layout>\n" ++
 		"  </defaults>\n" ++
-		*/
+
 		"  <part-list>\n";
 
 		{
@@ -432,6 +457,7 @@ Notator {
 		scdfile << ("(\n");
 
 		partsInTheFirstBar.do { |partKey|
+			if (score[1][partKey][\lbl] == nil || (score[1][partKey][\lbl] == '')) {score[1][partKey][\lbl] = \Piano};
 			header = header ++ "    <score-part id=" ++ q.(partKey.asString.toUpper) ++ ">\n" ++
 			"      <part-name>" ++ score[1][partKey][\lbl] ++ "</part-name>\n" ++
 			"    </score-part>\n";
@@ -484,11 +510,28 @@ Notator {
 				};
 				partAttributesPerBar = partItemsPerBar[\atr];
 
+
 				("\n\t\tpartAttributesPerBar:" + partAttributesPerBar).postln;
+
 				if (partAttributesPerBar == nil) {
-					partAttributesPerBar = partAttributesPerBarLast[\atr]
+					if (barIndex < 2) {
+						partAttributesPerBar = (key: [0, \none], time: \x, staves: 4, clef: [[\g, 2, 2], [\g, 2], [\f, 4], [\f, 4, -2]], trans: [0, 0, 0]);
+					} {
+						partAttributesPerBar = partAttributesPerBarLast[\atr]
+					}
 				};
 				("\n\t\t- partAttributesPerBarLast:\n\t\t  " + partAttributesPerBarLast).postln;
+
+				("(partAttributesPerBar[\\" ++ "key] != partAttributesPerBarLast[\\atr][\\" ++ "key])" + (partAttributesPerBar[\key] != partAttributesPerBarLast[\atr][\key])).postln;
+				("partAttributesPerBar[\\" ++ "key]:" + partAttributesPerBar[\key] ++ "\n").postln;
+				("(partAttributesPerBar[\\" ++ "time] != partAttributesPerBarLast[\\atr][\\" ++ "time])" + (partAttributesPerBar[\time] != partAttributesPerBarLast[\atr][\time])).postln;
+				("partAttributesPerBar[\\" ++ "time]:" + partAttributesPerBar[\time] ++ "\n").postln;
+				("(partAttributesPerBar[\\" ++ "staves] != partAttributesPerBarLast[\\atr][\\" ++ "staves])" + (partAttributesPerBar[\staves] != partAttributesPerBarLast[\atr][\staves])).postln;
+				("partAttributesPerBar[\\" ++ "staves]:" + partAttributesPerBar[\staves] ++ "\n").postln;
+				("(partAttributesPerBar[\\" ++ "clef] != partAttributesPerBarLast[\\atr][\\" ++ "clef])" + (partAttributesPerBar[\clef] != partAttributesPerBarLast[\atr][\clef])).postln;
+				("partAttributesPerBar[\\" ++ "clef]:" + partAttributesPerBar[\clef] ++ "\n").postln;
+				("(partAttributesPerBar[\\" ++ "trans] != partAttributesPerBarLast[\\atr][\\" ++ "trans])" + (partAttributesPerBar[\trans] != partAttributesPerBarLast[\atr][\trans])).postln;
+				("partAttributesPerBar[\\" ++ "trans]:" + partAttributesPerBar[\trans] ++ "\n").postln;
 
 				if (partAttributesPerBar[\key] == nil) {
 					partAttributesPerBar[\key] = partAttributesPerBarLast[\atr][\key]
@@ -518,6 +561,7 @@ Notator {
 				itemsPerPartPerBar = itemsPerPartPerBar ++ "    <measure number=" ++ q.(barIndex) ++ ">\n" ++
 				"      <attributes>\n" ++
 				"        <divisions>" ++ div ++"</divisions>\n" ++
+
 				if (partAttributesPerBar[\key] != partAttributesPerBarLast[\atr][\key]) {
 					"        <key>\n" ++
 					"          <fifths>" ++ partAttributesPerBar[\key][0] ++ "</fifths>\n" ++
@@ -526,6 +570,7 @@ Notator {
 				} {
 					""
 				} ++
+
 				if (partAttributesPerBar[\time] != partAttributesPerBarLast[\atr][\time]) {
 					"        <time>\n" ++
 					if ( partAttributesPerBar[\time] == \x) {
@@ -538,6 +583,7 @@ Notator {
 				} {
 					""
 				} ++
+
 				if (partAttributesPerBar[\staves] != partAttributesPerBarLast[\atr][\staves]) {
 					"        <staves>" ++ partAttributesPerBar[\staves] ++ "</staves>\n"
 				} {
@@ -752,7 +798,7 @@ Notator {
 
 						thisEntryIsChord = (thisEntry[0].size != 0);
 
-						thisEntryIsRest = thisEntry[0].asString[0].ascii == 114;
+						thisEntryIsRest = (thisEntry[0].asString[0].ascii == 114);
 
 
 						if (thisEntryIsSingleNote||singleMIDINoteChecker.()||thisEntryIsChord||thisEntryIsRest) {
@@ -887,7 +933,7 @@ Notator {
 									//normalTypeHistoryThisVoiceThisBar.insert(depth - 1, 0);
 									tupletTimeRegister.(nestedTupletOrNot[0], depth)
 								} {
-									"\t\t\t\t\t- This is not a nested tuplet.".postln;
+									"\t\t\t\t\t- This is not a nested tuplet. @tupletTimeRegister".postln;
 									("depth:" + depth).postln;
 									itemsPerPartPerBar = itemsPerPartPerBar ++
 									"        <time-modification>\n"
@@ -918,7 +964,7 @@ Notator {
 									depth = depth +1;
 									tupletNotationRegister.(nestedTupletOrNot[0], depth)
 								} {
-									"\t\t\t\t\t- This is not a nested tuplet.".postln;
+									"\t\t\t\t\t- This is not a nested tuplet. @tupletNotationRegister".postln;
 									switch(nestedTupletOrNot.size,
 										4, {
 											itemsPerPartPerBar = itemsPerPartPerBar ++
@@ -1033,7 +1079,7 @@ Notator {
 
 								thisPitch = if (thisPitch.size < 3) {
 									if (thisPitch.size == 2) {
-										if ("[0-9]$".matchRegexp(thisPitch)) {
+										if ("^[a-g][0-9]$".matchRegexp(thisPitch)) {
 											thisPitch[0] ++ "n" ++ thisPitch[1]
 										} {
 											thisPitch[0] ++ thisPitch[1] ++ thisVoiceOctaveLast
@@ -1729,7 +1775,17 @@ Notator {
 
 							scdfile << (
 								"\t\t\t\t(\n" ++
-								"\t\t\t\t\tdur:" + (thisDuration/252000) ++ ",\n" ++
+								"\t\t\t\t\tdur:" + (thisDuration/252000) ++ "," +
+								"tie:" + if (thisTie != nil) {
+									$\\ ++ (thisTie.asString.replace("r", "lv").replace("R", "stop_then_lv")
+										.replace("j", "start").replace("J", "stop")
+										.replace("~", "start").replace("`", "stop"))
+								} { "\\nil" } ++ "," +
+								"slur:" + if (thisSlur != nil) {
+									$\\ ++ (thisSlur.asString.replace("u", "start").replace("U", "stop")
+										.replace("(", "start").replace(")", "stop"))
+								} { "\\nil" } ++ "," +
+								"articulation: '" ++ articulations[thisArticulation] ++ "',\n" ++
 								"\t\t\t\t\tmidinote:" + if (thisEntryIsRest) { "Rest(" ++ (thisDuration/252000) ++ ")"
 								} {
 									thisMIDIPerfrom
@@ -1754,17 +1810,7 @@ Notator {
 									"\t\t\t\t\tdynamic:" + $\\ ++ dynamicMark ++ "," +
 									"velocity:" + dynamicMIDIvelocityPairs[dynamicMark] ++ ",\n"
 								}.() ++
-								"\t\t\t\t\tarticulation: '" ++ articulations[thisArticulation] ++ "'," +
-								"tie:" + if (thisTie != nil) {
-									$\\ ++ (thisTie.asString.replace("r", "lv").replace("R", "stop_then_lv")
-										.replace("j", "start").replace("J", "stop")
-										.replace("~", "start").replace("`", "stop"))
-								} ++ "," +
-								"slur:" + if (thisSlur != nil) {
-									$\\ ++ (thisSlur.asString.replace("u", "start").replace("U", "stop")
-										.replace("(", "start").replace(")", "stop"))
-								} ++
-								"\n\t\t\t\t),\n").replace("[ ", "[").replace(" ]", "]").replace("\nil", "nil");
+								"\t\t\t\t),\n").replace("[ ", "[").replace(" ]", "]").replace("\nil", "nil");
 						};
 						("\t\tthisEntryTemporaryUpdated:" + thisEntryTemporaryUpdated).postln;
 
@@ -1828,34 +1874,33 @@ Notator {
 			"\ts.waitForBoot {\n" ++
 			"\t\tvar parts, numBar, detectNumVoices, eventPlayer;\n" ++
 			"\t\tparts =" +  partLables.collect { |aPartLabel| "'" ++ aPartLabel ++ "'"} ++ ";\n" ++
-			"\t\tnumBar =" + (score.size - 1) ++ ";\n" ++
+			"\t\tnumBar =" + renotatedVariable ++ "[parts[0]].size" ++ ";\n" ++
 			"\t\tdetectNumVoices = { |nthBar, thisPart|\n" ++
 			"\t\t\t" ++ renotatedVariable ++ "[thisPart][nthBar].keys.count { |item|\n" ++
 			"\t\t\t\titem.asString.contains(" ++ q.("v") ++ ") }\n" ++
 			"\t\t};\n" ++
-			"\t\teventPlayer = { |thisEntry, slur, instrument|\n" ++
-			"\t\t\tvar articuletionToVelocity, articuletionToLegato, tiedNoteVelocity, sustain;\n" ++
-			"\t\t\tarticuletionToVelocity = 0;\n" ++
-			"\t\t\tcase\n" ++
-			"\t\t\t{ thisEntry[\\" ++ "articulation] == 'accent'          } { articuletionToVelocity = 4    }\n" ++
-			"\t\t\t{ thisEntry[\\" ++ "articulation] == 'strong-accent'   } { articuletionToVelocity = 8    }\n" ++
-			"\t\t\t{ thisEntry[\\" ++ "articulation] == 'staccato'        } { articuletionToLegato   = 0.5  }\n" ++
-			"\t\t\t{ thisEntry[\\" ++ "articulation] == 'staccatissimo'   } { articuletionToLegato   = 0.25 }\n" ++
-			"\t\t\t{ thisEntry[\\" ++ "articulation] == 'tenuto'          } { articuletionToLegato   = 1    }\n" ++
-			"\t\t\t{ thisEntry[\\" ++ "articulation] == 'detached-legato' } { articuletionToLegato   = 0.7  }\n" ++
-			"\t\t\t{ thisEntry[\\" ++ "articulation] == 'nil'             } {\n" ++
-			"\t\t\t\tarticuletionToLegato   = 1;\n" ++
-			"\t\t\t\tarticuletionToVelocity = 0\n" ++
-			"\t\t\t};\n" ++
+			"\t\teventPlayer = { |thisEntry, velocityFactorForRestNTiedNote, slur, instrument|\n" ++
+			"\t\t\tvar articulationToVelocity, articulationToLegato, sustain;\n" ++
+			"\t\t\t# articulationToVelocity, articulationToLegato = switch (thisEntry[\\" ++ "articulation],\n" ++
+			"\t\t\t\t'accent',          { [4, 1]    },\n" ++
+			"\t\t\t\t'strong-accent',   { [8, 1]    },\n" ++
+			"\t\t\t\t'staccato',        { [1, 0.4]  },\n" ++
+			"\t\t\t\t'staccatissimo',   { [2, 0.2] },\n" ++
+			"\t\t\t\t'tenuto',          { [0, 1]    },\n" ++
+			"\t\t\t\t'detached-legato', { [0, 0.8]  },\n" ++
+			"\t\t\t\t'nil',             { [0, 1]    }\n" ++
+			"\t\t\t);\n" ++
 			"\t\t\t\n" ++
-			"\t\t\tarticuletionToLegato = if (slur == \\" ++ "on || (thisEntry[\\" ++ "tiedDur] != 0)) {1.01} {0.8};\n" ++
-			"\t\t\ttiedNoteVelocity = if (thisEntry[\\" ++ "tie] == \\" ++ "stop) { 0 } { 1 };\n" ++
-			"\t\t\ttiedNoteVelocity = if (thisEntry[\\" ++ "tie] == \\" ++ "stop) { 0 } { 1 };\n" ++
-			"\t\t\tsustain = if (thisEntry['tiedDur'] != 0) {\n" ++
-			"\t\t\t\tthisEntry['tiedDur']\n" ++
+			"\t\t\t(" ++ q.("\\" ++ "t- articulationToLegato:") + "+ articulationToLegato).postln;\n" ++
+			"\t\t\tarticulationToLegato = if (slur == \\on) {\n" ++
+			"\t\t\t\t1\n" ++
 			"\t\t\t} {\n" ++
-			"\t\t\t\tthisEntry['dur']\n" ++
-			"\t\t\t};\n" ++
+			"\t\t\t\tif (thisEntry[\\" ++ "tie] == \\" ++ "lv) {\n" ++
+			"\t\t\t\t\t1.2\n" ++
+			"\t\t\t\t} { 0.9\n" ++
+			"\t\t\t\t}\n" ++
+			"\t\t\t} * articulationToLegato;\n" ++
+			"\t\t\t(" ++ q.("\\" ++ "t- slur-applied articulationToLegato:") + "+ articulationToLegato).postln;\n" ++
 			"\t\t\t(\n" ++
 			"\t\t\t\tinstrument: instrument,\n" ++
 			"\t\t\t\tdur:        if (thisEntry[\\" ++ "tiedDur] == 0) {\n" ++
@@ -1863,14 +1908,9 @@ Notator {
 			"\t\t\t\t} {\n" ++
 			"\t\t\t\t\tthisEntry[\\" ++ "tiedDur]\n" ++
 			"\t\t\t\t},\n" ++
-			"\t\t\t\tamp:        thisEntry[\\" ++ "velocity] / 127 * tiedNoteVelocity,\n" ++
+			"\t\t\t\tamp:        thisEntry[\\" ++ "velocity] / 127 * velocityFactorForRestNTiedNote,\n" ++
 			"\t\t\t\tmidinote:   thisEntry[\\" ++ "midinote],\n" ++
-			"\t\t\t\tsustain:    sustain,\n" ++
-			"\t\t\t\tlegato:     if (thisEntry[\\" ++ "tiedDur] == 0) {\n" ++
-			"\t\t\t\t\tthisEntry[\\" ++ "dur]\n" ++
-			"\t\t\t\t} {\n" ++
-			"\t\t\t\t\tthisEntry[\\" ++ "tiedDur]\n" ++
-			"\t\t\t\t} * articuletionToLegato\n" ++
+			"\t\t\t\tlegato:     articulationToLegato\n" ++
 			"\t\t\t).play.postln;\n" ++
 			"\t\t\t" ++ q.("") ++ ".postln;\n" ++
 			"\t\t};\n" ++
@@ -1885,83 +1925,161 @@ Notator {
 			"\t\t\t};\n" ++
 			"\t\t\tscorePlay = { |nthBarNum|\n" ++
 			"\t\t\t\tvar thisPartThisBarVoiceSize = detectNumVoices.(nthBarNum, aPart);\n" ++
-			"\t\t\t\t(" ++ q.("bar:") + "+ nthBarNum).postln;\n" ++
+			"\t\t\t\t(" ++ q.("\\" ++ "nbar:") + "+ nthBarNum).postln;\n" ++
 			"\t\t\t\tthisPartThisBarVoiceSize.do { |thisVoiceIndex|\n" ++
 			"\t\t\t\t\tfork{\n" ++
-			"\t\t\t\t\t\tvar thisPartThisBarThisVoice, thisPartThisBarThisVoiceItemSize, slur;\n" ++
-			"\t\t\t\t\t\tthisPartThisBarThisVoice =" + renotatedVariable ++ "\n" ++
-			"\t\t\t\t\t\t[aPart][nthBarNum][\n" ++
+			"\t\t\t\t\t\tvar thisPartThisBarThisVoice, thisPartThisBarThisVoiceLastItemIndex, slur;\n" ++
+			"\t\t\t\t\t\tthisPartThisBarThisVoice =" + renotatedVariable ++ "[\n" ++
+			"\t\t\t\t\t\t\taPart][nthBarNum][\n" ++
 			"\t\t\t\t\t\t\t(" ++ q.("v") + "++ (thisVoiceIndex + 1)).asSymbol\n" ++
 			"\t\t\t\t\t\t];\n" ++
-			"\t\t\t\t\t\tthisPartThisBarThisVoiceItemSize = thisPartThisBarThisVoice.size;\n" ++
-			"\t\t\t\t\t\tthisPartThisBarThisVoiceItemSize.do { |index|\n" ++
-			"\t\t\t\t\t\t\tvar entry = thisPartThisBarThisVoice[index];\n" ++
-			"\t\t\t\t\t\t\t("++ q.("\\n") + "++ entry ++" + q.("\\n") ++ ").postln;\n" ++
-			"\t\t\t\t\t\t\t" ++ "case\n" ++
-			"\t\t\t\t\t\t\t{ entry.keys.includes(\\" ++ "tempo) } {\n" ++
-			"\t\t\t\t\t\t\t\tTempoClock.default.tempo = entry[\\" ++ "tempo][\\" ++ "bpm] / 60;\n" ++
-			"\t\t\t\t\t\t\t\tTempoClock.default.tempo.postln\n" ++
+			"\t\t\t\t\t\tthisPartThisBarThisVoiceLastItemIndex = thisPartThisBarThisVoice.size - 1;\n" ++
+			"\t\t\t\t\t\tthisPartThisBarThisVoice.size.do { |thisVoiceItemIndex|\n" ++
+			"\t\t\t\t\t\t\tvar entryCurrent, entryNext, entryPrevious;\n" ++
+			"\t\t\t\t\t\t\t\n" ++
+			"\t\t\t\t\t\t\t(\n"++
+			"\t\t\t\t\t\t\t" ++ q.("\\n\\nthisVoiceItemIndex:") ++ "\n" ++
+			"\t\t\t\t\t\t\t\t+ thisVoiceItemIndex +" + q.("@ bar") + "+ nthBarNum ++" + q.("\\" ++ "n") ++ "\n" ++
+			"\t\t\t\t\t\t\t).postln;\n" ++
+			"\t\t\t\t\t\t\t# entryPrevious, entryCurrent, entryNext = (\n" ++
+			"\t\t\t\t\t\t\t\tcase\n" ++
+			"\t\t\t\t\t\t\t\t{ thisVoiceItemIndex < thisPartThisBarThisVoiceLastItemIndex\n" ++
+			"\t\t\t\t\t\t\t\t\t&&  (thisVoiceItemIndex != 0) } {\n" ++
+			"\t\t\t\t\t\t\t\t\t[\n" ++
+			"\t\t\t\t\t\t\t\t\t\tthisPartThisBarThisVoice[thisVoiceItemIndex - 1],\n" ++
+			"\t\t\t\t\t\t\t\t\t\tthisPartThisBarThisVoice[thisVoiceItemIndex],\n" ++
+			"\t\t\t\t\t\t\t\t\t\tthisPartThisBarThisVoice[thisVoiceItemIndex + 1]\n" ++
+			"\t\t\t\t\t\t\t\t\t]\n" ++
+			"\t\t\t\t\t\t\t\t}\n" ++
+			"\t\t\t\t\t\t\t\t{ thisVoiceItemIndex == thisPartThisBarThisVoiceLastItemIndex } {\n" ++
+			"\t\t\t\t\t\t\t\t\t[\n" ++
+			"\t\t\t\t\t\t\t\t\t\tthisPartThisBarThisVoice[thisVoiceItemIndex - 1],\n" ++
+			"\t\t\t\t\t\t\t\t\t\tthisPartThisBarThisVoice[thisVoiceItemIndex],\n" ++
+			"\t\t\t\t\t\t\t\t\t\tif (nthBarNum < (" ++ renotatedVariable ++ ".size - 1)) {\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\t" ++ renotatedVariable ++ "[aPart][nthBarNum + 1][\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\t\t(" ++ q.("v") + "++ (thisVoiceIndex + 1)).asSymbol\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\t][0]\n" ++
+			"\t\t\t\t\t\t\t\t\t\t}\n" ++
+			"\t\t\t\t\t\t\t\t\t]\n" ++
+			"\t\t\t\t\t\t\t\t}\n" ++
+			"\t\t\t\t\t\t\t\t{ thisVoiceItemIndex == 0 } {\n" ++
+			"\t\t\t\t\t\t\t\t\t[\n" ++
+			"\t\t\t\t\t\t\t\t\t\tif (nthBarNum == 1) {\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\t0\n" ++
+			"\t\t\t\t\t\t\t\t\t\t} {\n" ++
+
+			"\t\t\t\t\t\t\t\t\t\t\tvar previousItem =" + renotatedVariable++ "[aPart][nthBarNum - 1][\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\t\t(" ++  q.("v") + "++ (thisVoiceIndex + 1)).asSymbol\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\t];\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\tpreviousItem[previousItem.size - 1]\n" ++
+			"\t\t\t\t\t\t\t\t\t\t},\n" ++
+			"\t\t\t\t\t\t\t\t\t\tthisPartThisBarThisVoice[thisVoiceItemIndex],\n" ++
+			"\t\t\t\t\t\t\t\t\t\tthisPartThisBarThisVoice[thisVoiceItemIndex + 1]\n" ++
+			"\t\t\t\t\t\t\t\t\t]\n" ++
+			"\t\t\t\t\t\t\t\t}\n" ++
+			"\t\t\t\t\t\t\t);\n" ++
+			"\t\t\t\t\t\t\t\n" ++
+			"\t\t\t\t\t\t\t(\n" ++
+			"\t\t\t\t\t\t\t\t" ++ q.("\\" ++ "n\\" ++ "t* thisVoiceItemIndex:") + "+ thisVoiceItemIndex ++" + q.("\\" ++ "n\\" ++ "n\\" ++ "t-") ++ "\n" ++
+			"\t\t\t\t\t\t\t\t+ entryCurrent ++ " ++ q.("\\" ++ "n") ++ "\n" ++
+			"\t\t\t\t\t\t\t).postln;\n" ++
+			"\t\t\t\t\t\t\t\n" ++
+			"\t\t\t\t\t\t\tcase\n" ++
+			"\t\t\t\t\t\t\t{ entryCurrent.keys.includes(\\" ++ "tempo) } {\n" ++
+			"\t\t\t\t\t\t\t\tTempoClock.default.tempo = entryCurrent[\\" ++ "tempo][\\" ++ "bpm] / 60;\n" ++
+			"\t\t\t\t\t\t\t\t(\n" ++
+			"\t\t\t\t\t\t\t\t\t" ++ q.("\\" ++ "t* TempoClock.default.tempo:") ++ "\n" ++
+			"\t\t\t\t\t\t\t\t\t+ TempoClock.default.tempo ++ " ++ q.("\\" ++ "n" ) ++ "\n" ++
+			"\t\t\t\t\t\t\t\t).postln\n" ++
 			"\t\t\t\t\t\t\t}\n" ++
-			"\t\t\t\t\t\t\t{ thisPartThisBarThisVoice[index].keys.includes(\\" ++ "midinote) } {\n"
-			"\t\t\t\t\t\t\t\tvar tiedRhythmicValue = 0, waitTime;\n" ++
-			"\t\t\t\t\t\t\t\tswitch (entry[\\" ++ "slur],\n" ++
+			"\t\t\t\t\t\t\t{ thisPartThisBarThisVoice[thisVoiceItemIndex].keys.includes(\\"++ "midinote)\n" ++
+			"\t\t\t\t\t\t\t} {\n" ++
+			"\t\t\t\t\t\t\t\tvar tiedRhythmicValue = 0, velocityFactor = 1, waitTime;\n" ++
+			"\t\t\t\t\t\t\t\tswitch (entryCurrent[\\" ++ "slur],\n" ++
 			"\t\t\t\t\t\t\t\t\t\\" ++ "start, { slur = \\" ++ "on },\n" ++
 			"\t\t\t\t\t\t\t\t\t\\" ++ "stop, { slur = \\" ++ "off }\n" ++
 			"\t\t\t\t\t\t\t\t);\n" ++
-			"\t\t\t\t\t\t\t\tif (entry[\\" ++ "tie] == \\" ++ "start) {\n" ++
+			"\t\t\t\t\t\t\t\tif (entryCurrent[\\" ++ "tie] == \\" ++ "start\n" ++
+			"\t\t\t\t\t\t\t\t\t&& " + q.("^start") ++ ".matchRegexp(entryPrevious[\\" ++ "tie].asString).not) {\n" ++
 			"\t\t\t\t\t\t\t\t\tvar actualiseRhythmicValue;\n" ++
-			"\t\t\t\t\t\t\t\t\tactualiseRhythmicValue = { |testBar, itemIdx, testItem|\n" ++
-			"\t\t\t\t\t\t\t\t\t\tvar nextTestItem, nexttestItemIdx;\n" ++
+			"\t\t\t\t\t\t\t\t\tactualiseRhythmicValue = { |testBar, testItemIdx, testItem|\n" ++
+			"\t\t\t\t\t\t\t\t\t\tvar nextTestItemDetector, nextTestItem, nexttestItemIdx;\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\tnextTestItemDetector = { |testBarNum|\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\t" ++ renotatedVariable ++ "[aPart][testBarNum][\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\t\t("+ q.("v") + "++ (thisVoiceIndex + 1)).asSymbol\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\t\t]\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\t};\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\n" ++
+			"\t\t\t\t\t\t\t\t\t\t" ++ q.("\\" ++ "n\\" ++ "t* Checking the next tie status") ++ ".postln;\n" ++
+			"\t\t\t\t\t\t\t\t\t\t(\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\t" ++ q.("\\" ++ "n\\" ++ "t\\" ++ "t* nthBar:") + "+ testBar ++\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\t" ++ q.("; testItemIdx:") + "+ testItemIdx ++\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\t" ++ q.("; testItem[\\" ++ "dur]:") + "+ testItem[\\" ++ "dur]\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\t).postln;\n" ++
+			"\t\t\t\t\t\t\t\t\t\t(\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\t" ++ q.("\\" ++ "n\\" ++ "t\\" ++ "t* previous tiedRhythmicValue:") ++ "\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\t+ tiedRhythmicValue\n" ++
+			"\t\t\t\t\t\t\t\t\t\t).postln;\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\n" ++
 			"\t\t\t\t\t\t\t\t\t\ttiedRhythmicValue = tiedRhythmicValue + testItem[\\" ++ "dur];\n" ++
-			"\t\t\t\t\t\t\t\t\t\tif (itemIdx < (thisPartThisBarThisVoiceItemSize - 1)) {\n" ++
-			"\t\t\t\t\t\t\t\t\t\t\tif (testItem[\\" ++ "tie] != \\" ++ "stop) {\n" ++
-			"\t\t\t\t\t\t\t\t\t\t\t\tnexttestItemIdx = itemIdx + 1;\n" ++
-			"\t\t\t\t\t\t\t\t\t\t\t\tnextTestItem = thisPartThisBarThisVoice\n" ++
-			"\t\t\t\t\t\t\t\t\t\t\t\t[nexttestItemIdx];\n" ++
-			"\t\t\t\t\t\t\t\t\t\t\t\tnextTestItem.put(\\" ++ "tieDurCorrection, 0);\n" ++
-			"\t\t\t\t\t\t\t\t\t\t\t\tactualiseRhythmicValue\n" ++
-			"\t\t\t\t\t\t\t\t\t\t\t\t.(testBar, nexttestItemIdx, nextTestItem)\n" ++
-			"\t\t\t\t\t\t\t\t\t\t\t}\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\n" ++
+			"\t\t\t\t\t\t\t\t\t\t(" ++ q.("\\" ++ "t\\" ++ "t* updated tiedRhythmicValue:") + "+ tiedRhythmicValue).postln;\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\n" ++
+			"\t\t\t\t\t\t\t\t\t\tif (testItemIdx < (nextTestItemDetector.(testBar).size - 1)) {\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\tnexttestItemIdx = testItemIdx + 1;\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\tnextTestItem = nextTestItemDetector.(testBar)[nexttestItemIdx];\n" ++
 			"\t\t\t\t\t\t\t\t\t\t} {\n" ++
-			"\t\t\t\t\t\t\t\t\t\t\tif (testItem[\\" ++ "tie] != \\" ++ "stop) {\n" ++
-			"\t\t\t\t\t\t\t\t\t\t\t\tvar testNextNthBar = testBar + 1;\n" ++
-			"\t\t\t\t\t\t\t\t\t\t\t\tnexttestItemIdx = 0;\n" ++
-			"\t\t\t\t\t\t\t\t\t\t\t\tnextTestItem =" + renotatedVariable ++"\n" ++
-			"\t\t\t\t\t\t\t\t\t\t\t\t[aPart][testNextNthBar]\n" ++
-			"\t\t\t\t\t\t\t\t\t\t\t\t[\n" ++
-			"\t\t\t\t\t\t\t\t\t\t\t\t\t(\\" ++ "v ++ (thisVoiceIndex + 1)).asSymbol\n" ++
-			"\t\t\t\t\t\t\t\t\t\t\t\t][0];\n" ++
-			"\t\t\t\t\t\t\t\t\t\t\t\tnextTestItem.put(\\" ++ "tieDurCorrection, 0);\n" ++
-			"\t\t\t\t\t\t\t\t\t\t\t\tactualiseRhythmicValue\n" ++
-			"\t\t\t\t\t\t\t\t\t\t\t\t.(testNextNthBar, nexttestItemIdx, nextTestItem)\n" ++
-			"\t\t\t\t\t\t\t\t\t\t\t}\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\ttestBar = testBar + 1;\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\tnexttestItemIdx = 0;\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\tnextTestItem = nextTestItemDetector.(testBar)[nexttestItemIdx];\n" ++
+			"\t\t\t\t\t\t\t\t\t\t};\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\n" ++
+			"\t\t\t\t\t\t\t\t\t\t(" ++ q.("\\" ++ "t\\" ++ "t* the nextTestItem['tie'] of the testItem") + "+ testItemIdx ++ " ++ q.(":") + "+ nextTestItem[\\" ++ "tie]).postln;\n" ++
+
+			"\t\t\t\t\t\t\t\t\t\t(" ++ q.("\\" ++ "t\\" ++ "t*") + "+" + q.("^stop") ++ ".quote ++ " ++ q.(".matchRegexp(nextTestItem['tie'].asString): ") + "+" + q.("^stop") ++ ".matchRegexp(nextTestItem[\\" ++ "tie].asString)).postln;\n" ++
+			"\t\t\t\t\t\t\t\t\t\tif (" ++ q.("^stop") ++ ".matchRegexp(testItem[\\" ++ "tie].asString)) {\n"++
+			"\t\t\t\t\t\t\t\t\t\t\t" ++ q.("\\" ++ "t\\" ++ "t* no need to check the further ties\\" ++ "n") ++ ".postln\n" ++
+			"\t\t\t\t\t\t\t\t\t\t} {\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\t" ++ q.("\\" ++ "n\\" ++ "t* Checking the next tie status").postln ++ ";\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\tactualiseRhythmicValue.(testBar, nexttestItemIdx, nextTestItem);\n" ++
 			"\t\t\t\t\t\t\t\t\t\t}\n" ++
 			"\t\t\t\t\t\t\t\t\t};\n" ++
-			"\t\t\t\t\t\t\t\t\tactualiseRhythmicValue.(nthBarNum, index, entry);\n" ++
+			"\t\t\t\t\t\t\t\t\t\n" ++
+			"\t\t\t\t\t\t\t\t\tactualiseRhythmicValue.(nthBarNum, thisVoiceItemIndex, entryCurrent);\n" ++
 			"\t\t\t\t\t\t\t\t};\n" ++
-			"\t\t\t\t\t\t\t\tentry.put(\\" ++ "tiedDur, tiedRhythmicValue);\n" ++
+			"\t\t\t\t\t\t\t\t\n" ++
+			"\t\t\t\t\t\t\t\t(" ++ q.("\\" ++ "t* entryPrevious 'waitTimeCorrectionForTiedNote':") ++ "+ entryPrevious[\\" ++ "waitTimeCorrectionForTiedNote] ++" + q.("\\" ++ "n") ++ ").postln;\n" ++
+			"\t\t\t\t\t\t\t\tif (" ++ q.("^start") ++ ".matchRegexp(entryPrevious[\\" ++ "tie].asString)) {\n" ++
+			"\t\t\t\t\t\t\t\t\tentryCurrent.put(\\" ++ "waitTimeCorrectionForTiedNote, 0);\n" ++
+			"\t\t\t\t\t\t\t\t\tvelocityFactor = 0\n" ++
+			"\t\t\t\t\t\t\t\t};\n" ++
+			"\t\t\t\t\t\t\t\t\n" ++
+			"\t\t\t\t\t\t\t\tif (" ++ q.("^Rest") ++ ".matchRegexp(entryCurrent[\\" ++ "midinote].asString)) {\n" ++
+			"\t\t\t\t\t\t\t\t\tvelocityFactor = 0\n" ++
+			"\t\t\t\t\t\t\t\t};\n" ++
+			"\t\t\t\t\t\t\t\t\n" ++
+			"\t\t\t\t\t\t\t\tentryCurrent.put(\\" ++ "tiedDur, tiedRhythmicValue);\n" ++
 			"\t\t\t\t\t\t\t\t(\n" ++
-			"\t\t\t\t\t\t\t\t\t" ++ q.("entry['tiedDur']:") + "+ entry['tiedDur']" + "++" + q.("\;") + "+\n" ++
-			"\t\t\t\t\t\t\t\t\t" ++ q.("entry['dur']:") + "+ entry['dur']" + "++" + q.("\;") + "+\n" ++
-			"\t\t\t\t\t\t\t\t\t" ++ q.("entry['tieDurCorrection']:") + "+ entry['tieDurCorrection']\n" ++
+			"\t\t\t\t\t\t\t\t\t" ++ q.("\\" ++ "t* entryCurrent 'tiedDur':") + "+ entryCurrent['tiedDur'] ++" + q.(";") ++ "\n" ++
+			"\t\t\t\t\t\t\t\t\t" ++ q.("\\" ++ "t'dur':") ++ " + entryCurrent['dur'] ++" + q.(";") ++ "\n" ++
+			"\t\t\t\t\t\t\t\t\t" ++ q.("\\" ++ "t'waitTimeCorrectionForTiedNote':") ++ " + entryCurrent['waitTimeCorrectionForTiedNote'] ++" + q.(";\\" ++ "n") ++ "\n" ++
 			"\t\t\t\t\t\t\t\t).postln;\n" ++
-			"\t\t\t\t\t\t\t\teventPlayer.(entry, slur, instrument);\n" ++
-			"\t\t\t\t\t\t\t\twaitTime = if (entry[\\" ++ "tieDurCorrection] != nil) {\n" ++
-			"\t\t\t\t\t\t\t\t\tentry[\\" ++ "tieDurCorrection]\n" ++
+			"\t\t\t\t\t\t\t\teventPlayer.(entryCurrent, velocityFactor, slur, instrument);\n" ++
+			"\t\t\t\t\t\t\t\twaitTime = if (entryCurrent[\\" ++ "waitTimeCorrectionForTiedNote] != nil) {\n" ++
+			"\t\t\t\t\t\t\t\t\tentryCurrent[\\" ++ "waitTimeCorrectionForTiedNote]\n" ++
 			"\t\t\t\t\t\t\t\t} {\n" ++
-			"\t\t\t\t\t\t\t\t\tif (entry[\\" ++ "tiedDur] == 0) {\n" ++
-			"\t\t\t\t\t\t\t\t\t\tentry[\\" ++ "dur]\n" ++
+			"\t\t\t\t\t\t\t\t\tif (entryCurrent[\\" ++ "tiedDur] == 0) {\n" ++
+			"\t\t\t\t\t\t\t\t\t\tentryCurrent[\\" ++ "dur]\n" ++
 			"\t\t\t\t\t\t\t\t\t} {\n" ++
-			"\t\t\t\t\t\t\t\t\t\tentry[\\" ++ "tiedDur]\n" ++
+			"\t\t\t\t\t\t\t\t\t\tentryCurrent[\\" ++ "tiedDur]\n" ++
 			"\t\t\t\t\t\t\t\t\t}\n" ++
 			"\t\t\t\t\t\t\t\t};\n" ++
-			"\t\t\t\t\t\t\t\t(\n" ++
-			"\t\t\t\t\t\t\t\t\t" ++ q.("thisVoiceIndex:") + "\n" ++
-			"\t\t\t\t\t\t\t\t\t+ thisVoiceIndex + waitTime\n" ++
-			"\t\t\t\t\t\t\t\t).postln;\n" +
-			"\t\t\t\t\t\t\t\twaitTime.wait\n" +
+			"\t\t\t\t\t\t\t\t(" ++ q.("\t* v") + "++ (thisVoiceIndex + 1) + " ++ q.("waitTime:") ++ " + waitTime).postln;\n" ++
+			"\t\t\t\t\t\t\t\twaitTime.wait\n" ++
 			"\t\t\t\t\t\t\t};\n" ++
-			"\t\t\t\t\t\t\tif (index == (thisPartThisBarThisVoice.size - 1)) {\n" ++
+			"\t\t\t\t\t\t\t(" ++ q.("\t*") + "+ (thisVoiceItemIndex) +" + q.("/") + "+ (thisPartThisBarThisVoiceLastItemIndex) +" + q.("finished") ++ ").postln;\n" ++
+			"\t\t\t\t\t\t\t(" ++ q.("\t* nth bar of total bars:") + "+ nthBar + " ++ q.("/") + "+" + "numBar).postln;\n" ++
+			"\t\t\t\t\t\t\tif (thisVoiceItemIndex == thisPartThisBarThisVoiceLastItemIndex) {\n" ++
 			"\t\t\t\t\t\t\t\tif (nthBar < numBar) {\n" ++
 			"\t\t\t\t\t\t\t\t\tnthBar = nthBar + 1;\n" ++
 			"\t\t\t\t\t\t\t\t\tscorePlay.(nthBar)\n" ++
@@ -1980,9 +2098,13 @@ Notator {
 		}.();
 
 		scdfile << (routineText);
+		scdfile.close;
+
+		scdfile = File(scdfilePath, "r").readAllString;
+		scdfile = scdfile.replace(",\n\t\t\t]", "\n\t\t\t]");
+		File.use(scdfilePath, "w", { |f| f.write(scdfile) });
 
 		musicXMLfile.close;
-		scdfile.close;
 
 		Platform.case(
 			\linux,   { app + q.(musicXMLfilePath) },

@@ -75,9 +75,16 @@ score = [
 	// |          |             |
 	// title      composer      copyrights
 	//
-	//             staff lable
+	//             staff lable: If the staff label is empty or nil, then piano will be used.
 	//             |
-	//             ––––––––––––––––
+	//             |                 attribute: key signature, time signature, number of staves,
+	//             |                 |          clefs and optional transposition information.
+	//             |                 |          The number of staves and the transposition
+	//             |                 |          information defined in the first bar are fixed
+	//             |                 |          to the end.
+	//             |                 |          If the attribute is not defined, 4 staves are
+	//             |                 |          used to easily cover the range of the piano.
+	//             ––––––––––––––––  ––––––––––
 	(  bar: 1, p1:(lbl: \staffLabel, atr: (...), v1:[...], v2: [...], ...), p2:(...), ...  ),
 	// ––––––  –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– ––––––––  –––
 	// |       |                                                            |         |
@@ -94,10 +101,11 @@ score = [
 	//             |           |
 	//             |           v1: the entries of voice 1
 	//             |
-	//             attributes: key signature, time signature, number of staves, clef(s)
+	//             accepted attributes from the second bar: key signature, time signature, clef(s)
 	//
 	...
 ];
+
 x = Notator.notate(score, ("~/Downloads/" ++ title ++ ".musicXML").standardizePath, 'Dorico 4')
 //                 –––––   –––––––––––––     –––––    ––––––––––– ––––––––––––––––  ––––––––––
 //                 |       |                 |        |           |                 |
@@ -210,7 +218,7 @@ desired
 score
 ||
 table::
-##image::resources/example 1.svg::
+##image::resources/compact example.svg::
 ::
 ##Array
 
@@ -326,6 +334,7 @@ score = [
 		)
 	)
 ];
+
 x = Notator.notate(
 	score,
 	("~/Downloads/" ++ title ++ ".musicXML").standardizePath,
@@ -394,6 +403,7 @@ score = [
 		)
 	)
 ];
+
 x = Notator.notate(
 	score,
 	("~/Downloads/" ++ title ++ ".musicXML").standardizePath,
@@ -447,6 +457,7 @@ score = [
 		)
 	)
 ];
+
 x = Notator.notate(
 	score,
 	("~/Downloads/" ++ title ++ ".musicXML").standardizePath,
@@ -478,151 +489,128 @@ code::
 				(tempoNormalised: (beatUnit: \quarter, bpm: 90.0)),
 				(dynamicForPart: \f),
 				(
-					dur: 1.0,
+					dur: 1.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [76.0], pitch: ['e5'],
 					dynamic: \f, velocity: 79,
-					articulation: 'nil', tie: nil, slur: nil
 				),
 				(
-					dur: 1.0,
+					dur: 1.0, tie: \start, slur: \nil, articulation: 'nil',
 					midinote: [74.0, 77.0], pitch: ['d5', 'f5'],
 					dynamic: \f, velocity: 79,
-					articulation: 'nil', tie: \start, slur: nil
 				),
 				(
-					dur: 0.25,
+					dur: 0.25, tie: \stop, slur: \nil, articulation: 'nil',
 					midinote: [74.0, 77.0], pitch: ['d5', 'f5'],
 					dynamic: \f, velocity: 79,
-					articulation: 'nil', tie: \stop, slur: nil
 				),
 				(
-					dur: 0.25,
+					dur: 0.25, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [72.0, 75.0], pitch: ['c5', 'ef5'],
 					dynamic: \f, velocity: 79,
-					articulation: 'nil', tie: nil, slur: nil
 				),
 				(
-					dur: 0.5,
+					dur: 0.5, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [71.0, 74.0], pitch: ['b4', 'd5'],
 					dynamic: \sf, velocity: 96,
-					articulation: 'nil', tie: nil, slur: nil
 				),
 				(
-					dur: 1.0,
+					dur: 1.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: Rest(1.0), pitch: Rest(1.0),
 					dynamic: \sf, velocity: 96,
-					articulation: 'nil', tie: nil, slur: nil
-				),
+				)
 			], // voice end
 			v2: [ // voice start
 				(
-					dur: 1.5,
+					dur: 1.5, tie: \nil, slur: \start, articulation: 'nil',
 					midinote: [60.0], pitch: ['c4'],
 					dynamic: \mp, velocity: 55,
-					articulation: 'nil', tie: nil, slur: \start
 				),
 				(
-					dur: 0.5,
+					dur: 0.5, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [59.0], pitch: ['b3'],
 					dynamic: \mp, velocity: 55,
-					articulation: 'nil', tie: nil, slur: nil
 				),
 				(
-					dur: 0.5,
+					dur: 0.5, tie: \nil, slur: \stop, articulation: 'nil',
 					midinote: [60.0], pitch: ['c4'],
 					dynamic: \mp, velocity: 55,
-					articulation: 'nil', tie: nil, slur: \stop
 				),
 				(
-					dur: 0.5,
+					dur: 0.5, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [55.0, 62.0], pitch: ['g3', 'd4'],
 					dynamic: \sf, velocity: 96,
-					articulation: 'nil', tie: nil, slur: nil
 				),
 				(
-					dur: 0.5,
+					dur: 0.5, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: Rest(0.5), pitch: Rest(0.5),
 					dynamic: \sf, velocity: 96,
-					articulation: 'nil', tie: nil, slur: nil
 				),
 				(
-					dur: 0.5,
+					dur: 0.5, tie: \nil, slur: \nil, articulation: 'staccatissimo',
 					midinote: [67.0], pitch: ['g4'],
 					dynamic: \pp, velocity: 31,
-					articulation: 'staccatissimo', tie: nil, slur: nil
-				),
+				)
 			] // voice end
 		), // bar end
 		2: ( // bar 2 start
 			v1: [ // voice start
 				(
-					dur: 1.0,
+					dur: 1.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: Rest(1.0), pitch: Rest(1.0),
 					dynamic: \sf, velocity: 96,
-					articulation: 'nil', tie: nil, slur: nil
 				),
 				(
-					dur: 2.0,
+					dur: 2.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [72.0], pitch: ['c5'],
 					dynamic: \p, velocity: 43,
-					articulation: 'nil', tie: nil, slur: nil
 				),
 				(
-					dur: 1.0,
+					dur: 1.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [71.0], pitch: ['b4'],
 					dynamic: \p, velocity: 43,
-					articulation: 'nil', tie: nil, slur: nil
-				),
+				)
 			], // voice end
 			v2: [ // voice start
 				(
-					dur: 0.5,
+					dur: 0.5, tie: \nil, slur: \nil, articulation: 'tenuto',
 					midinote: [60.0], pitch: ['c4'],
 					dynamic: \pp, velocity: 31,
-					articulation: 'tenuto', tie: nil, slur: nil
 				),
 				(
-					dur: 0.5,
+					dur: 0.5, tie: \nil, slur: \nil, articulation: 'staccato',
 					midinote: [62.0], pitch: ['d4'],
 					dynamic: \pp, velocity: 31,
-					articulation: 'staccato', tie: nil, slur: nil
 				),
 				(
-					dur: 0.33333333333333,
+					dur: 0.33333333333333, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [64.0], pitch: ['e4'],
 					dynamic: \pp, velocity: 31,
-					articulation: 'nil', tie: nil, slur: nil
 				),
 				(
-					dur: 0.33333333333333,
+					dur: 0.33333333333333, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [65.0], pitch: ['f4'],
 					dynamic: \pp, velocity: 31,
-					articulation: 'nil', tie: nil, slur: nil
 				),
 				(
-					dur: 0.11111111111111,
+					dur: 0.11111111111111, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [67.0], pitch: ['g4'],
 					dynamic: \pp, velocity: 31,
-					articulation: 'nil', tie: nil, slur: nil
 				),
 				(
-					dur: 0.11111111111111,
+					dur: 0.11111111111111, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [65.0], pitch: ['f4'],
 					dynamic: \pp, velocity: 31,
-					articulation: 'nil', tie: nil, slur: nil
 				),
 				(
-					dur: 0.11111111111111,
+					dur: 0.11111111111111, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [64.0], pitch: ['e4'],
 					dynamic: \pp, velocity: 31,
-					articulation: 'nil', tie: nil, slur: nil
 				),
 				(
-					dur: 2.0,
+					dur: 2.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [62.0], pitch: ['d4'],
 					dynamic: \pp, velocity: 31,
-					articulation: 'nil', tie: nil, slur: nil
-				),
+				)
 			] // voice end
 		) // bar end
 	) // part end
@@ -632,34 +620,33 @@ code::
 	s.waitForBoot {
 		var parts, numBar, detectNumVoices, eventPlayer;
 		parts = [ 'test' ];
-		numBar = 2;
+		numBar = ~ex_1[parts[0]].size;
 		detectNumVoices = { |nthBar, thisPart|
 			~ex_1[thisPart][nthBar].keys.count { |item|
 				item.asString.contains("v") }
 		};
-		eventPlayer = { |thisEntry, slur, instrument|
-			var articuletionToVelocity, articuletionToLegato, tiedNoteVelocity, sustain;
-			articuletionToVelocity = 0;
-			case
-			{ thisEntry[\articulation] == 'accent'          } { articuletionToVelocity = 4    }
-			{ thisEntry[\articulation] == 'strong-accent'   } { articuletionToVelocity = 8    }
-			{ thisEntry[\articulation] == 'staccato'        } { articuletionToLegato   = 0.5  }
-			{ thisEntry[\articulation] == 'staccatissimo'   } { articuletionToLegato   = 0.25 }
-			{ thisEntry[\articulation] == 'tenuto'          } { articuletionToLegato   = 1    }
-			{ thisEntry[\articulation] == 'detached-legato' } { articuletionToLegato   = 0.7  }
-			{ thisEntry[\articulation] == 'nil'             } {
-				articuletionToLegato   = 1;
-				articuletionToVelocity = 0
-			};
+		eventPlayer = { |thisEntry, velocityFactorForRestNTiedNote, slur, instrument|
+			var articulationToVelocity, articulationToLegato, sustain;
+			# articulationToVelocity, articulationToLegato = switch (thisEntry[\articulation],
+				'accent',          { [4, 1]    },
+				'strong-accent',   { [8, 1]    },
+				'staccato',        { [1, 0.4]  },
+				'staccatissimo',   { [2, 0.2] },
+				'tenuto',          { [0, 1]    },
+				'detached-legato', { [0, 0.8]  },
+				'nil',             { [0, 1]    }
+			);
 
-			articuletionToLegato = if (slur == \on || (thisEntry[\tiedDur] != 0)) {1.01} {0.8};
-			tiedNoteVelocity = if (thisEntry[\tie] == \stop) { 0 } { 1 };
-			tiedNoteVelocity = if (thisEntry[\tie] == \stop) { 0 } { 1 };
-			sustain = if (thisEntry['tiedDur'] != 0) {
-				thisEntry['tiedDur']
+			("\t- articulationToLegato:" + articulationToLegato).postln;
+			articulationToLegato = if (slur == \on) {
+				1
 			} {
-				thisEntry['dur']
-			};
+				if (thisEntry[\tie] == \lv) {
+					1.2
+				} { 0.9
+				}
+			} * articulationToLegato;
+			("\t- slur-applied articulationToLegato:" + articulationToLegato).postln;
 			(
 				instrument: instrument,
 				dur:        if (thisEntry[\tiedDur] == 0) {
@@ -667,14 +654,9 @@ code::
 				} {
 					thisEntry[\tiedDur]
 				},
-				amp:        thisEntry[\velocity] / 127 * tiedNoteVelocity,
+				amp:        thisEntry[\velocity] / 127 * velocityFactorForRestNTiedNote,
 				midinote:   thisEntry[\midinote],
-				sustain:    sustain,
-				legato:     if (thisEntry[\tiedDur] == 0) {
-					thisEntry[\dur]
-				} {
-					thisEntry[\tiedDur]
-				} * articuletionToLegato
+				legato:     articulationToLegato
 			).play.postln;
 			"".postln;
 		};
@@ -689,84 +671,159 @@ code::
 			};
 			scorePlay = { |nthBarNum|
 				var thisPartThisBarVoiceSize = detectNumVoices.(nthBarNum, aPart);
-				("bar:" + nthBarNum).postln;
+				("\nbar:" + nthBarNum).postln;
 				thisPartThisBarVoiceSize.do { |thisVoiceIndex|
 					fork{
-						var thisPartThisBarThisVoice, thisPartThisBarThisVoiceItemSize, slur;
-						thisPartThisBarThisVoice = ~ex_1
+						var thisPartThisBarThisVoice, thisPartThisBarThisVoiceLastItemIndex, slur;
+						thisPartThisBarThisVoice = ~ex_1[
+							aPart][nthBarNum][
+							("v" ++ (thisVoiceIndex + 1)).asSymbol
+						];
+						thisPartThisBarThisVoiceLastItemIndex = thisPartThisBarThisVoice.size - 1;
+						thisPartThisBarThisVoice.size.do { |thisVoiceItemIndex|
+							var entryCurrent, entryNext, entryPrevious;
 
-							[aPart][nthBarNum][
-								("v" ++ (thisVoiceIndex + 1)).asSymbol
-							];
-						thisPartThisBarThisVoiceItemSize = thisPartThisBarThisVoice.size;
-						thisPartThisBarThisVoiceItemSize.do { |index|
-							var entry = thisPartThisBarThisVoice[index];
-							("\n" ++ entry ++ "\n").postln;
+							(
+							"\n\nthisVoiceItemIndex:"
+								+ thisVoiceItemIndex + "@ bar" + nthBarNum ++ "\n"
+							).postln;
+							# entryPrevious, entryCurrent, entryNext = (
+								case
+								{ thisVoiceItemIndex < thisPartThisBarThisVoiceLastItemIndex
+									&&  (thisVoiceItemIndex != 0) } {
+									[
+										thisPartThisBarThisVoice[thisVoiceItemIndex - 1],
+										thisPartThisBarThisVoice[thisVoiceItemIndex],
+										thisPartThisBarThisVoice[thisVoiceItemIndex + 1]
+									]
+								}
+								{ thisVoiceItemIndex == thisPartThisBarThisVoiceLastItemIndex } {
+									[
+										thisPartThisBarThisVoice[thisVoiceItemIndex - 1],
+										thisPartThisBarThisVoice[thisVoiceItemIndex],
+										if (nthBarNum < (~ex_1.size - 1)) {
+											~ex_1[aPart][nthBarNum + 1][
+												("v" ++ (thisVoiceIndex + 1)).asSymbol
+											][0]
+										}
+									]
+								}
+								{ thisVoiceItemIndex == 0 } {
+									[
+										if (nthBarNum == 1) {
+											0
+										} {
+											var previousItem = ~ex_1[aPart][nthBarNum - 1][
+												("v" ++ (thisVoiceIndex + 1)).asSymbol
+											];
+											previousItem[previousItem.size - 1]
+										},
+										thisPartThisBarThisVoice[thisVoiceItemIndex],
+										thisPartThisBarThisVoice[thisVoiceItemIndex + 1]
+									]
+								}
+							);
+
+							(
+								"\n\t* thisVoiceItemIndex:" + thisVoiceItemIndex ++ "\n\n\t-"
+								+ entryCurrent ++ "\n"
+							).postln;
+
 							case
-							{ entry.keys.includes(\tempo) } {
-								TempoClock.default.tempo = entry[\tempo][\bpm] / 60;
-								TempoClock.default.tempo.postln
+							{ entryCurrent.keys.includes(\tempo) } {
+								TempoClock.default.tempo = entryCurrent[\tempo][\bpm] / 60;
+								(
+									"\t* TempoClock.default.tempo:"
+									+ TempoClock.default.tempo ++ "\n"
+								).postln
 							}
-							{ thisPartThisBarThisVoice[index].keys.includes(\midinote) } {
-								var tiedRhythmicValue = 0, waitTime;
-								switch (entry[\slur],
+							{ thisPartThisBarThisVoice[thisVoiceItemIndex].keys.includes(\midinote)
+							} {
+								var tiedRhythmicValue = 0, velocityFactor = 1, waitTime;
+								switch (entryCurrent[\slur],
 									\start, { slur = \on },
 									\stop, { slur = \off }
 								);
-								if (entry[\tie] == \start) {
+								if (entryCurrent[\tie] == \start
+									&&  "^start".matchRegexp(entryPrevious[\tie].asString).not) {
 									var actualiseRhythmicValue;
-									actualiseRhythmicValue = { |testBar, itemIdx, testItem|
-										var nextTestItem, nexttestItemIdx;
+									actualiseRhythmicValue = { |testBar, testItemIdx, testItem|
+										var nextTestItemDetector, nextTestItem, nexttestItemIdx;
+											nextTestItemDetector = { |testBarNum|
+											~ex_1[aPart][testBarNum][
+												( "v" ++ (thisVoiceIndex + 1)).asSymbol
+												]
+											};
+
+										"\n\t* Checking the next tie status".postln;
+										(
+											"\n\t\t* nthBar:" + testBar ++
+											"; testItemIdx:" + testItemIdx ++
+											"; testItem[\dur]:" + testItem[\dur]
+											).postln;
+										(
+											"\n\t\t* previous tiedRhythmicValue:"
+											+ tiedRhythmicValue
+										).postln;
+
 										tiedRhythmicValue = tiedRhythmicValue + testItem[\dur];
-										if (itemIdx < (thisPartThisBarThisVoiceItemSize - 1)) {
-											if (testItem[\tie] != \stop) {
-												nexttestItemIdx = itemIdx + 1;
-												nextTestItem = thisPartThisBarThisVoice
-												[nexttestItemIdx];
-												nextTestItem.put(\tieDurCorrection, 0);
-												actualiseRhythmicValue
-												.(testBar, nexttestItemIdx, nextTestItem)
-											}
+
+										("\t\t* updated tiedRhythmicValue:" + tiedRhythmicValue).postln;
+
+										if (testItemIdx < (nextTestItemDetector.(testBar).size - 1)) {
+											nexttestItemIdx = testItemIdx + 1;
+											nextTestItem = nextTestItemDetector.(testBar)[nexttestItemIdx];
 										} {
-											if (testItem[\tie] != \stop) {
-												var testNextNthBar = testBar + 1;
-												nexttestItemIdx = 0;
-												nextTestItem = ~ex_1
-												[aPart][testNextNthBar]
-												[
-													(\v ++ (thisVoiceIndex + 1)).asSymbol
-												][0];
-												nextTestItem.put(\tieDurCorrection, 0);
-												actualiseRhythmicValue
-												.(testNextNthBar, nexttestItemIdx, nextTestItem)
-											}
+											testBar = testBar + 1;
+											nexttestItemIdx = 0;
+											nextTestItem = nextTestItemDetector.(testBar)[nexttestItemIdx];
+										};
+
+										("\t\t* the nextTestItem['tie'] of the testItem" + testItemIdx ++ ":" + nextTestItem[\tie]).postln;
+										("\t\t*" + "^stop".quote ++ ".matchRegexp(nextTestItem['tie'].asString): " + "^stop".matchRegexp(nextTestItem[\tie].asString)).postln;
+										if ("^stop".matchRegexp(testItem[\tie].asString)) {
+											"\t\t* no need to check the further ties\n".postln
+										} {
+											"\n\t* Checking the next tie status";
+											actualiseRhythmicValue.(testBar, nexttestItemIdx, nextTestItem);
 										}
 									};
-									actualiseRhythmicValue.(nthBarNum, index, entry);
+
+									actualiseRhythmicValue.(nthBarNum, thisVoiceItemIndex, entryCurrent);
 								};
-								entry.put(\tiedDur, tiedRhythmicValue);
+
+								("\t* entryPrevious 'waitTimeCorrectionForTiedNote':"+ entryPrevious[\waitTimeCorrectionForTiedNote] ++ "\n").postln;
+								if ("^start".matchRegexp(entryPrevious[\tie].asString)) {
+									entryCurrent.put(\waitTimeCorrectionForTiedNote, 0);
+									velocityFactor = 0
+								};
+
+								if ("^Rest".matchRegexp(entryCurrent[\midinote].asString)) {
+									velocityFactor = 0
+								};
+
+								entryCurrent.put(\tiedDur, tiedRhythmicValue);
 								(
-									"entry['tiedDur']:" + entry['tiedDur'] ++ ";" +
-									"entry['dur']:" + entry['dur'] ++ ";" +
-									"entry['tieDurCorrection']:" + entry['tieDurCorrection']
+									"\t* entryCurrent 'tiedDur':" + entryCurrent['tiedDur'] ++ ";"
+									"\t'dur':" + entryCurrent['dur'] ++ ";"
+									"\t'waitTimeCorrectionForTiedNote':" + entryCurrent['waitTimeCorrectionForTiedNote'] ++ ";\n"
 								).postln;
-								eventPlayer.(entry, slur, instrument);
-								waitTime = if (entry[\tieDurCorrection] != nil) {
-									entry[\tieDurCorrection]
+								eventPlayer.(entryCurrent, velocityFactor, slur, instrument);
+								waitTime = if (entryCurrent[\waitTimeCorrectionForTiedNote] != nil) {
+									entryCurrent[\waitTimeCorrectionForTiedNote]
 								} {
-									if (entry[\tiedDur] == 0) {
-										entry[\dur]
+									if (entryCurrent[\tiedDur] == 0) {
+										entryCurrent[\dur]
 									} {
-										entry[\tiedDur]
+										entryCurrent[\tiedDur]
 									}
 								};
-								(
-									"thisVoiceIndex:"
-									+ thisVoiceIndex + waitTime
-								).postln;
- 								waitTime.wait
- 							};
-							if (index == (thisPartThisBarThisVoice.size - 1)) {
+								("	* v" ++ (thisVoiceIndex + 1) + "waitTime:" + waitTime).postln;
+								waitTime.wait
+							};
+							("	*" + (thisVoiceItemIndex) + "/" + (thisPartThisBarThisVoiceLastItemIndex) + "finished").postln;
+							("	* nth bar of total bars:" + nthBar + "/" + numBar).postln;
+							if (thisVoiceItemIndex == thisPartThisBarThisVoiceLastItemIndex) {
 								if (nthBar < numBar) {
 									nthBar = nthBar + 1;
 									scorePlay.(nthBar)
@@ -860,7 +917,8 @@ score = [
 	notesInBar.collect { |aNote|
 		score[bar][\p1][\v1] = score[bar][\p1][\v1].add([aNote + 60]) }
 };
-Notator.notate(
+
+x = Notator.notate(
 	score,
 	("~/Downloads/" ++ title ++ ".musicXML").standardizePath,
 	'MuseScore 4'
@@ -910,30 +968,30 @@ code::
 (
 var title = "twelve-tone series", matrix_12tone;
 matrix_12tone = { |array|
-    var matrix = 12.collect { |i| array[i]; array - (array[i] % 12) };
-    matrix.do { |item| item.replace(11, \e).replace(10, \t).postln }
+	var matrix = 12.collect { |i| array[i]; array - (array[i] % 12) };
+	matrix.do { |item| item.replace(11, \e).replace(10, \t).postln }
 };
 matrix_12tone = matrix_12tone.((0..11).scramble) + 72;
 
 (
-	[(title: '12-tone series matrix', composer: 'randomised', rights: '©')] ++
+x = [(title: '12-tone series matrix', composer: 'randomised', rights: '©')] ++
 matrix_12tone.collect { |series, index|
-    if (index == 0) {
-        (
-            bar: index + 1,
-            p1: (
-                lbl: '',
-                atr: (key: [0, \none], time: \x, staves: 1, clef: [[\g, 2]]),
-                v1: series.collect { |aNote| [aNote, \w] }
-            )
-        )
-    } {
-        series.postln;
-        (
-            bar: index + 1,
-            p1: (v1: series.collect { |aNote| [aNote, \w] })
-        )
-    }
+	if (index == 0) {
+		(
+			bar: index + 1,
+			p1: (
+				lbl: '',
+				atr: (key: [0, \none], time: \x, staves: 1, clef: [[\g, 2]]),
+				v1: series.collect { |aNote| [aNote, \w] }
+			)
+		)
+	} {
+		series.postln;
+		(
+			bar: index + 1,
+			p1: (v1: series.collect { |aNote| [aNote, \w] })
+		)
+	}
 }
 ).notate(("~/Downloads/" ++ title ++ ".musicXML").standardizePath, 'MuseScore 4')
 )
@@ -941,7 +999,7 @@ matrix_12tone.collect { |series, index|
 ::
 
 
-subsection::Nested tuplets and tied notes across bars
+subsection::Default staves and default instrument (piano)
 
 table::
 
@@ -951,9 +1009,9 @@ desired
 
 score
 ||
-In this examples, Dorico 4 is used to open musicXML since MuseScore does not correctly show nested tuplets in the bar 2.
+In this examples, Dorico 4 is used to open musicXML since MuseScore does not correctly show nested tuplets staves.
 table::
-##image::resources/example 2.svg::
+##image::resources/default staves.svg::
 ::
 ##Array
 
@@ -979,25 +1037,17 @@ Notation)
 ||
 code::
 (
-var title = 'nested tuplets', score;
+var title = 'default staves', score;
 score = [
 	(
 		title: title, composer: 'me', rights: '©'
-
 	),
 	(
 		bar: 1,
 		p1: (
-			lbl: \,
-			atr: (
-				key: [0, \none],
-				time: [4, 4],
-				staves: 1,
-				clef: [[\g, 2]]
-			),
 			v1: [
 				[\t, \q, 120],
-				[[\a4, \c5, \a5], [\e, 3, 2], \p, \a, \u],
+				[[\a0, \a3, \a5, \c8], [\e, 3, 2], \p, \a, \u],
 				[$|, [[\x, 3, 2]], \f, \s],
 				[$|, [[\e, \]], \f, \S],
 				[$|, [5, \], \j],
@@ -1016,7 +1066,7 @@ score = [
 		bar: 2,
 		p1: (
 			v1: [
-				[\aqs4, [\e, 3, 2], \J],
+				[$|, [\e, 3, 2], \J],
 				[\s1],
 				[$|, [\e]],
 				[$|, [5, \]],
@@ -1027,7 +1077,7 @@ score = [
 				[$|, [[\x]]],
 				[$|, [[\x, \], \]],
 				[$|, \dx],
-				[$|, \t],
+				[\a2, \t],
 				[$|, \Dx],
 				[$|, \i],
 				[$|, \Te],
@@ -1036,7 +1086,8 @@ score = [
 		)
 	)
 ];
-Notator.notate(
+
+x = Notator.notate(
 	score,
 	("~/Downloads/" ++ title ++ ".musicXML").standardizePath,
 	'Dorico 4'
@@ -1069,7 +1120,7 @@ Notation)
 ||
 code::
 (
-var title = 'nested tuplets', score;
+var title = 'default staves', score;
 score = [
 	(
 		title: title, composer: 'me', rights: '©'
@@ -1077,16 +1128,9 @@ score = [
 	(
 		bar: 1,
 		p1: (
-			lbl: \,
-			atr: (
-				key: [0, \none],
-				time: [4, 4],
-				staves: 1,
-				clef: [[\g, 2]]
-			),
 			v1: [
 				"t q 120",
-				"<a4 c5 a5> /8/3:2 p > (",
+				"<a0 a3 a5 c8> /8/3:2 p > (",
 				"| //16/3:2 f .",
 				"| //8/ f !",
 				"| /8/ ~",
@@ -1116,7 +1160,7 @@ score = [
 				'| //16',
 				'| //16//',
 				'| 16.',
-				'| 32',
+				'a2 32',
 				'| 16..',
 				'| 64',
 				'| 8...',
@@ -1125,7 +1169,8 @@ score = [
 		)
 	)
 ];
-Notator.notate(
+
+x = Notator.notate(
 	score,
 	("~/Downloads/" ++ title ++ ".musicXML").standardizePath,
 	'Dorico 4'
@@ -1156,7 +1201,7 @@ soft:: ::
 ||
 code::
 (
-var title = 'nested tuplets', score;
+var title = 'default staves', score;
 score = [
 	(
 		title: title, composer: 'me', rights: '©'
@@ -1164,16 +1209,9 @@ score = [
 	(
 		bar: 1,
 		p1: (
-			lbl: \,
-			atr: (
-				key: [0, \none],
-				time: [4, 4],
-				staves: 1,
-				clef: [[\g, 2]]
-			),
 			v1: "
 t_q_120
-<a4_c5_a5>_/e/3:2_p_>_(
+<a0_a3_a5_c8>_/e/3:2_p_>_(
 |_//16/3:2_f_.
 |_//8/_f_!
 |_/8/_~
@@ -1195,12 +1233,13 @@ aqs4_/8/_sf_~
 aqs4_/8/3:2_`
 s1
 |_/8 |_/8/ a4_/16/5:4 |_/16 \\ |_//16/3:2 |_//16 |_//16//
-|_16. |_32 |_16.. |_64 |_8... |_64_)
+|_16. a2_32 |_16.. |_64 |_8... |_64_)
 "
 		)
 	)
 ];
-Notator.notate(
+
+x = Notator.notate(
 	score,
 	("~/Downloads/" ++ title ++ ".musicXML").standardizePath,
 	'Dorico 4'
@@ -1210,462 +1249,63 @@ Notator.notate(
 ::
 
 
-table::
 
+
+
+
+
+
+
+
+subsection::Nested tuplets and multiple voices
+
+
+
+
+
+table::
+##The
+
+desired
+
+score
+||
+table::
 ##
+In this examples, Dorico 4 is used to open musicXML since MuseScore does not correctly show nested tuplets.
+
+image::resources/Nested_tuplets_and_multiple_voices dorico 4.svg::
+::
+##Array
+
+soft:: ::
+
+per
+
+soft:: ::
+
+Entry
+
+soft:: ::
+
+soft:: ::
+
+(Array-
+
+in-
+
+Array
+
+Notation)
+||
 code::
 (
-/* A score should be written in bar notation as an array. */
-~score1 = [
-
-	/* The first element should be information about the composer, title and copyright. */
-	// - Access: ~score1[0]
-	(   title: 'untitled', composer: 'me', rights: '©'),
-
-	/* The elements from the second to the last are musical notation events,
-	and each event contains the musical information for each bar. */
-	// - Access to all bars: ~score1[1..]
-	// - Access to a specific bar: ~score1[barNumber]
-	//                         ex.) ~score1[1]
-
-	(   /* The notation information of a bar should be constructed as elements within an event. */
-		// It contains the "bar number" with the key \bar
-		// and all the parts of the bar with keys like \p1, \p2, etc:
-
+var title = 'Nested tuplets and multiple voices';
+x = [
+	(title: title, composer: 'randomised', rights: '©'),
+	(
 		bar: 1,
-		// - Access: ~score1[barNumber][\bar]
-		//           ex.) ~score1[1][\bar]
-
-		// ATTENTION:
-		// The first bar should contain all the parts of the whole score even though
-		// one or more particular parts do not appear in the first bar.
-
-		/* Each part should be an event that contains its notation information in the bar. */
-		// The value of the event key is an array containing the notation information of its part in the bar:
-		p1:
-		(
-			lbl: \Soprano,
-			// The \lbl key should contain its part name or staff label.
-			// - Access: ~score1[barNumber][partNumber][\lbl]
-			//           ex.) ~score1[1][\p1][\lbl]
-
-			atr: // The \atr key should contain its attributes as an event:
-			(
-				key: // This defines the key signature.
-				[ // ATTENTION: the order of the elements is important!
-					0 // The number of sharps or flats:
-					//    2:   two sharps, used for D major or B Minor
-					//    1:   one sharp, used for G major or E minor
-					//    0:   no sharps and no flats
-					//   -1:   one flat
-					//   -2:   two flats;
-					,
-					\none // mode:
-					//         \none: atonal
-					//         \C: C-major
-					//         \a: A-minor
-				]
-				,
-
-				time: // This defines the time signature.
-				\x //       \x: senza-misura
-				/*
-				[ // ATTENTION: the order of the elements is important!
-				4 // upper numeral (top number)
-				,
-				4 // lower numeral (bottom number)
-				]
-				*/
-				,
-
-				staves: // This defines the number of staves.
-				1       // The number of staves
-				,
-
-				clef: // This defines the clef and its position on each staff.
-				[ // ATTENTION: the order of the elements is important!
-
-					// The clef definition for the first staff:
-					[ // ATTENTION: the order of the elements is important!
-						\c // The clef symbol:
-						//    \G: g-clef
-						//    \C: c-clef
-						//    \F: f clef
-						,
-						1  // Postition on the staff:
-						//    1: the bottom line
-						//    5: the fifth line from the bottom
-					]
-				]
-				/*
-				,
-				trans: // This defines the transposition properties of the part, if necessary.
-				[
-				-1 // diatonic transposition
-				,
-				-2 // chromatic transposition
-				,
-				0 // octave transposition
-				]
-				*/
-			),
-
-			v1: // voice 1. Its elements should be constructed as an array.
-			[
-				// ATTENTION:
-				// 1. The order of the elements is important!
-				// 2. Each element of a voice should be an array!
-
-				[\t, \q, 120]
-				// The array element with \t as the first element and a number as the second element
-				// defines the tempo by the number of quarter notes per minute.
-				,
-
-				[\F],
-				// The one-element array with the following symbols defines dynamic marks:
-				// - \ffff, \fff, \ff, \f,  \mf, \mp, \p,  \pp, \ppp, \pppp, \sf
-				// - \s4,   \s3,  \s2, \s1, \s0, \q0, \q1, \q2, \q3,  \q4
-
-				[\c4]
-				// The array containing a scientific pitch name defines the pitch of the note.
-				// - S: double sharp
-				// - s: sharp
-				// - (n: natural) can be ommited
-				// - f: flat
-				// - F: double flat
-				// A quarter tone could be expressed as follows:
-				// - \c5:  c5 natural
-				// - \cq5: a quarter-tone raised c5
-				// - \cs5: c#5
-				// - \cQ5: a quarter-tone raised c#5
-				// Its duration follows the last duration defined with the previous note, if any.
-				// If the note is the first note of the entire notation information,
-				// it follows the default value (crotchet).
-				// Its dynamic mark follows the last dynamic mark defined with the previous note, if it exists.
-				// If the note is the first note of the whole notation information,
-				// it will follow the default value (mp).
-				,
-
-				[\cn4],
-
-				[62]
-				// The array containing a number defines the pitch of the note.
-				// The number should be an integer or a float with a single decimal ending in 0.5 as follows:
-				// - 72   = \c5:  c5 natural
-				// - 72.5 = \cq5: one quarter-tone raised c5
-				// - 73   = \cs5: c#5
-				// - 73.5 = \cQ5: one quarter-tone raised c#5
-				// A float with a single decimal ending in 0.5 indicates a quarter tone.
-				// The range of numbers supported is as follows:
-				// - range: 0 ~ 127
-				// Its duration and dynamic mark are the same as described above.
-				,
-
-				[[64, 64.5, \g4, \gq4]]
-				// A chord (notes of equal duration) should be defined as an array.
-				// Its duration and dynamic mark are the same as described above.
-				,
-
-				[67],
-
-				[65, \w]
-				// The two-element array containing a scientific pitch name followed by a duration defines
-				// the pitch of the note and its duration. The following durations are ready to use:
-				//
-				// Durations                                  Symbols
-				//
-				// - double-dotted maxima:                   \Dm  \D_
-				// - dotted maxima:                          \dm  \d_
-				// - maxima:                                  \m   \_
-				// - double-dotted longa:                    \Dl  \D0
-				// - dotted longa:                           \dl  \d0
-				// - longa:                                   \l   \0  0
-				// - double-dotted breve:                    \Db  \D9
-				// - dotted breve:                           \db  \d9
-				// - breve:                                   \b   \9  9
-				// - double-dotted semibreve:                \Dw  \D8
-				// - dotted semibreve:                       \dw  \d8
-				// - semibreve:                               \w   \8  8
-				// - double-dotted minim:                    \Dh  \D7
-				// - dotted minim:                           \dh  \d7
-				// - minim:                                   \h   \7  7
-				// - double-dotted crotchet:                 \Dq  \D6
-				// - dotted crotchet:                        \dq  \d6
-				// - crotchet:                                \q   \6  6
-				// - double-dotted quaver:                   \De  \D5
-				// - dotted quaver:                          \de  \d5
-				// - quaver:                                  \e   \5  5
-				// - double-dotted semiquaver:               \Dx  \D4
-				// - dotted semiquaver:                      \dx  \d4
-				// - semiquaver:                              \x   \4  4
-				// - double-dotted demisemiquaver:           \Dt  \D3
-				// - dotted demisemiquaver:                  \dt  \d3
-				// - demisemiquaver:                          \t   \3  3
-				// - double-dotted hemidemisemiquaver:       \Di  \D2
-				// - dotted hemidemisemiquaver:              \di  \d2
-				// - hemidemisemiquaver:                      \i   \2  2
-				// - double-dotted semihemidemisemiquavers:  \Dn  \D1
-				// - dotted semihemidemisemiquavers:         \dn  \d1
-				// - semihemidemisemiquavers:                 \n   \1  1
-				// - 256th:                                   '!'
-				// - 512th:                                   '`'
-				// - 1024th:                                  '~'
-				,
-
-				[67, \q, \f]
-				// The three-element array containing a scientific pitch name followed by
-				// a duration then a dynamic mark defines the pitch of the note, its duration and dynamic mark of
-				// the note.
-				,
-
-				[67, \q, \s2],
-				// Strong dynamic marks can be abbreviated as follows:
-				// - ffff: s4
-				// - fff:  s3
-				// - ff:   s2
-				// - f:    s1   <- to distinguish it with a stacatto symbol (s).
-
-				[67, \q, \q3],
-				// Quiet dynamic marks can be abbreviated as follows:
-				// - pppp: q4
-				// - ppp:  q3
-				// - pp:   q2
-				// - p:    q1   <- to distinguish it with a crotchet symbol (q).
-
-
-				[68, \e, \pp, \A]
-				// The four-element array containing a scientific pitch name followed by
-				// a duration, a dynamic mark and an articulation defines the pitch of the note, its duration,
-				// dynamic mark and articulation. The following articulations are ready to use:
-				//
-				// Articulations      Symbols
-				// - accent:          \a
-				// - strong-accent:   \A
-				// - staccato:        \s
-				// - staccatissimo:   \S
-				// - tenuto:          \o
-				// - detached-legato: \O
-				,
-
-				[68, \e, \s2, \a, \j]
-				// The five-element array containing a scientific pitch name followed by
-				// a duration, a dynamic mark, an articulation and a tie status defines the pitch of the note,
-				// its duration, dynamic mark, articulation and tie status.
-				// The following tie states are ready to use:
-				//
-				// Tie status                       Symbols
-				// - tie start:                       \j <- from 'join'
-				// - tie stop:                        \J
-				// - laissez vibrer:                  \r <- from 'let-ring'
-				// - tie stop with laissez vibrer:    \R
-				,
-
-				[68, \e, \s2, \J],
-
-				[68, \s, \s2, \r],
-
-				[68, \x, \j],
-
-				[68, \e, \R],
-
-				[68, \e, \s2, \S, \r, \u]
-				// The six-element array containing a scientific pitch name followed by
-				// a duration, a dynamic mark, an articulation, tie status a slur status defines
-				// the pitch of the note, its duration, dynamic mark, articulation, tie status and slur status.
-				// The following slur states are ready to use:
-				//
-				// Slur status                       Symbols
-				// - slur start:                       \u <- from r in 'slur'
-				// - slur stop:                        \U
-				,
-
-
-				[69, \p]
-				// The elements of an entry can be flexibly omitted.
-				// The two-element array containing a scientific pitch name followed by an dynamic mark defines
-				// the pitch of the note with its dynamic mark,
-				// and its duration follows the duration of the previous note
-				,
-
-				[71, \p]
-				// The repetition of the dynamic mark will not be displayed on the score, except for sf.
-				,
-
-				[72, \sf],
-
-				[73, \sf],
-
-				[74, \pp, \A, \r]
-				,
-
-				[74, \s]
-				// The two-element array containing a scientific pitch name followed by
-				// an articulation defines the pitch of the note with its articulation,
-				// and its duration and dynamic mark follow those of the previous note.
-				,
-
-				[$|, \S]
-				// The array containing $| defines that the pitch of the note is a repetition of
-				// the previous one. Its duration and length follow those of the previous note.
-				,
-
-				[[74, 75]],
-
-				[$|, \h, \f, \O],
-
-				[$|, \p, \o],
-
-				[$|, \U],
-
-				[$\\]
-				// The array containing $\\ defines that the entry is a repetition of the previous entry.
-				,
-
-				[[\c5, \a4, \fs4, \ds4], \x, \f],
-
-				[$\\, \s],
-
-				[$\\],
-
-				[$\\],
-
-				[$|, \7],
-			]
-		),
-		p2: (
-			lbl: \Contralto,
-			atr: (key: [0, \none], time: \x, staves: 1, clef: [[\c, 3]]),
-			v1: [
-				[[\c5, \a4, \fs4, \ds4], \_, \ffff],
-				[[\cq5, \aq4, \fQ4, \dQ4], \d_, \fff],
-				[[\df5, \bf4, \g4, \e4], \D_, \ff]
-			]
-		),
-		p3: (
-			lbl: \Tenore,
-			atr: (key: [0, \none], time: \x, staves: 1, clef: [[\c, 4]]),
-			v1: [
-				[[63.5, 60.5, 57.5, 54.5], \D0, \f],
-				[[64, 61, 58, 55], \d0, \mf],
-				[[64.5, 61.5, 58.5, 55.5], \0, \sf]
-			],
-			v2: [
-				[\r, \D0],
-				[\r, \d0],
-				[\r, \0]
-			]
-		),
-		p4: (
-			lbl: \Basso,
-			atr: (key: [0, \none], time: \x, staves: 1, clef: [[\f, 4]]),
-			v1: [
-				[\r, \D9],
-				[\r, \d9],
-				[\r, 9]
-			],
-			v2: [
-				[[52, \g3], \D9, \mp],
-				[[\e3, 55], \d9, \p],
-				[[52.5, \gQ3], 9, \pp],
-				[[\eq3, 56.5]]
-			]
-		),
-		p5: (
-			lbl: 'Clarinetto in si bemolle',
-			atr: (key: [0, \none], time: \x, staves: 1, clef: [[\g, 2]], trans:[-1, -2, 0]),
-			v1: [
-				[72, \D8],
-				[\cq5, \d8],
-				[73, 8],
-				[\cQ5]
-			],
-			v2: [
-				[67, \D8],
-				[\gq4, \d8],
-				[68, 8],
-				[\gQ4]
-			]
-		),
-		p6: (
-			lbl: 'Violino',
-			atr: (key: [0, \none], time: \x, staves: 1, clef: [[\g, 2]]),
-			v1: [
-				[72, \D8],
-				[\cq5, \d8],
-				[73, 8],
-				[\cQ5]
-			],
-			v2: [
-				[67, \D8],
-				[\gq4, \d8],
-				[68, 8],
-				[\gQ4]
-			]
-		),
-		p7: (
-			lbl: \Viola,
-			atr: (key: [0, \none], time: \x, staves: 1, clef: [[\c, 3]]),
-			v1: [
-				[\cq4, \D7, \ppp],
-				[\dq4, \d7, \pppp],
-				[[61.5, \dq4, \cq4], 7]
-			]
-		),
-		p8: (
-			lbl: \Violoncello,
-			atr: (key: [0, \none], time: \x, staves: 1, clef: [[\f, 4]]),
-			v1: [
-				[\c3, \D6, \f],
-				[\c3, \d6, \f],
-				[\c3, 6, \f]
-			]
-		),
-		p9: (
-			lbl: \Contrabass,
-			atr: (key: [0, \none], time: \x, staves: 1, clef: [[\f, 4]], trans: [0, 0, -1]),
-			v1: [
-				[\c3, \D6, \f],
-				[\c3, \d6, \f],
-				[\c3, 6, \f]
-			]
-		),
-		p10: (
-			lbl: 'Piano 1',
-			atr: (key: [0, \none], time: \x, staves: 2, clef: [[\g, 2], [\f, 4]]),
-			v1: [
-				[[\c5, \e5, \g5], \D5, \f],
-				[\ef5, \d5],
-				[\c5, \5],
-				[$|],
-				[$|, \D4],
-				[$|, \d4],
-				[$|, \4],
-				[[\d5, 76], \D3],
-				[$|, \d3],
-				[$|, \3],
-				[[\d4, 65, 68], \D2],
-				[$|, \d2],
-				[$|, \2]/*,
-				[[69, 74, 88], \D1, \sf],
-				[$|, \d1],
-				[$|, \1],
-				[$|, '!'],
-				[$|, '`'],
-				[$|, '~']*/
-			],
-			v2: [
-				[\cF4, \h],
-				[\cf3, \h]
-			]
-		),
-		p11: (
-			lbl: 'Piano 2',
-			atr: (
-				key: [0, \none],
-				time: \x,
-				staves: 4,
-				clef: [[\g, 2, 2], [\g, 2], [\f, 4], [\f, 4, -2]]
-			),
+		p1: (
 			v1: [
 				[[\a7, \a6], [\e, 3, 2, \e]],
 				[$|, [\e]],
@@ -1698,11 +1338,101 @@ code::
 			],
 			v4: [
 				[[\a1, \a0]]
-			],
+			]
 		)
 	)
-];
-Notator.notate(~score1, "~/Downloads/multiple.musicXML".standardizePath, 'MuseScore 4')
+].notate(("~/Downloads/" ++ title ++ ".musicXML").standardizePath, 'Dorico 4')
+)
+::
+##Symbol
+
+(or string)
+
+soft:: ::
+
+per
+
+soft:: ::
+
+Entry
+
+soft:: ::
+
+soft:: ::
+
+(Symbol-
+
+in-
+
+Array
+
+Notation)
+||
+
+code::
+(
+var title = 'Nested tuplets and multiple voices';
+x = [
+	(title: title, composer: 'randomised', rights: '©'),
+	(
+		bar: 1,
+		p1: (
+			v1: [
+				'<a7 a6> /8/3:2', '| /8', '| /8/',
+				'<af7 as6> /8/3:2', '| //16/3:2', '| //16', '| //16/', '| /8/',
+				'| /8/5:4', '| //8/3:2', '| //4/', '| /4/'
+			],
+			v2: [
+				'<a5 a4> /16/5:4', '| /16', '| /16', '| /16', '| /16/',
+				'<af5 a4> /16/6:4', '| /16', '| /8', '| /16', '| /16/'
+			],
+			v3: ['<a3 a2> 4'],
+			v4: ['<a1 a0>']
+		)
+	)
+].notate(("~/Downloads/" ++ title ++ ".musicXML").standardizePath, 'Dorico 4')
+)
+::
+##String
+
+soft:: ::
+
+per
+
+soft:: ::
+
+Whole
+
+Entries
+
+per
+
+Voice
+
+soft:: ::
+
+soft:: ::
+
+(String Notation)
+||
+code::
+(
+var title = 'Nested tuplets and multiple voices';
+x = [
+	(title: title, composer: 'randomised', rights: '©'),
+	(
+		bar: 1,
+		p1: (
+			v1: "
+<a7_a6>_/8/3:2 |_/8 |_/8/
+<af7_as6>_/8/3:2 |_//16/3:2 |_//16 |_//16/ |_/8/ |_/8/5:4 |_//8/3:2 |_//4/ |_/4/",
+			v2: "
+<a5_a4>_/16/5:4 |_/16 |_/16 |_/16 |_/16/ <af5_a4>_/16/6:4 |_/16 |_/8 |_/16 |_/16/",
+			v3: "<a3_a2>_4",
+			v4: "<a1_a0>"
+		)
+	)
+].notate(("~/Downloads/" ++ title ++ ".musicXML").standardizePath, 'Dorico 4')
 )
 ::
 ::

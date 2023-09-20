@@ -11,7 +11,7 @@ related:: Classes/Notator, Classes/PitchClassSet, Classes/SPN
 
 
 
-
+Notator
 
 
 
@@ -112,19 +112,19 @@ table::
 
 each musical information as an element in an array
 code::
-v1: [[\t,90],[\F],[\e5],[[\d,\f],$~],[$|,16],[[72,76]]]
+v1: [[\t,\q,90],[\F],[\e5],[[\d,\f],$~],[$|,16],[[72,76]]]
 ::
 ##Symbol-in-Array notation:
 
 each musical information as a symbol or string in an array
 code::
-v1: ['t 90', \F, \e5, "<d f> ~", '| 16', "<72 76>"]
+v1: ['t q 90', \F, \e5, "<d f> ~", '| 16', "<72 76>"]
 ::
 ##String notation:
 
 all the musical information in a voice as a string
 code::
-v1: "t_90 F e5 <d_f>_~ |_16 <72_76>"
+v1: "t_q_90 F e5 <d_f>_~ |_16 <72_76>"
 ::
 ::
 ::
@@ -174,6 +174,129 @@ aVariable = [
 	...
 ]
 )
+::
+
+
+
+
+
+
+
+
+
+
+note::Accessing particular element
+Array indices can be used to access a particular element or a range of elements:
+
+list::
+
+##To access the first element (title, composer and copyright):
+code::
+a_variable_of_the_score[0]
+::
+
+##to access a bar or bars:
+
+list::
+##To access a particular bar:
+code::
+a_variable_of_the_score[the_number_of_a_particular_bar]
+::
+
+
+table::
+
+##Examples:
+
+
+list::
+##To access the first bar:
+code::
+a_variable_of_the_score[1]
+::
+##To access the tenth bar:
+code::
+a_variable_of_the_score[10]
+::
+::
+::
+
+##To access a series of bars:
+
+
+list::
+
+##code::
+a_variable_of_the_score[the_first_number_in_the_series .. the_last_number_in_the_series]
+::
+
+##code::
+a_variable_of_the_score[the_first_number_in_the_series .. ]
+::
+::
+
+
+table::
+
+##Examples:
+
+
+list::
+
+##To access from the first bar to the tenth bar:
+code::
+a_variable_of_the_score[1..10]
+::
+
+##To access from the eleventh bar to the end:
+code::
+a_variable_of_the_score[11..]
+::
+::
+::
+
+##To access a specific element of a bar:
+
+list::
+##To access the bar number
+
+This is not normally used, but may be necessary when debugging your code.
+code::
+a_variable_of_the_score[the_number_of_a_particular_bar][\bar]
+::
+
+##To access a particular part
+code::
+a_variable_of_the_score[the_number_of_a_particular_bar][the_key_of_a_particular_part]
+::
+
+
+table::
+
+##Exmaple:
+
+To access the part \p1
+code::
+a_variable_of_the_score[the_number_of_a_particular_bar][\p1]
+::
+::
+::
+
+##To access the staff label of a specific part:
+
+code::
+a_variable_of_the_score[the_number_of_a_particular_bar][partNumber][\lbl]
+::
+table::
+##Example:
+
+To access the staff label of part \p1
+code::
+a_variable_of_the_score[1][\p1][\lbl]
+::
+::
+::
+::
 ::
 
 
@@ -364,6 +487,13 @@ score = [
 	...
 ]
 )
+::
+
+note::
+list::
+##If staff label is empty or nil, then piano will be used.
+##If attribute is not defined, 4 staves are used to easily cover the range of the piano.
+::
 ::
 
 
@@ -857,8 +987,7 @@ x = [
 ::
 ::
 
-table::
-##The results of the evaluation of each of the codes above:
+The results of the evaluation of each of the codes above:
 
 table::
 
@@ -873,7 +1002,6 @@ in
 Dorico 4:
 
 ||image::resources/time signature - Dorico.svg::
-::
 ::
 ::
 
@@ -904,44 +1032,133 @@ To add a dynamic marking, insert a one-element array into a voice: the element c
 
 table::
 ##symbols||corresponding dynamic marking
-##\ffff
+##code::
+\ffff
+::
 
-\s4
 
-\s stands for 'strong'
+code::
+\F4
+::
+
+code::
+\s4 // \s stands for 'strong'
+::
 ||emphasis::ffff::
-##\fff
+##code::
+\fff
+::
 
-\s3||emphasis::fff::
-##\ff
+code::
+\F3
+::
 
-\s2||emphasis::ff::
-##\F
+code::
+\s3
+::
+||emphasis::fff::
+##code::
+\ff
+::
 
-(should be capitalised!)
+code::
+\F2
+::
 
-\s1||emphasis::f::
-##\mf
+code::
+\s2
+::
+||emphasis::ff::
+##
+code::
+\F // (should be capitalised!)
+::
 
-\s0||emphasis::mf::
-##\mp
+code::
+\F1
+::
+code::
+\s1
+::
+||emphasis::f::
+##code::
+\mf
+::
 
-\q0
+code::
+\F0
+::
 
-\q stands for 'quiet'
-||emphasis::mp::
-##\p
+code::
+\s0
+::
+||
+emphasis::mf::
 
-\q1||emphasis::p::
-##\pp
+##code::
+\mp
+::
 
-\q2||emphasis::pp::
-##\ppp
+code::
+\p0
+::
 
-\q3||emphasis::ppp::
-##\pppp
+code::
+\q0 // \q stands for 'quiet'
+::
+||
+emphasis::mp::
+##code::
+\p
+::
 
-\q4||emphasis::pppp::
+code::
+
+\p1
+::
+
+code::
+\q1
+::
+||emphasis::p::
+##code::
+\pp
+::
+
+code::
+
+\p2
+::
+
+code::
+\q2
+::
+||
+emphasis::pp::
+##code::
+\ppp
+::
+
+code::
+
+\p3
+::
+
+code::
+\q3
+::||emphasis::ppp::
+##code::
+\pppp
+::
+
+code::
+
+\p4
+::
+
+code::
+\q4
+::||emphasis::pppp::
 ::
 
 table::
@@ -1035,8 +1252,8 @@ x = [
 ::
 ::
 
-table::
-##The results of the evaluation of each of the codes above:
+
+The results of the evaluation of each of the codes above:
 
 table::
 
@@ -1051,7 +1268,6 @@ in
 Dorico 4:
 
 ||image::resources/dynamic - Dorico.svg::
-::
 ::
 ::
 
@@ -1079,21 +1295,21 @@ section::10. Adding Rests
 
 
 
-The crotchet rest (or quarter rest) in the example in section link::#8. Adding a tempo indication:: and the same in the example in section link::#9. Adding a dynamic marking that is not attached to a note or chord:: are automatically inserted by Dorico. MuseScore and Finale insert a whole rest for the same place. To add a rest intentionally, the correct notation for each of the link::#Three ways to construct the musical information of a voice#three ways to construct the musical information of a voice:: should be used as follows:
+The crotchet rest (or quarter rest) in the example in section link::#8. Adding a tempo indication:: and the same in the example in section link::#9. Adding a dynamic marking that is not attached to a note or chord:: are automatically inserted by Dorico. MuseScore and Finale insert a whole rest for the same place. To add rest symbols intentionally, the correct notation for each of the link::#Three ways to construct the musical information of a voice#three ways to construct the musical information of a voice:: should be used as follows:
 
 table::
 ##numberedlist::
 ##Array-in-Array notation:
 code::
-v1: [[\t,90],[\r], [\r6]]
+v1: [[\t, \q, 90], [\r], [\r6]]
 ::
 ##Symbol-in-Array notation:
 code::
-v1: ['t 90', \r, 'r6']
+v1: ['t q 90', \r, 'r6']
 ::
 ##String notation:
 code::
-v1: "t_90 r r6"
+v1: "t_q_90 r r6"
 ::
 ::
 ::
@@ -1104,9 +1320,9 @@ v1: "t_90 r r6"
 
 table::
 
-## Notating way
+##
 ||
-Array-in-Arra notationy
+Array-in-Array notation
 ||
 Symbol-in-Array notation,
 
@@ -2242,8 +2458,8 @@ x = [
 ::
 ::
 
-table::
-##The results of the evaluation of each of the codes above:
+
+The results of the evaluation of each of the codes above:
 
 table::
 
@@ -2253,7 +2469,6 @@ image::resources/rests in Dorico.png::
 image::resources/rests in MuseScore 4.png::
 ::
 ::
-::
 
 
 
@@ -2274,12 +2489,13 @@ image::resources/rests in MuseScore 4.png::
 
 
 
-section::11. Adding notes
+section::11. Adding notes, including note-attached dynamics, articulation, tie and slur
 
 
 
 
 
+A pitch or chord can be added using MIDI pitch number or scientific pitch notation, and this pitch (or pitches) should be placed as an array.
 Currently, 12-tone equal temperament, 24-tone equal temperament and 48-tone equal temperament are supported by music engraving software such as Dorico 4 Pro, MuseScore 4, Finale 27 and so on, so link::Classes/Notator:: class supports eighth-tone pitches. Refer to an example of the link::Classes/Notator#Eighth-tone Scale through algorithmic construction#Eighth-tone Scale example in Notator help document::.
 table::
 ##Related help documents of the link::Classes/SPN:: class and link::Classes/PitchClassSet:: class included in link::Classes/Notator:: Quark.
@@ -2291,17 +2507,79 @@ list::
 ::
 
 
-A pitch or chord can be added using MIDI pitch number or scientific pitch notation, and this pitch (or pitches) should be placed as an array.
+To add notes or chords, use the correct notation for each of the link::#Three ways to construct the musical information of a voice#three ways to construct the musical information of a voice::, as follows:
+
+table::
+##numberedlist::
+##Array-in-Array notation:
+code::
+v1: [[\t,\q,90],[\c4], [['cn4', \g4]], [[60, 67]], [[\c4, 67]]]
+::
+##Symbol-in-Array notation:
+code::
+v1: ['t q 90', \c4, '<cn4 g4>', '<60 67>', '<c4 67>']
+::
+##String notation:
+code::
+v1: "t_q_90 c4 <cn4_g4> <60_67> <c4_67>"
+::
+::
+::
+
+
+To add additional duration, dynamics, articulation, tie and slur, the correct notation for each of the link::#Three ways to construct the musical information of a voice#three ways to construct the musical information of a voice:: should be used as follows (The same rules as above for rest symbol durations and dynamic markers should be applied to note durations and note-attached dynamic markers.):
+
+table::
+##numberedlist::
+##Array-in-Array notation:
+code::
+v1: [
+	[t, \q, 90],
+	[\c4, \e, \f, \a, \j, \u], // [\c4, \5, \f, $>, $~, $(]
+	[\cn4, \dq, \J],           // [\cn4, \d6, $`]
+	[60, \x, \sf, \U]          // [60, \4, \sf, $)]
+]
+::
+##Symbol-in-Array notation:
+code::
+v1: ['t q 90', 'c4 8 f > ~ (', 'cn4 4. `', '60 16 sf )']
+::
+##String notation:
+code::
+v1: "t_q_90 c4_8_f_>_~_( cn4_4._` 60_16_sf_)"
+::
+::
+::
 
 
 
 
 
 
+
+
+
+subsection:: 11.1. Notes and chords
+
+
+
+
+
+
+table::
+##
+strong::Example:::
+
+Three different styles of code to get the same musicXML file:
+table::
+##
+Array-in-Array notation
+||
 code::
 (
-[
-	(title: 'untitled', composer: 'me', rights: '©'),
+var title = 'notes and chords';
+x = [
+	(title: title, composer: 'me', rights: '©'),
 	(
 		bar: 1,
 		p1:
@@ -2315,7 +2593,8 @@ code::
 				[\F],
 
 				[\c4]
-				// The array containing a scientific pitch name defines the pitch of the note.
+				// The array containing a scientific pitch name defines the pitch
+				// of the note.
 				// - S: double sharp
 				// - s: sharp
 				// - (n: natural) can be ommited
@@ -2326,482 +2605,604 @@ code::
 				// - \cq5: a quarter-tone raised c5
 				// - \cs5: c#5
 				// - \cQ5: a quarter-tone raised c#5
-				// Its duration follows the last duration defined with the previous note, if any.
-				// If the note is the first note of the entire notation information,
-				// it follows the default value (crotchet).
-				// Its dynamic mark follows the last dynamic mark defined with the previous note, if it any.
-				// If the note is the first note of the whole notation information,
-				// it will follow the default value (mp).
+				// Its duration follows the last duration defined with the
+				// previous note, if any.
+				// If the note is the first note of the entire notation
+				// information, it follows the default value (crotchet).
+				// Its dynamic mark follows the last dynamic mark defined with the
+				// previous note, if it any.
+				// If the note is the first note of the whole notation
+				// information, it will follow the default value (mp).
 				,
 
 				[\cn4],
 
 				[62]
 				// The array containing a number defines the pitch of the note.
-				// The number should be an integer or a float with a single decimal ending in 0.5 as follows:
+				// The number should be an integer or a float with a single
+				// decimal ending in 0.5 as follows:
 				// - 72   = \c5:  c5 natural
 				// - 72.5 = \cq5: one quarter-tone raised c5
 				// - 73   = \cs5: c#5
 				// - 73.5 = \cQ5: one quarter-tone raised c#5
-				// A float with a single decimal ending in 0.5 indicates a quarter tone.
+				// A float with a single decimal ending in 0.5 indicates a quarter
+				// tone.
 				// The range of numbers supported is as follows:
 				// - range: 0 ~ 127
 				// Its duration and dynamic mark are the same as described above.
 				,
 
 				[[64, 64.5, \g4, \gq4]]
-				// A chord (notes of equal duration) should be defined as an array.
-				// Its duration and dynamic mark are the same as described above.
+				// A chord (notes of equal duration) should be defined as an
+				// array. Its duration and dynamic mark are the same as described
+				// above.
 				,
 
 				[67],
 
 				[65, \w]
-				// The two-element array containing a scientific pitch name followed by a duration defines
-				// the pitch of the note and its duration. The following durations are ready to use:
+				// The two-element array containing a scientific pitch name
+				// followed by a duration defines the pitch of the note and its
+				// duration. The following durations are ready to use:
 				,
 
 				[67, \q, \f]
-				// The three-element array containing a scientific pitch name followed by
-				// a duration then a dynamic mark defines the pitch of the note, its duration and dynamic mark
-
-				// of the note.
+				// The three-element array containing a scientific pitch name
+				// followed by a duration then a dynamic mark defines the pitch of
+				// the note, its duration and dynamic mark of the note.
 				,
 
 				[67, \q, \s2],
-				// Strong dynamic marks can be abbreviated as follows:
-				// - ffff: s4
-				//         ffff
-				//         F4
-				// - fff:  s3
-				//         fff
-				//         F3
-				// - ff:   s2
-				//         ff
-				//         F2
-				// - f:    s1   <- to distinguish it with a stacatto symbol (s).
-				//         F   <- to distinguish it with a stacatto symbol (s).
-				//         F1
 
 				[67, \q, \q3],
-				// Quiet dynamic marks can be abbreviated as follows:
-				// - pppp: q4
-				//         P4
-				//         pppp
-				// - ppp:  q3
-				//         P3
-				//         ppp
-				// - pp:   q2
-				//         P2
-				//         pp
-				// - p:    q1   <- to distinguish it with a crotchet symbol (q).
-				//         P1
-				//         p
+
+			]
+		)
+	)
+].notate(("~/Downloads" +/+ title ++ ".musicxml").standardizePath, 'MuseScore 4')
+)
+::
+##
+Symbol-in-Array notation
+||
+code::
+(
+var title = 'notes and chords';
+x = [
+	(title: title, composer: 'me', rights: '©'),
+	(
+		bar: 1,
+		p1:
+		(
+			lbl: \Soprano,
+			atr: (key: [0, \none], time:\x, staves: 1, clef: [[\c, 1]]),
+			v1: // voice 1.
+			[
+				't q 120',
+				\F,
+				\c4, \cn4, \62, '<64 64.5 g4 gq4>', \67, '65 w', '67 q f',
+				'67 q s2',
+				'67 q, q3',
+			]
+		)
+	)
+].notate(("~/Downloads" +/+ title ++ ".musicxml").standardizePath, 'MuseScore 4')
+)
+::
+##
+String notation
+||
+code::
+(
+var title = 'notes and chords';
+x = [
+	(title: title, composer: 'me', rights: '©'),
+	(
+		bar: 1,
+		p1:
+		(
+			lbl: \Soprano,
+			atr: (key: [0, \none], time:\x, staves: 1, clef: [[\c, 1]]),
+			v1: "t_q_120 F c4 cn4 62 <64_64.5_g4_gq4> 67 65_w 67_q_f 67_q_s2 67_q_q3"
+		)
+	)
+].notate(("~/Downloads" +/+ title ++ ".musicxml").standardizePath, 'MuseScore 4')
+)
+::
+::
+
+The results of the evaluation of the codes above:
+
+table::
+##
+The rendered score in Dorico 4 Pro:
+
+image::resources/notes_and_chords Dorico 4.svg::
+||
+The rendered score in MuseScore 4:
+
+image::resources/notes_and_chords MuseScore 4 @102dpi.png::
+::
+::
 
 
-				[68, \e, \pp, \A]
-				// The four-element array containing a scientific pitch name followed by
-				// a duration, a dynamic mark and an articulation defines the pitch of the note, its duration,
-				// dynamic mark and articulation. The following articulations are ready to use:
-				//
-				// Articulations      Symbols   Character
-				// - accent:          \a        $>
-				// - strong-accent:   \A        $^
-				// - staccato:        \s        $.
-				// - staccatissimo:   \S        $!
-				// - tenuto:          \o        $-
-				// - detached-legato: \O        $_
+
+
+
+
+
+
+
+subsection::11.2. Multiple instruments
+
+
+table::
+##strong::Example:::
+
+code::
+(
+x = [
+	(title: 'untitled', composer: 'me', rights: '©'),
+	(
+		bar: 1,
+		p1: (
+			lbl: \Contralto,
+			atr: (key: [0, \none], time: \x, staves: 1, clef: [[\c, 3]]),
+			v1: [
+				[[\c5, \a4, \fs4, \ds4], \_], [[\cq5, \aq4, \fQ4, \dQ4], \d_], [[\df5, \bf4, \g4, \e4], \D_]]
+		),
+		p2: (
+			lbl: \Tenore,
+			atr: (key: [0, \none], time: \x, staves: 1, clef: [[\c, 4]]),
+			v1: [
+				[[63.5, 60.5, 57.5, 54.5], \D0], [[64, 61, 58, 55], \d0], [[64.5, 61.5, 58.5, 55.5], \0]],
+			v2: [[\r, \D0], [\r, \d0], [\r, \0]]
+		),
+		p3: (
+			lbl: \Basso,
+			atr: (key: [0, \none], time: \x, staves: 1, clef: [[\f, 4]]),
+			v1: [[\r, \D9], [\r, \d9], [\r, 9]],
+			v2: [[[52, \g3], \D9], [[\e3, 55], \d9], [[52.5, \gQ3], 9], [[\eq3, 56.5]]]
+		),
+		p4: (
+			lbl: 'Clarinetto in si bemolle',
+			atr: (key: [0, \none], time: \x, staves: 1, clef: [[\g, 2]], trans:[-1, -2, 0]),
+			v1: [[72, \D8], [\cq5, \d8], [73, 8], [\cQ5]],
+			v2: [[67, \D8], [\gq4, \d8], [68, 8], [\gQ4]]
+		),
+		p5: (
+			lbl: 'Violino',
+			atr: (key: [0, \none], time: \x, staves: 1, clef: [[\g, 2]]),
+			v1: [[72, \D8], [\cq5, \d8], [73, 8], [\cQ5]],
+			v2: [[67, \D8], [\gq4, \d8], [68, 8], [\gQ4] ]
+		),
+		p6: (
+			lbl: \Viola,
+			atr: (key: [0, \none], time: \x, staves: 1, clef: [[\c, 3]]),
+			v1: [
+				[\cq4, \D7], [\dq4, \d7], [[61.5, \dq4, \cq4], 7]]
+		),
+		p7: (
+			lbl: \Violoncello,
+			atr: (key: [0, \none], time: \x, staves: 1, clef: [[\f, 4]]),
+			v1: [[\c3, \D6], [\c3, \d6], [\c3, 6]]
+		),
+		p8: (
+			lbl: \Contrabass,
+			atr: (key: [0, \none], time: \x, staves: 1, clef: [[\f, 4]], trans: [0, 0, -1]),
+			v1: [[\c3, \D6], [\c3, \d6], [\c3, 6]]
+		),
+		p9: (
+			lbl: \Piano,
+			atr: (key: [0, \none], time: \x, staves: 2, clef: [[\g, 2], [\f, 4]]),
+			v1: [
+				[[\c5, \e5, \g5], \D5],	[\ef5, \d5],
+				[\c5, \5], [$|], [$|, \D4], [$|, \d4], [$|, \4],
+				[[\d5, 76], \D3], [$|, \d3], [$|, \3],
+				[[\d4, 65, 68], \D2], [$|, \d2], [$|, \2], [[69, 74, 88], \D1], [$|, \d1], [$|, \1]
+			],
+			v2: [[\cF4, \h], [\cf3, \h]]
+		)
+	)
+].notate("~/Downloads/multiple instruments.musicxml".standardizePath, 'MuseScore 4')
+)
+::
+
+
+The results of the above code block evaluation:
+table::
+##
+The rendered score in Dorico 4 Pro:
+
+image::resources/notes on music scores in multiple instruments Dorico 4.svg::
+||
+The rendered score in MuseScore 4:
+image::resources/notes on music scores in multiple instruments MuseScore 4 @102dpi.png::
+::
+::
+
+
+
+
+
+
+
+
+
+
+subsection::11.3. Articulations, ties, slurs, pitch repetition and previous entry repetition
+The list of currently supported articulations is as follows:
+table::
+##||Array-in-Array notation||Symbol-in-Array notation,
+
+String notation
+
+##accent          ||
+code::
+\a
+::
+
+code::
+$>
+::
+||
+code::
+>
+::
+
+##strong-accent   ||
+code::
+\A
+::
+
+code::
+$^
+::
+||
+code::
+^
+::
+
+##staccato        ||
+code::
+\s
+::
+
+code::
+$.
+::
+||
+code::
+.
+::
+
+##staccatissimo   ||
+code::
+\S
+::
+
+code::
+$!
+::
+||
+code::
+!
+::
+
+##tenuto          ||
+code::
+\o
+::
+
+code::
+$-
+::
+||
+code::
+-
+::
+
+##detached-legato ||
+code::
+\O
+::
+
+code::
+$_
+::
+||
+code::
+_
+::
+::
+
+
+The list of currently supported ties is as follows:
+table::
+##||Array-in-Array notation||Symbol-in-Array notation,
+
+String notation
+
+##
+tie start
+||
+code::
+$j \\ <- from 'join'
+::
+
+code::
+$~
+::
+||
+code::
+~
+::
+##
+tie stop
+||
+code::
+$J
+::
+
+code::
+$`
+::
+||
+code::
+`
+::
+##
+laissez vibrer
+||
+code::
+\lv
+::
+
+code::
+$r \\ <- from 'let-ring'
+::
+||
+code::
+r
+::
+
+##
+tie stop with laissez vibrer
+||
+code::
+$R
+::||
+code::
+R
+::
+::
+
+
+
+
+
+
+
+
+
+
+The list of currently supported slurs is as follows:
+
+
+table::
+##||Array-in-Array notation||Symbol-in-Array notation,
+
+String notation
+
+##
+slur start
+||
+code::
+\u \\ <- from u in 'slur'
+::
+
+code::
+$(
+::
+||
+code::
+(
+::
+##
+slur stop
+||
+code::
+\U
+::
+
+code::
+$)
+::
+||
+code::
+)
+::
+::
+
+
+The list of the currently supported abbreviations for the repetitive pitches and the repetition of entries is as follows:
+
+
+table::
+##||Array-in-Array notation||Symbol-in-Array notation,
+
+String notation
+
+##
+repetitive pitche (a note) or pitches (a chord)
+||
+code::
+$|
+::
+||
+code::
+|
+::
+##
+The repetition of the previous entry
+||
+code::
+$\\
+::
+||
+code::
+\\
+::
+::
+
+
+table::
+##Three different styles of code to get the same musicXML file:
+table::
+##
+Array-in-Array notation
+||
+code::
+(
+var title = \articulations;
+x = [
+	(title: title, composer: 'me', rights: '©'),
+	(
+		bar: 1,
+		p1:
+		(
+			lbl: \Soprano,
+			atr: (key: [0, \none], time:[4, 4], staves: 1, clef: [[\c, 1]]),
+			v1: // voice 1.
+			[
+				[\t, \q, 60],
+
+				[68, \e, \sf, $!]
+				// The four-element array containing a scientific pitch name
+				// followed by a duration, a dynamic mark and an articulation
+				// defines the pitch of the note, its duration, dynamic mark and
+				// articulation.
 				,
 
-				[68, \e, \s2, \a, \j]
-				// The five-element array containing a scientific pitch name followed by
-				// a duration, a dynamic mark, an articulation and a tie status defines the pitch of the note,
-				// its duration, dynamic mark, articulation and tie status.
-				// The following tie states are ready to use:
-				//
-				// Tie status                       Symbols                   Character
-				// - tie start:                       \j <- from 'join'       $~
-				// - tie stop:                        \J                      $`
-				// - laissez vibrer:                  \r <- from 'let-ring'
-				// - tie stop with laissez vibrer:    \R
+				[$|, \e, \pp, $~]
+				// The five-element array containing a scientific pitch name
+				// followed by a duration, a dynamic mark, an articulation and
+				// a tie status defines the pitch of the note, its duration,
+				// dynamic mark, articulation and tie status.
 				,
 
-				[68, \e, \s2, $`],
+				[$|, \q, $~],
+				// The array containing $| defines that the pitch of the note is
+				// a repetition of the previous one. Here its duration does not
+				// follow those of the previous note
 
-				[68, \s, \s2, \r],
+				[$|, \h, \pp, $~]
+			]
+		)
+	),
+	(
+		bar: 2,
+		p1:
+		(
+			v1: // voice 1.
+			[
+				[$|, \dq, $~],
 
-				[68, \x, $~],
+				[$|, \e, $`],
 
-				[68, \e, \R],
+				[\r, \q],
 
-				[68, \e, \s2, \S, \r, \u]
-				// The six-element array containing a scientific pitch name followed by
-				// a duration, a dynamic mark, an articulation, tie status a slur status defines
-				// the pitch of the note, its duration, dynamic mark, articulation,
-				// tie status and slur status.
-				// The following slur states are ready to use:
-				//
-				// Slur status                       Symbols                   Character
-				// - slur start:                       \u <- from r in 'slur'  $(
-				// - slur stop:                        \U                      $)
+				[\r, \q]
+			]
+		)
+	),
+	(
+		bar: 3,
+		p1:
+		(
+			v1: [
+				[68, \e],
+
+				[68, \e, \s2, $^, $r, $(]
+				// The six-element array containing a scientific pitch name
+				// followed by a duration, a dynamic mark, an articulation, tie
+				// status a slur status defines the pitch of the note, its
+				// duration, dynamic mark, articulation, tie status and slur
+				// status.
 				,
-
 
 				[69, \p]
 				// The elements of an entry can be flexibly omitted.
-				// The two-element array containing a scientific pitch name followed by an dynamic mark
-				// defines the pitch of the note with its dynamic mark,
-				// and its duration follows the duration of the previous note
+				// The two-element array containing a scientific pitch name
+				// followed by an dynamic mark defines the pitch of the note with
+				// its dynamic mark, and its duration follows the duration of the
+				// previous note
 				,
 
 				[71, \p]
-				// The repetition of the dynamic mark will not be displayed on the score, except for sf.
+				// The repetition of the dynamic mark will not be displayed on the
+				// score, except for sf.
 				,
 
 				[72, \sf],
 
 				[73, \sf],
 
-				[74, \pp, \A, \r]
-				,
+				[74, \pp, $A, $r],
 
 				[74, \s]
-				// The two-element array containing a scientific pitch name followed by
-				// an articulation defines the pitch of the note with its articulation,
-				// and its duration and dynamic mark follow those of the previous note.
+				// The two-element array containing a scientific pitch name
+				// followed by an articulation defines the pitch of the note with
+				// its articulation, and its duration and dynamic mark follow
+				// those of the previous note.
 				,
 
-				[$|, \S]
-				// The array containing $| defines that the pitch of the note is a repetition of
-				// the previous one. Its duration and length follow those of the previous note.
-				,
-
+				[$|, \S],
 				[[74, 75]],
-
-				[$|, \h, \f, \O],
-
-				[$|, \p, \o],
-
-				[$|, \U],
+				[$|, \h, \f, $_],
+				[$|, \p, $-],
+				[$|, $)],
 
 				[$\\]
-				// The array containing $\\ defines that the entry is a repetition of the previous entry.
+				// The array containing $\\ defines that the entry is a repetition
+				// of the previous entry.
 				,
 
 				[[\c5, \a4, \fs4, \ds4], \x, \f],
-
 				[$\\, \s],
-
 				[$\\],
-
 				[$\\],
-
-				[$|, \7],
+				[$|, \7]
 			]
-		),
-		p2: (
-			lbl: \Contralto,
-			atr: (key: [0, \none], time: \x, staves: 1, clef: [[\c, 3]]),
-			v1: [
-				[[\c5, \a4, \fs4, \ds4], \_, \ffff],
-				[[\cq5, \aq4, \fQ4, \dQ4], \d_, \fff],
-				[[\df5, \bf4, \g4, \e4], \D_, \ff]
-			]
-		),
-		p3: (
-			lbl: \Tenore,
-			atr: (key: [0, \none], time: \x, staves: 1, clef: [[\c, 4]]),
-			v1: [
-				[[63.5, 60.5, 57.5, 54.5], \D0, \f],
-				[[64, 61, 58, 55], \d0, \mf],
-				[[64.5, 61.5, 58.5, 55.5], \0, \sf]
-			],
-			v2: [
-				[\r, \D0],
-				[\r, \d0],
-				[\r, \0]
-			]
-		),
-		p4: (
-			lbl: \Basso,
-			atr: (key: [0, \none], time: \x, staves: 1, clef: [[\f, 4]]),
-			v1: [
-				[\r, \D9],
-				[\r, \d9],
-				[\r, 9]
-			],
-			v2: [
-				[[52, \g3], \D9, \mp],
-				[[\e3, 55], \d9, \p],
-				[[52.5, \gQ3], 9, \pp],
-				[[\eq3, 56.5]]
-			]
-		),
-		p5: (
-			lbl: 'Clarinetto in si bemolle',
-			atr: (key: [0, \none], time: \x, staves: 1, clef: [[\g, 2]], trans:[-1, -2, 0]),
-			v1: [
-				[72, \D8],
-				[\cq5, \d8],
-				[73, 8],
-				[\cQ5]
-			],
-			v2: [
-				[67, \D8],
-				[\gq4, \d8],
-				[68, 8],
-				[\gQ4]
-			]
-		),
-		p6: (
-			lbl: 'Violino',
-			atr: (key: [0, \none], time: \x, staves: 1, clef: [[\g, 2]]),
-			v1: [
-				[72, \D8],
-				[\cq5, \d8],
-				[73, 8],
-				[\cQ5]
-			],
-			v2: [
-				[67, \D8],
-				[\gq4, \d8],
-				[68, 8],
-				[\gQ4]
-			]
-		),
-		p7: (
-			lbl: \Viola,
-			atr: (key: [0, \none], time: \x, staves: 1, clef: [[\c, 3]]),
-			v1: [
-				[\cq4, \D7, \ppp],
-				[\dq4, \d7, \pppp],
-				[[61.5, \dq4, \cq4], 7]
-			]
-		),
-		p8: (
-			lbl: \Violoncello,
-			atr: (key: [0, \none], time: \x, staves: 1, clef: [[\f, 4]]),
-			v1: [
-				[\c3, \D6, \f],
-				[\c3, \d6, \f],
-				[\c3, 6, \f]
-			]
-		),
-		p9: (
-			lbl: \Contrabass,
-			atr: (key: [0, \none], time: \x, staves: 1, clef: [[\f, 4]], trans: [0, 0, -1]),
-			v1: [
-				[\c3, \D6, \f],
-				[\c3, \d6, \f],
-				[\c3, 6, \f]
-			]
-		),
-		p10: (
-			lbl: 'Piano 1',
-			atr: (key: [0, \none], time: \x, staves: 2, clef: [[\g, 2], [\f, 4]]),
-			v1: [
-				[[\c5, \e5, \g5], \D5, \f],
-				[\ef5, \d5],
-				[\c5, \5],
-				[$|],
-				[$|, \D4],
-				[$|, \d4],
-				[$|, \4],
-				[[\d5, 76], \D3],
-				[$|, \d3],
-				[$|, \3],
-				[[\d4, 65, 68], \D2],
-				[$|, \d2],
-				[$|, \2],
-				[[69, 74, 88], \D1, \sf],
-				[$|, \d1],
-				[$|, \1]/*,
-				[$|, '!'],
-				[$|, '`'],
-				[$|, '~']*/
-			],
-			v2: [
-				[\cF4, \h],
-				[\cf3, \h]
-			]
-		),
-		p11: (
-			lbl: 'Piano 2',
-			atr: (
-				key: [0, \none],
-				time: \x,
-				staves: 4,
-				clef: [[\g, 2, 2], [\g, 2], [\f, 4], [\f, 4, -2]]
-			),
-			v1: [
-				[[\a7, \a6], [\e, 3, 2, \e]],
-				[$|, [\e]],
-				[$|, [5, \]],
-				[[\af7, \as6], [\e, 3, 2, \e]],
-				[$|, [[\x, 3, 2, \x]]],
-				[$|, [[\x]]],
-				[$|, [[\x, \]]],
-				[$|, [\e, \]],
-				[$|, [\e, 5, 4, \e]],
-				[$|, [[\e, 3, 2, \e]]],
-				[$|, [[\q, \]]],
-				[$|, [\q, \]]
-			],
-			v2: [
-				[[\a5, \a4], [\x, 5, 4, \x]],
-				[$|, [\x]],
-				[$|, [4]],
-				[$|, [\x]],
-				[$|, [4, \]],
-				[[\af5, \a4], [\x, 6, 4, \x]],
-				[$|, [\x]],
-				[$|, [5]],
-				[$|, [\x]],
-				[$|, [4, \]]
-			],
-			v3:
-			[
-				[[\a3, \a2], 6]
-			],
-			v4: [
-				[[\a1, \a0]]
-			],
 		)
 	)
-].notate("~/Downloads/multiple instruments.musicxml".standardizePath, 'MuseScore 4')
+].notate(("~/Downloads"+/+ title ++ ".musicxml").standardizePath, 'Dorico 4')
 )
 ::
-table::
-##image::resources/multiple instruments - 001.svg::||image::resources/multiple instruments - 002.svg::
-::
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-section::12. Accessing particular element
-Array indices can be used to access a particular element or a range of elements:
-
-list::
-
-##To access the first element (title, composer and copyright):
+##
+Symbol-in-Array notation
+||
 code::
-a_variable_of_the_score[0]
+s
 ::
-
-##to access a bar or bars:
-
-list::
-##To access a particular bar:
+##
+String notation
+||
 code::
-a_variable_of_the_score[the_number_of_a_particular_bar]
+s
+::
 ::
 
+The results of the evaluation of the codes above:
 
 table::
+##
+The rendered score in Dorico 4 Pro:
 
-##Examples:
+image::resources/notes_and_chords Dorico 4.svg::
+||
+The rendered score in MuseScore 4:
 
-
-list::
-##To access the first bar:
-code::
-a_variable_of_the_score[1]
-::
-##To access the tenth bar:
-code::
-a_variable_of_the_score[10]
-::
-::
-::
-
-##To access a series of bars:
-
-
-list::
-
-##code::
-a_variable_of_the_score[the_first_number_in_the_series .. the_last_number_in_the_series]
-::
-
-##code::
-a_variable_of_the_score[the_first_number_in_the_series .. ]
-::
-::
-
-
-table::
-
-##Examples:
-
-
-list::
-
-##To access from the first bar to the tenth bar:
-code::
-a_variable_of_the_score[1..10]
-::
-
-##To access from the eleventh bar to the end:
-code::
-a_variable_of_the_score[11..]
-::
-::
-::
-
-##To access a specific element of a bar:
-
-list::
-##To access the bar number
-
-This is not normally used, but may be necessary when debugging your code.
-code::
-a_variable_of_the_score[the_number_of_a_particular_bar][\bar]
-::
-
-##To access a particular part
-code::
-a_variable_of_the_score[the_number_of_a_particular_bar][the_key_of_a_particular_part]
-::
-
-
-table::
-
-##Exmaple:
-
-To access the part \p1
-code::
-a_variable_of_the_score[the_number_of_a_particular_bar][\p1]
-::
-::
-::
-
-##To access the staff label of a specific part:
-
-code::
-a_variable_of_the_score[the_number_of_a_particular_bar][partNumber][\lbl]
-::
-table::
-##Example:
-
-To access the staff label of part \p1
-code::
-a_variable_of_the_score[1][\p1][\lbl]
-::
-::
+image::resources/notes_and_chords MuseScore 4 @102dpi.png::
 ::
 ::
