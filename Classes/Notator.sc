@@ -1965,7 +1965,7 @@ Notator {
 			"\t\t\t\t\t\t\t\t{ thisVoiceItemIndex == 0 } {\n" ++
 			"\t\t\t\t\t\t\t\t\t[\n" ++
 			"\t\t\t\t\t\t\t\t\t\tif (nthBarNum == 1) {\n" ++
-			"\t\t\t\t\t\t\t\t\t\t\t(tie: \nil)\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\t(tie: \\" ++ "nil)\n" ++
 			"\t\t\t\t\t\t\t\t\t\t} {\n" ++
 
 			"\t\t\t\t\t\t\t\t\t\t\tvar previousItem =" + renotatedVariable++ "[aPart][nthBarNum - 1][\n" ++
