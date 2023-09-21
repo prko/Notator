@@ -1808,7 +1808,7 @@ Notator {
 										thisDynamic
 									};
 									"\t\t\t\t\tdynamic:" + $\\ ++ dynamicMark ++ "," +
-									"velocity:" + dynamicMIDIvelocityPairs[dynamicMark] ++ ",\n"
+									"velocity:" + dynamicMIDIvelocityPairs[dynamicMark] ++ "\n"
 								}.() ++
 								"\t\t\t\t),\n").replace("[ ", "[").replace(" ]", "]").replace("\nil", "nil");
 						};
@@ -1965,7 +1965,7 @@ Notator {
 			"\t\t\t\t\t\t\t\t{ thisVoiceItemIndex == 0 } {\n" ++
 			"\t\t\t\t\t\t\t\t\t[\n" ++
 			"\t\t\t\t\t\t\t\t\t\tif (nthBarNum == 1) {\n" ++
-			"\t\t\t\t\t\t\t\t\t\t\t0\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\t(tie: \nil)\n" ++
 			"\t\t\t\t\t\t\t\t\t\t} {\n" ++
 
 			"\t\t\t\t\t\t\t\t\t\t\tvar previousItem =" + renotatedVariable++ "[aPart][nthBarNum - 1][\n" ++
@@ -1980,7 +1980,7 @@ Notator {
 			"\t\t\t\t\t\t\t);\n" ++
 			"\t\t\t\t\t\t\t\n" ++
 			"\t\t\t\t\t\t\t(\n" ++
-			"\t\t\t\t\t\t\t\t" ++ q.("\\" ++ "n\\" ++ "t* thisVoiceItemIndex:") + "+ thisVoiceItemIndex ++" + q.("\\" ++ "n\\" ++ "n\\" ++ "t-") ++ "\n" ++
+			"\t\t\t\t\t\t\t\t" ++ q.("\\" ++ "n\\" ++ "t* thisVoiceItemIndex:") + "+ thisVoiceItemIndex ++" + q.("\\" ++ "n\\" ++ "n\\" ++ "t*") ++ "\n" ++
 			"\t\t\t\t\t\t\t\t+ entryCurrent ++ " ++ q.("\\" ++ "n") ++ "\n" ++
 			"\t\t\t\t\t\t\t).postln;\n" ++
 			"\t\t\t\t\t\t\t\n" ++
