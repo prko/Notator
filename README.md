@@ -3,7 +3,10 @@ musicXML File Writer for SuperCollider with the rewrite feature of the given scl
 
 To install Notator, copy and paste the following code into the SC-IDE editor window, and evaluate it:
 ```
+(
+"https://github.com/telephon/Strang".include;
 "https://github.com/prko/Notator".include
+)
 ```
 
 ## Description
