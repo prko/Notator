@@ -1872,9 +1872,8 @@ Notator {
 			routineText = routineText ++
 			"~play = {\n" ++
 			"\ts.waitForBoot {\n" ++
-			"\t\tvar parts, numBar, detectNumVoices, eventPlayer;\n" ++
+			"\t\tvar parts, detectNumVoices, eventPlayer;\n" ++
 			"\t\tparts =" +  partLables.collect { |aPartLabel| "'" ++ aPartLabel ++ "'"} ++ ";\n" ++
-			"\t\tnumBar =" + renotatedVariable ++ "[parts[0]].size" ++ ";\n" ++
 			"\t\tdetectNumVoices = { |nthBar, thisPart|\n" ++
 			"\t\t\t" ++ renotatedVariable ++ "[thisPart][nthBar].keys.count { |item|\n" ++
 			"\t\t\t\titem.asString.contains(" ++ q.("v") ++ ") }\n" ++
@@ -1916,7 +1915,8 @@ Notator {
 			"\t\t};\n" ++
 			"\t\t\n" ++
 			"\t\tparts.do { |aPart|\n" ++
-			"\t\t\tvar nthBar, instrument, scorePlay;\n" ++
+			"\t\t\tvar numBars, nthBar, instrument, scorePlay;\n" ++
+			"\t\tnumBars =" + renotatedVariable ++ "[parts[0]].size" ++ ";\n" ++
 			"\t\t\tnthBar = 1;\n" ++
 			"\t\t\tinstrument = if (SynthDescLib.global.synthDescs.keys.includes(aPart)) {\n" ++
 			"\t\t\t\taPart\n" ++
@@ -1927,11 +1927,12 @@ Notator {
 			"\t\t\t\tvar thisPartThisBarVoiceSize = detectNumVoices.(nthBarNum, aPart);\n" ++
 			"\t\t\t\t(" ++ q.("\\" ++ "nbar:") + "+ nthBarNum).postln;\n" ++
 			"\t\t\t\tthisPartThisBarVoiceSize.do { |thisVoiceIndex|\n" ++
+			"\t\t\t\t\tthisVoiceIndex = thisVoiceIndex + 1;\n" ++
 			"\t\t\t\t\tfork{\n" ++
 			"\t\t\t\t\t\tvar thisPartThisBarThisVoice, thisPartThisBarThisVoiceLastItemIndex, slur;\n" ++
 			"\t\t\t\t\t\tthisPartThisBarThisVoice =" + renotatedVariable ++ "[\n" ++
 			"\t\t\t\t\t\t\taPart][nthBarNum][\n" ++
-			"\t\t\t\t\t\t\t(" ++ q.("v") + "++ (thisVoiceIndex + 1)).asSymbol\n" ++
+			"\t\t\t\t\t\t\t(" ++ q.("v") + "++ thisVoiceIndex).asSymbol\n" ++
 			"\t\t\t\t\t\t];\n" ++
 			"\t\t\t\t\t\tthisPartThisBarThisVoiceLastItemIndex = thisPartThisBarThisVoice.size - 1;\n" ++
 			"\t\t\t\t\t\tthisPartThisBarThisVoice.size.do { |thisVoiceItemIndex|\n" ++
@@ -1951,13 +1952,13 @@ Notator {
 			"\t\t\t\t\t\t\t\t\t\tthisPartThisBarThisVoice[thisVoiceItemIndex + 1]\n" ++
 			"\t\t\t\t\t\t\t\t\t]\n" ++
 			"\t\t\t\t\t\t\t\t}\n" ++
-			"\t\t\t\t\t\t\t\t{ thisVoiceItemIndex == thisPartThisBarThisVoiceLastItemIndex } {\n" ++
+			"\t\t\t\t\t\t\t\t{ thisVoiceItemIndex == thisPartThisBarThisVoiceLastItemIndex  &&  (thisVoiceItemIndex != 0)} {\n" ++
 			"\t\t\t\t\t\t\t\t\t[\n" ++
 			"\t\t\t\t\t\t\t\t\t\tthisPartThisBarThisVoice[thisVoiceItemIndex - 1],\n" ++
 			"\t\t\t\t\t\t\t\t\t\tthisPartThisBarThisVoice[thisVoiceItemIndex],\n" ++
-			"\t\t\t\t\t\t\t\t\t\tif (nthBarNum < (" ++ renotatedVariable ++ ".size - 1)) {\n" ++
+			"\t\t\t\t\t\t\t\t\t\tif (nthBarNum < numBars) {\n" ++
 			"\t\t\t\t\t\t\t\t\t\t\t" ++ renotatedVariable ++ "[aPart][nthBarNum + 1][\n" ++
-			"\t\t\t\t\t\t\t\t\t\t\t\t(" ++ q.("v") + "++ (thisVoiceIndex + 1)).asSymbol\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\t\t(" ++ q.("v") + "++ thisVoiceIndex).asSymbol\n" ++
 			"\t\t\t\t\t\t\t\t\t\t\t][0]\n" ++
 			"\t\t\t\t\t\t\t\t\t\t}\n" ++
 			"\t\t\t\t\t\t\t\t\t]\n" ++
@@ -1969,7 +1970,7 @@ Notator {
 			"\t\t\t\t\t\t\t\t\t\t} {\n" ++
 
 			"\t\t\t\t\t\t\t\t\t\t\tvar previousItem =" + renotatedVariable++ "[aPart][nthBarNum - 1][\n" ++
-			"\t\t\t\t\t\t\t\t\t\t\t\t(" ++  q.("v") + "++ (thisVoiceIndex + 1)).asSymbol\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\t\t(" ++  q.("v") + "++ thisVoiceIndex).asSymbol\n" ++
 			"\t\t\t\t\t\t\t\t\t\t\t];\n" ++
 			"\t\t\t\t\t\t\t\t\t\t\tpreviousItem[previousItem.size - 1]\n" ++
 			"\t\t\t\t\t\t\t\t\t\t},\n" ++
@@ -2006,7 +2007,7 @@ Notator {
 			"\t\t\t\t\t\t\t\t\t\tvar nextTestItemDetector, nextTestItem, nexttestItemIdx;\n" ++
 			"\t\t\t\t\t\t\t\t\t\t\tnextTestItemDetector = { |testBarNum|\n" ++
 			"\t\t\t\t\t\t\t\t\t\t\t" ++ renotatedVariable ++ "[aPart][testBarNum][\n" ++
-			"\t\t\t\t\t\t\t\t\t\t\t\t("+ q.("v") + "++ (thisVoiceIndex + 1)).asSymbol\n" ++
+			"\t\t\t\t\t\t\t\t\t\t\t\t("+ q.("v") + "++ thisVoiceIndex).asSymbol\n" ++
 			"\t\t\t\t\t\t\t\t\t\t\t\t]\n" ++
 			"\t\t\t\t\t\t\t\t\t\t\t};\n" ++
 			"\t\t\t\t\t\t\t\t\t\t\n" ++
@@ -2074,13 +2075,13 @@ Notator {
 			"\t\t\t\t\t\t\t\t\t\tentryCurrent[\\" ++ "tiedDur]\n" ++
 			"\t\t\t\t\t\t\t\t\t}\n" ++
 			"\t\t\t\t\t\t\t\t};\n" ++
-			"\t\t\t\t\t\t\t\t(" ++ q.("\t* v") + "++ (thisVoiceIndex + 1) + " ++ q.("waitTime:") ++ " + waitTime).postln;\n" ++
+			"\t\t\t\t\t\t\t\t(" ++ q.("\t* v") + "++ thisVoiceIndex + " ++ q.("waitTime:") ++ " + waitTime).postln;\n" ++
 			"\t\t\t\t\t\t\t\twaitTime.wait\n" ++
 			"\t\t\t\t\t\t\t};\n" ++
 			"\t\t\t\t\t\t\t(" ++ q.("\t*") + "+ (thisVoiceItemIndex) +" + q.("/") + "+ (thisPartThisBarThisVoiceLastItemIndex) +" + q.("finished") ++ ").postln;\n" ++
-			"\t\t\t\t\t\t\t(" ++ q.("\t* nth bar of total bars:") + "+ nthBar + " ++ q.("/") + "+" + "numBar).postln;\n" ++
+			"\t\t\t\t\t\t\t(" ++ q.("\t* nth bar of total bars:") + "+ nthBar + " ++ q.("/") + "+" + "numBars).postln;\n" ++
 			"\t\t\t\t\t\t\tif (thisVoiceItemIndex == thisPartThisBarThisVoiceLastItemIndex) {\n" ++
-			"\t\t\t\t\t\t\t\tif (nthBar < numBar) {\n" ++
+			"\t\t\t\t\t\t\t\tif (nthBar < numBars) {\n" ++
 			"\t\t\t\t\t\t\t\t\tnthBar = nthBar + 1;\n" ++
 			"\t\t\t\t\t\t\t\t\tscorePlay.(nthBar)\n" ++
 			"\t\t\t\t\t\t\t\t}\n" ++
