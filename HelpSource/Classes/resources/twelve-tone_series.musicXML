@@ -10,7 +10,7 @@
     <rights>©</rights>
     <encoding>
       <software>SuperCollider</software>
-      <encoding-date>2023-09-21</encoding-date>
+      <encoding-date>2023-09-23</encoding-date>
     </encoding>
   </identification>
   <defaults>
@@ -74,6 +74,18 @@
       <note>
         <pitch>
           <step>F</step>
+          <alter>1.0</alter>
+          <octave>5</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>sharp</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>B</step>
           <alter>0.0</alter>
           <octave>4</octave>
         </pitch>
@@ -85,8 +97,19 @@
       <note>
         <pitch>
           <step>G</step>
+          <alter>0.0</alter>
+          <octave>5</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>G</step>
           <alter>1.0</alter>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>1008000</duration>
         <voice>1</voice>
@@ -96,13 +119,14 @@
       </note>
       <note>
         <pitch>
-          <step>A</step>
+          <step>F</step>
           <alter>0.0</alter>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>1008000</duration>
         <voice>1</voice>
         <type>whole</type>
+        <accidental>natural</accidental>
         <staff>1</staff>
       </note>
       <note>
@@ -153,14 +177,13 @@
       </note>
       <note>
         <pitch>
-          <step>F</step>
-          <alter>1.0</alter>
-          <octave>4</octave>
+          <step>A</step>
+          <alter>0.0</alter>
+          <octave>5</octave>
         </pitch>
         <duration>1008000</duration>
         <voice>1</voice>
         <type>whole</type>
-        <accidental>sharp</accidental>
         <staff>1</staff>
       </note>
       <note>
@@ -173,29 +196,6 @@
         <voice>1</voice>
         <type>whole</type>
         <accidental>sharp</accidental>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>B</step>
-          <alter>0.0</alter>
-          <octave>4</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>G</step>
-          <alter>0.0</alter>
-          <octave>4</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <accidental>natural</accidental>
         <staff>1</staff>
       </note>
     </measure>
@@ -203,13 +203,14 @@
     <measure number="2">
       <note>
         <pitch>
-          <step>G</step>
-          <alter>0.0</alter>
-          <octave>5</octave>
+          <step>F</step>
+          <alter>1.0</alter>
+          <octave>4</octave>
         </pitch>
         <duration>1008000</duration>
         <voice>1</voice>
         <type>whole</type>
+        <accidental>sharp</accidental>
         <staff>1</staff>
       </note>
       <note>
@@ -225,7 +226,19 @@
       </note>
       <note>
         <pitch>
-          <step>D</step>
+          <step>F</step>
+          <alter>0.0</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>natural</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>C</step>
           <alter>1.0</alter>
           <octave>5</octave>
         </pitch>
@@ -237,7 +250,7 @@
       </note>
       <note>
         <pitch>
-          <step>E</step>
+          <step>D</step>
           <alter>0.0</alter>
           <octave>5</octave>
         </pitch>
@@ -250,7 +263,7 @@
         <pitch>
           <step>B</step>
           <alter>0.0</alter>
-          <octave>5</octave>
+          <octave>4</octave>
         </pitch>
         <duration>1008000</duration>
         <voice>1</voice>
@@ -260,12 +273,110 @@
       <note>
         <pitch>
           <step>A</step>
+          <alter>1.0</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>sharp</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>G</step>
+          <alter>1.0</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>sharp</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>G</step>
+          <alter>0.0</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>natural</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>A</step>
+          <alter>0.0</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>natural</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>D</step>
+          <alter>1.0</alter>
+          <octave>5</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>sharp</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>E</step>
+          <alter>0.0</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <staff>1</staff>
+      </note>
+    </measure>
+  <!--=====================================================-->
+    <measure number="3">
+      <note>
+        <pitch>
+          <step>C</step>
+          <alter>1.0</alter>
+          <octave>5</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>sharp</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>G</step>
           <alter>0.0</alter>
           <octave>5</octave>
         </pitch>
         <duration>1008000</duration>
         <voice>1</voice>
         <type>whole</type>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>C</step>
+          <alter>0.0</alter>
+          <octave>5</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>natural</accidental>
         <staff>1</staff>
       </note>
       <note>
@@ -283,18 +394,17 @@
       <note>
         <pitch>
           <step>A</step>
-          <alter>1.0</alter>
+          <alter>0.0</alter>
           <octave>5</octave>
         </pitch>
         <duration>1008000</duration>
         <voice>1</voice>
         <type>whole</type>
-        <accidental>sharp</accidental>
         <staff>1</staff>
       </note>
       <note>
         <pitch>
-          <step>C</step>
+          <step>F</step>
           <alter>1.0</alter>
           <octave>5</octave>
         </pitch>
@@ -313,11 +423,12 @@
         <duration>1008000</duration>
         <voice>1</voice>
         <type>whole</type>
+        <accidental>natural</accidental>
         <staff>1</staff>
       </note>
       <note>
         <pitch>
-          <step>F</step>
+          <step>D</step>
           <alter>1.0</alter>
           <octave>5</octave>
         </pitch>
@@ -339,9 +450,6 @@
         <accidental>natural</accidental>
         <staff>1</staff>
       </note>
-    </measure>
-  <!--=====================================================-->
-    <measure number="3">
       <note>
         <pitch>
           <step>E</step>
@@ -356,111 +464,6 @@
       <note>
         <pitch>
           <step>A</step>
-          <alter>0.0</alter>
-          <octave>4</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>C</step>
-          <alter>0.0</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>C</step>
-          <alter>1.0</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <accidental>sharp</accidental>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>G</step>
-          <alter>1.0</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <accidental>sharp</accidental>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>F</step>
-          <alter>1.0</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <accidental>sharp</accidental>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>F</step>
-          <alter>0.0</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <accidental>natural</accidental>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>G</step>
-          <alter>0.0</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <accidental>natural</accidental>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>A</step>
-          <alter>1.0</alter>
-          <octave>4</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <accidental>sharp</accidental>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>D</step>
-          <alter>0.0</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>D</step>
           <alter>1.0</alter>
           <octave>5</octave>
         </pitch>
@@ -486,26 +489,13 @@
     <measure number="4">
       <note>
         <pitch>
-          <step>D</step>
-          <alter>1.0</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <accidental>sharp</accidental>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>G</step>
-          <alter>1.0</alter>
+          <step>F</step>
+          <alter>0.0</alter>
           <octave>4</octave>
         </pitch>
         <duration>1008000</duration>
         <voice>1</voice>
         <type>whole</type>
-        <accidental>sharp</accidental>
         <staff>1</staff>
       </note>
       <note>
@@ -521,6 +511,17 @@
       </note>
       <note>
         <pitch>
+          <step>E</step>
+          <alter>0.0</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
           <step>C</step>
           <alter>0.0</alter>
           <octave>5</octave>
@@ -532,43 +533,21 @@
       </note>
       <note>
         <pitch>
-          <step>G</step>
-          <alter>0.0</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <accidental>natural</accidental>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>F</step>
-          <alter>0.0</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>E</step>
-          <alter>0.0</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>F</step>
+          <step>C</step>
           <alter>1.0</alter>
           <octave>5</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>sharp</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>A</step>
+          <alter>1.0</alter>
+          <octave>4</octave>
         </pitch>
         <duration>1008000</duration>
         <voice>1</voice>
@@ -585,13 +564,37 @@
         <duration>1008000</duration>
         <voice>1</voice>
         <type>whole</type>
+        <accidental>natural</accidental>
         <staff>1</staff>
       </note>
       <note>
         <pitch>
-          <step>C</step>
+          <step>G</step>
+          <alter>0.0</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>F</step>
           <alter>1.0</alter>
-          <octave>5</octave>
+          <octave>4</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>sharp</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>G</step>
+          <alter>1.0</alter>
+          <octave>4</octave>
         </pitch>
         <duration>1008000</duration>
         <voice>1</voice>
@@ -608,12 +611,11 @@
         <duration>1008000</duration>
         <voice>1</voice>
         <type>whole</type>
-        <accidental>natural</accidental>
         <staff>1</staff>
       </note>
       <note>
         <pitch>
-          <step>A</step>
+          <step>D</step>
           <alter>1.0</alter>
           <octave>4</octave>
         </pitch>
@@ -628,30 +630,6 @@
     <measure number="5">
       <note>
         <pitch>
-          <step>G</step>
-          <alter>1.0</alter>
-          <octave>4</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <accidental>sharp</accidental>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>C</step>
-          <alter>1.0</alter>
-          <octave>4</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <accidental>sharp</accidental>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
           <step>E</step>
           <alter>0.0</alter>
           <octave>4</octave>
@@ -663,7 +641,31 @@
       </note>
       <note>
         <pitch>
-          <step>F</step>
+          <step>A</step>
+          <alter>1.0</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>sharp</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>D</step>
+          <alter>1.0</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>sharp</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>B</step>
           <alter>0.0</alter>
           <octave>4</octave>
         </pitch>
@@ -681,12 +683,23 @@
         <duration>1008000</duration>
         <voice>1</voice>
         <type>whole</type>
-        <accidental>natural</accidental>
         <staff>1</staff>
       </note>
       <note>
         <pitch>
           <step>A</step>
+          <alter>0.0</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>natural</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>G</step>
           <alter>1.0</alter>
           <octave>4</octave>
         </pitch>
@@ -694,40 +707,6 @@
         <voice>1</voice>
         <type>whole</type>
         <accidental>sharp</accidental>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>A</step>
-          <alter>0.0</alter>
-          <octave>4</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <accidental>natural</accidental>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>B</step>
-          <alter>0.0</alter>
-          <octave>4</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>D</step>
-          <alter>0.0</alter>
-          <octave>4</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
         <staff>1</staff>
       </note>
       <note>
@@ -744,6 +723,18 @@
       </note>
       <note>
         <pitch>
+          <step>F</step>
+          <alter>0.0</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>natural</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
           <step>G</step>
           <alter>0.0</alter>
           <octave>4</octave>
@@ -756,14 +747,26 @@
       </note>
       <note>
         <pitch>
-          <step>D</step>
+          <step>C</step>
           <alter>1.0</alter>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>1008000</duration>
         <voice>1</voice>
         <type>whole</type>
         <accidental>sharp</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>D</step>
+          <alter>0.0</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>natural</accidental>
         <staff>1</staff>
       </note>
     </measure>
@@ -771,21 +774,20 @@
     <measure number="6">
       <note>
         <pitch>
-          <step>A</step>
-          <alter>1.0</alter>
+          <step>G</step>
+          <alter>0.0</alter>
           <octave>4</octave>
         </pitch>
         <duration>1008000</duration>
         <voice>1</voice>
         <type>whole</type>
-        <accidental>sharp</accidental>
         <staff>1</staff>
       </note>
       <note>
         <pitch>
-          <step>D</step>
+          <step>C</step>
           <alter>1.0</alter>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>1008000</duration>
         <voice>1</voice>
@@ -807,9 +809,9 @@
       </note>
       <note>
         <pitch>
-          <step>G</step>
+          <step>D</step>
           <alter>0.0</alter>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>1008000</duration>
         <voice>1</voice>
@@ -819,13 +821,13 @@
       <note>
         <pitch>
           <step>D</step>
-          <alter>0.0</alter>
+          <alter>1.0</alter>
           <octave>5</octave>
         </pitch>
         <duration>1008000</duration>
         <voice>1</voice>
         <type>whole</type>
-        <accidental>natural</accidental>
+        <accidental>sharp</accidental>
         <staff>1</staff>
       </note>
       <note>
@@ -837,6 +839,7 @@
         <duration>1008000</duration>
         <voice>1</voice>
         <type>whole</type>
+        <accidental>natural</accidental>
         <staff>1</staff>
       </note>
       <note>
@@ -852,19 +855,7 @@
       </note>
       <note>
         <pitch>
-          <step>C</step>
-          <alter>1.0</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <accidental>sharp</accidental>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>E</step>
+          <step>A</step>
           <alter>0.0</alter>
           <octave>4</octave>
         </pitch>
@@ -888,13 +879,24 @@
       <note>
         <pitch>
           <step>A</step>
-          <alter>0.0</alter>
+          <alter>1.0</alter>
           <octave>4</octave>
         </pitch>
         <duration>1008000</duration>
         <voice>1</voice>
         <type>whole</type>
-        <accidental>natural</accidental>
+        <accidental>sharp</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>E</step>
+          <alter>0.0</alter>
+          <octave>5</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
         <staff>1</staff>
       </note>
       <note>
@@ -914,6 +916,112 @@
     <measure number="7">
       <note>
         <pitch>
+          <step>G</step>
+          <alter>1.0</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>sharp</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>D</step>
+          <alter>0.0</alter>
+          <octave>5</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>G</step>
+          <alter>0.0</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>natural</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>D</step>
+          <alter>1.0</alter>
+          <octave>5</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>sharp</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>E</step>
+          <alter>0.0</alter>
+          <octave>5</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>C</step>
+          <alter>1.0</alter>
+          <octave>5</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>sharp</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>C</step>
+          <alter>0.0</alter>
+          <octave>5</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>natural</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>A</step>
+          <alter>1.0</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>sharp</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>A</step>
+          <alter>0.0</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>natural</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
           <step>B</step>
           <alter>0.0</alter>
           <octave>4</octave>
@@ -925,118 +1033,13 @@
       </note>
       <note>
         <pitch>
-          <step>E</step>
-          <alter>0.0</alter>
-          <octave>4</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>G</step>
-          <alter>0.0</alter>
-          <octave>4</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>G</step>
-          <alter>1.0</alter>
-          <octave>4</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <accidental>sharp</accidental>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>D</step>
-          <alter>1.0</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <accidental>sharp</accidental>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>C</step>
-          <alter>1.0</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <accidental>sharp</accidental>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>C</step>
-          <alter>0.0</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <accidental>natural</accidental>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>D</step>
-          <alter>0.0</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <accidental>natural</accidental>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
           <step>F</step>
           <alter>0.0</alter>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>1008000</duration>
         <voice>1</voice>
         <type>whole</type>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>A</step>
-          <alter>0.0</alter>
-          <octave>4</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>A</step>
-          <alter>1.0</alter>
-          <octave>4</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <accidental>sharp</accidental>
         <staff>1</staff>
       </note>
       <note>
@@ -1057,39 +1060,6 @@
       <note>
         <pitch>
           <step>A</step>
-          <alter>0.0</alter>
-          <octave>4</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>D</step>
-          <alter>0.0</alter>
-          <octave>4</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>F</step>
-          <alter>0.0</alter>
-          <octave>4</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>F</step>
           <alter>1.0</alter>
           <octave>4</octave>
         </pitch>
@@ -1101,7 +1071,41 @@
       </note>
       <note>
         <pitch>
-          <step>C</step>
+          <step>E</step>
+          <alter>0.0</alter>
+          <octave>5</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>A</step>
+          <alter>0.0</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>natural</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>F</step>
+          <alter>0.0</alter>
+          <octave>5</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>F</step>
           <alter>1.0</alter>
           <octave>5</octave>
         </pitch>
@@ -1109,6 +1113,41 @@
         <voice>1</voice>
         <type>whole</type>
         <accidental>sharp</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>D</step>
+          <alter>1.0</alter>
+          <octave>5</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>sharp</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>D</step>
+          <alter>0.0</alter>
+          <octave>5</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>natural</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>C</step>
+          <alter>0.0</alter>
+          <octave>5</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
         <staff>1</staff>
       </note>
       <note>
@@ -1124,9 +1163,9 @@
       </note>
       <note>
         <pitch>
-          <step>A</step>
+          <step>C</step>
           <alter>1.0</alter>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>1008000</duration>
         <voice>1</voice>
@@ -1136,37 +1175,13 @@
       </note>
       <note>
         <pitch>
-          <step>C</step>
+          <step>G</step>
           <alter>0.0</alter>
           <octave>5</octave>
         </pitch>
         <duration>1008000</duration>
         <voice>1</voice>
         <type>whole</type>
-        <accidental>natural</accidental>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>D</step>
-          <alter>1.0</alter>
-          <octave>4</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <accidental>sharp</accidental>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>G</step>
-          <alter>0.0</alter>
-          <octave>4</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
         <staff>1</staff>
       </note>
       <note>
@@ -1179,17 +1194,6 @@
         <voice>1</voice>
         <type>whole</type>
         <accidental>sharp</accidental>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>E</step>
-          <alter>0.0</alter>
-          <octave>4</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
         <staff>1</staff>
       </note>
     </measure>
@@ -1197,6 +1201,40 @@
     <measure number="9">
       <note>
         <pitch>
+          <step>B</step>
+          <alter>0.0</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>F</step>
+          <alter>0.0</alter>
+          <octave>5</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>A</step>
+          <alter>1.0</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>sharp</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
           <step>F</step>
           <alter>1.0</alter>
           <octave>5</octave>
@@ -1209,89 +1247,7 @@
       </note>
       <note>
         <pitch>
-          <step>B</step>
-          <alter>0.0</alter>
-          <octave>4</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>D</step>
-          <alter>0.0</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>D</step>
-          <alter>1.0</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <accidental>sharp</accidental>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>A</step>
-          <alter>1.0</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <accidental>sharp</accidental>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
           <step>G</step>
-          <alter>1.0</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <accidental>sharp</accidental>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>G</step>
-          <alter>0.0</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <accidental>natural</accidental>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>A</step>
-          <alter>0.0</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <accidental>natural</accidental>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>C</step>
           <alter>0.0</alter>
           <octave>5</octave>
         </pitch>
@@ -1313,14 +1269,14 @@
       </note>
       <note>
         <pitch>
-          <step>F</step>
-          <alter>0.0</alter>
+          <step>D</step>
+          <alter>1.0</alter>
           <octave>5</octave>
         </pitch>
         <duration>1008000</duration>
         <voice>1</voice>
         <type>whole</type>
-        <accidental>natural</accidental>
+        <accidental>sharp</accidental>
         <staff>1</staff>
       </note>
       <note>
@@ -1333,6 +1289,54 @@
         <voice>1</voice>
         <type>whole</type>
         <accidental>sharp</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>C</step>
+          <alter>0.0</alter>
+          <octave>5</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>natural</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>D</step>
+          <alter>0.0</alter>
+          <octave>5</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>natural</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>G</step>
+          <alter>1.0</alter>
+          <octave>5</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>sharp</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>A</step>
+          <alter>0.0</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>natural</accidental>
         <staff>1</staff>
       </note>
     </measure>
@@ -1340,31 +1344,20 @@
     <measure number="10">
       <note>
         <pitch>
-          <step>D</step>
-          <alter>0.0</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>G</step>
-          <alter>0.0</alter>
-          <octave>4</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
           <step>A</step>
-          <alter>1.0</alter>
+          <alter>0.0</alter>
           <octave>4</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>D</step>
+          <alter>1.0</alter>
+          <octave>5</octave>
         </pitch>
         <duration>1008000</duration>
         <voice>1</voice>
@@ -1374,20 +1367,9 @@
       </note>
       <note>
         <pitch>
-          <step>B</step>
-          <alter>0.0</alter>
-          <octave>4</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>F</step>
+          <step>G</step>
           <alter>1.0</alter>
-          <octave>5</octave>
+          <octave>4</octave>
         </pitch>
         <duration>1008000</duration>
         <voice>1</voice>
@@ -1408,19 +1390,18 @@
       </note>
       <note>
         <pitch>
-          <step>D</step>
-          <alter>1.0</alter>
+          <step>F</step>
+          <alter>0.0</alter>
           <octave>5</octave>
         </pitch>
         <duration>1008000</duration>
         <voice>1</voice>
         <type>whole</type>
-        <accidental>sharp</accidental>
         <staff>1</staff>
       </note>
       <note>
         <pitch>
-          <step>F</step>
+          <step>D</step>
           <alter>0.0</alter>
           <octave>5</octave>
         </pitch>
@@ -1432,7 +1413,30 @@
       </note>
       <note>
         <pitch>
-          <step>G</step>
+          <step>C</step>
+          <alter>1.0</alter>
+          <octave>5</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>sharp</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>B</step>
+          <alter>0.0</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>A</step>
           <alter>1.0</alter>
           <octave>4</octave>
         </pitch>
@@ -1451,11 +1455,12 @@
         <duration>1008000</duration>
         <voice>1</voice>
         <type>whole</type>
+        <accidental>natural</accidental>
         <staff>1</staff>
       </note>
       <note>
         <pitch>
-          <step>C</step>
+          <step>F</step>
           <alter>1.0</alter>
           <octave>5</octave>
         </pitch>
@@ -1467,7 +1472,7 @@
       </note>
       <note>
         <pitch>
-          <step>A</step>
+          <step>G</step>
           <alter>0.0</alter>
           <octave>4</octave>
         </pitch>
@@ -1482,19 +1487,7 @@
     <measure number="11">
       <note>
         <pitch>
-          <step>C</step>
-          <alter>1.0</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <accidental>sharp</accidental>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>F</step>
+          <step>D</step>
           <alter>1.0</alter>
           <octave>4</octave>
         </pitch>
@@ -1517,6 +1510,18 @@
       </note>
       <note>
         <pitch>
+          <step>D</step>
+          <alter>0.0</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>natural</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
           <step>A</step>
           <alter>1.0</alter>
           <octave>4</octave>
@@ -1525,64 +1530,6 @@
         <voice>1</voice>
         <type>whole</type>
         <accidental>sharp</accidental>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>F</step>
-          <alter>0.0</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <accidental>natural</accidental>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>D</step>
-          <alter>1.0</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <accidental>sharp</accidental>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>D</step>
-          <alter>0.0</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <accidental>natural</accidental>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>E</step>
-          <alter>0.0</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>G</step>
-          <alter>0.0</alter>
-          <octave>4</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
         <staff>1</staff>
       </note>
       <note>
@@ -1598,9 +1545,21 @@
       </note>
       <note>
         <pitch>
-          <step>C</step>
+          <step>G</step>
+          <alter>1.0</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>sharp</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>G</step>
           <alter>0.0</alter>
-          <octave>5</octave>
+          <octave>4</octave>
         </pitch>
         <duration>1008000</duration>
         <voice>1</voice>
@@ -1610,7 +1569,52 @@
       </note>
       <note>
         <pitch>
-          <step>G</step>
+          <step>F</step>
+          <alter>0.0</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>E</step>
+          <alter>0.0</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>F</step>
+          <alter>1.0</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>sharp</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>C</step>
+          <alter>0.0</alter>
+          <octave>5</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>C</step>
           <alter>1.0</alter>
           <octave>4</octave>
         </pitch>
@@ -1625,7 +1629,7 @@
     <measure number="12">
       <note>
         <pitch>
-          <step>F</step>
+          <step>D</step>
           <alter>0.0</alter>
           <octave>5</octave>
         </pitch>
@@ -1636,9 +1640,9 @@
       </note>
       <note>
         <pitch>
-          <step>A</step>
+          <step>G</step>
           <alter>1.0</alter>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>1008000</duration>
         <voice>1</voice>
@@ -1660,7 +1664,7 @@
       </note>
       <note>
         <pitch>
-          <step>D</step>
+          <step>A</step>
           <alter>0.0</alter>
           <octave>5</octave>
         </pitch>
@@ -1672,13 +1676,13 @@
       <note>
         <pitch>
           <step>A</step>
-          <alter>0.0</alter>
+          <alter>1.0</alter>
           <octave>5</octave>
         </pitch>
         <duration>1008000</duration>
         <voice>1</voice>
         <type>whole</type>
-        <accidental>natural</accidental>
+        <accidental>sharp</accidental>
         <staff>1</staff>
       </note>
       <note>
@@ -1690,6 +1694,7 @@
         <duration>1008000</duration>
         <voice>1</voice>
         <type>whole</type>
+        <accidental>natural</accidental>
         <staff>1</staff>
       </note>
       <note>
@@ -1706,21 +1711,9 @@
       </note>
       <note>
         <pitch>
-          <step>G</step>
-          <alter>1.0</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>1008000</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <accidental>sharp</accidental>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>B</step>
+          <step>E</step>
           <alter>0.0</alter>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>1008000</duration>
         <voice>1</voice>
@@ -1741,7 +1734,19 @@
       </note>
       <note>
         <pitch>
-          <step>E</step>
+          <step>F</step>
+          <alter>0.0</alter>
+          <octave>5</octave>
+        </pitch>
+        <duration>1008000</duration>
+        <voice>1</voice>
+        <type>whole</type>
+        <accidental>natural</accidental>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>B</step>
           <alter>0.0</alter>
           <octave>5</octave>
         </pitch>

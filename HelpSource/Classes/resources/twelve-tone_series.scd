@@ -6,62 +6,62 @@
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [72.0], pitch: ['c5'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [65.0], pitch: ['f4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [68.0], pitch: ['gs4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [69.0], pitch: ['a4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [76.0], pitch: ['e5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [74.0], pitch: ['d5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [73.0], pitch: ['cs5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [75.0], pitch: ['ds5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [66.0], pitch: ['fs4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [70.0], pitch: ['as4'],
-					dynamic: \mp, velocity: 55,
+					midinote: [78.0], pitch: ['fs5'],
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [71.0], pitch: ['b4'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [67.0], pitch: ['g4'],
-					dynamic: \mp, velocity: 55,
+					midinote: [79.0], pitch: ['g5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [80.0], pitch: ['gs5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [77.0], pitch: ['f5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [76.0], pitch: ['e5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [74.0], pitch: ['d5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [73.0], pitch: ['cs5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [75.0], pitch: ['ds5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [81.0], pitch: ['a5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [70.0], pitch: ['as4'],
+					dynamic: \mp, velocity: 55
 				)
 			] // voice end
 		), // bar end
@@ -69,63 +69,63 @@
 			v1: [ // voice start
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [79.0], pitch: ['g5'],
-					dynamic: \mp, velocity: 55,
+					midinote: [66.0], pitch: ['fs4'],
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [72.0], pitch: ['c5'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [75.0], pitch: ['ds5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [76.0], pitch: ['e5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [83.0], pitch: ['b5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [81.0], pitch: ['a5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [80.0], pitch: ['gs5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [82.0], pitch: ['as5'],
-					dynamic: \mp, velocity: 55,
+					midinote: [65.0], pitch: ['f4'],
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [73.0], pitch: ['cs5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [77.0], pitch: ['f5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [78.0], pitch: ['fs5'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [74.0], pitch: ['d5'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [71.0], pitch: ['b4'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [70.0], pitch: ['as4'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [68.0], pitch: ['gs4'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [67.0], pitch: ['g4'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [69.0], pitch: ['a4'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [75.0], pitch: ['ds5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [64.0], pitch: ['e4'],
+					dynamic: \mp, velocity: 55
 				)
 			] // voice end
 		), // bar end
@@ -133,63 +133,63 @@
 			v1: [ // voice start
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [76.0], pitch: ['e5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [69.0], pitch: ['a4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [72.0], pitch: ['c5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [73.0], pitch: ['cs5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [80.0], pitch: ['gs5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [78.0], pitch: ['fs5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [77.0], pitch: ['f5'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [79.0], pitch: ['g5'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [70.0], pitch: ['as4'],
-					dynamic: \mp, velocity: 55,
+					midinote: [72.0], pitch: ['c5'],
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [74.0], pitch: ['d5'],
-					dynamic: \mp, velocity: 55,
+					midinote: [80.0], pitch: ['gs5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [81.0], pitch: ['a5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [78.0], pitch: ['fs5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [77.0], pitch: ['f5'],
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [75.0], pitch: ['ds5'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [74.0], pitch: ['d5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [76.0], pitch: ['e5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [82.0], pitch: ['as5'],
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [71.0], pitch: ['b4'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
 				)
 			] // voice end
 		), // bar end
@@ -197,63 +197,63 @@
 			v1: [ // voice start
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [75.0], pitch: ['ds5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [68.0], pitch: ['gs4'],
-					dynamic: \mp, velocity: 55,
+					midinote: [65.0], pitch: ['f4'],
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [71.0], pitch: ['b4'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [64.0], pitch: ['e4'],
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [72.0], pitch: ['c5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [79.0], pitch: ['g5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [77.0], pitch: ['f5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [76.0], pitch: ['e5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [78.0], pitch: ['fs5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [69.0], pitch: ['a4'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [73.0], pitch: ['cs5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [74.0], pitch: ['d5'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [70.0], pitch: ['as4'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [69.0], pitch: ['a4'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [67.0], pitch: ['g4'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [66.0], pitch: ['fs4'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [68.0], pitch: ['gs4'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [74.0], pitch: ['d5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [63.0], pitch: ['ds4'],
+					dynamic: \mp, velocity: 55
 				)
 			] // voice end
 		), // bar end
@@ -261,63 +261,63 @@
 			v1: [ // voice start
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [68.0], pitch: ['gs4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [61.0], pitch: ['cs4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [64.0], pitch: ['e4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [65.0], pitch: ['f4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [72.0], pitch: ['c5'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [70.0], pitch: ['as4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [69.0], pitch: ['a4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [71.0], pitch: ['b4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [62.0], pitch: ['d4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [66.0], pitch: ['fs4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [67.0], pitch: ['g4'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [63.0], pitch: ['ds4'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [71.0], pitch: ['b4'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [72.0], pitch: ['c5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [69.0], pitch: ['a4'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [68.0], pitch: ['gs4'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [66.0], pitch: ['fs4'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [65.0], pitch: ['f4'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [67.0], pitch: ['g4'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [73.0], pitch: ['cs5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [62.0], pitch: ['d4'],
+					dynamic: \mp, velocity: 55
 				)
 			] // voice end
 		), // bar end
@@ -325,63 +325,63 @@
 			v1: [ // voice start
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [70.0], pitch: ['as4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [63.0], pitch: ['ds4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [66.0], pitch: ['fs4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [67.0], pitch: ['g4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [74.0], pitch: ['d5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [72.0], pitch: ['c5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [71.0], pitch: ['b4'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [73.0], pitch: ['cs5'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [64.0], pitch: ['e4'],
-					dynamic: \mp, velocity: 55,
+					midinote: [66.0], pitch: ['fs4'],
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [68.0], pitch: ['gs4'],
-					dynamic: \mp, velocity: 55,
+					midinote: [74.0], pitch: ['d5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [75.0], pitch: ['ds5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [72.0], pitch: ['c5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [71.0], pitch: ['b4'],
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [69.0], pitch: ['a4'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [68.0], pitch: ['gs4'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [70.0], pitch: ['as4'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [76.0], pitch: ['e5'],
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [65.0], pitch: ['f4'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
 				)
 			] // voice end
 		), // bar end
@@ -389,63 +389,63 @@
 			v1: [ // voice start
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [71.0], pitch: ['b4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [64.0], pitch: ['e4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [67.0], pitch: ['g4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [68.0], pitch: ['gs4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [75.0], pitch: ['ds5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [73.0], pitch: ['cs5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [72.0], pitch: ['c5'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [74.0], pitch: ['d5'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [65.0], pitch: ['f4'],
-					dynamic: \mp, velocity: 55,
+					midinote: [67.0], pitch: ['g4'],
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [69.0], pitch: ['a4'],
-					dynamic: \mp, velocity: 55,
+					midinote: [75.0], pitch: ['ds5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [76.0], pitch: ['e5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [73.0], pitch: ['cs5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [72.0], pitch: ['c5'],
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [70.0], pitch: ['as4'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [69.0], pitch: ['a4'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [71.0], pitch: ['b4'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [77.0], pitch: ['f5'],
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [66.0], pitch: ['fs4'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
 				)
 			] // voice end
 		), // bar end
@@ -453,63 +453,63 @@
 			v1: [ // voice start
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [69.0], pitch: ['a4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [62.0], pitch: ['d4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [65.0], pitch: ['f4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [66.0], pitch: ['fs4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [73.0], pitch: ['cs5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [71.0], pitch: ['b4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [70.0], pitch: ['as4'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [76.0], pitch: ['e5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [69.0], pitch: ['a4'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [77.0], pitch: ['f5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [78.0], pitch: ['fs5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [75.0], pitch: ['ds5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [74.0], pitch: ['d5'],
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [72.0], pitch: ['c5'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [63.0], pitch: ['ds4'],
-					dynamic: \mp, velocity: 55,
+					midinote: [71.0], pitch: ['b4'],
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [67.0], pitch: ['g4'],
-					dynamic: \mp, velocity: 55,
+					midinote: [73.0], pitch: ['cs5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [79.0], pitch: ['g5'],
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [68.0], pitch: ['gs4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [64.0], pitch: ['e4'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
 				)
 			] // voice end
 		), // bar end
@@ -517,63 +517,63 @@
 			v1: [ // voice start
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [78.0], pitch: ['fs5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [71.0], pitch: ['b4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [74.0], pitch: ['d5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [75.0], pitch: ['ds5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [82.0], pitch: ['as5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [80.0], pitch: ['gs5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [79.0], pitch: ['g5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [81.0], pitch: ['a5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [72.0], pitch: ['c5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [76.0], pitch: ['e5'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [77.0], pitch: ['f5'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [70.0], pitch: ['as4'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [78.0], pitch: ['fs5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [79.0], pitch: ['g5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [76.0], pitch: ['e5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [75.0], pitch: ['ds5'],
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [73.0], pitch: ['cs5'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [72.0], pitch: ['c5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [74.0], pitch: ['d5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [80.0], pitch: ['gs5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [69.0], pitch: ['a4'],
+					dynamic: \mp, velocity: 55
 				)
 			] // voice end
 		), // bar end
@@ -581,63 +581,63 @@
 			v1: [ // voice start
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [74.0], pitch: ['d5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [67.0], pitch: ['g4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [70.0], pitch: ['as4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [71.0], pitch: ['b4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [78.0], pitch: ['fs5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [76.0], pitch: ['e5'],
-					dynamic: \mp, velocity: 55,
+					midinote: [69.0], pitch: ['a4'],
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [75.0], pitch: ['ds5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [77.0], pitch: ['f5'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [68.0], pitch: ['gs4'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [72.0], pitch: ['c5'],
-					dynamic: \mp, velocity: 55,
+					midinote: [76.0], pitch: ['e5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [77.0], pitch: ['f5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [74.0], pitch: ['d5'],
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [73.0], pitch: ['cs5'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [69.0], pitch: ['a4'],
-					dynamic: \mp, velocity: 55,
+					midinote: [71.0], pitch: ['b4'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [70.0], pitch: ['as4'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [72.0], pitch: ['c5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [78.0], pitch: ['fs5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [67.0], pitch: ['g4'],
+					dynamic: \mp, velocity: 55
 				)
 			] // voice end
 		), // bar end
@@ -645,63 +645,63 @@
 			v1: [ // voice start
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [73.0], pitch: ['cs5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [66.0], pitch: ['fs4'],
-					dynamic: \mp, velocity: 55,
+					midinote: [63.0], pitch: ['ds4'],
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [69.0], pitch: ['a4'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [62.0], pitch: ['d4'],
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [70.0], pitch: ['as4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [77.0], pitch: ['f5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [75.0], pitch: ['ds5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [74.0], pitch: ['d5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [76.0], pitch: ['e5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [67.0], pitch: ['g4'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [71.0], pitch: ['b4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [72.0], pitch: ['c5'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [68.0], pitch: ['gs4'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [67.0], pitch: ['g4'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [65.0], pitch: ['f4'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [64.0], pitch: ['e4'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [66.0], pitch: ['fs4'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [72.0], pitch: ['c5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [61.0], pitch: ['cs4'],
+					dynamic: \mp, velocity: 55
 				)
 			] // voice end
 		), // bar end
@@ -709,63 +709,63 @@
 			v1: [ // voice start
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [77.0], pitch: ['f5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [70.0], pitch: ['as4'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [73.0], pitch: ['cs5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [74.0], pitch: ['d5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [81.0], pitch: ['a5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [79.0], pitch: ['g5'],
-					dynamic: \mp, velocity: 55,
-				),
-				(
-					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [78.0], pitch: ['fs5'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [80.0], pitch: ['gs5'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [71.0], pitch: ['b4'],
-					dynamic: \mp, velocity: 55,
+					midinote: [73.0], pitch: ['cs5'],
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
-					midinote: [75.0], pitch: ['ds5'],
-					dynamic: \mp, velocity: 55,
+					midinote: [81.0], pitch: ['a5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [82.0], pitch: ['as5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [79.0], pitch: ['g5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [78.0], pitch: ['fs5'],
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [76.0], pitch: ['e5'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [75.0], pitch: ['ds5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [77.0], pitch: ['f5'],
+					dynamic: \mp, velocity: 55
+				),
+				(
+					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
+					midinote: [83.0], pitch: ['b5'],
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 4.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [72.0], pitch: ['c5'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
 				)
 			] // voice end
 		) // bar end
@@ -774,9 +774,8 @@
 
 ~play = {
 	s.waitForBoot {
-		var parts, numBar, detectNumVoices, eventPlayer;
+		var parts, detectNumVoices, eventPlayer;
 		parts = [ 'Piano' ];
-		numBar = ~twelve_tone_series[parts[0]].size;
 		detectNumVoices = { |nthBar, thisPart|
 			~twelve_tone_series[thisPart][nthBar].keys.count { |item|
 				item.asString.contains("v") }
@@ -818,7 +817,8 @@
 		};
 		
 		parts.do { |aPart|
-			var nthBar, instrument, scorePlay;
+			var numBars, nthBar, instrument, scorePlay;
+		numBars = ~twelve_tone_series[parts[0]].size;
 			nthBar = 1;
 			instrument = if (SynthDescLib.global.synthDescs.keys.includes(aPart)) {
 				aPart
@@ -829,11 +829,12 @@
 				var thisPartThisBarVoiceSize = detectNumVoices.(nthBarNum, aPart);
 				("\nbar:" + nthBarNum).postln;
 				thisPartThisBarVoiceSize.do { |thisVoiceIndex|
+					thisVoiceIndex = thisVoiceIndex + 1;
 					fork{
 						var thisPartThisBarThisVoice, thisPartThisBarThisVoiceLastItemIndex, slur;
 						thisPartThisBarThisVoice = ~twelve_tone_series[
 							aPart][nthBarNum][
-							("v" ++ (thisVoiceIndex + 1)).asSymbol
+							("v" ++ thisVoiceIndex).asSymbol
 						];
 						thisPartThisBarThisVoiceLastItemIndex = thisPartThisBarThisVoice.size - 1;
 						thisPartThisBarThisVoice.size.do { |thisVoiceItemIndex|
@@ -853,13 +854,13 @@
 										thisPartThisBarThisVoice[thisVoiceItemIndex + 1]
 									]
 								}
-								{ thisVoiceItemIndex == thisPartThisBarThisVoiceLastItemIndex } {
+								{ thisVoiceItemIndex == thisPartThisBarThisVoiceLastItemIndex  &&  (thisVoiceItemIndex != 0)} {
 									[
 										thisPartThisBarThisVoice[thisVoiceItemIndex - 1],
 										thisPartThisBarThisVoice[thisVoiceItemIndex],
-										if (nthBarNum < (~twelve_tone_series.size - 1)) {
+										if (nthBarNum < numBars) {
 											~twelve_tone_series[aPart][nthBarNum + 1][
-												("v" ++ (thisVoiceIndex + 1)).asSymbol
+												("v" ++ thisVoiceIndex).asSymbol
 											][0]
 										}
 									]
@@ -867,10 +868,10 @@
 								{ thisVoiceItemIndex == 0 } {
 									[
 										if (nthBarNum == 1) {
-											0
+											(tie: \nil)
 										} {
 											var previousItem = ~twelve_tone_series[aPart][nthBarNum - 1][
-												("v" ++ (thisVoiceIndex + 1)).asSymbol
+												("v" ++ thisVoiceIndex).asSymbol
 											];
 											previousItem[previousItem.size - 1]
 										},
@@ -881,7 +882,7 @@
 							);
 							
 							(
-								"\n\t* thisVoiceItemIndex:" + thisVoiceItemIndex ++ "\n\n\t-"
+								"\n\t* thisVoiceItemIndex:" + thisVoiceItemIndex ++ "\n\n\t*"
 								+ entryCurrent ++ "\n"
 							).postln;
 							
@@ -907,7 +908,7 @@
 										var nextTestItemDetector, nextTestItem, nexttestItemIdx;
 											nextTestItemDetector = { |testBarNum|
 											~twelve_tone_series[aPart][testBarNum][
-												( "v" ++ (thisVoiceIndex + 1)).asSymbol
+												( "v" ++ thisVoiceIndex).asSymbol
 												]
 											};
 										
@@ -974,13 +975,13 @@
 										entryCurrent[\tiedDur]
 									}
 								};
-								("	* v" ++ (thisVoiceIndex + 1) + "waitTime:" + waitTime).postln;
+								("	* v" ++ thisVoiceIndex + "waitTime:" + waitTime).postln;
 								waitTime.wait
 							};
 							("	*" + (thisVoiceItemIndex) + "/" + (thisPartThisBarThisVoiceLastItemIndex) + "finished").postln;
-							("	* nth bar of total bars:" + nthBar + "/" + numBar).postln;
+							("	* nth bar of total bars:" + nthBar + "/" + numBars).postln;
 							if (thisVoiceItemIndex == thisPartThisBarThisVoiceLastItemIndex) {
-								if (nthBar < numBar) {
+								if (nthBar < numBars) {
 									nthBar = nthBar + 1;
 									scorePlay.(nthBar)
 								}
