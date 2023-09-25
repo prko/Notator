@@ -28,6 +28,14 @@ The musical notation for the Notator class can be opened as a form of score in a
 > [WARNING]
 The way musicXML is decoded varies from software to software, so a musicXML file may look different in different software that opens it. Also, if the decoding is not correct, the score may look incorrect. You should therefore be familiar with the musicXML import characteristics of the software you use.
 
+## Score Guideline (needs further work)
+- [Score Guideline](https://rawcdn.githack.com/prko/Notator/e0bb6521e45af5d41259e67bcdf169f32f439b17/_Help%20(rendered%20HTML)/Reference/ScoreGuideline.html)
+
+## Online Help Documents
+- [Notator class](https://rawcdn.githack.com/prko/Notator/15d08873184c9ad81d8e558ca98875d5cc368de8/_Help%20(rendered%20HTML)/Classes/Notator.html)
+- [PitchClassSet class](https://rawcdn.githack.com/prko/Notator/15d08873184c9ad81d8e558ca98875d5cc368de8/_Help%20(rendered%20HTML)/Classes/PitchClassSet.html)
+- [SPN class](https://rawcdn.githack.com/prko/Notator/15d08873184c9ad81d8e558ca98875d5cc368de8/_Help%20(rendered%20HTML)/Classes/SPN.html)
+
 ## Examples
 
 ### Eighth-tone Scale through algorithmic construction
