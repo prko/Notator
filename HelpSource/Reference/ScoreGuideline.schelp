@@ -1,5 +1,5 @@
 TITLE:: Score Guideline for Notator
-summary:: musicXML File Writer for SuperCollider
+summary:: How to write musicXML File in SuperCollider
 categories:: Notator
 related:: Classes/Notator, Classes/PitchClassSet, Classes/SPN
 
