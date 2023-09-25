@@ -347,9 +347,9 @@ Notator {
 
 		articulations = (
 			a: \accent,          s: \staccato,       o: \tenuto,
-			$>: \accent,         $.: \staccato,      $-: \tenuto,
+			'>': \accent,        '.': \staccato,      '-': \tenuto,
 			A: 'strong-accent',  S: \staccatissimo,  O: 'detached-legato',
-			$^: 'strong-accent', $!: \staccatissimo, $_: 'detached-legato'
+			'^': 'strong-accent', '!': \staccatissimo, '_': 'detached-legato'
 		);
 
 		ties = (
@@ -357,7 +357,7 @@ Notator {
 				\tie:  "        <tie type=" ++ q.(\start) ++ "/>\n",
 				\tied: "          <tied type=" ++ q.(\start) ++ "/>\n"
 			),
-			$~: (
+			'~': (
 				\tie:  "        <tie type=" ++ q.(\start) ++ "/>\n",
 				\tied: "          <tied type=" ++ q.(\start) ++ "/>\n"
 			),
@@ -365,22 +365,24 @@ Notator {
 				\tie:  "        <tie type=" ++ q.(\stop) ++ "/>\n",
 				\tied: "          <tied type=" ++ q.(\stop) ++ "/>\n"
 			),
-			$`: (
+			'`': (
 				\tie:  "        <tie type=" ++ q.(\stop) ++ "/>\n",
 				\tied: "          <tied type=" ++ q.(\stop) ++ "/>\n"
 			),
 			lv: (
 				\tie:  "        <tie type=" ++ q.('let-ring') ++ "/>\n",
 				\tied: "          <tied type=" ++ q.('let-ring') ++ "/>\n"
-			),/*
+			),
+			/*
 			r: (
-			\tie:  "        <tie type=" ++ q.('let-ring') ++ "/>\n",
-			\tied: "          <tied type=" ++ q.('let-ring') ++ "/>\n"
-			),*/
+				\tie:  "        <tie type=" ++ q.('let-ring') ++ "/>\n",
+				\tied: "          <tied type=" ++ q.('let-ring') ++ "/>\n"
+			),
+			*/
 			r: (
-				\tie:  "        <tie type=" ++ q.(\stop) ++ "/>\n",
-				\tied: "          <tied type=" ++ q.(\stop) ++ "/>\n" ++
-				"          <tied type=" ++ q.('let-ring') ++ "/>\n"
+			\tie:  "        <tie type=" ++ q.(\stop) ++ "/>\n",
+			\tied: "          <tied type=" ++ q.(\stop) ++ "/>\n" ++
+			"          <tied type=" ++ q.('let-ring') ++ "/>\n"
 			),
 			R: (
 				\tie:  "        <tie type=" ++ q.(\stop) ++ "/>\n",
@@ -391,8 +393,8 @@ Notator {
 
 		slur = (
 			u: "          <slur number=" ++ q.(1) ++ " type=" ++ q.(\start) ++ "/>\n",
-			$(: "          <slur number=" ++ q.(1) ++ " type=" ++ q.(\start) ++ "/>\n",
-			$): "          <slur number=" ++ q.(1) ++ " type=" ++ q.(\stop) ++ "/>\n",
+			'(': "          <slur number=" ++ q.(1) ++ " type=" ++ q.(\start) ++ "/>\n",
+			')': "          <slur number=" ++ q.(1) ++ " type=" ++ q.(\stop) ++ "/>\n",
 			U: "          <slur number=" ++ q.(1) ++ " type=" ++ q.(\stop) ++ "/>\n"
 		);
 
@@ -479,7 +481,7 @@ Notator {
 
 		itemsPerPartPerBar = "";
 
-		renotatedVariable = $~ ++ scdfilePath.replace("~", "").basename.splitext[0][0].toLower ++ scdfilePath.basename.splitext[0][1..].replace("-", "_").replace(" ", "_");
+		renotatedVariable = $~ ++ scdfilePath.replace("~", "").replace(".", "_").replace("-", "_").basename.splitext[0][0].toLower ++ scdfilePath.basename.splitext[0][1..].replace("-", "_").replace(" ", "_");
 
 		scdfile <<  (renotatedVariable + "= ( // score start\n");
 		partsInTheFirstBar.do { |partKey, partIndex|
@@ -803,18 +805,18 @@ Notator {
 
 						if (thisEntryIsSingleNote||singleMIDINoteChecker.()||thisEntryIsChord||thisEntryIsRest) {
 							var duration_Dynamic_Articulation_Tie_Slur_Candidate,
-							dynamic_Articulation_Tie_Slur_Candidate, articulation_Tie_Slur_candidate,
+							dynamic_Articulation_Tie_Slur_Candidate, articulation_Tie_Slur_Candidate,
 							tie_Slur_Candidate, slur_Candidate,
 							thisPitches, thisPitchClass, thisPitchAlteration, thisOctave, thisPitchPerform, thisMIDIPerfrom, thisDuration,
 							thisNoteType, thisNoteTypeAndDuration,
 							tupletTimeRegister, tupletNotationRegister, tupletDurationCalculator,
 							thisDynamic, thisArticulation, thisTie, thisSlur;
 
-							duration_Dynamic_Articulation_Tie_Slur_Candidate = thisEntry[1];
-							dynamic_Articulation_Tie_Slur_Candidate = if (thisEntry[2] != nil) { thisEntry[2] };
-							articulation_Tie_Slur_candidate         = if (thisEntry[3] != nil) { thisEntry[3] };
-							tie_Slur_Candidate                      = if (thisEntry[4] != nil) { thisEntry[4] };
-							slur_Candidate                          = if (thisEntry[5] != nil) { thisEntry[5] };
+							duration_Dynamic_Articulation_Tie_Slur_Candidate = thisEntry[1].asSymbol;
+							dynamic_Articulation_Tie_Slur_Candidate = if (thisEntry[2] != nil) { thisEntry[2] }.asSymbol;
+							articulation_Tie_Slur_Candidate         = if (thisEntry[3] != nil) { thisEntry[3] }.asSymbol;
+							tie_Slur_Candidate                      = if (thisEntry[4] != nil) { thisEntry[4] }.asSymbol;
+							slur_Candidate                          = if (thisEntry[5] != nil) { thisEntry[5] }.asSymbol;
 
 							thisVoiceDurationLast = durationsLastPerPart[partKey][thisVoiceID];
 							thisVoiceDynamicLast = dynamicsLastPerPart[partKey][thisVoiceID];
@@ -1549,12 +1551,12 @@ Notator {
 										tie_Slur_Candidate
 									}
 									{
-										articulation_Tie_Slur_candidate != nil
+										articulation_Tie_Slur_Candidate != nil
 										&&
-										ties.keys.includes(articulation_Tie_Slur_candidate)
+										ties.keys.includes(articulation_Tie_Slur_Candidate)
 									} {
 										"index 3".postln;
-										articulation_Tie_Slur_candidate
+										articulation_Tie_Slur_Candidate
 									}
 									{
 										dynamic_Articulation_Tie_Slur_Candidate != nil
@@ -1678,12 +1680,12 @@ Notator {
 								thisArticulation = {
 									case
 									{
-										articulation_Tie_Slur_candidate != nil
+										articulation_Tie_Slur_Candidate != nil
 										&&
-										articulations.keys.includes(articulation_Tie_Slur_candidate)
+										articulations.keys.includes(articulation_Tie_Slur_Candidate)
 									} {
 										"index 3".postln;
-										articulation_Tie_Slur_candidate
+										articulation_Tie_Slur_Candidate
 									}
 									{
 										dynamic_Articulation_Tie_Slur_Candidate != nil
@@ -1731,12 +1733,12 @@ Notator {
 										tie_Slur_Candidate
 									}
 									{
-										articulation_Tie_Slur_candidate != nil
+										articulation_Tie_Slur_Candidate != nil
 										&&
-										slur.keys.includes(articulation_Tie_Slur_candidate)
+										slur.keys.includes(articulation_Tie_Slur_Candidate)
 									} {
 										"index 3".postln;
-										articulation_Tie_Slur_candidate
+										articulation_Tie_Slur_Candidate
 									}
 									{
 										dynamic_Articulation_Tie_Slur_Candidate != nil

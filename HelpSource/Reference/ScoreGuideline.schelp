@@ -11,7 +11,7 @@ related:: Classes/Notator, Classes/PitchClassSet, Classes/SPN
 
 
 
-Notator
+
 
 
 
@@ -3123,7 +3123,7 @@ x = [
 			v1: [
 				[68, \e],
 
-				[68, \e, \s2, $^, $r, $(]
+				[$|, \e, \F2, $^, $r, $(]
 				// The six-element array containing a scientific pitch name
 				// followed by a duration, a dynamic mark, an articulation, tie
 				// status a slur status defines the pitch of the note, its
@@ -3148,18 +3148,18 @@ x = [
 
 				[73, \sf],
 
-				[74, \pp, $A, $r],
+				[74, \pp, $^, $r],
 
-				[74, \s]
+				[$|, \F]
 				// The two-element array containing a scientific pitch name
 				// followed by an articulation defines the pitch of the note with
 				// its articulation, and its duration and dynamic mark follow
 				// those of the previous note.
 				,
 
-				[$|, \S],
+				[$|, \F],
 				[[74, 75]],
-				[$|, \h, \f, $_],
+				[$|, \h, \F, $_],
 				[$|, \p, $-],
 				[$|, $)],
 
@@ -3168,8 +3168,8 @@ x = [
 				// of the previous entry.
 				,
 
-				[[\c5, \a4, \fs4, \ds4], \x, \f],
-				[$\\, \s],
+				[[\c5, \a4, \fs4, \ds4], \x, \F],
+				[$\\, \F],
 				[$\\],
 				[$\\],
 				[$|, \7]
@@ -3183,13 +3183,80 @@ x = [
 Symbol-in-Array notation
 ||
 code::
-s
+(
+var title = \articulations;
+x = [
+	(title: title, composer: 'me', rights: '©'),
+	(
+		bar: 1,
+		p1:
+		(
+			lbl: \Soprano,
+			atr: (key: [0, \none], time:[4, 4], staves: 1, clef: [[\c, 1]]),
+			v1: // voice 1.
+			['t q 60', '68 e sf !','| e pp ~', '| q ~', '| h pp ~']
+		)
+	),
+	(
+		bar: 2,
+		p1:
+		(
+			v1: // voice 1.
+			['| dq ~', '| e `', 'r q', 'r q']
+		)
+	),
+	(
+		bar: 3,
+		p1:
+		(
+			v1: ['68 e', '| e F2 ^ r (', '69 p', '71 p', '72 sf', '73 sf',
+				'74 pp ^ r', '| F', '| F',
+				'<74 75>', '| h F _', '| p -', '| )',
+				'\\',
+				'<c5 a4 fs4 ds4> x F', '\\ F', '\\', '\\', '| h']
+		)
+	)
+].notate(("~/Downloads"+/+ title ++ ".musicxml").standardizePath, 'Dorico 4')
+)
 ::
 ##
 String notation
 ||
 code::
-s
+(
+var title = \articulations;
+x = [
+    (title: title, composer: 'me', rights: '©'),
+    (
+        bar: 1,
+        p1:
+        (
+            lbl: \Soprano,
+            atr: (key: [0, \none], time:[4, 4], staves: 1, clef: [[\c, 1]]),
+            v1: "t_q_60 68_e_sf_! |_e_pp_~ |_q_~ |_h_pp_~"
+        )
+    ),
+    (
+        bar: 2,
+        p1:
+        (
+            v1: "|_dq_~ |_e_` r_q r_q"
+        )
+    ),
+    (
+        bar: 3,
+        p1:
+        (
+            v1: "
+68_e |_e_F2_^_r_( 69_p 71_p 72_sf 73_sf
+74_pp_^_r |_F |_F
+<74_75> |_h_F__ |_p_- |_)
+\\
+<c5_a4_fs4_ds4>_x_F \\_F \\ \\ |_h"
+        )
+    )
+].notate(("~/Downloads"+/+ title ++ ".musicxml").standardizePath, 'Dorico 4')
+)
 ::
 ::
 
