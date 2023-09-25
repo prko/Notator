@@ -491,64 +491,64 @@ code::
 				(
 					dur: 1.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [76.0], pitch: ['e5'],
-					dynamic: \f, velocity: 79,
+					dynamic: \f, velocity: 79
 				),
 				(
 					dur: 1.0, tie: \start, slur: \nil, articulation: 'nil',
 					midinote: [74.0, 77.0], pitch: ['d5', 'f5'],
-					dynamic: \f, velocity: 79,
+					dynamic: \f, velocity: 79
 				),
 				(
 					dur: 0.25, tie: \stop, slur: \nil, articulation: 'nil',
 					midinote: [74.0, 77.0], pitch: ['d5', 'f5'],
-					dynamic: \f, velocity: 79,
+					dynamic: \f, velocity: 79
 				),
 				(
 					dur: 0.25, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [72.0, 75.0], pitch: ['c5', 'ef5'],
-					dynamic: \f, velocity: 79,
+					dynamic: \f, velocity: 79
 				),
 				(
 					dur: 0.5, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [71.0, 74.0], pitch: ['b4', 'd5'],
-					dynamic: \sf, velocity: 96,
+					dynamic: \sf, velocity: 96
 				),
 				(
 					dur: 1.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: Rest(1.0), pitch: Rest(1.0),
-					dynamic: \sf, velocity: 96,
+					dynamic: \sf, velocity: 96
 				)
 			], // voice end
 			v2: [ // voice start
 				(
 					dur: 1.5, tie: \nil, slur: \start, articulation: 'nil',
 					midinote: [60.0], pitch: ['c4'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 0.5, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [59.0], pitch: ['b3'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 0.5, tie: \nil, slur: \stop, articulation: 'nil',
 					midinote: [60.0], pitch: ['c4'],
-					dynamic: \mp, velocity: 55,
+					dynamic: \mp, velocity: 55
 				),
 				(
 					dur: 0.5, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [55.0, 62.0], pitch: ['g3', 'd4'],
-					dynamic: \sf, velocity: 96,
+					dynamic: \sf, velocity: 96
 				),
 				(
 					dur: 0.5, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: Rest(0.5), pitch: Rest(0.5),
-					dynamic: \sf, velocity: 96,
+					dynamic: \sf, velocity: 96
 				),
 				(
 					dur: 0.5, tie: \nil, slur: \nil, articulation: 'staccatissimo',
 					midinote: [67.0], pitch: ['g4'],
-					dynamic: \pp, velocity: 31,
+					dynamic: \pp, velocity: 31
 				)
 			] // voice end
 		), // bar end
@@ -557,59 +557,59 @@ code::
 				(
 					dur: 1.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: Rest(1.0), pitch: Rest(1.0),
-					dynamic: \sf, velocity: 96,
+					dynamic: \sf, velocity: 96
 				),
 				(
 					dur: 2.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [72.0], pitch: ['c5'],
-					dynamic: \p, velocity: 43,
+					dynamic: \p, velocity: 43
 				),
 				(
 					dur: 1.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [71.0], pitch: ['b4'],
-					dynamic: \p, velocity: 43,
+					dynamic: \p, velocity: 43
 				)
 			], // voice end
 			v2: [ // voice start
 				(
 					dur: 0.5, tie: \nil, slur: \nil, articulation: 'tenuto',
 					midinote: [60.0], pitch: ['c4'],
-					dynamic: \pp, velocity: 31,
+					dynamic: \pp, velocity: 31
 				),
 				(
 					dur: 0.5, tie: \nil, slur: \nil, articulation: 'staccato',
 					midinote: [62.0], pitch: ['d4'],
-					dynamic: \pp, velocity: 31,
+					dynamic: \pp, velocity: 31
 				),
 				(
 					dur: 0.33333333333333, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [64.0], pitch: ['e4'],
-					dynamic: \pp, velocity: 31,
+					dynamic: \pp, velocity: 31
 				),
 				(
 					dur: 0.33333333333333, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [65.0], pitch: ['f4'],
-					dynamic: \pp, velocity: 31,
+					dynamic: \pp, velocity: 31
 				),
 				(
 					dur: 0.11111111111111, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [67.0], pitch: ['g4'],
-					dynamic: \pp, velocity: 31,
+					dynamic: \pp, velocity: 31
 				),
 				(
 					dur: 0.11111111111111, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [65.0], pitch: ['f4'],
-					dynamic: \pp, velocity: 31,
+					dynamic: \pp, velocity: 31
 				),
 				(
 					dur: 0.11111111111111, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [64.0], pitch: ['e4'],
-					dynamic: \pp, velocity: 31,
+					dynamic: \pp, velocity: 31
 				),
 				(
 					dur: 2.0, tie: \nil, slur: \nil, articulation: 'nil',
 					midinote: [62.0], pitch: ['d4'],
-					dynamic: \pp, velocity: 31,
+					dynamic: \pp, velocity: 31
 				)
 			] // voice end
 		) // bar end
@@ -618,9 +618,8 @@ code::
 
 ~play = {
 	s.waitForBoot {
-		var parts, numBar, detectNumVoices, eventPlayer;
+		var parts, detectNumVoices, eventPlayer;
 		parts = [ 'test' ];
-		numBar = ~ex_1[parts[0]].size;
 		detectNumVoices = { |nthBar, thisPart|
 			~ex_1[thisPart][nthBar].keys.count { |item|
 				item.asString.contains("v") }
@@ -662,7 +661,8 @@ code::
 		};
 
 		parts.do { |aPart|
-			var nthBar, instrument, scorePlay;
+			var numBars, nthBar, instrument, scorePlay;
+		numBars = ~ex_1[parts[0]].size;
 			nthBar = 1;
 			instrument = if (SynthDescLib.global.synthDescs.keys.includes(aPart)) {
 				aPart
@@ -673,11 +673,12 @@ code::
 				var thisPartThisBarVoiceSize = detectNumVoices.(nthBarNum, aPart);
 				("\nbar:" + nthBarNum).postln;
 				thisPartThisBarVoiceSize.do { |thisVoiceIndex|
+					thisVoiceIndex = thisVoiceIndex + 1;
 					fork{
 						var thisPartThisBarThisVoice, thisPartThisBarThisVoiceLastItemIndex, slur;
 						thisPartThisBarThisVoice = ~ex_1[
 							aPart][nthBarNum][
-							("v" ++ (thisVoiceIndex + 1)).asSymbol
+							("v" ++ thisVoiceIndex).asSymbol
 						];
 						thisPartThisBarThisVoiceLastItemIndex = thisPartThisBarThisVoice.size - 1;
 						thisPartThisBarThisVoice.size.do { |thisVoiceItemIndex|
@@ -697,13 +698,13 @@ code::
 										thisPartThisBarThisVoice[thisVoiceItemIndex + 1]
 									]
 								}
-								{ thisVoiceItemIndex == thisPartThisBarThisVoiceLastItemIndex } {
+								{ thisVoiceItemIndex == thisPartThisBarThisVoiceLastItemIndex  &&  (thisVoiceItemIndex != 0)} {
 									[
 										thisPartThisBarThisVoice[thisVoiceItemIndex - 1],
 										thisPartThisBarThisVoice[thisVoiceItemIndex],
-										if (nthBarNum < (~ex_1.size - 1)) {
+										if (nthBarNum < numBars) {
 											~ex_1[aPart][nthBarNum + 1][
-												("v" ++ (thisVoiceIndex + 1)).asSymbol
+												("v" ++ thisVoiceIndex).asSymbol
 											][0]
 										}
 									]
@@ -711,10 +712,10 @@ code::
 								{ thisVoiceItemIndex == 0 } {
 									[
 										if (nthBarNum == 1) {
-											0
+											(tie: \nil)
 										} {
 											var previousItem = ~ex_1[aPart][nthBarNum - 1][
-												("v" ++ (thisVoiceIndex + 1)).asSymbol
+												("v" ++ thisVoiceIndex).asSymbol
 											];
 											previousItem[previousItem.size - 1]
 										},
@@ -725,7 +726,7 @@ code::
 							);
 
 							(
-								"\n\t* thisVoiceItemIndex:" + thisVoiceItemIndex ++ "\n\n\t-"
+								"\n\t* thisVoiceItemIndex:" + thisVoiceItemIndex ++ "\n\n\t*"
 								+ entryCurrent ++ "\n"
 							).postln;
 
@@ -751,7 +752,7 @@ code::
 										var nextTestItemDetector, nextTestItem, nexttestItemIdx;
 											nextTestItemDetector = { |testBarNum|
 											~ex_1[aPart][testBarNum][
-												( "v" ++ (thisVoiceIndex + 1)).asSymbol
+												( "v" ++ thisVoiceIndex).asSymbol
 												]
 											};
 
@@ -818,13 +819,13 @@ code::
 										entryCurrent[\tiedDur]
 									}
 								};
-								("	* v" ++ (thisVoiceIndex + 1) + "waitTime:" + waitTime).postln;
+								("	* v" ++ thisVoiceIndex + "waitTime:" + waitTime).postln;
 								waitTime.wait
 							};
 							("	*" + (thisVoiceItemIndex) + "/" + (thisPartThisBarThisVoiceLastItemIndex) + "finished").postln;
-							("	* nth bar of total bars:" + nthBar + "/" + numBar).postln;
+							("	* nth bar of total bars:" + nthBar + "/" + numBars).postln;
 							if (thisVoiceItemIndex == thisPartThisBarThisVoiceLastItemIndex) {
-								if (nthBar < numBar) {
+								if (nthBar < numBars) {
 									nthBar = nthBar + 1;
 									scorePlay.(nthBar)
 								}
