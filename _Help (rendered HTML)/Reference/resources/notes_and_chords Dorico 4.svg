@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="149.931mm" height="79.7278mm"
+ viewBox="0 0 425 226"
+ xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" baseProfile="tiny">
+<title>Slice 2</title>
+<desc>Dorico</desc>
+<defs>
+</defs>
+<g fill="none" stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel" >
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="0.5625" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(1,0,0,1,0,0)"
+font-family=".AppleSystemUIFont" font-size="13" font-weight="400" font-style="normal" 
+>
+<polyline fill="none" vector-effect="none" points="64.3125,145.02 416.2,145.02 " />
+<polyline fill="none" vector-effect="none" points="64.3125,136.02 416.2,136.02 " />
+<polyline fill="none" vector-effect="none" points="64.3125,140.52 416.2,140.52 " />
+<polyline fill="none" vector-effect="none" points="64.3125,131.52 416.2,131.52 " />
+<polyline fill="none" vector-effect="none" points="64.3125,127.02 416.2,127.02 " />
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="0.9" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(1,0,0,1,0,0)"
+font-family=".AppleSystemUIFont" font-size="13" font-weight="400" font-style="normal" 
+>
+<polyline fill="none" vector-effect="none" points="411.25,126.739 411.25,145.301 " />
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="2.25" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(1,0,0,1,0,0)"
+font-family=".AppleSystemUIFont" font-size="13" font-weight="400" font-style="normal" 
+>
+<polyline fill="none" vector-effect="none" points="415.075,126.739 415.075,145.301 " />
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="0.54" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(1,0,0,1,0,0)"
+font-family=".AppleSystemUIFont" font-size="13" font-weight="400" font-style="normal" 
+>
+<polyline fill="none" vector-effect="none" points="94.9175,129.27 94.9175,144.174 " />
+<polyline fill="none" vector-effect="none" points="127.072,129.27 127.072,144.174 " />
+<polyline fill="none" vector-effect="none" points="159.226,127.02 159.226,141.924 " />
+<polyline fill="none" vector-effect="none" points="206.177,135.174 206.177,139.674 " />
+<polyline fill="none" vector-effect="none" points="191.503,124.996 205.976,134.41 " />
+<polyline fill="none" vector-effect="none" points="191.38,120.27 191.38,139.674 " />
+<polyline fill="none" vector-effect="none" points="223.527,121.958 223.527,135.174 " />
+<polyline fill="none" vector-effect="none" points="314.607,136.848 314.607,150.083 " />
+<polyline fill="none" vector-effect="none" points="346.762,136.848 346.762,150.083 " />
+<polyline fill="none" vector-effect="none" points="378.916,136.848 378.916,150.083 " />
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,89.9063,115.77)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="1" stroke="none" transform="matrix(0.5,0,0,0.5,89.9063,115.77)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M0.576,-9.504 C0.18,-9.504 0,-9.324 0,-8.928 C0,-8.568 0.18,-8.388 0.54,-8.388 L2.628,-8.388 C2.844,-8.388 2.916,-8.388 2.916,-8.244 C2.916,-8.172 2.88,-8.064 2.844,-7.884 L0.576,0 C-0.432,3.528 -1.08,4.68 -2.52,4.68 C-2.988,4.68 -3.168,4.536 -3.168,4.356 C-3.168,4.068 -2.844,4.248 -2.304,3.888 C-1.872,3.6 -1.584,3.132 -1.584,2.556 C-1.584,1.62 -2.232,1.08 -3.204,1.08 C-4.284,1.08 -5.076,1.944 -5.076,3.06 C-5.076,4.644 -3.888,5.472 -2.376,5.472 C0.36,5.472 2.052,3.636 4.032,-0.432 C5.076,-2.628 5.868,-4.86 6.732,-7.92 L6.768,-7.956 C6.768,-8.064 7.056,-8.388 7.236,-8.388 L9.576,-8.388 C9.972,-8.388 10.152,-8.568 10.152,-8.964 C10.152,-9.324 9.972,-9.504 9.612,-9.504 L7.452,-9.504 C7.2,-9.504 7.092,-9.504 7.092,-9.684 C7.092,-9.792 7.128,-9.9 7.164,-10.116 C7.884,-13.248 8.676,-15.156 10.476,-15.156 C10.764,-15.156 11.052,-15.084 11.052,-14.868 C11.052,-14.652 10.872,-14.688 10.476,-14.508 C10.008,-14.292 9.72,-13.788 9.72,-13.14 C9.72,-12.132 10.44,-11.628 11.34,-11.628 C12.276,-11.628 13.104,-12.24 13.104,-13.572 C13.104,-14.904 12.276,-15.984 10.008,-15.984 C6.516,-15.984 4.572,-13.5 3.384,-10.044 C3.204,-9.504 3.168,-9.504 2.664,-9.504 L0.576,-9.504"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,89.9063,115.77)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="0" font-family=".AppleSystemUIFont" font-size="13" font-weight="400" font-style="normal" 
+ ></text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,89.2656,104.293)"
+font-family="Bravura Text" font-size="27" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="1" stroke="none" transform="matrix(0.5,0,0,0.5,89.2656,104.293)"
+font-family="Bravura Text" font-size="27" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M6.534,-5.724 C6.102,-6.102 5.508,-6.291 4.806,-6.291 C2.133,-6.291 0,-4.32 0,-2.214 C0,-0.945 1.026,-0.189 2.349,-0.189 C4.509,-0.189 7.182,-2.214 7.182,-4.266 L7.182,-18.09 L6.534,-18.09 L6.534,-5.724"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,89.2656,104.293)"
+font-family="Bravura Text" font-size="27" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="0" font-family=".AppleSystemUIFont" font-size="13" font-weight="400" font-style="normal" 
+ ></text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,344.87,161.45)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="1" stroke="none" transform="matrix(0.5,0,0,0.5,344.87,161.45)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M7.668,-9.504 C7.416,-9.504 7.308,-9.504 7.308,-9.684 C7.308,-9.792 7.344,-9.9 7.38,-10.116 C8.1,-13.248 8.64,-15.156 10.044,-15.156 C10.224,-15.156 10.332,-15.12 10.332,-15.012 C10.332,-14.76 9.684,-14.616 9.684,-13.644 C9.684,-12.6 10.332,-12.168 11.196,-12.168 C12.168,-12.168 12.78,-12.816 12.78,-14.004 C12.78,-14.94 12.06,-15.984 10.008,-15.984 C6.48,-15.984 4.788,-13.536 3.6,-10.044 C3.42,-9.504 3.384,-9.504 2.88,-9.504 L0.792,-9.504 C0.396,-9.504 0.216,-9.324 0.216,-8.928 C0.216,-8.568 0.396,-8.388 0.756,-8.388 L2.844,-8.388 C3.06,-8.388 3.132,-8.388 3.132,-8.244 C3.132,-8.172 3.096,-8.064 3.06,-7.884 L0.792,0 C-0.216,3.528 -0.864,4.68 -2.304,4.68 C-2.772,4.68 -2.952,4.536 -2.952,4.356 C-2.952,4.068 -2.628,4.248 -2.088,3.888 C-1.656,3.6 -1.368,3.132 -1.368,2.556 C-1.368,1.62 -2.016,1.08 -2.988,1.08 C-4.068,1.08 -4.86,1.944 -4.86,3.06 C-4.86,4.644 -3.672,5.472 -2.16,5.472 C0.576,5.472 2.268,3.636 4.248,-0.432 C5.292,-2.628 6.084,-4.86 6.948,-7.92 L6.984,-7.956 C6.984,-8.064 7.272,-8.388 7.452,-8.388 L11.484,-8.388 C11.7,-8.388 11.772,-8.388 11.772,-8.244 C11.772,-8.172 11.736,-8.064 11.7,-7.884 L9.432,0 C8.424,3.528 7.776,4.68 6.336,4.68 C6.048,4.68 5.976,4.608 5.976,4.5 C5.976,4.356 6.12,4.284 6.516,4.032 C6.948,3.744 7.128,3.348 7.128,2.772 C7.128,1.908 6.516,1.368 5.652,1.368 C4.536,1.368 3.888,2.124 3.888,3.24 C3.888,4.644 4.968,5.472 6.48,5.472 C9.216,5.472 10.908,3.636 12.888,-0.432 C13.932,-2.628 14.724,-4.86 15.588,-7.92 L15.624,-7.956 C15.624,-8.064 15.912,-8.388 16.092,-8.388 L18.432,-8.388 C18.828,-8.388 19.008,-8.568 19.008,-8.964 C19.008,-9.324 18.828,-9.504 18.468,-9.504 L16.308,-9.504 C16.056,-9.504 15.948,-9.504 15.948,-9.684 C15.948,-9.792 15.984,-9.9 16.02,-10.116 C16.74,-13.248 17.532,-15.156 19.332,-15.156 C19.62,-15.156 19.908,-15.084 19.908,-14.868 C19.908,-14.652 19.728,-14.688 19.332,-14.508 C18.864,-14.292 18.576,-13.788 18.576,-13.14 C18.576,-12.132 19.296,-11.628 20.196,-11.628 C21.132,-11.628 21.96,-12.24 21.96,-13.572 C21.96,-14.904 21.132,-15.984 18.864,-15.984 C15.372,-15.984 13.428,-13.5 12.24,-10.044 C12.06,-9.504 12.024,-9.504 11.52,-9.504 L7.668,-9.504"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,344.87,161.45)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="0" font-family=".AppleSystemUIFont" font-size="13" font-weight="400" font-style="normal" 
+ ></text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,372.462,161.45)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="1" stroke="none" transform="matrix(0.5,0,0,0.5,372.462,161.45)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M9.756,-9.864 C8.64,-9.864 7.848,-9.504 7.2,-8.928 C6.696,-8.496 6.588,-8.208 6.444,-8.208 C6.264,-8.208 6.372,-8.46 6.048,-9.072 C5.796,-9.504 5.256,-9.828 4.32,-9.828 C2.196,-9.828 1.044,-8.316 -0.072,-6.264 C-0.252,-5.94 -0.324,-5.76 -0.324,-5.58 C-0.324,-5.328 -0.144,-5.184 0.072,-5.184 C0.324,-5.184 0.468,-5.4 0.648,-5.724 C1.692,-7.524 2.412,-8.46 3.06,-8.46 C3.348,-8.46 3.456,-8.28 3.456,-8.028 C3.456,-7.74 3.348,-7.38 3.24,-7.128 L-1.188,3.852 C-1.296,4.14 -1.368,4.212 -1.728,4.212 L-2.844,4.212 C-3.168,4.212 -3.312,4.356 -3.312,4.68 C-3.312,4.968 -3.168,5.112 -2.88,5.112 L4.068,5.112 C4.392,5.112 4.536,4.968 4.536,4.644 C4.536,4.356 4.392,4.212 4.104,4.212 L2.664,4.212 C2.448,4.212 2.34,4.212 2.34,4.104 C2.34,4.068 2.376,3.96 2.412,3.852 L4.032,-0.18 C4.104,-0.36 4.176,-0.612 4.356,-0.612 C4.536,-0.612 4.644,-0.252 5.22,0.036 C5.724,0.288 6.192,0.36 6.804,0.36 C10.26,0.36 13.068,-3.24 13.068,-6.66 C13.068,-8.748 11.772,-9.864 9.756,-9.864 M22.536,-9.864 C21.42,-9.864 20.628,-9.504 19.98,-8.928 C19.476,-8.496 19.368,-8.208 19.224,-8.208 C19.044,-8.208 19.152,-8.46 18.828,-9.072 C18.576,-9.504 18.036,-9.828 17.1,-9.828 C15.372,-9.828 14.436,-8.892 13.644,-7.776 C13.428,-7.452 13.356,-7.272 13.356,-7.092 C13.356,-6.84 13.536,-6.732 13.752,-6.732 C14.004,-6.732 14.148,-6.912 14.328,-7.164 C14.328,-7.164 14.4,-7.308 14.472,-7.38 C14.832,-7.848 15.3,-8.46 15.84,-8.46 C16.128,-8.46 16.236,-8.28 16.236,-8.028 C16.236,-7.74 16.128,-7.38 16.02,-7.128 L11.592,3.852 C11.484,4.14 11.412,4.212 11.052,4.212 L9.936,4.212 C9.612,4.212 9.468,4.356 9.468,4.68 C9.468,4.968 9.612,5.112 9.9,5.112 L16.848,5.112 C17.172,5.112 17.316,4.968 17.316,4.644 C17.316,4.356 17.172,4.212 16.884,4.212 L15.444,4.212 C15.228,4.212 15.12,4.212 15.12,4.104 C15.12,4.068 15.156,3.96 15.192,3.852 L16.812,-0.18 C16.884,-0.36 16.956,-0.612 17.136,-0.612 C17.316,-0.612 17.424,-0.252 18,0.036 C18.504,0.288 18.972,0.36 19.584,0.36 C23.04,0.36 25.848,-3.24 25.848,-6.66 C25.848,-8.748 24.552,-9.864 22.536,-9.864 M35.316,-9.864 C34.2,-9.864 33.408,-9.504 32.76,-8.928 C32.256,-8.496 32.148,-8.208 32.004,-8.208 C31.824,-8.208 31.932,-8.46 31.608,-9.072 C31.356,-9.504 30.816,-9.828 29.88,-9.828 C28.152,-9.828 27.216,-8.892 26.424,-7.776 C26.208,-7.452 26.136,-7.272 26.136,-7.092 C26.136,-6.84 26.316,-6.732 26.532,-6.732 C26.784,-6.732 26.928,-6.912 27.108,-7.164 C27.108,-7.164 27.18,-7.308 27.252,-7.38 C27.612,-7.848 28.08,-8.46 28.62,-8.46 C28.908,-8.46 29.016,-8.28 29.016,-8.028 C29.016,-7.74 28.908,-7.38 28.8,-7.128 L24.372,3.852 C24.264,4.14 24.192,4.212 23.832,4.212 L22.716,4.212 C22.392,4.212 22.248,4.356 22.248,4.68 C22.248,4.968 22.392,5.112 22.68,5.112 L29.628,5.112 C29.952,5.112 30.096,4.968 30.096,4.644 C30.096,4.356 29.952,4.212 29.664,4.212 L28.224,4.212 C28.008,4.212 27.9,4.212 27.9,4.104 C27.9,4.068 27.936,3.96 27.972,3.852 L29.592,-0.18 C29.664,-0.36 29.736,-0.612 29.916,-0.612 C30.096,-0.612 30.204,-0.252 30.78,0.036 C31.284,0.288 31.752,0.36 32.364,0.36 C35.82,0.36 38.628,-3.24 38.628,-6.66 C38.628,-8.748 37.332,-9.864 35.316,-9.864 M8.784,-8.532 C9.396,-8.532 9.612,-7.992 9.612,-7.2 C9.612,-5.436 7.704,-0.864 5.976,-0.864 C5.364,-0.864 5.076,-1.26 5.076,-2.016 C5.076,-2.772 5.364,-3.492 5.76,-4.5 L6.48,-6.264 C6.984,-7.488 7.92,-8.532 8.784,-8.532 M21.564,-8.532 C22.176,-8.532 22.392,-7.992 22.392,-7.2 C22.392,-5.436 20.484,-0.864 18.756,-0.864 C18.144,-0.864 17.856,-1.26 17.856,-2.016 C17.856,-2.772 18.144,-3.492 18.54,-4.5 L19.26,-6.264 C19.764,-7.488 20.7,-8.532 21.564,-8.532 M34.344,-8.532 C34.956,-8.532 35.172,-7.992 35.172,-7.2 C35.172,-5.436 33.264,-0.864 31.536,-0.864 C30.924,-0.864 30.636,-1.26 30.636,-2.016 C30.636,-2.772 30.924,-3.492 31.32,-4.5 L32.04,-6.264 C32.544,-7.488 33.48,-8.532 34.344,-8.532 "/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,372.462,161.45)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="0" font-family=".AppleSystemUIFont" font-size="13" font-weight="400" font-style="normal" 
+ ></text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,89.2656,145.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="1" stroke="none" transform="matrix(0.5,0,0,0.5,89.2656,145.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M3.888,5.04 C7.452,5.04 11.844,1.728 11.844,-1.692 C11.844,-3.708 10.224,-5.04 7.92,-5.04 C3.528,-5.04 0,-1.764 0,1.692 C0,3.78 1.728,5.04 3.888,5.04 "/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,89.2656,145.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="0" font-family=".AppleSystemUIFont" font-size="13" font-weight="400" font-style="normal" 
+ ></text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,121.42,145.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="1" stroke="none" transform="matrix(0.5,0,0,0.5,121.42,145.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M3.888,5.04 C7.452,5.04 11.844,1.728 11.844,-1.692 C11.844,-3.708 10.224,-5.04 7.92,-5.04 C3.528,-5.04 0,-1.764 0,1.692 C0,3.78 1.728,5.04 3.888,5.04 "/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,121.42,145.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="0" font-family=".AppleSystemUIFont" font-size="13" font-weight="400" font-style="normal" 
+ ></text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,153.574,142.77)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="1" stroke="none" transform="matrix(0.5,0,0,0.5,153.574,142.77)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M3.888,5.04 C7.452,5.04 11.844,1.728 11.844,-1.692 C11.844,-3.708 10.224,-5.04 7.92,-5.04 C3.528,-5.04 0,-1.764 0,1.692 C0,3.78 1.728,5.04 3.888,5.04 "/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,153.574,142.77)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="0" font-family=".AppleSystemUIFont" font-size="13" font-weight="400" font-style="normal" 
+ ></text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,181.58,136.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="1" stroke="none" transform="matrix(0.5,0,0,0.5,181.58,136.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M5.076,-6.516 C5.004,-6.516 4.968,-6.48 4.932,-6.48 C4.932,-6.48 2.628,-5.652 1.692,-5.652 C1.476,-5.652 1.332,-5.688 1.332,-5.832 L1.332,-11.844 C1.332,-12.096 1.116,-12.276 0.9,-12.276 L0.432,-12.276 C0.18,-12.276 0,-12.096 0,-11.844 L0,6.696 C0,6.912 0.108,7.02 0.324,7.02 L0.396,6.984 C0.432,6.984 0.504,6.984 0.54,6.948 C1.044,6.732 3.06,5.868 4.104,5.868 C4.464,5.868 4.716,5.976 4.716,6.264 L4.716,11.628 C4.716,11.88 4.896,12.06 5.148,12.06 L5.616,12.06 C5.832,12.06 6.048,11.88 6.048,11.628 L6.048,-6.444 C6.048,-6.624 5.904,-6.732 5.76,-6.732 C5.724,-6.732 5.652,-6.732 5.616,-6.696 L5.076,-6.516 M1.332,-1.404 C1.332,-1.908 3.528,-2.844 4.392,-2.844 C4.608,-2.844 4.716,-2.808 4.716,-2.664 L4.716,1.044 C4.716,1.692 2.664,2.52 1.764,2.52 C1.512,2.52 1.332,2.448 1.332,2.304 L1.332,-1.404"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,181.58,136.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="0" font-family=".AppleSystemUIFont" font-size="13" font-weight="400" font-style="normal" 
+ ></text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,177.469,140.52)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="1" stroke="none" transform="matrix(0.5,0,0,0.5,177.469,140.52)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M5.076,-6.516 C5.004,-6.516 4.968,-6.48 4.932,-6.48 C4.932,-6.48 2.628,-5.652 1.692,-5.652 C1.476,-5.652 1.332,-5.688 1.332,-5.832 L1.332,-11.844 C1.332,-12.096 1.116,-12.276 0.9,-12.276 L0.432,-12.276 C0.18,-12.276 0,-12.096 0,-11.844 L0,6.696 C0,6.912 0.108,7.02 0.324,7.02 L0.396,6.984 C0.432,6.984 0.504,6.984 0.54,6.948 C1.044,6.732 3.06,5.868 4.104,5.868 C4.464,5.868 4.716,5.976 4.716,6.264 L4.716,11.628 C4.716,11.88 4.896,12.06 5.148,12.06 L5.616,12.06 C5.832,12.06 6.048,11.88 6.048,11.628 L6.048,-6.444 C6.048,-6.624 5.904,-6.732 5.76,-6.732 C5.724,-6.732 5.652,-6.732 5.616,-6.696 L5.076,-6.516 M1.332,-1.404 C1.332,-1.908 3.528,-2.844 4.392,-2.844 C4.608,-2.844 4.716,-2.808 4.716,-2.664 L4.716,1.044 C4.716,1.692 2.664,2.52 1.764,2.52 C1.512,2.52 1.332,2.448 1.332,2.304 L1.332,-1.404"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,177.469,140.52)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="0" font-family=".AppleSystemUIFont" font-size="13" font-weight="400" font-style="normal" 
+ ></text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,200.525,136.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="1" stroke="none" transform="matrix(0.5,0,0,0.5,200.525,136.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M3.888,5.04 C7.452,5.04 11.844,1.728 11.844,-1.692 C11.844,-3.708 10.224,-5.04 7.92,-5.04 C3.528,-5.04 0,-1.764 0,1.692 C0,3.78 1.728,5.04 3.888,5.04 "/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,200.525,136.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="0" font-family=".AppleSystemUIFont" font-size="13" font-weight="400" font-style="normal" 
+ ></text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,200.525,140.52)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="1" stroke="none" transform="matrix(0.5,0,0,0.5,200.525,140.52)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M3.888,5.04 C7.452,5.04 11.844,1.728 11.844,-1.692 C11.844,-3.708 10.224,-5.04 7.92,-5.04 C3.528,-5.04 0,-1.764 0,1.692 C0,3.78 1.728,5.04 3.888,5.04 "/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,200.525,140.52)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="0" font-family=".AppleSystemUIFont" font-size="13" font-weight="400" font-style="normal" 
+ ></text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,185.728,140.52)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="1" stroke="none" transform="matrix(0.5,0,0,0.5,185.728,140.52)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M3.888,5.04 C7.452,5.04 11.844,1.728 11.844,-1.692 C11.844,-3.708 10.224,-5.04 7.92,-5.04 C3.528,-5.04 0,-1.764 0,1.692 C0,3.78 1.728,5.04 3.888,5.04 "/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,185.728,140.52)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="0" font-family=".AppleSystemUIFont" font-size="13" font-weight="400" font-style="normal" 
+ ></text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,185.728,136.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="1" stroke="none" transform="matrix(0.5,0,0,0.5,185.728,136.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M3.888,5.04 C7.452,5.04 11.844,1.728 11.844,-1.692 C11.844,-3.708 10.224,-5.04 7.92,-5.04 C3.528,-5.04 0,-1.764 0,1.692 C0,3.78 1.728,5.04 3.888,5.04 "/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,185.728,136.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="0" font-family=".AppleSystemUIFont" font-size="13" font-weight="400" font-style="normal" 
+ ></text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,196.181,136.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="1" stroke="none" transform="matrix(0.5,0,0,0.5,196.181,136.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M6.444,-6.012 C6.444,-6.192 6.3,-6.3 6.156,-6.3 C6.12,-6.3 6.048,-6.3 6.012,-6.264 C6.012,-6.264 4.284,-5.616 4.212,-5.616 C3.888,-5.616 3.744,-6.012 3.744,-6.336 L3.744,-10.656 C3.744,-10.872 3.528,-11.052 3.24,-11.052 C2.7,-11.052 2.628,-10.728 2.628,-10.44 L2.628,-5.76 C2.628,-5.472 2.52,-5.04 2.268,-4.824 C1.62,-4.572 1.044,-4.284 0.432,-4.032 C0.216,-3.96 0,-3.672 0,-3.456 L0,-0.9 C0,-0.684 0.108,-0.576 0.324,-0.576 L0.396,-0.612 C0.432,-0.612 1.836,-1.224 2.16,-1.332 L2.196,-1.368 C2.448,-1.368 2.664,-1.044 2.664,-0.756 L2.664,2.844 C2.664,3.24 2.52,3.564 2.304,3.636 L0.432,4.428 C0.216,4.5 0,4.788 0,5.004 L0,7.56 C0,7.776 0.108,7.884 0.324,7.884 L0.396,7.848 C0.432,7.848 1.8,7.272 2.124,7.128 C2.304,7.056 2.628,7.524 2.628,7.812 L2.628,12.312 C2.628,12.528 2.844,12.708 3.132,12.708 C3.672,12.708 3.744,12.456 3.744,12.096 L3.744,7.128 C3.744,7.02 3.744,6.948 3.78,6.84 C3.816,6.624 3.96,6.408 4.104,6.336 C4.392,6.264 6.012,5.616 6.012,5.616 C6.228,5.544 6.444,5.256 6.444,5.04 L6.444,2.484 C6.444,2.268 6.336,2.16 6.12,2.16 L6.048,2.196 C6.048,2.196 6.012,2.196 6.012,2.196 L6.012,2.16 C6.012,2.16 4.356,2.844 4.212,2.88 C3.96,2.88 3.708,2.664 3.708,2.268 L3.708,-1.08 C3.708,-1.368 3.888,-2.016 4.176,-2.124 C4.5,-2.268 6.012,-2.844 6.012,-2.844 C6.228,-2.952 6.444,-3.204 6.444,-3.456 L6.444,-6.012"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,196.181,136.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="0" font-family=".AppleSystemUIFont" font-size="13" font-weight="400" font-style="normal" 
+ ></text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,192.213,140.52)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="1" stroke="none" transform="matrix(0.5,0,0,0.5,192.213,140.52)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M6.444,-6.012 C6.444,-6.192 6.3,-6.3 6.156,-6.3 C6.12,-6.3 6.048,-6.3 6.012,-6.264 C6.012,-6.264 4.284,-5.616 4.212,-5.616 C3.888,-5.616 3.744,-6.012 3.744,-6.336 L3.744,-10.656 C3.744,-10.872 3.528,-11.052 3.24,-11.052 C2.7,-11.052 2.628,-10.728 2.628,-10.44 L2.628,-5.76 C2.628,-5.472 2.52,-5.04 2.268,-4.824 C1.62,-4.572 1.044,-4.284 0.432,-4.032 C0.216,-3.96 0,-3.672 0,-3.456 L0,-0.9 C0,-0.684 0.108,-0.576 0.324,-0.576 L0.396,-0.612 C0.432,-0.612 1.836,-1.224 2.16,-1.332 L2.196,-1.368 C2.448,-1.368 2.664,-1.044 2.664,-0.756 L2.664,2.844 C2.664,3.24 2.52,3.564 2.304,3.636 L0.432,4.428 C0.216,4.5 0,4.788 0,5.004 L0,7.56 C0,7.776 0.108,7.884 0.324,7.884 L0.396,7.848 C0.432,7.848 1.8,7.272 2.124,7.128 C2.304,7.056 2.628,7.524 2.628,7.812 L2.628,12.312 C2.628,12.528 2.844,12.708 3.132,12.708 C3.672,12.708 3.744,12.456 3.744,12.096 L3.744,7.128 C3.744,7.02 3.744,6.948 3.78,6.84 C3.816,6.624 3.96,6.408 4.104,6.336 C4.392,6.264 6.012,5.616 6.012,5.616 C6.228,5.544 6.444,5.256 6.444,5.04 L6.444,2.484 C6.444,2.268 6.336,2.16 6.12,2.16 L6.048,2.196 C6.048,2.196 6.012,2.196 6.012,2.196 L6.012,2.16 C6.012,2.16 4.356,2.844 4.212,2.88 C3.96,2.88 3.708,2.664 3.708,2.268 L3.708,-1.08 C3.708,-1.368 3.888,-2.016 4.176,-2.124 C4.5,-2.268 6.012,-2.844 6.012,-2.844 C6.228,-2.952 6.444,-3.204 6.444,-3.456 L6.444,-6.012"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,192.213,140.52)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="0" font-family=".AppleSystemUIFont" font-size="13" font-weight="400" font-style="normal" 
+ ></text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,213.726,136.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="1" stroke="none" transform="matrix(0.5,0,0,0.5,213.726,136.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M5.076,-6.516 C5.004,-6.516 4.968,-6.48 4.932,-6.48 C4.932,-6.48 2.628,-5.652 1.692,-5.652 C1.476,-5.652 1.332,-5.688 1.332,-5.832 L1.332,-11.844 C1.332,-12.096 1.116,-12.276 0.9,-12.276 L0.432,-12.276 C0.18,-12.276 0,-12.096 0,-11.844 L0,6.696 C0,6.912 0.108,7.02 0.324,7.02 L0.396,6.984 C0.432,6.984 0.504,6.984 0.54,6.948 C1.044,6.732 3.06,5.868 4.104,5.868 C4.464,5.868 4.716,5.976 4.716,6.264 L4.716,11.628 C4.716,11.88 4.896,12.06 5.148,12.06 L5.616,12.06 C5.832,12.06 6.048,11.88 6.048,11.628 L6.048,-6.444 C6.048,-6.624 5.904,-6.732 5.76,-6.732 C5.724,-6.732 5.652,-6.732 5.616,-6.696 L5.076,-6.516 M1.332,-1.404 C1.332,-1.908 3.528,-2.844 4.392,-2.844 C4.608,-2.844 4.716,-2.808 4.716,-2.664 L4.716,1.044 C4.716,1.692 2.664,2.52 1.764,2.52 C1.512,2.52 1.332,2.448 1.332,2.304 L1.332,-1.404"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,213.726,136.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="0" font-family=".AppleSystemUIFont" font-size="13" font-weight="400" font-style="normal" 
+ ></text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,217.875,136.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="1" stroke="none" transform="matrix(0.5,0,0,0.5,217.875,136.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M3.888,5.04 C7.452,5.04 11.844,1.728 11.844,-1.692 C11.844,-3.708 10.224,-5.04 7.92,-5.04 C3.528,-5.04 0,-1.764 0,1.692 C0,3.78 1.728,5.04 3.888,5.04 "/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,217.875,136.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="0" font-family=".AppleSystemUIFont" font-size="13" font-weight="400" font-style="normal" 
+ ></text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,250.029,138.27)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="1" stroke="none" transform="matrix(0.5,0,0,0.5,250.029,138.27)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M8.46,-4.932 C3.24,-4.932 0,-2.736 0,-0.072 C0,2.556 2.232,4.896 8.064,4.896 C14.472,4.896 16.524,2.664 16.524,-0.072 C16.524,-2.844 12.096,-4.932 8.46,-4.932 M7.452,-4.032 C10.116,-4.032 12.276,-1.152 12.276,1.224 C12.276,3.204 11.052,3.996 9.288,3.996 C6.696,3.996 4.212,1.008 4.212,-1.512 C4.212,-3.528 5.616,-4.032 7.452,-4.032 "/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,250.029,138.27)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="0" font-family=".AppleSystemUIFont" font-size="13" font-weight="400" font-style="normal" 
+ ></text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,314.337,136.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="1" stroke="none" transform="matrix(0.5,0,0,0.5,314.337,136.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M3.888,5.04 C7.452,5.04 11.844,1.728 11.844,-1.692 C11.844,-3.708 10.224,-5.04 7.92,-5.04 C3.528,-5.04 0,-1.764 0,1.692 C0,3.78 1.728,5.04 3.888,5.04 "/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,314.337,136.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="0" font-family=".AppleSystemUIFont" font-size="13" font-weight="400" font-style="normal" 
+ ></text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,346.492,136.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="1" stroke="none" transform="matrix(0.5,0,0,0.5,346.492,136.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M3.888,5.04 C7.452,5.04 11.844,1.728 11.844,-1.692 C11.844,-3.708 10.224,-5.04 7.92,-5.04 C3.528,-5.04 0,-1.764 0,1.692 C0,3.78 1.728,5.04 3.888,5.04 "/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,346.492,136.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="0" font-family=".AppleSystemUIFont" font-size="13" font-weight="400" font-style="normal" 
+ ></text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,378.646,136.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="1" stroke="none" transform="matrix(0.5,0,0,0.5,378.646,136.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M3.888,5.04 C7.452,5.04 11.844,1.728 11.844,-1.692 C11.844,-3.708 10.224,-5.04 7.92,-5.04 C3.528,-5.04 0,-1.764 0,1.692 C0,3.78 1.728,5.04 3.888,5.04 "/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,378.646,136.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="0" font-family=".AppleSystemUIFont" font-size="13" font-weight="400" font-style="normal" 
+ ></text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,66.5625,145.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="1" stroke="none" transform="matrix(0.5,0,0,0.5,66.5625,145.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M8.28,-17.352 C8.28,-17.856 8.028,-18.108 7.524,-18.108 L7.488,-18.108 C6.984,-18.108 6.732,-17.856 6.732,-17.352 L6.732,17.352 C6.732,17.856 6.984,18.108 7.488,18.108 L7.524,18.108 C8.028,18.108 8.28,17.856 8.28,17.352 L8.28,1.584 C8.28,1.296 8.46,1.332 8.604,1.368 C9.54,1.62 11.052,2.556 11.808,6.624 C11.916,7.2 12.132,7.524 12.492,7.524 C12.888,7.524 13.068,7.164 13.248,6.552 C13.716,4.968 14.544,3.204 17.1,3.204 C19.44,3.204 20.088,5.508 20.088,10.224 C20.088,14.94 19.26,17.064 16.272,17.064 C15.768,17.064 13.212,16.848 13.212,16.092 C13.212,15.912 13.788,15.696 14.184,15.552 C14.904,15.3 15.624,14.58 15.624,13.212 C15.624,11.628 14.58,10.728 13.176,10.728 C11.628,10.728 10.404,11.772 10.404,13.68 C10.404,15.948 12.384,18.216 16.668,18.216 C22.572,18.216 25.164,14.076 25.164,10.332 C25.164,5.364 22.428,1.908 17.64,1.908 C16.596,1.908 15.912,2.088 15.444,2.232 C15.084,2.34 14.724,2.412 14.4,2.196 C13.896,1.872 13.104,0.72 13.104,0 C13.104,-0.72 13.896,-1.872 14.4,-2.196 C14.724,-2.412 15.084,-2.34 15.444,-2.232 C15.912,-2.088 16.596,-1.908 17.64,-1.908 C22.428,-1.908 25.164,-5.364 25.164,-10.332 C25.164,-14.076 22.572,-18.216 16.668,-18.216 C12.384,-18.216 10.404,-15.948 10.404,-13.68 C10.404,-11.772 11.628,-10.728 13.176,-10.728 C14.58,-10.728 15.624,-11.628 15.624,-13.212 C15.624,-14.58 14.904,-15.3 14.184,-15.552 C13.788,-15.696 13.212,-15.912 13.212,-16.092 C13.212,-16.848 15.768,-17.064 16.272,-17.064 C19.26,-17.064 20.088,-14.94 20.088,-10.224 C20.088,-5.508 19.44,-3.204 17.1,-3.204 C14.544,-3.204 13.716,-4.968 13.248,-6.552 C13.068,-7.164 12.888,-7.524 12.492,-7.524 C12.132,-7.524 11.916,-7.2 11.808,-6.624 C11.052,-2.556 9.54,-1.62 8.604,-1.368 C8.46,-1.332 8.28,-1.296 8.28,-1.584 L8.28,-17.352 M0.756,-18.108 C0.252,-18.108 0,-17.856 0,-17.352 L0,17.352 C0,17.856 0.252,18.108 0.756,18.108 L3.852,18.108 C4.356,18.108 4.608,17.856 4.608,17.352 L4.608,-17.352 C4.608,-17.856 4.356,-18.108 3.852,-18.108 L0.756,-18.108"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,66.5625,145.02)"
+font-family="Bravura" font-size="36" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="0" font-family=".AppleSystemUIFont" font-size="13" font-weight="400" font-style="normal" 
+ ></text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,92.8516,104.293)"
+font-family="Academico" font-size="16" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="0" font-family="Academico" font-size="16" font-weight="400" font-style="normal" 
+ > = 120</text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="0.54" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(1,0,0,1,0,0)"
+font-family="Academico" font-size="16" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="0.54" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(0.5,0,0,0.5,9,129.293)"
+font-family="Academico" font-size="16" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,9,129.293)"
+font-family="Academico" font-size="16" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0.375" y="17.625" font-family="Academico" font-size="18" font-weight="400" font-style="normal" 
+ >Soprano 1</text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="0.54" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(0.5,0,0,0.5,9,129.293)"
+font-family="Academico" font-size="16" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="0.54" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(1,0,0,1,0,0)"
+font-family="Academico" font-size="16" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#11cc00" stroke-opacity="1" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(1,0,0,1,0,0)"
+font-family="Academico" font-size="16" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#11cc00" stroke-opacity="1" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(0.5,0,0,0.5,9,207.77)"
+font-family="Academico" font-size="16" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#11cc00" stroke-opacity="1" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(0.5,0,0,0.5,9,207.77)"
+font-family="Academico" font-size="16" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,9,207.77)"
+font-family="Academico" font-size="16" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="400.531" y="15.6719" font-family="Academico" font-size="16" font-weight="400" font-style="normal" 
+ >©</text>
+</g>
+
+<g fill="none" stroke="#11cc00" stroke-opacity="1" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(0.5,0,0,0.5,9,207.77)"
+font-family="Academico" font-size="16" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#11cc00" stroke-opacity="1" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(1,0,0,1,0,0)"
+font-family="Academico" font-size="16" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#11cc00" stroke-opacity="1" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(0.5,0,0,0.5,9,14.5)"
+font-family="Academico" font-size="16" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#11cc00" stroke-opacity="1" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(0.5,0,0,0.5,9,14.5)"
+font-family="Academico" font-size="16" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,9,14.5)"
+font-family="Academico" font-size="16" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="251.453" y="39.1875" font-family="Academico" font-size="40" font-weight="400" font-style="normal" 
+ >notes and chords</text>
+</g>
+
+<g fill="none" stroke="#11cc00" stroke-opacity="1" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(0.5,0,0,0.5,9,14.5)"
+font-family="Academico" font-size="16" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#11cc00" stroke-opacity="1" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(1,0,0,1,0,0)"
+font-family="Academico" font-size="16" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#11cc00" stroke-opacity="1" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(0.5,0,0,0.5,9,50.75)"
+font-family="Academico" font-size="16" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#11cc00" stroke-opacity="1" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(0.5,0,0,0.5,9,50.75)"
+font-family="Academico" font-size="16" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#11cc00" stroke-opacity="1" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(0.5,0,0,0.5,9,50.75)"
+font-family="Academico" font-size="16" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#11cc00" stroke-opacity="1" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(1,0,0,1,0,0)"
+font-family="Academico" font-size="16" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#11cc00" stroke-opacity="1" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(0.5,0,0,0.5,161.2,50.75)"
+font-family="Academico" font-size="16" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#11cc00" stroke-opacity="1" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(0.5,0,0,0.5,161.2,50.75)"
+font-family="Academico" font-size="16" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#11cc00" stroke-opacity="1" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(0.5,0,0,0.5,161.2,50.75)"
+font-family="Academico" font-size="16" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#11cc00" stroke-opacity="1" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(1,0,0,1,0,0)"
+font-family="Academico" font-size="16" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#11cc00" stroke-opacity="1" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(0.5,0,0,0.5,9,71)"
+font-family="Academico" font-size="16" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#11cc00" stroke-opacity="1" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(0.5,0,0,0.5,9,71)"
+font-family="Academico" font-size="16" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,0,0,0.5,9,71)"
+font-family="Academico" font-size="16" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="265.422" y="31.3594" font-family="Academico" font-size="32" font-weight="400" font-style="normal" 
+ >1. notes and chords</text>
+</g>
+
+<g fill="none" stroke="#11cc00" stroke-opacity="1" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(0.5,0,0,0.5,9,71)"
+font-family="Academico" font-size="16" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#11cc00" stroke-opacity="1" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(1,0,0,1,0,0)"
+font-family="Academico" font-size="16" font-weight="400" font-style="normal" 
+>
+</g>
+</g>
+</svg>

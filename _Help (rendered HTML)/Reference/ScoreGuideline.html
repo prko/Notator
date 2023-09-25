@@ -1,0 +1,1633 @@
+<!doctype html><html lang='en'><head><title>Score Guideline for Notator | SuperCollider 3.13.0 Help</title>
+<link rel='stylesheet' href='https://doc.sccode.org/scdoc.css' type='text/css' />
+<link rel='stylesheet' href='https://doc.sccode.org/codemirror.css' type='text/css' />
+<link rel='stylesheet' href='https://doc.sccode.org/editor.css' type='text/css' />
+<link rel='stylesheet' href='https://doc.sccode.org/frontend.css' type='text/css' />
+<link rel='stylesheet' href='./../custom.css' type='text/css' />
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+<script src='https://doc.sccode.org/lib/jquery.min.js'></script>
+<script src='https://doc.sccode.org/lib/codemirror-5.39.2.min.js' type='text/javascript'></script>
+<script src='https://doc.sccode.org/lib/codemirror-addon-simple-5.39.2.min.js' type='text/javascript'></script>
+<script>
+var helpRoot = './..';
+var scdoc_title = 'Score Guideline for Notator';
+var scdoc_sc_version = '3.13.0';
+</script>
+<script src='https://doc.sccode.org/scdoc.js' type='text/javascript'></script>
+<script src='https://doc.sccode.org/docmap.js' type='text/javascript'></script>
+<script src='qrc:///qtwebchannel/qwebchannel.js' type='text/javascript'></script>
+</head>
+<body onload='fixTOC()'>
+<div id='toc'>
+<div id='toctitle'>Score Guideline for Notator:</div>
+<span class='toc_search'>Filter: <input id='toc_search'></span><ul class='toc'><li class='toc1'><a href='#1.%20Overview'>1. Overview</a></li>
+<ul class='toc'></ul><li class='toc1'><a href='#2.%20Adding%20title,%20composer%20and%20copyright'>2. Adding title, composer and copyright</a></li>
+<ul class='toc'></ul><li class='toc1'><a href='#3.%20Adding%20one%20or%20more%20bars'>3. Adding one or more bars</a></li>
+<ul class='toc'></ul><li class='toc1'><a href='#4.%20Adding%20the%20first%20bar%20part%20elements'>4. Adding the first bar part elements</a></li>
+<ul class='toc'><li class='toc2'><a href='#4.1.%20Adding%20one%20or%20more%20parts'>4.1. Adding one or more parts</a></li>
+<ul class='toc'></ul><li class='toc2'><a href='#4.2.%20Adding%20one%20or%20more%20staves%20with%20a%20staff%20label%20per%20part'>4.2. Adding one or more staves with a staff label per part</a></li>
+<ul class='toc'></ul><li class='toc2'><a href='#4.3.%20Adding%20optional%20transposition%20attribute%20for%20transposing%20instrument%20per%20part'>4.3. Adding optional transposition attribute for transposing instrument per part</a></li>
+<ul class='toc'></ul></ul><li class='toc1'><a href='#5.%20Adding%20one%20or%20more%20clefs%20per%20part'>5. Adding one or more clefs per part</a></li>
+<ul class='toc'></ul><li class='toc1'><a href='#6.%20Adding%20time%20signature%20per%20part'>6. Adding time signature per part</a></li>
+<ul class='toc'></ul><li class='toc1'><a href='#7.%20Adding%20key%20signature%20per%20part'>7. Adding key signature per part</a></li>
+<ul class='toc'></ul><li class='toc1'><a href='#8.%20Adding%20a%20tempo%20indication'>8. Adding a tempo indication</a></li>
+<ul class='toc'></ul><li class='toc1'><a href='#9.%20Adding%20a%20dynamic%20marking%20that%20is%20not%20attached%20to%20a%20note%20or%20chord'>9. Adding a dynamic marking that is not attached to a note or chord</a></li>
+<ul class='toc'></ul><li class='toc1'><a href='#10.%20Adding%20Rests'>10. Adding Rests</a></li>
+<ul class='toc'></ul><li class='toc1'><a href='#11.%20Adding%20notes,%20including%20note-attached%20dynamics,%20articulation,%20tie%20and%20slur'>11. Adding notes, including note-attached dynamics, articulation, tie and slur</a></li>
+<ul class='toc'><li class='toc2'><a href='#11.1.%20Notes%20and%20chords'>11.1. Notes and chords</a></li>
+<ul class='toc'></ul><li class='toc2'><a href='#11.2.%20Multiple%20instruments'>11.2. Multiple instruments</a></li>
+<ul class='toc'></ul><li class='toc2'><a href='#11.3.%20Articulations,%20ties,%20slurs,%20pitch%20repetition%20and%20previous%20entry%20repetition'>11.3. Articulations, ties, slurs, pitch repetition and previous entry repetition</a></li>
+<ul class='toc'></ul></ul></ul></div><div id='menubar'></div>
+<div class='contents'>
+<div class='header'>
+<div id='label'>
+<span id='folder'>Reference (extension)</span>
+ | <span id='categories'><a href='https://doc.sccode.org/Browse.html#Notator'>Notator</a></span>
+</div><h1>Score Guideline for Notator<div class='extension-indicator-ctr' title='This help file originates from a third-party quark or plugin for SuperCollider.'><img class='extension-indicator-icon' alt='Extension' src='https://doc.sccode.org/images/plugin.png'><span class='extension-indicator-text'>Extension</span></div></h1>
+<div id='summary'>musicXML File Writer for SuperCollider</div>
+</div>
+<div class='subheader'>
+<div id='related'>See also: <a href="https://doc.sccode.org/Classes/Notator.html">Notator</a>, <a href="https://doc.sccode.org/Classes/PitchClassSet.html">PitchClassSet</a>, <a href="https://doc.sccode.org/Classes/SPN.html">SPN</a></div>
+</div>
+<h2><a class='anchor' name='1.%20Overview'>1. Overview</a></h2>
+
+<p><strong>A score should be written in bar notation as an array.</strong><div class='note'><span class='notelabel'>NOTE:</span> Bar notation here means a notation in which each part appears within each bar (parts per bar). The opposite concept is part notation, where each bar appears within each part (bars per part).</div>
+<p>The first element should be information about the composer, title and copyright. The elements from the second to the last are musical notation events, and each event contains the musical information for each bar.
+<p><strong>The parts of a bar should be constructed as elements within an event.</strong> It contains all parts of the bar with keys like <code>\p1</code>, <code>\p2</code>, etc:. Each part should be an event that contains its notation information in the bar. The value of the event key is an array containing the notation information of its part in the bar:<div class='warning'><span class='warninglabel'>WARNING:</span> The first bar should contain all the parts of the whole score even though one or more particular parts do not appear in the first bar.</div>
+<p>It also contains the "bar number" with the key <code>\bar</code>. This is only used to indicate the bar number when entering musical events in a particular bar, as a comment is often used to indicate the bar number. You can ignore the <code>\bar</code> if you do not need it.<textarea class='editor'>(
+aVariable = [
+    (title: 'the name of title', composer: 'the name of composer', rights: '© copyright'),
+    (bar: 1, p1: (...), p2: (...), p3: (...), p4: (...), p5: (...), p6: (...), ..., pn: (...)),
+    (bar: 2, p1: (...), p2: (...), ...),
+    ...
+]
+)</textarea>
+
+<p>Each part consists of a <em>staff label</em>, an <em>attribute</em> and one or more <em>voices</em> (The term voice here is very similar to the term voice used in traditional western classical poplyphonic music. If one has a very narrow view of the concept of voice, there may be a difference, as the voice here can include chords.).
+<p>Each can be defined with its own key and contains the following information<table>
+<tr><td>components<td>key<td>data type
+<p>for its value<td>details<tr><td>staff label<td><code>\lbl</code><td>symbol<td><ul>
+<li>the name of a staff
+<p>(or staves, if more than one staff is registered)</ul>
+
+<p><tr><td>attributes<td><code>\atr</code><td>event<td><ul>
+<li>the number of staves<li>clef
+<p>(or clefs if more than one staff is registered)<li>time signaure<li>key signature and optional transposition information</ul>
+
+<p><tr><td>voices<td><code>\v1</code>
+<p><code>\v2</code>
+<p>...<td>array<td><ul>
+<li>tempo<li>dynamic markings<li>note or chord with pitch, duration and articulation
+<p>as well as tie and slur status<li>rest with duration</ul>
+<div class='note'><span class='notelabel'>NOTE:</span> Three ways to construct the musical information of a voice: <a class='anchor' name='Three%20ways%20to%20construct%20the%20musical%20information%20of%20a%20voice'>&nbsp;</a><table>
+<tr><td><ol>
+<li>Array-in-Array notation:
+<p>each musical information as an element in an array<textarea class='editor'>v1: [[\t,\q,90],[\F],[\e5],[[\d,\f],$~],[$|,16],[[72,76]]]</textarea>
+
+<p><li>Symbol-in-Array notation:
+<p>each musical information as a symbol or string in an array<textarea class='editor'>v1: ['t q 90', \F, \e5, "&lt;d f&gt; ~", '| 16', "&lt;72 76&gt;"]</textarea>
+
+<p><li>String notation:
+<p>all the musical information in a voice as a string<textarea class='editor'>v1: "t_q_90 F e5 &lt;d_f&gt;_~ |_16 &lt;72_76&gt;"</textarea>
+</ol>
+</table>
+
+<p>The last option is recommended for transcribing an existing piece.
+<p>The other options are more complicated, but are useful for
+<p>algorithmic composition.</div></table>
+
+<p>The staff label, number of staves and optional transposition information should be defined in the first bar. Attributes such as time signature, key signature, clef can be changed in any bar, if necessary, as follows:<textarea class='editor'>(
+aVariable = [
+    (title: 'the name of title', composer: 'the name of composer', rights: '© copyright'),
+
+    (
+        bar: 1,
+        p1:(
+            lbl: \staffLabel,
+            atr: (...),
+            v1:[...],
+            v2: [...],
+            ...
+        ),
+        p2:(...), ...
+    ),
+
+    (
+        bar: 2, p1: (v1:[...], v2: [...], ...), p2: (v1:[...], v2: [...], ...), ...
+    ),
+
+    (
+        bar: 3,
+        p1: (
+            atr: (...),
+            v1:[...],
+            v2: [...],
+            ...
+        ),
+        p2: (v1:[...], v2: [...], ...), ...
+    ),
+
+    ...
+]
+)</textarea>
+<div class='note'><span class='notelabel'>NOTE:</span> Accessing particular element Array indices can be used to access a particular element or a range of elements:<ul>
+<li>To access the first element (title, composer and copyright):<textarea class='editor'>a_variable_of_the_score[0]</textarea>
+<li>to access a bar or bars:<ul>
+<li>To access a particular bar:<textarea class='editor'>a_variable_of_the_score[the_number_of_a_particular_bar]</textarea>
+<table>
+<tr><td>Examples:<ul>
+<li>To access the first bar:<textarea class='editor'>a_variable_of_the_score[1]</textarea>
+
+<p><li>To access the tenth bar:<textarea class='editor'>a_variable_of_the_score[10]</textarea>
+</ul>
+</table>
+<li>To access a series of bars:<ul>
+<li><textarea class='editor'>a_variable_of_the_score[the_first_number_in_the_series .. the_last_number_in_the_series]</textarea>
+<li><textarea class='editor'>a_variable_of_the_score[the_first_number_in_the_series .. ]</textarea>
+</ul>
+<table>
+<tr><td>Examples:<ul>
+<li>To access from the first bar to the tenth bar:<textarea class='editor'>a_variable_of_the_score[1..10]</textarea>
+<li>To access from the eleventh bar to the end:<textarea class='editor'>a_variable_of_the_score[11..]</textarea>
+</ul>
+</table>
+<li>To access a specific element of a bar:<ul>
+<li>To access the bar number
+<p>This is not normally used, but may be necessary when debugging your code.<textarea class='editor'>a_variable_of_the_score[the_number_of_a_particular_bar][\bar]</textarea>
+<li>To access a particular part<textarea class='editor'>a_variable_of_the_score[the_number_of_a_particular_bar][the_key_of_a_particular_part]</textarea>
+<table>
+<tr><td>Exmaple:
+<p>To access the part \p1<textarea class='editor'>a_variable_of_the_score[the_number_of_a_particular_bar][\p1]</textarea>
+</table>
+</ul>
+<li>To access the staff label of a specific part:<textarea class='editor'>a_variable_of_the_score[the_number_of_a_particular_bar][partNumber][\lbl]</textarea>
+
+<p><table>
+<tr><td>Example:
+<p>To access the staff label of part \p1<textarea class='editor'>a_variable_of_the_score[1][\p1][\lbl]</textarea>
+</table>
+</ul>
+</ul>
+</div><h2><a class='anchor' name='2.%20Adding%20title,%20composer%20and%20copyright'>2. Adding title, composer and copyright</a></h2>
+
+<p>To add the title, composer and copyright of a piece, use an event with key and value pairs: for the title, use the key <code>\title</code>, for the composer, use the key <code>\composer</code>, and for the copyrights, use the key <code>\rights</code>, as follows:<textarea class='editor'>(
+aVariable = [
+    (title: \untitled, composer: 'The name of the composer', rights: '©')
+]
+)</textarea>
+<h2><a class='anchor' name='3.%20Adding%20one%20or%20more%20bars'>3. Adding one or more bars</a></h2>
+
+<p>One or more bars can be added by adding an event as an array element, as follows:<textarea class='editor'>(
+aVariable = [
+    (title: \untitled, composer: 'The name of the composer', rights: '©'),
+    (...),
+    (...),
+    (...),
+    ...
+]
+)</textarea>
+<div class='note'><span class='notelabel'>NOTE:</span> A score example and code example are not provided in the correct form because more components are required to import a musicXML file into music software programs such as MuseScore, Dorico Finale and Logic Pro.</div><h2><a class='anchor' name='4.%20Adding%20the%20first%20bar%20part%20elements'>4. Adding the first bar part elements</a></h2>
+<h3><a class='anchor' name='4.1.%20Adding%20one%20or%20more%20parts'>4.1. Adding one or more parts</a></h3>
+
+<p>One or more parts can be added by adding an event to any event in an array element, as follows:<textarea class='editor'>(
+aVariable = [
+    (title: \untitled, composer: 'The name of the composer', rights: '©'),
+    (bar: 1, p1: (...), p2: (...), p3: (...), p4: (...), p5: (...), p6: (...), pn: (...)),
+    (bar: 2, p1: (...), p2: (...), p3: (...)),
+    (bar: 2, p1: (...), p3: (...), p5: (...)),
+    ...
+]
+)</textarea>
+<div class='warning'><span class='warninglabel'>WARNING:</span> All parts that appear at one point in the piece must be included in the first bar. Except for the first bars, the parts that do not contain any information may be omitted in any bar.</div><div class='note'><span class='notelabel'>NOTE:</span> A score example and code example are not provided in the correct form because more components are required to import a musicXML file into music software programs such as MuseScore, Dorico Finale and Logic Pro.</div><h3><a class='anchor' name='4.2.%20Adding%20one%20or%20more%20staves%20with%20a%20staff%20label%20per%20part'>4.2. Adding one or more staves with a staff label per part</a></h3>
+
+<p>To add a staff label, the name of the label should be defined with the key <code>\lbl</code> in a part of the first bar. To add one or more staves to a part, the number of staves should be defined with the key <code>\staves</code> in the <code>\atr</code> event in a part of the first bar, as follows (the label and the number of staves defined in the first bar are fixed until the end):<textarea class='editor'>(
+score = [
+    (title: \untitled, composer: 'The name of the composer', rights: '©'),
+    (
+        bar: 1,
+        p1: (
+            lbl: \Violin,
+            atr: (
+                staves: 1
+            )
+        ),
+        p2: (
+            lbl: \Piano,
+            atr: (
+                staves: 2
+            )
+        ),
+        ...
+    ),
+    (bar: 2, p1: (...), p2: (...)),
+    (bar: 3, p2: (...)),
+    (bar: 4, p1: (...), p2: (...)),
+    (bar: 5, p1: (...)),
+    ...
+]
+)</textarea>
+<div class='note'><span class='notelabel'>NOTE:</span> <ul>
+<li>If staff label is empty or nil, then piano will be used.<li>If attribute is not defined, 4 staves are used to easily cover the range of the piano.</ul>
+</div><div class='note'><span class='notelabel'>NOTE:</span> A score example and code example are not provided in the correct form because more components are required to import a musicXML file into music software programs such as MuseScore, Dorico Finale and Logic Pro.</div><h3><a class='anchor' name='4.3.%20Adding%20optional%20transposition%20attribute%20for%20transposing%20instrument%20per%20part'>4.3. Adding optional transposition attribute for transposing instrument per part</a></h3>
+
+<p>To add optional transposition to a part label, the following properties should be defined as an array element of an event with the key <code>\trans</code> in a part of the first bar:<table>
+<tr><td>Integer<td>diatonic transposition<tr><td>Integer<td>chromatic transposition<tr><td>Integer<td>octave transposition</table>
+
+<p>For example, the clarinet part should be defined, as follows:<textarea class='editor'>(
+aVariable = [
+    (title: \untitled, composer: 'The name of the composer', rights: '©'),
+    (
+        bar: 1,
+        p1: (
+            lbl: 'Clarinetto in si bemolle',
+            atr: (
+                staves: 1,
+                trans:
+                [
+                    -1 // diatonic transposition
+                    ,
+                    -2 // chromatic transposition
+                    ,
+                    0 // octave transposition
+                ],
+                ...
+            )
+        )
+    )
+]
+)</textarea>
+<div class='note'><span class='notelabel'>NOTE:</span> A score example and code example are not provided in the correct form because more components are required to import a musicXML file into music software programs such as MuseScore, Dorico Finale and Logic Pro.</div><h2><a class='anchor' name='5.%20Adding%20one%20or%20more%20clefs%20per%20part'>5. Adding one or more clefs per part</a></h2>
+
+<p>The clef or clefs in a part can be changed in any bar, and should be defined in an array with the key <code>\clef</code> in the <code>\atr</code> event in a part in a bar. To define a clef, an array with two elements should be used. The first element defines the clef symbol and the second element defines its position on the staff (counting upwards).<ul>
+<li>The first element of an array that defines the clef:<table>
+<tr><td><code>\g</code><td>g-clef<tr><td><code>\c</code><td>c-clef<tr><td><code>\f</code><td>f clef</table>
+
+<p><li>The second element of an array that defines the clef:<table>
+<tr><td>1<td>the bottom line<tr><td>5<td>the fifth line from the bottom</table>
+</ul>
+
+<p>To define multiple clefs on multiple staves, a staff array can be used within its parent array:<textarea class='editor'>(
+aVariable = [
+    (title: 'untitled', composer: 'me', rights: '©'),
+    (
+        bar: 1,
+        p1: (
+            lbl: 'Clarinetto in si bemolle',
+            atr: (
+                staves: 1,
+                trans: [-1, -2, 0],
+                clef: [[\g, 2]] // defining a clef
+            )
+        ),
+        p2: (
+            lbl: \Piano,
+            atr: (
+                staves: 2,
+                clef: [[\g, 2], [\f, 4]] // defininf two clefs
+            )
+        ),
+        ...
+    ),
+    (
+        bar: 2,
+        p1: (...),
+        p2: (
+            atr: (
+                clef: [[\f, 4], [\f, 4]]
+            )
+        ),
+        ...
+    ),
+    (bar: 3, p1: (...), p2: (...), ...),
+    ...
+]
+)</textarea>
+<div class='note'><span class='notelabel'>NOTE:</span> A score example and code example are not provided in the correct form because more components are required to import a musicXML file into music software programs such as MuseScore, Dorico Finale and Logic Pro.</div><h2><a class='anchor' name='6.%20Adding%20time%20signature%20per%20part'>6. Adding time signature per part</a></h2>
+
+<p>The time signature in a part can be changed in any bar, and should be defined with the key <code>\time</code> in the <code>\atr</code> event in a part in a bar. To define a normal time signature, an array with two elements should be used. The first element defines the upper number (top number) of the time signature, and the second element defines the lower number (bottom number) of the time signature. To define <em>senza-misura</em>, the symbol \x can be used instead of an array:<textarea class='editor'>(
+aVariable = [
+    (title: 'untitled', composer: 'me', rights: '©'),
+    (
+        bar: 1,
+        p1: (
+            lbl: 'Clarinetto in si bemolle',
+            atr: (
+                staves: 1,
+                trans: [-1, -2, 0],
+                clef: [[\g, 2]],
+                time: \x
+            )
+        ),
+        p2: (
+            lbl: \Piano,
+            atr: (
+                staves: 2,
+                clef: [[\g, 2], [\f, 4]],
+                time: \x
+            )
+        ),
+        ...
+    ),
+    (
+        bar: 2,
+        p1: (
+            atr: (
+                time: [4, 4]
+            )
+        ),
+        p2: (
+            atr: (
+                clef: [[\f, 4], [\f, 4]],
+                time: [4, 4]
+            )
+        ),
+        ...
+    ),
+    (bar: 3, p1: (...), p2: (...), ...),
+    ...
+]
+)</textarea>
+<div class='note'><span class='notelabel'>NOTE:</span> A score example and code example are not provided in the correct form because more components are required to import a musicXML file into music software programs such as MuseScore, Dorico Finale and Logic Pro.</div><h2><a class='anchor' name='7.%20Adding%20key%20signature%20per%20part'>7. Adding key signature per part</a></h2>
+
+<p>The time signature in a part can be changed in any bar, and should be defined with the key <code>\key</code> in the <code>\atr</code> event in a part in a bar.<ul>
+<li>To define a key signature, an array with two elements should be used. The first element defines the number of sharps or flats, as follows:<table>
+<tr><td>...<td><tr><td>2<td>two sharps, used for D major or B Minor<tr><td>1<td>one sharp, used for G major or E minor<tr><td>0<td>no sharps and no flats<tr><td>-1<td>one flat<tr><td>-2<td>two flats<tr><td>...<td></table>
+<li>The second element defines the mode, as follows:<table>
+<tr><td>\none<td>atonal<tr><td>\C<td>C-major<tr><td>\a<td>A-minor</table>
+</ul>
+
+<p>A mixed use of atonal and polytonal examples are as follows:<textarea class='editor'>(
+aVariable = [
+    (title: 'untitled', composer: 'me', rights: '©'),
+    (
+        bar: 1,
+        p1: (
+            lbl: 'Clarinetto in si bemolle',
+            atr: (
+                staves: 1,
+                trans: [-1, -2, 0],
+                clef: [[\g, 2]],
+                time: \x,
+                key: [0, \none]
+            )
+        ),
+        p2: (
+            lbl: \Piano,
+            atr: (
+                staves: 2,
+                clef: [[\g, 2], [\f, 4]],
+                time: \x,
+                key: [0, \none]
+            )
+        ),
+        ...
+    ),
+    (
+        bar: 2,
+        p1: (
+            atr: (
+                time: [4, 4],
+                key: [1, \minor]
+            )
+        ),
+        p2: (
+            atr: (
+                clef: [[\f, 4], [\f, 4]],
+                time: [4, 4],
+                key: [2, \major]
+            )
+        ),
+        ...
+    ),
+    (bar: 3, p1: (...), p2: (...), ...),
+    ...
+]
+)</textarea>
+<div class='note'><span class='notelabel'>NOTE:</span> A score example and code example are not provided in the correct form because more components are required to import a musicXML file into music software programs such as MuseScore, Dorico Finale and Logic Pro.</div><h2><a class='anchor' name='8.%20Adding%20a%20tempo%20indication'>8. Adding a tempo indication</a></h2>
+
+<p>To add a metronome number defined by the number of beat unit per minute, insert an array into a voice as follows:<table>
+<tr><td>the first element<td>\t<tr><td>the second element<td>beat unit<table>
+<tr><td>double-dotted maxima:<td>\Dm<td>\D_<tr><td>dotted maxima<td>\dm<td>\d_<tr><td>maxima<td>\m<td>\_<tr><td>double-dotted longa<td>\Dl<td>\D0<tr><td>dotted longa<td>\dl<td>\d0<tr><td>longa<td>\l<td>\0<td>0<tr><td>double-dotted breve<td>\Db<td>\D9<tr><td>dotted breve<td>\db<td>\d9<tr><td>breve<td>\b<td>\9<td>9<tr><td>double-dotted semibreve<td>\Dw<td>\D8<tr><td>dotted semibreve<td>\dw<td>\d8<tr><td>semibreve<td>\w<td>\8<td>8<tr><td>double-dotted minim<td>\Dh<td>\D7<tr><td>dotted minim<td>\dh<td>\d7<tr><td>minim<td>\h<td>\7<td>7<tr><td>double-dotted crotchet<td>\Dq<td>\D6<tr><td>dotted crotchet<td>\dq<td>\d6<tr><td>crotchet<td>\q<td>\6<td>6<tr><td>double-dotted quaver<td>\De<td>\D5<tr><td>dotted quaver<td>\de<td>\d5<tr><td>quaver<td>\e<td>\5<td>5<tr><td>double-dotted semiquaver<td>\Dx<td>\D4<tr><td>dotted semiquaver<td>\dx<td>\d4<tr><td>semiquaver<td>\x<td>\4<td>4<tr><td>double-dotted demisemiquaver<td>\Dt<td>\D3<tr><td>dotted demisemiquaver<td>\dt<td>\d3<tr><td>demisemiquaver<td>\t<td>\3<td>3<tr><td>double-dotted hemidemisemiquaver<td>\Di<td>\D2<tr><td>dotted hemidemisemiquaver<td>\di<td>\d2<tr><td>hemidemisemiquaver<td>\i<td>\2<td>2</table>
+
+<p><tr><td>the third element<td>bpm (beat per minute)</table>
+<table>
+<tr><td><strong>Example</strong>:<table>
+<tr><td>Three different styles of code to get the same musicXML file:<table>
+<tr><td>Array-in-Array notation<td><textarea class='editor'>(
+var title = \tempo, score;
+score = [
+    (title: title, composer: 'me', rights: '©'),
+    (
+        bar: 1,
+        p1: (
+            lbl: 'Clarinetto in si bemolle',
+            atr: (
+                staves: 1,
+                trans: [-1, -2, 0],
+                clef: [[\g, 2]],
+                time: \x,
+                key: [0, \none]
+            ),
+            v1: [
+                [\t, \dq, 120]
+            ]
+        )
+    )
+];
+x = Notator.notate(score, ("~/Downloads/" ++ title ++ ".musicxml").standardizePath)
+)</textarea>
+<tr><td>Symbol-in-Array notation<td><textarea class='editor'>(
+var title = \tempo;
+x = [
+    (title: title, composer: 'me', rights: '©'),
+    (
+        bar: 1,
+        p1: (
+            lbl: 'Clarinetto in si bemolle',
+            atr: (
+                staves: 1,
+                trans: [-1, -2, 0],
+                clef: [[\g, 2]],
+                time: \x,
+                key: [0, \none]
+            ),
+            v1: [
+                "t dq 120"
+            ]
+        )
+    )
+].notate(("~/Downloads/" ++ title ++ ".musicxml").standardizePath)
+)</textarea>
+<tr><td>String notation<td><textarea class='editor'>(
+var title = \tempo;
+x = [
+    (title: title, composer: 'me', rights: '©'),
+    (
+        bar: 1,
+        p1: (
+            lbl: 'Clarinetto in si bemolle',
+            atr: (
+                staves: 1,
+                trans: [-1, -2, 0],
+                clef: [[\g, 2]],
+                time: \x,
+                key: [0, \none]
+            ),
+            v1: "t_dq_120"
+        )
+    )
+].notate(("~/Downloads/" ++ title ++ ".musicxml").standardizePath, "Dorico 4")
+)</textarea>
+</table>
+</table>
+The results of the evaluation of each of the codes above:<table>
+<tr><td>The
+<p>rendered
+<p>score
+<p>in
+<p>Dorico 4:<td><div class='image'><img src='resources/time signature - Dorico.svg'/></div>
+</table>
+</table>
+<h2><a class='anchor' name='9.%20Adding%20a%20dynamic%20marking%20that%20is%20not%20attached%20to%20a%20note%20or%20chord'>9. Adding a dynamic marking that is not attached to a note or chord</a></h2>
+To add a dynamic marking, insert a one-element array into a voice: the element could be one of the following:<table>
+<tr><td>symbols<td>corresponding dynamic marking<tr><td><textarea class='editor'>\ffff</textarea>
+<textarea class='editor'>\F4</textarea>
+<textarea class='editor'>\s4 // \s stands for 'strong'</textarea>
+<td><em>ffff</em><tr><td><textarea class='editor'>\fff</textarea>
+<textarea class='editor'>\F3</textarea>
+<textarea class='editor'>\s3</textarea>
+<td><em>fff</em><tr><td><textarea class='editor'>\ff</textarea>
+<textarea class='editor'>\F2</textarea>
+<textarea class='editor'>\s2</textarea>
+<td><em>ff</em><tr><td><textarea class='editor'>\F // (should be capitalised!)</textarea>
+<textarea class='editor'>\F1</textarea>
+<textarea class='editor'>\s1</textarea>
+
+<p><td><em>f</em><tr><td><textarea class='editor'>\mf</textarea>
+<textarea class='editor'>\F0</textarea>
+<textarea class='editor'>\s0</textarea>
+<td><em>mf</em><tr><td><textarea class='editor'>\mp</textarea>
+<textarea class='editor'>\p0</textarea>
+<textarea class='editor'>\q0 // \q stands for 'quiet'</textarea>
+<td><em>mp</em><tr><td><textarea class='editor'>\p</textarea>
+<textarea class='editor'>\p1</textarea>
+<textarea class='editor'>\q1</textarea>
+<td><em>p</em><tr><td><textarea class='editor'>\pp</textarea>
+<textarea class='editor'>\p2</textarea>
+<textarea class='editor'>\q2</textarea>
+<td><em>pp</em><tr><td><textarea class='editor'>\ppp</textarea>
+<textarea class='editor'>\p3</textarea>
+<textarea class='editor'>\q3</textarea>
+<td><em>ppp</em><tr><td><textarea class='editor'>\pppp</textarea>
+<textarea class='editor'>\p4</textarea>
+<textarea class='editor'>\q4</textarea>
+<td><em>pppp</em></table>
+<table>
+<tr><td><strong>Example</strong>:<table>
+<tr><td>Three different styles of code to get the same musicXML file:<table>
+<tr><td>Array-in-Array notation<td><textarea class='editor'>(
+var title = \dynamic, score;
+score = [
+    (title: title, composer: 'me', rights: '©'),
+    (
+        bar: 1,
+        p1: (
+            lbl: 'Clarinetto in si bemolle',
+            atr: (
+                staves: 1,
+                trans: [-1, -2, 0],
+                clef: [[\g, 2]],
+                time: \x,
+                key: [0, \none]
+            ),
+            v1: [
+                [\t, \dq, 120],
+                [\F]
+            ]
+        )
+    )
+];
+x = Notator.notate(score, ("~/Downloads/" ++ title ++ ".musicxml").standardizePath)
+)</textarea>
+<tr><td>Symbol-in-Array notation<td><textarea class='editor'>(
+var title = \dynamic;
+x = [
+    (title: title, composer: 'me', rights: '©'),
+    (
+        bar: 1,
+        p1: (
+            lbl: 'Clarinetto in si bemolle',
+            atr: (
+                staves: 1,
+                trans: [-1, -2, 0],
+                clef: [[\g, 2]],
+                time: \x,
+                key: [0, \none]
+            ),
+            v1: [
+                't dq 120', \F
+            ]
+        )
+    )
+].notate(("~/Downloads/" ++ title ++ ".musicxml").standardizePath)
+)</textarea>
+<tr><td>String notation<td><textarea class='editor'>(
+var title = \dynamic;
+x = [
+    (title: title, composer: 'me', rights: '©'),
+    (
+        bar: 1,
+        p1: (
+            lbl: 'Clarinetto in si bemolle',
+            atr: (
+                staves: 1,
+                trans: [-1, -2, 0],
+                clef: [[\g, 2]],
+                time: \x,
+                key: [0, \none]
+            ),
+            v1: "t_dq_120 F"
+        )
+    )
+].notate(("~/Downloads/" ++ title ++ ".musicxml").standardizePath, "Dorico 4")
+)</textarea>
+</table>
+</table>
+The results of the evaluation of each of the codes above:<table>
+<tr><td>The
+<p>rendered
+<p>score
+<p>in
+<p>Dorico 4:<td><div class='image'><img src='resources/dynamic - Dorico.svg'/></div>
+</table>
+</table>
+<h2><a class='anchor' name='10.%20Adding%20Rests'>10. Adding Rests</a></h2>
+The crotchet rest (or quarter rest) in the example in section <a href="#8.%20Adding%20a%20tempo%20indication">8. Adding a tempo indication</a> and the same in the example in section <a href="#9.%20Adding%20a%20dynamic%20marking%20that%20is%20not%20attached%20to%20a%20note%20or%20chord">9. Adding a dynamic marking that is not attached to a note or chord</a> are automatically inserted by Dorico. MuseScore and Finale insert a whole rest for the same place. To add rest symbols intentionally, the correct notation for each of the <a href="#Three%20ways%20to%20construct%20the%20musical%20information%20of%20a%20voice">three ways to construct the musical information of a voice</a> should be used as follows:<table>
+<tr><td><ol>
+<li>Array-in-Array notation:<textarea class='editor'>v1: [[\t, \q, 90], [\r], [\r6]]</textarea>
+
+<p><li>Symbol-in-Array notation:<textarea class='editor'>v1: ['t q 90', \r, 'r6']</textarea>
+
+<p><li>String notation:<textarea class='editor'>v1: "t_q_90 r r6"</textarea>
+</ol>
+</table>
+
+<p>\r in Array-in-Array notation and r in the other notations stand alone without a rhythmic value if the previous rhythmic value is used. If the first rest stands alone, the default value of crotchet is used, as shown in <a href="#8.%20Adding%20a%20tempo%20indication">8. Adding a tempo indication</a> for Array-in-Array notation (also below), and as shown below for the other two notations:<table>
+<tr><td><td>Array-in-Array notation<td>Symbol-in-Array notation,
+<p>String notation<tr><td>triple-dotted maxima
+<p><span class='soft'>(MuseScore 4.1.1 crashes</span>
+<p> <span class='soft'>when this value is used for a rest.)</span><td><textarea class='editor'>\Tm</textarea>
+<textarea class='editor'>\T_</textarea>
+<td><textarea class='editor'>m...</textarea>
+<tr><td>double-dotted maxima
+<p><span class='soft'>(MuseScore 4.1.1 crashes</span>
+<p> <span class='soft'>when this value is used for a rest.)</span><td><textarea class='editor'>\Dm</textarea>
+<textarea class='editor'>\D_</textarea>
+<td><textarea class='editor'>m..</textarea>
+<tr><td>dotted maxima
+<p><span class='soft'>(MuseScore 4.1.1 crashes</span>
+<p> <span class='soft'>when this value is used for a rest.)</span><td><textarea class='editor'>\dm</textarea>
+<textarea class='editor'>\d_</textarea>
+<td><textarea class='editor'>m.</textarea>
+<tr><td>maxima
+<p><span class='soft'>(MuseScore 4.1.1 crashes</span>
+<p> <span class='soft'>when this value is used for a rest.)</span><td><textarea class='editor'>\m</textarea>
+<textarea class='editor'>\_</textarea>
+<td><textarea class='editor'>m</textarea>
+<tr><td>triple-dotted longa<td><textarea class='editor'>\Tl</textarea>
+<textarea class='editor'>\T0</textarea>
+<td><textarea class='editor'>l...</textarea>
+<tr><td>double-dotted longa<td><textarea class='editor'>\Dl</textarea>
+<textarea class='editor'>\D0</textarea>
+<td><textarea class='editor'>l..</textarea>
+<tr><td>dotted longa<td><textarea class='editor'>\dl</textarea>
+<textarea class='editor'>\d0</textarea>
+<td><textarea class='editor'>l.</textarea>
+<tr><td>longa<td><textarea class='editor'>\l</textarea>
+<textarea class='editor'>\0</textarea>
+<textarea class='editor'>0</textarea>
+
+<p><td><textarea class='editor'>l</textarea>
+<tr><td>triple-dotted breve<td><textarea class='editor'>\Tb</textarea>
+<textarea class='editor'>\T9</textarea>
+<td><textarea class='editor'>b...</textarea>
+<tr><td>double-dotted breve<td><textarea class='editor'>\Db</textarea>
+<textarea class='editor'>\D9</textarea>
+<td><textarea class='editor'>b..</textarea>
+<tr><td>dotted breve<td><textarea class='editor'>\db</textarea>
+<textarea class='editor'>\d9</textarea>
+<td><textarea class='editor'>b.</textarea>
+<tr><td>breve<td><textarea class='editor'>\b</textarea>
+<textarea class='editor'>\9</textarea>
+<textarea class='editor'>9</textarea>
+<td><textarea class='editor'>b</textarea>
+<tr><td>triple-dotted semibreve<td><textarea class='editor'>\Tw</textarea>
+<textarea class='editor'>\T8</textarea>
+<td><textarea class='editor'>w...</textarea>
+<textarea class='editor'>1...</textarea>
+<tr><td>double-dotted semibreve<td><textarea class='editor'>\Dw</textarea>
+<textarea class='editor'>\D8</textarea>
+<td><textarea class='editor'>w..</textarea>
+<textarea class='editor'>1..</textarea>
+<tr><td>dotted semibreve<td><textarea class='editor'>\dw</textarea>
+<textarea class='editor'>\d8</textarea>
+<td><textarea class='editor'>w.</textarea>
+<textarea class='editor'>1.</textarea>
+<tr><td>semibreve<td><textarea class='editor'>\w</textarea>
+<textarea class='editor'>\8</textarea>
+<textarea class='editor'>8</textarea>
+<td><textarea class='editor'>w</textarea>
+<textarea class='editor'>1</textarea>
+<tr><td>triple-dotted minim<td><textarea class='editor'>\Th</textarea>
+<textarea class='editor'>\T7</textarea>
+<td><textarea class='editor'>h...</textarea>
+<textarea class='editor'>2...</textarea>
+<tr><td>double-dotted minim<td><textarea class='editor'>\Dh</textarea>
+<textarea class='editor'>\D7</textarea>
+<td><textarea class='editor'>h..</textarea>
+<textarea class='editor'>2..</textarea>
+<tr><td>dotted minim<td><textarea class='editor'>\dh</textarea>
+<textarea class='editor'>\d7</textarea>
+<td><textarea class='editor'>h.</textarea>
+<textarea class='editor'>2.</textarea>
+<tr><td>minim<td><textarea class='editor'>\h</textarea>
+<textarea class='editor'>\7</textarea>
+<textarea class='editor'>7</textarea>
+<td><textarea class='editor'>h</textarea>
+<textarea class='editor'>2</textarea>
+<tr><td>triple-dotted crotchet<td><textarea class='editor'>\Tq</textarea>
+<textarea class='editor'>\T6</textarea>
+<td><textarea class='editor'>q...</textarea>
+<textarea class='editor'>4...</textarea>
+<tr><td>double-dotted crotchet<td><textarea class='editor'>\Dq</textarea>
+<textarea class='editor'>\D6</textarea>
+<td><textarea class='editor'>q..</textarea>
+<textarea class='editor'>4..</textarea>
+<tr><td>dotted crotchet<td><textarea class='editor'>\dq</textarea>
+<textarea class='editor'>\d6</textarea>
+<td><textarea class='editor'>q.</textarea>
+<textarea class='editor'>4.</textarea>
+<tr><td>crotchet<td><textarea class='editor'>\q</textarea>
+<textarea class='editor'>\6</textarea>
+<textarea class='editor'>6</textarea>
+<td><textarea class='editor'>q</textarea>
+<textarea class='editor'>4</textarea>
+<tr><td>triple-dotted quaver<td><textarea class='editor'>\Te</textarea>
+<textarea class='editor'>\T5</textarea>
+<td><textarea class='editor'>e...</textarea>
+<textarea class='editor'>8...</textarea>
+<tr><td>double-dotted quaver<td><textarea class='editor'>\De</textarea>
+<textarea class='editor'>\D5</textarea>
+<td><textarea class='editor'>e..</textarea>
+<textarea class='editor'>8..</textarea>
+<tr><td>dotted quaver<td><textarea class='editor'>\de</textarea>
+<textarea class='editor'>\d5</textarea>
+<td><textarea class='editor'>e.</textarea>
+<textarea class='editor'>8.</textarea>
+<tr><td>quaver<td><textarea class='editor'>\e</textarea>
+<textarea class='editor'>\5</textarea>
+<textarea class='editor'>5</textarea>
+<td><textarea class='editor'>e</textarea>
+<textarea class='editor'>8</textarea>
+<tr><td>triple-dotted semiquaver<td><textarea class='editor'>\Tx</textarea>
+<textarea class='editor'>\T4</textarea>
+<td><textarea class='editor'>x...</textarea>
+<textarea class='editor'>16...</textarea>
+<tr><td>double-dotted semiquaver<td><textarea class='editor'>\Dx</textarea>
+<textarea class='editor'>\D4</textarea>
+<td><textarea class='editor'>x..</textarea>
+<textarea class='editor'>16..</textarea>
+<tr><td>dotted semiquaver<td><textarea class='editor'>\dx</textarea>
+<textarea class='editor'>\d4</textarea>
+<td><textarea class='editor'>x.</textarea>
+<textarea class='editor'>16.</textarea>
+<tr><td>semiquaver<td><textarea class='editor'>\x</textarea>
+<textarea class='editor'>\4</textarea>
+<textarea class='editor'>4</textarea>
+<td><textarea class='editor'>x</textarea>
+<textarea class='editor'>16</textarea>
+<tr><td>triple-dotted demisemiquaver<td><textarea class='editor'>\Tt</textarea>
+<textarea class='editor'>\T3</textarea>
+<td><textarea class='editor'>t...</textarea>
+<textarea class='editor'>32...</textarea>
+<tr><td>double-dotted demisemiquaver<td><textarea class='editor'>\Dt</textarea>
+<textarea class='editor'>\D3</textarea>
+<td><textarea class='editor'>t..</textarea>
+<textarea class='editor'>32..</textarea>
+<tr><td>dotted demisemiquaver<td><textarea class='editor'>\dt</textarea>
+<textarea class='editor'>\d3</textarea>
+<td><textarea class='editor'>t.</textarea>
+<textarea class='editor'>32.</textarea>
+<tr><td>demisemiquaver<td><textarea class='editor'>\t</textarea>
+<textarea class='editor'>\3</textarea>
+<textarea class='editor'>3</textarea>
+<td><textarea class='editor'>t</textarea>
+<textarea class='editor'>32</textarea>
+<tr><td>triple-dotted hemidemisemiquaver<td><textarea class='editor'>\Ti</textarea>
+<textarea class='editor'>\T2</textarea>
+<td><textarea class='editor'>i...</textarea>
+<textarea class='editor'>64...</textarea>
+<tr><td>double-dotted hemidemisemiquaver<td><textarea class='editor'>\Di</textarea>
+<textarea class='editor'>\D2</textarea>
+<td><textarea class='editor'>i..</textarea>
+<textarea class='editor'>64..</textarea>
+<tr><td>dotted hemidemisemiquaver<td><textarea class='editor'>\di</textarea>
+<textarea class='editor'>\d2</textarea>
+<td><textarea class='editor'>i.</textarea>
+<textarea class='editor'>64.</textarea>
+<tr><td>hemidemisemiquaver<td><textarea class='editor'>\i</textarea>
+<textarea class='editor'>\2</textarea>
+<textarea class='editor'>2</textarea>
+<td><textarea class='editor'>i</textarea>
+<textarea class='editor'>64</textarea>
+<tr><td>triple-dotted quasihemidemisemiquaver<td><textarea class='editor'>\Ty</textarea>
+<textarea class='editor'>\T1</textarea>
+<td><textarea class='editor'>y...</textarea>
+<textarea class='editor'>128...</textarea>
+<tr><td>double-dotted quasihemidemisemiquaver<td><textarea class='editor'>\Dy</textarea>
+<textarea class='editor'>\D1</textarea>
+<td><textarea class='editor'>y..</textarea>
+<textarea class='editor'>128..</textarea>
+<tr><td>dotted quasihemidemisemiquaver<td><textarea class='editor'>\dy</textarea>
+<textarea class='editor'>\d1</textarea>
+<td><textarea class='editor'>y.</textarea>
+<textarea class='editor'>128.</textarea>
+<tr><td>quasihemidemisemiquaver
+<p>semihemidemisemiquaver<td><textarea class='editor'>\y</textarea>
+<textarea class='editor'>\1</textarea>
+<textarea class='editor'>1</textarea>
+<td><textarea class='editor'>y</textarea>
+<textarea class='editor'>128</textarea>
+</table>
+<table>
+<tr><td><strong>Example</strong>:<table>
+<tr><td>Three different styles of code to get the same musicXML file:<table>
+<tr><td>Array-in-Array notation<td><textarea class='editor'>(
+var title = \rests, score;
+score = [
+    (title: title, composer: 'me', rights: '©'),
+    (
+        bar: 1,
+        p1: (
+            lbl: 'Clarinetto in si bemolle',
+            atr: (
+                staves: 1,
+                trans: [-1, -2, 0],
+                clef: [[\g, 2]],
+                time: \x,
+                key: [0, \none]
+            ),
+            v1: [
+                [\t, \dq, 120],
+                [\r],     // rhythmic value: default, crotchet
+                [\r, \e], // rhythmic value: quaver
+                [\r]      // rhythmic value: the same as the last rhythmic value
+                //                           in the same voice
+            ],
+            v2: [
+                [\r],     // rhythmic value: default, crotchet
+                [\r, \dh] // rhythmic value: dotted minim
+            ]
+        )
+    ),
+    (
+        bar: 2,
+        p1: (
+            v1: [
+                [\r], // rhythmic value: the previous value of the same voice
+                [\r, \q],
+                [\r, \q],
+                [\r, 6]
+            ],
+            v2: [
+                [\r], // rhythmic value: the previous value of the same voice
+                [\r, 6]
+            ]
+        )
+    ),
+    (
+        bar: 3,
+        p1: (
+            v1: [
+                [\r, \Tl], [\r, \D0], [\r, \dl], [\r, \0]
+            ]
+        )
+    ),
+    (
+        bar: 4,
+        p1: (
+            v1: [
+                [\r, \T9], [\r, \Db], [\r, \d9], [\r, \b]
+            ]
+        )
+    ),
+    (
+        bar: 5,
+        p1: (
+            v1: [
+                [\r, \Tw], [\r, \Dw], [\r, \dw], [\r, \w],
+                [\r, \T8], [\r, \D8], [\r, \d8], [\r, 8]
+            ]
+        )
+    ),
+    (
+        bar: 6,
+        p1: (
+            v1: [
+                [\r, \Th], [\r, \Dh], [\r, \dh], [\r, \h],
+                [\r, \T7], [\r, \D7], [\r, \d7], [\r, \7]
+            ]
+        )
+    ),
+    (
+        bar: 7,
+        p1: (
+            v1: [
+                [\r, \Tq], [\r, \Dq], [\r, \dq], [\r, \q],
+                [\r, \T6], [\r, \D6], [\r, \d6], [\r, 6]
+            ]
+        )
+    ),
+    (
+        bar: 8,
+        p1: (
+            v1: [
+                [\r, \Te], [\r, \De], [\r, \de], [\r, \e],
+                [\r, \T5], [\r, \D5], [\r, \d5], [\r, \5]
+            ]
+        )
+    ),
+    (
+        bar: 9,
+        p1: (
+            v1: [
+                [\r, \Tx], [\r, \Dx], [\r, \dx], [\r, \x],
+                [\r, \T4], [\r, \D4], [\r, \d4], [\r, \4]
+            ]
+        )
+    ),
+    (
+        bar: 10,
+        p1: (
+            v1: [
+                [\r, \Tt], [\r, \Dt], [\r, \dt], [\r, \t],
+                [\r, \T3], [\r, \D3], [\r, \d3], [\r, 3]
+            ]
+        )
+    ),
+    (
+        bar: 11,
+        p1: (
+            v1: [
+                [\r, \Ti], [\r, \Di], [\r, \di], [\r, \i],
+                [\r, \T2], [\r, \D2], [\r, \d2], [\r, \2]
+            ]
+        )
+    ),
+    (
+        bar: 12,
+        p1: (
+            v1: [
+                [\r, \Ty], [\r, \Dy], [\r, \dy], [\r, \y],
+                [\r, \T1], [\r, \D1], [\r, \d1], [\r, 1]
+            ]
+        )
+    )
+];
+x = Notator.notate(score, ("~/Downloads/" ++ title ++ ".musicxml").standardizePath)
+)</textarea>
+<tr><td>Symbol-in-Array notation<td><textarea class='editor'>(
+var title = \rests;
+x = [
+    (title: title, composer: 'me', rights: '©'),
+    (
+        bar: 1,
+        p1: (
+            lbl: 'Clarinetto in si bemolle',
+            atr: (
+                staves: 1,
+                trans: [-1, -2, 0],
+                clef: [[\g, 2]],
+                time: \x,
+                key: [0, \none]
+            ),
+            v1: ['t dq 120', \r, 'r e', \r],
+            v2: [\r, 'r h.']
+        )
+    ),
+    (
+        bar: 2,
+        p1: (
+            v1: [\r, 'r q', 'r q', 'r 4'],
+            v2: [\r, '\r 4']
+        )
+    ),
+    (
+        bar: 3,
+        p1: (
+            v1: ['r l...', 'r l..', 'r l.', 'r l']
+        )
+    ),
+    (
+        bar: 4,
+        p1: (
+            v1: ['r b...', 'r b..', 'r b.', 'r, b']
+        )
+    ),
+    (
+        bar: 5,
+        p1: (
+            v1: [
+                'r w...', 'r w..', 'r w.', 'r w',
+                'r 1...', 'r 1..', 'r 1.', 'r 1'
+            ]
+        )
+    ),
+    (
+        bar: 6,
+        p1: (
+            v1: [
+                'r h...', 'r h..', 'r h.', 'r h',
+                'r 2...', 'r 2..', 'r 2.', 'r 2'
+            ]
+        )
+    ),
+    (
+        bar: 7,
+        p1: (
+            v1: [
+                'r q...', 'r q..', 'r q.', 'r q',
+                'r 4...', 'r 4..', 'r 4.', 'r 4'
+            ]
+        )
+    ),
+    (
+        bar: 8,
+        p1: (
+            v1: [
+                'r e...', 'r e..', 'r e.', 'r e',
+                'r 8...', 'r 8..', 'r 8.', 'r 8'
+            ]
+        )
+    ),
+    (
+        bar: 9,
+        p1: (
+            v1: [
+                'r x...', 'r x..', 'r x.', 'r x',
+                'r 16...', 'r 16..', 'r 16.', 'r 16'
+            ]
+        )
+    ),
+    (
+        bar: 10,
+        p1: (
+            v1: [
+                'r t...', 'r t..', 'r t.', 'r t',
+                'r 32...', 'r 32..', 'r 32.', 'r 32'
+            ]
+        )
+    ),
+    (
+        bar: 11,
+        p1: (
+            v1: [
+                'r i...', 'r i..', 'r i.', 'r i',
+                'r 64...', 'r 64..', 'r 64.', 'r 64'
+            ]
+        )
+    ),
+    (
+        bar: 12,
+        p1: (
+            v1: [
+                'r y...', 'r y..', 'r y.', 'r y',
+                'r 128...', 'r 128..', 'r 128.', 'r 128'
+            ]
+        )
+    )
+].notate(("~/Downloads/" ++ title ++ ".musicxml").standardizePath)
+)</textarea>
+<tr><td>String notation<td><textarea class='editor'>(
+var title = \rests;
+x = [
+    (title: title, composer: 'me', rights: '©'),
+    (
+        bar: 1,
+        p1: (
+            lbl: 'Clarinetto in si bemolle',
+            atr: (
+                staves: 1,
+                trans: [-1, -2, 0],
+                clef: [[\g, 2]],
+                time: \x,
+                key: [0, \none]
+            ),
+            v1: "t_dq_120 r r_e r",
+            v2: "r r_h."
+        )
+    ),
+    (
+        bar: 2,
+        p1: (
+            v1: "r r_q r_q r_4",
+            v2: "r r_4"
+        )
+    ),
+    (
+        bar: 3,
+        p1: (
+            v1: "r_l... r_l.. r_l. r_l"
+        )
+    ),
+    (
+        bar: 4,
+        p1: (
+            v1: "r_b... r_b.. r_b. r_b"
+        )
+    ),
+    (
+        bar: 5,
+        p1: (
+            v1: "r_w... r_w.. r_w. r_w r_1... r_1.. r_1. r_1"
+        )
+    ),
+    (
+        bar: 6,
+        p1: (
+            v1: "r_h... r_h.. r_h. r_h r_2... r_2.. r_2. r_2"
+        )
+    ),
+    (
+        bar: 7,
+        p1: (
+            v1: "r_q... r_q.. r_q. r_q  r_4... r_4.. r_4. r_4"
+        )
+    ),
+    (
+        bar: 8,
+        p1: (
+            v1: "r_e... r_e.. r_e. r_e r_8... r_8.. r_8. r_8"
+        )
+    ),
+    (
+        bar: 9,
+        p1: (
+            v1: "r_x... r_x.. r_x. r_x r_16... r_16.. r_16. r_16"
+        )
+    ),
+    (
+        bar: 10,
+        p1: (
+            v1: "r_t... r_t.. r_t. r_t r_32... r_32.. r_32. r_32"
+        )
+    ),
+    (
+        bar: 11,
+        p1: (
+            v1: "r_i... r_i.. r_i. r_i r_64... r_64.. r_64. r_64"
+        )
+    ),
+    (
+        bar: 12,
+        p1: (
+            v1: "r_y... r_y.. r_y. r_y r_128... r_128.. r_128. r_128"
+        )
+    )
+].notate(("~/Downloads/" ++ title ++ ".musicxml").standardizePath)
+)</textarea>
+</table>
+</table>
+The results of the evaluation of each of the codes above:<table>
+<tr><td>The rendered score in Dorico 4 Pro:<div class='image'><img src='resources/rests in Dorico.png'/></div>
+
+<p><td>The rendered score in MuseScore 4 (with an error message):<div class='image'><img src='resources/rests in MuseScore 4.png'/></div>
+</table>
+</table>
+<h2><a class='anchor' name='11.%20Adding%20notes,%20including%20note-attached%20dynamics,%20articulation,%20tie%20and%20slur'>11. Adding notes, including note-attached dynamics, articulation, tie and slur</a></h2>
+
+<p>A pitch or chord can be added using MIDI pitch number or scientific pitch notation, and this pitch (or pitches) should be placed as an array. Currently, 12-tone equal temperament, 24-tone equal temperament and 48-tone equal temperament are supported by music engraving software such as Dorico 4 Pro, MuseScore 4, Finale 27 and so on, so <a href="https://doc.sccode.org/Classes/Notator.html">Notator</a> class supports eighth-tone pitches. Refer to an example of the <a href="https://doc.sccode.org/Classes/Notator.html#Eighth-tone%20Scale%20through%20algorithmic%20construction">Eighth-tone Scale example in Notator help document</a>.<table>
+<tr><td>Related help documents of the <a href="https://doc.sccode.org/Classes/SPN.html">SPN</a> class and <a href="https://doc.sccode.org/Classes/PitchClassSet.html">PitchClassSet</a> class included in <a href="https://doc.sccode.org/Classes/Notator.html">Notator</a> Quark.<ul>
+<li><a href="https://doc.sccode.org/Classes/PitchClassSet.html#Microtonal%20Support">PitchClassSet: Microtonal Support</a><li><a href="https://doc.sccode.org/Classes/PitchClassSet.html#Full%20list%20of%20pitch%20class%20names%20with%20all%20styles">PitchClassSet: Full list of pitch class names with all styles</a><li><a href="https://doc.sccode.org/Classes/SPN.html#Full%20list%20of%20quartertones%20in%20scientific%20notation%20with%20all%20styles">SPN: Full list of quartertones in scientific notation with all styles</a></ul>
+</table>
+
+<p>To add notes or chords, use the correct notation for each of the <a href="#Three%20ways%20to%20construct%20the%20musical%20information%20of%20a%20voice">three ways to construct the musical information of a voice</a>, as follows:<table>
+<tr><td><ol>
+<li>Array-in-Array notation:<textarea class='editor'>v1: [[\t,\q,90],[\c4], [['cn4', \g4]], [[60, 67]], [[\c4, 67]]]</textarea>
+
+<p><li>Symbol-in-Array notation:<textarea class='editor'>v1: ['t q 90', \c4, '&lt;cn4 g4&gt;', '&lt;60 67&gt;', '&lt;c4 67&gt;']</textarea>
+
+<p><li>String notation:<textarea class='editor'>v1: "t_q_90 c4 &lt;cn4_g4&gt; &lt;60_67&gt; &lt;c4_67&gt;"</textarea>
+</ol>
+</table>
+
+<p>To add additional duration, dynamics, articulation, tie and slur, the correct notation for each of the <a href="#Three%20ways%20to%20construct%20the%20musical%20information%20of%20a%20voice">three ways to construct the musical information of a voice</a> should be used as follows (The same rules as above for rest symbol durations and dynamic markers should be applied to note durations and note-attached dynamic markers.):<table>
+<tr><td><ol>
+<li>Array-in-Array notation:<textarea class='editor'>v1: [
+    [t, \q, 90],
+    [\c4, \e, \f, \a, \j, \u], // [\c4, \5, \f, $&gt;, $~, $(]
+    [\cn4, \dq, \J],           // [\cn4, \d6, $`]
+    [60, \x, \sf, \U]          // [60, \4, \sf, $)]
+]</textarea>
+
+<p><li>Symbol-in-Array notation:<textarea class='editor'>v1: ['t q 90', 'c4 8 f &gt; ~ (', 'cn4 4. `', '60 16 sf )']</textarea>
+
+<p><li>String notation:<textarea class='editor'>v1: "t_q_90 c4_8_f_&gt;_~_( cn4_4._` 60_16_sf_)"</textarea>
+</ol>
+</table>
+<h3><a class='anchor' name='11.1.%20Notes%20and%20chords'>11.1. Notes and chords</a></h3>
+<table>
+<tr><td><strong>Example</strong>:
+<p>Three different styles of code to get the same musicXML file:<table>
+<tr><td>Array-in-Array notation<td><textarea class='editor'>(
+var title = 'notes and chords';
+x = [
+    (title: title, composer: 'me', rights: '©'),
+    (
+        bar: 1,
+        p1:
+        (
+            lbl: \Soprano,
+            atr: (key: [0, \none], time:\x, staves: 1, clef: [[\c, 1]]),
+            v1: // voice 1.
+            [
+                [\t, \q, 120],
+
+                [\F],
+
+                [\c4]
+                // The array containing a scientific pitch name defines the pitch
+                // of the note.
+                // - S: double sharp
+                // - s: sharp
+                // - (n: natural) can be ommited
+                // - f: flat
+                // - F: double flat
+                // A quarter tone could be expressed as follows:
+                // - \c5:  c5 natural
+                // - \cq5: a quarter-tone raised c5
+                // - \cs5: c#5
+                // - \cQ5: a quarter-tone raised c#5
+                // Its duration follows the last duration defined with the
+                // previous note, if any.
+                // If the note is the first note of the entire notation
+                // information, it follows the default value (crotchet).
+                // Its dynamic mark follows the last dynamic mark defined with the
+                // previous note, if it any.
+                // If the note is the first note of the whole notation
+                // information, it will follow the default value (mp).
+                ,
+
+                [\cn4],
+
+                [62]
+                // The array containing a number defines the pitch of the note.
+                // The number should be an integer or a float with a single
+                // decimal ending in 0.5 as follows:
+                // - 72   = \c5:  c5 natural
+                // - 72.5 = \cq5: one quarter-tone raised c5
+                // - 73   = \cs5: c#5
+                // - 73.5 = \cQ5: one quarter-tone raised c#5
+                // A float with a single decimal ending in 0.5 indicates a quarter
+                // tone.
+                // The range of numbers supported is as follows:
+                // - range: 0 ~ 127
+                // Its duration and dynamic mark are the same as described above.
+                ,
+
+                [[64, 64.5, \g4, \gq4]]
+                // A chord (notes of equal duration) should be defined as an
+                // array. Its duration and dynamic mark are the same as described
+                // above.
+                ,
+
+                [67],
+
+                [65, \w]
+                // The two-element array containing a scientific pitch name
+                // followed by a duration defines the pitch of the note and its
+                // duration. The following durations are ready to use:
+                ,
+
+                [67, \q, \f]
+                // The three-element array containing a scientific pitch name
+                // followed by a duration then a dynamic mark defines the pitch of
+                // the note, its duration and dynamic mark of the note.
+                ,
+
+                [67, \q, \s2],
+
+                [67, \q, \q3],
+
+            ]
+        )
+    )
+].notate(("~/Downloads" +/+ title ++ ".musicxml").standardizePath, 'MuseScore 4')
+)</textarea>
+<tr><td>Symbol-in-Array notation<td><textarea class='editor'>(
+var title = 'notes and chords';
+x = [
+    (title: title, composer: 'me', rights: '©'),
+    (
+        bar: 1,
+        p1:
+        (
+            lbl: \Soprano,
+            atr: (key: [0, \none], time:\x, staves: 1, clef: [[\c, 1]]),
+            v1: // voice 1.
+            [
+                't q 120',
+                \F,
+                \c4, \cn4, \62, '&lt;64 64.5 g4 gq4&gt;', \67, '65 w', '67 q f',
+                '67 q s2',
+                '67 q, q3',
+            ]
+        )
+    )
+].notate(("~/Downloads" +/+ title ++ ".musicxml").standardizePath, 'MuseScore 4')
+)</textarea>
+<tr><td>String notation<td><textarea class='editor'>(
+var title = 'notes and chords';
+x = [
+    (title: title, composer: 'me', rights: '©'),
+    (
+        bar: 1,
+        p1:
+        (
+            lbl: \Soprano,
+            atr: (key: [0, \none], time:\x, staves: 1, clef: [[\c, 1]]),
+            v1: "t_q_120 F c4 cn4 62 &lt;64_64.5_g4_gq4&gt; 67 65_w 67_q_f 67_q_s2 67_q_q3"
+        )
+    )
+].notate(("~/Downloads" +/+ title ++ ".musicxml").standardizePath, 'MuseScore 4')
+)</textarea>
+</table>
+The results of the evaluation of the codes above:<table>
+<tr><td>The rendered score in Dorico 4 Pro:<div class='image'><img src='resources/notes_and_chords Dorico 4.svg'/></div>
+
+<p><td>The rendered score in MuseScore 4:<div class='image'><img src='resources/notes_and_chords MuseScore 4 @102dpi.png'/></div>
+</table>
+</table>
+<h3><a class='anchor' name='11.2.%20Multiple%20instruments'>11.2. Multiple instruments</a></h3>
+<table>
+<tr><td><strong>Example</strong>:<textarea class='editor'>(
+x = [
+    (title: 'untitled', composer: 'me', rights: '©'),
+    (
+        bar: 1,
+        p1: (
+            lbl: \Contralto,
+            atr: (key: [0, \none], time: \x, staves: 1, clef: [[\c, 3]]),
+            v1: [
+                [[\c5, \a4, \fs4, \ds4], \_], [[\cq5, \aq4, \fQ4, \dQ4], \d_], [[\df5, \bf4, \g4, \e4], \D_]]
+        ),
+        p2: (
+            lbl: \Tenore,
+            atr: (key: [0, \none], time: \x, staves: 1, clef: [[\c, 4]]),
+            v1: [
+                [[63.5, 60.5, 57.5, 54.5], \D0], [[64, 61, 58, 55], \d0], [[64.5, 61.5, 58.5, 55.5], \0]],
+            v2: [[\r, \D0], [\r, \d0], [\r, \0]]
+        ),
+        p3: (
+            lbl: \Basso,
+            atr: (key: [0, \none], time: \x, staves: 1, clef: [[\f, 4]]),
+            v1: [[\r, \D9], [\r, \d9], [\r, 9]],
+            v2: [[[52, \g3], \D9], [[\e3, 55], \d9], [[52.5, \gQ3], 9], [[\eq3, 56.5]]]
+        ),
+        p4: (
+            lbl: 'Clarinetto in si bemolle',
+            atr: (key: [0, \none], time: \x, staves: 1, clef: [[\g, 2]], trans:[-1, -2, 0]),
+            v1: [[72, \D8], [\cq5, \d8], [73, 8], [\cQ5]],
+            v2: [[67, \D8], [\gq4, \d8], [68, 8], [\gQ4]]
+        ),
+        p5: (
+            lbl: 'Violino',
+            atr: (key: [0, \none], time: \x, staves: 1, clef: [[\g, 2]]),
+            v1: [[72, \D8], [\cq5, \d8], [73, 8], [\cQ5]],
+            v2: [[67, \D8], [\gq4, \d8], [68, 8], [\gQ4] ]
+        ),
+        p6: (
+            lbl: \Viola,
+            atr: (key: [0, \none], time: \x, staves: 1, clef: [[\c, 3]]),
+            v1: [
+                [\cq4, \D7], [\dq4, \d7], [[61.5, \dq4, \cq4], 7]]
+        ),
+        p7: (
+            lbl: \Violoncello,
+            atr: (key: [0, \none], time: \x, staves: 1, clef: [[\f, 4]]),
+            v1: [[\c3, \D6], [\c3, \d6], [\c3, 6]]
+        ),
+        p8: (
+            lbl: \Contrabass,
+            atr: (key: [0, \none], time: \x, staves: 1, clef: [[\f, 4]], trans: [0, 0, -1]),
+            v1: [[\c3, \D6], [\c3, \d6], [\c3, 6]]
+        ),
+        p9: (
+            lbl: \Piano,
+            atr: (key: [0, \none], time: \x, staves: 2, clef: [[\g, 2], [\f, 4]]),
+            v1: [
+                [[\c5, \e5, \g5], \D5],    [\ef5, \d5],
+                [\c5, \5], [$|], [$|, \D4], [$|, \d4], [$|, \4],
+                [[\d5, 76], \D3], [$|, \d3], [$|, \3],
+                [[\d4, 65, 68], \D2], [$|, \d2], [$|, \2], [[69, 74, 88], \D1], [$|, \d1], [$|, \1]
+            ],
+            v2: [[\cF4, \h], [\cf3, \h]]
+        )
+    )
+].notate("~/Downloads/multiple instruments.musicxml".standardizePath, 'MuseScore 4')
+)</textarea>
+
+<p>The results of the above code block evaluation:<table>
+<tr><td>The rendered score in Dorico 4 Pro:<div class='image'><img src='resources/notes on music scores in multiple instruments Dorico 4.svg'/></div>
+
+<p><td>The rendered score in MuseScore 4:<div class='image'><img src='resources/notes on music scores in multiple instruments MuseScore 4 @102dpi.png'/></div>
+</table>
+</table>
+<h3><a class='anchor' name='11.3.%20Articulations,%20ties,%20slurs,%20pitch%20repetition%20and%20previous%20entry%20repetition'>11.3. Articulations, ties, slurs, pitch repetition and previous entry repetition</a></h3>
+
+<p>The list of currently supported articulations is as follows:<table>
+<tr><td><td>Array-in-Array notation<td>Symbol-in-Array notation,
+<p>String notation<tr><td>accent<td><textarea class='editor'>\a</textarea>
+<textarea class='editor'>$&gt;</textarea>
+<td><textarea class='editor'>&gt;</textarea>
+<tr><td>strong-accent<td><textarea class='editor'>\A</textarea>
+<textarea class='editor'>$^</textarea>
+<td><textarea class='editor'>^</textarea>
+<tr><td>staccato<td><textarea class='editor'>\s</textarea>
+<textarea class='editor'>$.</textarea>
+<td><textarea class='editor'>.</textarea>
+<tr><td>staccatissimo<td><textarea class='editor'>\S</textarea>
+<textarea class='editor'>$!</textarea>
+<td><textarea class='editor'>!</textarea>
+<tr><td>tenuto<td><textarea class='editor'>\o</textarea>
+<textarea class='editor'>$-</textarea>
+<td><textarea class='editor'>-</textarea>
+<tr><td>detached-legato<td><textarea class='editor'>\O</textarea>
+<textarea class='editor'>$_</textarea>
+<td><textarea class='editor'>_</textarea>
+</table>
+The list of currently supported ties is as follows:<table>
+<tr><td><td>Array-in-Array notation<td>Symbol-in-Array notation,
+<p>String notation<tr><td>tie start<td><textarea class='editor'>$j \\ &lt;- from 'join'</textarea>
+<textarea class='editor'>$~</textarea>
+<td><textarea class='editor'>~</textarea>
+<tr><td>tie stop<td><textarea class='editor'>$J</textarea>
+<textarea class='editor'>$`</textarea>
+<td><textarea class='editor'>`</textarea>
+<tr><td>laissez vibrer<td><textarea class='editor'>\lv</textarea>
+<textarea class='editor'>$r \\ &lt;- from 'let-ring'</textarea>
+<td><textarea class='editor'>r</textarea>
+<tr><td>tie stop with laissez vibrer<td><textarea class='editor'>$R</textarea>
+<td><textarea class='editor'>R</textarea>
+</table>
+The list of currently supported slurs is as follows:<table>
+<tr><td><td>Array-in-Array notation<td>Symbol-in-Array notation,
+<p>String notation<tr><td>slur start<td><textarea class='editor'>\u \\ &lt;- from u in 'slur'</textarea>
+<textarea class='editor'>$(</textarea>
+<td><textarea class='editor'>(</textarea>
+<tr><td>slur stop<td><textarea class='editor'>\U</textarea>
+<textarea class='editor'>$)</textarea>
+<td><textarea class='editor'>)</textarea>
+</table>
+The list of the currently supported abbreviations for the repetitive pitches and the repetition of entries is as follows:<table>
+<tr><td><td>Array-in-Array notation<td>Symbol-in-Array notation,
+<p>String notation<tr><td>repetitive pitche (a note) or pitches (a chord)<td><textarea class='editor'>$|</textarea>
+<td><textarea class='editor'>|</textarea>
+<tr><td>The repetition of the previous entry<td><textarea class='editor'>$\\</textarea>
+<td><textarea class='editor'>\\</textarea>
+</table>
+<table>
+<tr><td>Three different styles of code to get the same musicXML file:<table>
+<tr><td>Array-in-Array notation<td><textarea class='editor'>(
+var title = \articulations;
+x = [
+    (title: title, composer: 'me', rights: '©'),
+    (
+        bar: 1,
+        p1:
+        (
+            lbl: \Soprano,
+            atr: (key: [0, \none], time:[4, 4], staves: 1, clef: [[\c, 1]]),
+            v1: // voice 1.
+            [
+                [\t, \q, 60],
+
+                [68, \e, \sf, $!]
+                // The four-element array containing a scientific pitch name
+                // followed by a duration, a dynamic mark and an articulation
+                // defines the pitch of the note, its duration, dynamic mark and
+                // articulation.
+                ,
+
+                [$|, \e, \pp, $~]
+                // The five-element array containing a scientific pitch name
+                // followed by a duration, a dynamic mark, an articulation and
+                // a tie status defines the pitch of the note, its duration,
+                // dynamic mark, articulation and tie status.
+                ,
+
+                [$|, \q, $~],
+                // The array containing $| defines that the pitch of the note is
+                // a repetition of the previous one. Here its duration does not
+                // follow those of the previous note
+
+                [$|, \h, \pp, $~]
+            ]
+        )
+    ),
+    (
+        bar: 2,
+        p1:
+        (
+            v1: // voice 1.
+            [
+                [$|, \dq, $~],
+
+                [$|, \e, $`],
+
+                [\r, \q],
+
+                [\r, \q]
+            ]
+        )
+    ),
+    (
+        bar: 3,
+        p1:
+        (
+            v1: [
+                [68, \e],
+
+                [$|, \e, \F2, $^, $r, $(]
+                // The six-element array containing a scientific pitch name
+                // followed by a duration, a dynamic mark, an articulation, tie
+                // status a slur status defines the pitch of the note, its
+                // duration, dynamic mark, articulation, tie status and slur
+                // status.
+                ,
+
+                [69, \p]
+                // The elements of an entry can be flexibly omitted.
+                // The two-element array containing a scientific pitch name
+                // followed by an dynamic mark defines the pitch of the note with
+                // its dynamic mark, and its duration follows the duration of the
+                // previous note
+                ,
+
+                [71, \p]
+                // The repetition of the dynamic mark will not be displayed on the
+                // score, except for sf.
+                ,
+
+                [72, \sf],
+
+                [73, \sf],
+
+                [74, \pp, $^, $r],
+
+                [$|, \F]
+                // The two-element array containing a scientific pitch name
+                // followed by an articulation defines the pitch of the note with
+                // its articulation, and its duration and dynamic mark follow
+                // those of the previous note.
+                ,
+
+                [$|, \F],
+                [[74, 75]],
+                [$|, \h, \F, $_],
+                [$|, \p, $-],
+                [$|, $)],
+
+                [$\\]
+                // The array containing $\\ defines that the entry is a repetition
+                // of the previous entry.
+                ,
+
+                [[\c5, \a4, \fs4, \ds4], \x, \F],
+                [$\\, \F],
+                [$\\],
+                [$\\],
+                [$|, \7]
+            ]
+        )
+    )
+].notate(("~/Downloads"+/+ title ++ ".musicxml").standardizePath, 'Dorico 4')
+)</textarea>
+<tr><td>Symbol-in-Array notation<td><textarea class='editor'>(
+var title = \articulations;
+x = [
+    (title: title, composer: 'me', rights: '©'),
+    (
+        bar: 1,
+        p1:
+        (
+            lbl: \Soprano,
+            atr: (key: [0, \none], time:[4, 4], staves: 1, clef: [[\c, 1]]),
+            v1: // voice 1.
+            ['t q 60', '68 e sf !','| e pp ~', '| q ~', '| h pp ~']
+        )
+    ),
+    (
+        bar: 2,
+        p1:
+        (
+            v1: // voice 1.
+            ['| dq ~', '| e `', 'r q', 'r q']
+        )
+    ),
+    (
+        bar: 3,
+        p1:
+        (
+            v1: ['68 e', '| e F2 ^ r (', '69 p', '71 p', '72 sf', '73 sf',
+                '74 pp ^ r', '| F', '| F',
+                '&lt;74 75&gt;', '| h F _', '| p -', '| )',
+                '\\',
+                '&lt;c5 a4 fs4 ds4&gt; x F', '\\ F', '\\', '\\', '| h']
+        )
+    )
+].notate(("~/Downloads"+/+ title ++ ".musicxml").standardizePath, 'Dorico 4')
+)</textarea>
+<tr><td>String notation<td><textarea class='editor'>(
+var title = \articulations;
+x = [
+    (title: title, composer: 'me', rights: '©'),
+    (
+        bar: 1,
+        p1:
+        (
+            lbl: \Soprano,
+            atr: (key: [0, \none], time:[4, 4], staves: 1, clef: [[\c, 1]]),
+            v1: "t_q_60 68_e_sf_! |_e_pp_~ |_q_~ |_h_pp_~"
+        )
+    ),
+    (
+        bar: 2,
+        p1:
+        (
+            v1: "|_dq_~ |_e_` r_q r_q"
+        )
+    ),
+    (
+        bar: 3,
+        p1:
+        (
+            v1: "
+68_e |_e_F2_^_r_( 69_p 71_p 72_sf 73_sf
+74_pp_^_r |_F |_F
+&lt;74_75&gt; |_h_F__ |_p_- |_)
+\\
+&lt;c5_a4_fs4_ds4&gt;_x_F \\_F \\ \\ |_h"
+        )
+    )
+].notate(("~/Downloads"+/+ title ++ ".musicxml").standardizePath, 'Dorico 4')
+)</textarea>
+</table>
+The results of the evaluation of the codes above:<table>
+<tr><td>The rendered score in Dorico 4 Pro:<div class='image'><img src='resources/articulations.svg'/></div>
+</table>
+</table>
+
+<p><div class='doclink'>helpfile source: <a href='file:///Users/prko/Library/Application Support/SuperCollider/downloaded-quarks/Notator/HelpSource/Reference/ScoreGuideline.schelp'>/Users/prko/Library/Application Support/SuperCollider/downloaded-quarks/Notator/HelpSource/Reference/ScoreGuideline.schelp</a><br>link::Reference/ScoreGuideline::<br></div></div><script src='https://doc.sccode.org/editor.js' type='text/javascript'></script>
+</body></html>

@@ -1,0 +1,1167 @@
+<!doctype html><html lang='en'><head><title>Notator | SuperCollider 3.13.0 Help</title>
+<link rel='stylesheet' href='https://doc.sccode.org/scdoc.css' type='text/css' />
+<link rel='stylesheet' href='https://doc.sccode.org/codemirror.css' type='text/css' />
+<link rel='stylesheet' href='https://doc.sccode.org/editor.css' type='text/css' />
+<link rel='stylesheet' href='https://doc.sccode.org/frontend.css' type='text/css' />
+<link rel='stylesheet' href='./../custom.css' type='text/css' />
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+<script src='https://doc.sccode.org/lib/jquery.min.js'></script>
+<script src='https://doc.sccode.org/lib/codemirror-5.39.2.min.js' type='text/javascript'></script>
+<script src='https://doc.sccode.org/lib/codemirror-addon-simple-5.39.2.min.js' type='text/javascript'></script>
+<script>
+var helpRoot = './..';
+var scdoc_title = 'Notator';
+var scdoc_sc_version = '3.13.0';
+</script>
+<script src='https://doc.sccode.org/scdoc.js' type='text/javascript'></script>
+<script src='https://doc.sccode.org/docmap.js' type='text/javascript'></script>
+<script src='qrc:///qtwebchannel/qwebchannel.js' type='text/javascript'></script>
+</head>
+<body onload='fixTOC()'>
+<div id='toc'>
+<div id='toctitle'>Notator:</div>
+<span class='toc_search'>Filter: <input id='toc_search'></span><ul class='toc'><li class='toc1'><a href='#description'>Description</a></li>
+<ul class='toc'><li class='toc2'><a href='#Basic%20use'>Basic use</a></li>
+<ul class='toc'></ul><li class='toc2'><a href='#Example'>Example</a></li>
+<ul class='toc'></ul></ul><li class='toc1'><a href='#classmethods'>Class methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#*notate'>notate</a> </li>
+<li class='toc2'><a href='#Inherited%20class%20methods'>Inherited class methods</a></li>
+<li class='toc2'><a href='#Undocumented%20class%20methods'>Undocumented class methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#*parseStringAndSymbol'>parseStringAndSymbol</a> </li>
+<li class='toc3'><a href='#*stringToArray'>stringToArray</a> </li>
+</ul></ul><li class='toc1'><a href='#instancemethods'>Instance methods</a></li>
+<ul class='toc'><li class='toc2'><a href='#Inherited%20instance%20methods'>Inherited instance methods</a></li>
+</ul><li class='toc1'><a href='#examples'>Examples</a></li>
+<ul class='toc'><li class='toc2'><a href='#Eighth-tone%20Scale%20through%20algorithmic%20construction'>Eighth-tone Scale through algorithmic construction</a></li>
+<ul class='toc'></ul><li class='toc2'><a href='#Twelve-tone%20matrix%20through%20algorithmic%20construction'>Twelve-tone matrix through algorithmic construction</a></li>
+<ul class='toc'></ul><li class='toc2'><a href='#Default%20staves%20and%20default%20instrument%20(piano)'>Default staves and default instrument (piano)</a></li>
+<ul class='toc'></ul><li class='toc2'><a href='#Nested%20tuplets%20and%20multiple%20voices'>Nested tuplets and multiple voices</a></li>
+<ul class='toc'></ul></ul></ul></div><div id='menubar'></div>
+<div class='contents'>
+<div class='header'>
+<div id='label'>
+<span id='folder'>Classes (extension)</span>
+ | <span id='categories'><a href='https://doc.sccode.org/Browse.html#Notator'>Notator</a></span>
+</div><h1>Notator<span id='superclasses'> : <a href="../Classes/Object.html">Object</a></span>
+<div class='extension-indicator-ctr' title='This help file originates from a third-party quark or plugin for SuperCollider.'><img class='extension-indicator-icon' alt='Extension' src='https://doc.sccode.org/images/plugin.png'><span class='extension-indicator-text'>Extension</span></div></h1>
+<div id='summary'>musicXML Writer with the rewrite feature of the given sclang code to play it via scserver</div>
+</div>
+<div class='subheader'>
+<div id='filename'>Source: <a href='file:///Users/prko/Library/Application Support/SuperCollider/downloaded-quarks/Notator/Classes/Notator.sc' title='/Users/prko/Library/Application Support/SuperCollider/downloaded-quarks/Notator/Classes/Notator.sc'>Notator.sc</a></div><div id='related'>See also: <a href="https://doc.sccode.org/Reference/ScoreGuideline.html">Score Guideline for Notator</a>, <a href="https://doc.sccode.org/Classes/PitchClassSet.html">PitchClassSet</a>, <a href="https://doc.sccode.org/Classes/SPN.html">SPN</a></div>
+</div>
+<h2><a class='anchor' name='description'>Description</a></h2>
+
+<p>Using the <a href="https://doc.sccode.org/Classes/Notator.html">Notator</a> class, you can play the score via the sc-server and create musicXML files to seamlessly edit the score created in sclang in your favourite music notation software that supports musicXML 4.0 (or higher) import. It provides the following automated functions:<ol>
+<li>export a musicXML file and automatically open it in a music notation program,<li>create an SCD file and automatically load and open it to play music:<ul>
+<li>all standard and abbreviated notation is rewritten;<li>adds a new code block to play the transcribed code;<li>tied notes and articulation are applied for playback;<li>tries to associate the staff label with the same name as <code>SynthDef</code>. <code>Synth(\default)</code> will be used if the same defname is not found with the staff label.</ul>
+</ol>
+
+<p>You can print (or make a PDF of) the musicXML file without editing it, but you should edit and modify the score, since the <a href="https://doc.sccode.org/Classes/Notator.html">Notator</a> class is not intended for engraving music, but for composing seamlessly from music designed with SuperCollider.<div class='note'><span class='notelabel'>NOTE:</span> The musical notation for the <a href="https://doc.sccode.org/Classes/Notator.html">Notator</a> class can be opened as a form of score in any music software program that supports musicXML 4.0 (or higher) import and a score view functionality. The scores used in the examples in this help document are encoded by Dorico 4 Pro for some examples that do not display the musicXML file correctly, but are otherwise encoded by MuseScore 4.</div><div class='warning'><span class='warninglabel'>WARNING:</span> The way musicXML is decoded varies from software to software, so a musicXML file may look different in different software that opens it. Also, if the decoding is not correct, the score may look incorrect. You should therefore be familiar with the musicXML import characteristics of the software you use.</div>
+<p>This section covers only the basic usage of the <a href="https://doc.sccode.org/Classes/Notator.html">Notator</a>. For details, refer to <a href="https://doc.sccode.org/Reference/ScoreGuideline.html">Score Guideline for Notator</a>. For simpler and eleganter examples using algorithmic code construction, refer to the following examples in <a href="#examples">Example</a> section:<ul>
+<li><a href="#Eighth-tone%20Scale%20through%20algorithmic%20construction">Eighth-tone Scale through algorithmic construction</a><li><a href="#Twelve-tone%20matrix%20through%20algorithmic%20construction">Twelve-tone matrix through algorithmic construction</a></ul>
+<h3><a class='anchor' name='Basic%20use'>Basic use</a></h3>
+
+<p>The musical notation for the <a href="https://doc.sccode.org/Classes/Notator.html">Notator</a> class is constructed as an array instance, each element of which represents the contents of a particular bar. The first element of the array instance, i.e. index 0 of the array instance, is assigned information about the title, composer and copyright of the piece, and the index of the first and subsequent bar contents starts from index 1. The voice number can vary from bar to bar, but the voice number of joined notes (or joined chords) by a tie across the bar line should be the same voice. The bar number and the index of the array instance are therefore identical. The basic usage of <a href="https://doc.sccode.org/Classes/Notator.html">Notator</a> is as follows:<table>
+<tr><td>Standard
+<p>Notation
+<p><span class='soft'> </span>
+<p><span class='soft'> </span>
+<p>(Array-
+<p>in-
+<p>Array
+<p>Notation)<td><textarea class='editor'>(
+var title, score;
+
+title = ''; // title of the piece.
+// The value for the variable title should start with a lowercase character and
+// cannot be an uppercase letter or number.
+
+score = [
+    (  title: \x, composer: \x, rights: '©'  ),
+    // –––––––––  ––––––––––––  –––––––––––
+    // |          |             |
+    // title      composer      copyrights
+    //
+    //             staff lable: If the staff label is empty or nil, then piano will be used.
+    //             |
+    //             |                 attribute: key signature, time signature, number of staves,
+    //             |                 |          clefs and optional transposition information.
+    //             |                 |          The number of staves and the transposition
+    //             |                 |          information defined in the first bar are fixed
+    //             |                 |          to the end.
+    //             |                 |          If the attribute is not defined, 4 staves are
+    //             |                 |          used to easily cover the range of the piano.
+    //             ––––––––––––––––  ––––––––––
+    (  bar: 1, p1:(lbl: \staffLabel, atr: (...), v1:[...], v2: [...], ...), p2:(...), ...  ),
+    // ––––––  –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– ––––––––  –––
+    // |       |                                                            |         |
+    // |       contents for player 1                                        |         and so on
+    // |                                                                    |
+    // bar number                                                           contents for player 2
+    //
+    (  bar: 2, p1:(atr: (...), v1: [...], v2: [...], ...), p2:(...), ...  ),
+    //             ––––––––––  –––––––––  –––––––––  –––
+    //             |           |          |          |
+    //             |           |          |          and so on
+    //             |           |          |
+    //             |           |          v2: the entries of voice 2
+    //             |           |
+    //             |           v1: the entries of voice 1
+    //             |
+    //             accepted attributes from the second bar: key signature, time signature, clef(s)
+    //
+    ...
+];
+
+x = Notator.notate(score, ("~/Downloads/" ++ title ++ ".musicXML").standardizePath, 'Dorico 4')
+//                 –––––   –––––––––––––     –––––    ––––––––––– ––––––––––––––––  ––––––––––
+//                 |       |                 |        |           |                 |
+//                 |       |                 |        |           |                 the application
+//                 |       |                 |        |           |                 that will open
+//                 |       |                 |        |           |                 the exported
+//                 |       |                 |        |           |                 musicXML file
+//                 |       |                 |        |           |
+//                 |       |                 |        |         standardise the path written in
+//                 |       |                 |        |         a folder under the user's home folder
+//                 |       |                 |        |           (starting with the ~ symbol).
+//                 |       |                 |        |
+//                 |       |                 |        the extension for the musicXML file
+//                 |       |                 |
+//                 |       |                 title of the piece above
+//                 |       |
+//                 |       the folder where the musicXML file will be saved
+//                 |
+//                 score constructed above
+)</textarea>
+<tr><td>Syntactic
+<p>Sugar<td><textarea class='editor'>(
+var title = \x;
+x = [
+    (  title: \x, composer: \x, rights: '©'  ),
+    (  bar: 1, p1:(lbl: \staffLabel, atr: (...), v1:[...], v2: [...], ...), p2:(...), ...  ),
+    (  bar: 2, p1:(lbl: \staffLabel, atr: (...), v1: [...], v2: [...], ...), p2:(...), ...  ),
+    ...
+]
+.notate(("~/Downloads/" ++ title ++ ".musicXML").standardizePath, 'Dorico 4')
+)</textarea>
+<tr><td>Access
+<p>to
+<p>results<td><ul>
+<li>To play the music again via the scserver without having to recreate the music XML file:<textarea class='editor'>~play.()</textarea>
+<li>To open the musicXML file using the system's default application:<textarea class='editor'>x[0].openOS</textarea>
+<li>To reload the SCD file in SuperCollider:<textarea class='editor'>x[1].load</textarea>
+<li>To reopen the SCD file into SuperCollider:<textarea class='editor'>x[1].openDocument</textarea>
+<li>To open the folder containing the musicXML and SCD file using File Explorer (or Finder):<textarea class='editor'>x[0].dirname.openOS // x[1].dirname.openOS</textarea>
+</ul>
+</table>
+
+<p>There are three ways of notating musical information for <a href="https://doc.sccode.org/Classes/Notator.html">Notator</a>, i.e. score construction using:<ol>
+<li>Array-in-Array Notation:
+<p>an array for each musical entry.<li>Symbol-in-Array Notation:
+<p>a string or symbol for each musical entry.<li>String Notation:
+<p>a string for the musical entry of a voice.</ol>
+
+<p>There would be many possibilties of playing the score according to the characteristic of music and the work style of users. In this help document, the simplest way which provided by the <a href="https://doc.sccode.org/Classes/Notator.html">Notator</a> class is provided.<h3><a class='anchor' name='Example'>Example</a></h3>
+<table>
+<tr><td>In this examples, Dorico 4 is used to open musicXML since MuseScore does not correctly show nested tuplets in the bar 2.<table>
+<tr><td>The
+<p>desired
+<p>score<td><table>
+<tr><td><div class='image'><img src='resources/compact example.svg'/></div>
+</table>
+<tr><td>Array
+<p><span class='soft'> </span>
+<p>per
+<p><span class='soft'> </span>
+<p>Entry
+<p><span class='soft'> </span>
+<p><span class='soft'> </span>
+<p>(Array-
+<p>in-
+<p>Array
+<p>Notation)<td><textarea class='editor'>(
+var title = \ex_1, score;
+score = [
+    (
+        title: title, composer: 'me', rights: '©'
+    ),
+    (
+        bar: 1,
+        p1: (
+            lbl: \test,
+            atr: (key: [-3, \minor], time: [4, 4], staves: 1, clef: [[\g, 2]]),
+            //                                    –––––––––
+            //                                    |
+            //                                    The number of staves defined in the first
+            //                                    bar is fixed until the end.
+            //
+            v1:
+            [[\t,\q,90],[\F],[\e5],[[\d,\f],$~],[$|,\x,$`],[[72,\ef]],[[71,74],\e,\sf],[\r,\q]],
+            //–– –––––   ––   –––   |–––––  ––   –– –– ––    ––––––     –––––      –––  ––
+            // |  |       |    |    | |  |  |    |  |  |     |   |      |          |    |
+            // |  |       |    |    | |  |  tie  |  |  |     |   |      |          |    rest
+            // |  |       |    |    | |  | start |  |  |     |   |      |          |
+            // |  |       |    |    | |  |       |  |  |     |   |      |          sforzando
+            // |  |       |    |    | |  |       |  |  |     |   |      |
+            // |  |       |    |    | |  |       |  |  |     |   |      pitches for chord
+            // |  |       |    |    | |  |       |  |  |     |   |
+            // |  |       |    |    | |  |       |  |  |     MIDI pitch number and pitch name
+            // |  |       |    |    | |  |       |  |  |     for chord with the previous
+            // |  |       |    |    | |  |       |  |  |     rhythmic value
+            // |  |       |    |    | |  |       |  |  |
+            // |  |       |    |    | |  |       |  |  tie end
+            // |  |       |    |    | |  |       |  |
+            // |  |       |    |    | |  |       |  rhythmic value
+            // |  |       |    |    | |  |       |  - \x: sixteenth note
+            // |  |       |    |    | |  |       |  - \e: eighth note
+            // |  |       |    |    | |  |       |  - \q: quarter note
+            // |  |       |    |    | |  |       |  - \h: half note
+            // |  |       |    |    | |  |       |
+            // |  |       |    |    | |  |       the same pitch(es)
+            // |  |       |    |    | |  |       as the pitch(es) of the previous entry
+            // |  |       |    |    | |  |
+            // |  |       |    |    | pitches for chord:
+            // |  |       |    |    | the octave of previous pitch will be used.
+            // |  |       |    |    | If the previous one is a chord,
+            // |  |       |    |    | the octave of the last notated element in its array
+            // |  |       |    |    | will be used.
+            // |  |       |    |    |
+            // |  |       |    |    [ ]: chord
+            // |  |       |    |
+            // |  |       |    pitch (scientific pitch notation)
+            // |  |       |    with default rhythmic value (quarter note)
+            // |  |       |
+            // |  |       \F: dynamic.
+            // |  |       \f: pitch class.
+            // |  |
+            // |  90: bpm (quarter note)
+            // |
+            // \t: tempo
+            //
+            v2: [[\c4, \dq, $(], [\b3, \e], [60, $)], [[55, \d4], \sf], [\r], [\g, \pp, $!]]
+            //         –––  ––                   ––                                –––  ––
+            //         |    |                    |                                 |    |
+            //         |    slur start           slur end                      dynamic  |
+            //         dotted quarter note                                              |
+            //         dotted quarter note                                         staccatissimo
+        )
+    ),
+    (
+        bar: 2,
+        p1: (
+            v1: [[\r, \q], [\c, \h, \p], [\b4, \q]],
+            v2: [
+                //                         rhythmic value and tuplet unit are the same
+                //                         when there are three elements for a tuplet
+                //                         |
+                //         staccato        |
+                // tenuto      |    tuplet |  three in place of two    nested tuplet
+                //   |         |         | |  |                        |
+                //   ——        ––        – –– ––––                     ––
+                [\c, $-], [\d, $.], [\e, [\e, 3, 2]], [\f, [\e]], [\g, [[\x, 3, 2]]],
+                [\f, [[\x]]], [\e, [[\x, \], \]], [\d, \h]
+                //                       ––  ––
+                //                       |   |
+                //                       |   the end of the tuplet
+                //                       |
+                //                       the end of the nested tuplet
+            ]
+        )
+    )
+];
+
+x = Notator.notate(
+    score,
+    ("~/Downloads/" ++ title ++ ".musicXML").standardizePath,
+    'Dorico 4'
+)
+)</textarea>
+<tr><td>Symbol
+<p>(or string)
+<p><span class='soft'> </span>
+<p>per
+<p><span class='soft'> </span>
+<p>Entry
+<p><span class='soft'> </span>
+<p><span class='soft'> </span>
+<p>(Symbol-
+<p>in-
+<p>Array
+<p>Notation)<td><textarea class='editor'>(
+var title = \ex_1, score;
+score = [
+    (
+        title: title, composer: 'me', rights: '©'
+    ),
+    (
+        bar: 1,
+        p1: (
+            lbl: \test,
+            atr: (key: [-3, \minor], time: [4, 4], staves: 1, clef: [[\g, 2]]),
+            v1: ['t q 90', \F, \e5, '&lt;d f&gt; ~', '| 16 `', '&lt;72 ef&gt;', '&lt;71 74&gt; 8 sf', 'r 4'],
+            //                       –––––        ––      –––––––    ––––––– –         –
+            //                       |            |       |          |       |         |
+            //                       chord        |      chord      chord    |   rhythmic value:
+            //                                    |                          |   quarter note
+            //                                    |                          |
+            //                                    rhythmic value:      rhythmic value:
+            //                                    sixteenth note       eighth note
+
+            v2: ["c4 4. (", "b3 8", "60 )", "&lt;55 d4&gt; sf", \r, 'g pp !']
+            //                                                   |
+            //                                                   dynamic
+        )
+    ),
+    (
+        bar: 2,
+        p1: (
+            v1: ["r 4", "c 2 p", "b4 4"],
+            v2: [
+                "c -", "d .", "e /8/3:2", "f /8", "g //16/3:2", 'f //16', 'e //16//', 'd 2'
+            ]
+        )
+    )
+];
+
+x = Notator.notate(
+    score,
+    ("~/Downloads/" ++ title ++ ".musicXML").standardizePath,
+    'Dorico 4'
+)
+)</textarea>
+<tr><td>String
+<p><span class='soft'> </span>
+<p>per
+<p><span class='soft'> </span>
+<p>Whole
+<p>Entries
+<p>per
+<p>Voice
+<p><span class='soft'> </span>
+<p><span class='soft'> </span>
+<p>(String Notation)<td><textarea class='editor'>(
+var title = \ex_1, score;
+score = [
+    (
+        title: title, composer: 'me', rights: '©'
+    ),
+    (
+        bar: 1,
+        p1: (
+            lbl: \test,
+            atr: (key: [-3, \minor], time: [4, 4], staves: 1, clef: [[\g, 2]]),
+            v1: "t_q_90 F e5 &lt;d_f&gt;_~ |_16_` &lt;72_ef&gt; &lt;71_74&gt;_8_sf r_4",
+            v2: "c4_4._( b3_8 60_) &lt;55_d4&gt;_sf r g_pp_!"
+        )
+    ),
+    (
+        bar: 2,
+        p1: (
+            v1: "r_q c_h_p b4_q",
+            v2: "c_- d_. e_/8/3:2 f_/8 g_//16/3:2 f_//16 e_//16// d_2"
+        )
+    )
+];
+
+x = Notator.notate(
+    score,
+    ("~/Downloads/" ++ title ++ ".musicXML").standardizePath,
+    'Dorico 4'
+)
+)</textarea>
+<tr><td>Automatic
+<p>rewrite of
+<p>the
+<p>sclang
+<p>code
+<p>to play
+<p>in SC<td><textarea class='editor'>(
+~ex_1 = ( // score start
+    'test': ( // part start
+        1: ( // bar 1 start
+            v1: [ // voice start
+                (tempo: (beatUnit: \quarter, beatUnitNumDot: 0, bpm: 90)),
+                (tempoNormalised: (beatUnit: \quarter, bpm: 90.0)),
+                (dynamicForPart: \f),
+                (
+                    dur: 1.0, tie: \nil, slur: \nil, articulation: 'nil',
+                    midinote: [76.0], pitch: ['e5'],
+                    dynamic: \f, velocity: 79
+                ),
+                (
+                    dur: 1.0, tie: \start, slur: \nil, articulation: 'nil',
+                    midinote: [74.0, 77.0], pitch: ['d5', 'f5'],
+                    dynamic: \f, velocity: 79
+                ),
+                (
+                    dur: 0.25, tie: \stop, slur: \nil, articulation: 'nil',
+                    midinote: [74.0, 77.0], pitch: ['d5', 'f5'],
+                    dynamic: \f, velocity: 79
+                ),
+                (
+                    dur: 0.25, tie: \nil, slur: \nil, articulation: 'nil',
+                    midinote: [72.0, 75.0], pitch: ['c5', 'ef5'],
+                    dynamic: \f, velocity: 79
+                ),
+                (
+                    dur: 0.5, tie: \nil, slur: \nil, articulation: 'nil',
+                    midinote: [71.0, 74.0], pitch: ['b4', 'd5'],
+                    dynamic: \sf, velocity: 96
+                ),
+                (
+                    dur: 1.0, tie: \nil, slur: \nil, articulation: 'nil',
+                    midinote: Rest(1.0), pitch: Rest(1.0),
+                    dynamic: \sf, velocity: 96
+                )
+            ], // voice end
+            v2: [ // voice start
+                (
+                    dur: 1.5, tie: \nil, slur: \start, articulation: 'nil',
+                    midinote: [60.0], pitch: ['c4'],
+                    dynamic: \mp, velocity: 55
+                ),
+                (
+                    dur: 0.5, tie: \nil, slur: \nil, articulation: 'nil',
+                    midinote: [59.0], pitch: ['b3'],
+                    dynamic: \mp, velocity: 55
+                ),
+                (
+                    dur: 0.5, tie: \nil, slur: \stop, articulation: 'nil',
+                    midinote: [60.0], pitch: ['c4'],
+                    dynamic: \mp, velocity: 55
+                ),
+                (
+                    dur: 0.5, tie: \nil, slur: \nil, articulation: 'nil',
+                    midinote: [55.0, 62.0], pitch: ['g3', 'd4'],
+                    dynamic: \sf, velocity: 96
+                ),
+                (
+                    dur: 0.5, tie: \nil, slur: \nil, articulation: 'nil',
+                    midinote: Rest(0.5), pitch: Rest(0.5),
+                    dynamic: \sf, velocity: 96
+                ),
+                (
+                    dur: 0.5, tie: \nil, slur: \nil, articulation: 'staccatissimo',
+                    midinote: [67.0], pitch: ['g4'],
+                    dynamic: \pp, velocity: 31
+                )
+            ] // voice end
+        ), // bar end
+        2: ( // bar 2 start
+            v1: [ // voice start
+                (
+                    dur: 1.0, tie: \nil, slur: \nil, articulation: 'nil',
+                    midinote: Rest(1.0), pitch: Rest(1.0),
+                    dynamic: \sf, velocity: 96
+                ),
+                (
+                    dur: 2.0, tie: \nil, slur: \nil, articulation: 'nil',
+                    midinote: [72.0], pitch: ['c5'],
+                    dynamic: \p, velocity: 43
+                ),
+                (
+                    dur: 1.0, tie: \nil, slur: \nil, articulation: 'nil',
+                    midinote: [71.0], pitch: ['b4'],
+                    dynamic: \p, velocity: 43
+                )
+            ], // voice end
+            v2: [ // voice start
+                (
+                    dur: 0.5, tie: \nil, slur: \nil, articulation: 'tenuto',
+                    midinote: [60.0], pitch: ['c4'],
+                    dynamic: \pp, velocity: 31
+                ),
+                (
+                    dur: 0.5, tie: \nil, slur: \nil, articulation: 'staccato',
+                    midinote: [62.0], pitch: ['d4'],
+                    dynamic: \pp, velocity: 31
+                ),
+                (
+                    dur: 0.33333333333333, tie: \nil, slur: \nil, articulation: 'nil',
+                    midinote: [64.0], pitch: ['e4'],
+                    dynamic: \pp, velocity: 31
+                ),
+                (
+                    dur: 0.33333333333333, tie: \nil, slur: \nil, articulation: 'nil',
+                    midinote: [65.0], pitch: ['f4'],
+                    dynamic: \pp, velocity: 31
+                ),
+                (
+                    dur: 0.11111111111111, tie: \nil, slur: \nil, articulation: 'nil',
+                    midinote: [67.0], pitch: ['g4'],
+                    dynamic: \pp, velocity: 31
+                ),
+                (
+                    dur: 0.11111111111111, tie: \nil, slur: \nil, articulation: 'nil',
+                    midinote: [65.0], pitch: ['f4'],
+                    dynamic: \pp, velocity: 31
+                ),
+                (
+                    dur: 0.11111111111111, tie: \nil, slur: \nil, articulation: 'nil',
+                    midinote: [64.0], pitch: ['e4'],
+                    dynamic: \pp, velocity: 31
+                ),
+                (
+                    dur: 2.0, tie: \nil, slur: \nil, articulation: 'nil',
+                    midinote: [62.0], pitch: ['d4'],
+                    dynamic: \pp, velocity: 31
+                )
+            ] // voice end
+        ) // bar end
+    ) // part end
+); // score end
+
+~play = {
+    s.waitForBoot {
+        var parts, detectNumVoices, eventPlayer;
+        parts = [ 'test' ];
+        detectNumVoices = { |nthBar, thisPart|
+            ~ex_1[thisPart][nthBar].keys.count { |item|
+                item.asString.contains("v") }
+        };
+        eventPlayer = { |thisEntry, velocityFactorForRestNTiedNote, slur, instrument|
+            var articulationToVelocity, articulationToLegato, sustain;
+            # articulationToVelocity, articulationToLegato = switch (thisEntry[\articulation],
+                'accent',          { [4, 1]    },
+                'strong-accent',   { [8, 1]    },
+                'staccato',        { [1, 0.4]  },
+                'staccatissimo',   { [2, 0.2] },
+                'tenuto',          { [0, 1]    },
+                'detached-legato', { [0, 0.8]  },
+                'nil',             { [0, 1]    }
+            );
+
+            ("\t- articulationToLegato:" + articulationToLegato).postln;
+            articulationToLegato = if (slur == \on) {
+                1
+            } {
+                if (thisEntry[\tie] == \lv) {
+                    1.2
+                } { 0.9
+                }
+            } * articulationToLegato;
+            ("\t- slur-applied articulationToLegato:" + articulationToLegato).postln;
+            (
+                instrument: instrument,
+                dur:        if (thisEntry[\tiedDur] == 0) {
+                    thisEntry[\dur]
+                } {
+                    thisEntry[\tiedDur]
+                },
+                amp:        thisEntry[\velocity] / 127 * velocityFactorForRestNTiedNote,
+                midinote:   thisEntry[\midinote],
+                legato:     articulationToLegato
+            ).play.postln;
+            "".postln;
+        };
+
+        parts.do { |aPart|
+            var numBars, nthBar, instrument, scorePlay;
+        numBars = ~ex_1[parts[0]].size;
+            nthBar = 1;
+            instrument = if (SynthDescLib.global.synthDescs.keys.includes(aPart)) {
+                aPart
+            } {
+                \default
+            };
+            scorePlay = { |nthBarNum|
+                var thisPartThisBarVoiceSize = detectNumVoices.(nthBarNum, aPart);
+                ("\nbar:" + nthBarNum).postln;
+                thisPartThisBarVoiceSize.do { |thisVoiceIndex|
+                    thisVoiceIndex = thisVoiceIndex + 1;
+                    fork{
+                        var thisPartThisBarThisVoice, thisPartThisBarThisVoiceLastItemIndex, slur;
+                        thisPartThisBarThisVoice = ~ex_1[
+                            aPart][nthBarNum][
+                            ("v" ++ thisVoiceIndex).asSymbol
+                        ];
+                        thisPartThisBarThisVoiceLastItemIndex = thisPartThisBarThisVoice.size - 1;
+                        thisPartThisBarThisVoice.size.do { |thisVoiceItemIndex|
+                            var entryCurrent, entryNext, entryPrevious;
+
+                            (
+                            "\n\nthisVoiceItemIndex:"
+                                + thisVoiceItemIndex + "@ bar" + nthBarNum ++ "\n"
+                            ).postln;
+                            # entryPrevious, entryCurrent, entryNext = (
+                                case
+                                { thisVoiceItemIndex &lt; thisPartThisBarThisVoiceLastItemIndex
+                                    &amp;&amp;  (thisVoiceItemIndex != 0) } {
+                                    [
+                                        thisPartThisBarThisVoice[thisVoiceItemIndex - 1],
+                                        thisPartThisBarThisVoice[thisVoiceItemIndex],
+                                        thisPartThisBarThisVoice[thisVoiceItemIndex + 1]
+                                    ]
+                                }
+                                { thisVoiceItemIndex == thisPartThisBarThisVoiceLastItemIndex  &amp;&amp;  (thisVoiceItemIndex != 0)} {
+                                    [
+                                        thisPartThisBarThisVoice[thisVoiceItemIndex - 1],
+                                        thisPartThisBarThisVoice[thisVoiceItemIndex],
+                                        if (nthBarNum &lt; numBars) {
+                                            ~ex_1[aPart][nthBarNum + 1][
+                                                ("v" ++ thisVoiceIndex).asSymbol
+                                            ][0]
+                                        }
+                                    ]
+                                }
+                                { thisVoiceItemIndex == 0 } {
+                                    [
+                                        if (nthBarNum == 1) {
+                                            (tie: \nil)
+                                        } {
+                                            var previousItem = ~ex_1[aPart][nthBarNum - 1][
+                                                ("v" ++ thisVoiceIndex).asSymbol
+                                            ];
+                                            previousItem[previousItem.size - 1]
+                                        },
+                                        thisPartThisBarThisVoice[thisVoiceItemIndex],
+                                        thisPartThisBarThisVoice[thisVoiceItemIndex + 1]
+                                    ]
+                                }
+                            );
+
+                            (
+                                "\n\t* thisVoiceItemIndex:" + thisVoiceItemIndex ++ "\n\n\t*"
+                                + entryCurrent ++ "\n"
+                            ).postln;
+
+                            case
+                            { entryCurrent.keys.includes(\tempo) } {
+                                TempoClock.default.tempo = entryCurrent[\tempo][\bpm] / 60;
+                                (
+                                    "\t* TempoClock.default.tempo:"
+                                    + TempoClock.default.tempo ++ "\n"
+                                ).postln
+                            }
+                            { thisPartThisBarThisVoice[thisVoiceItemIndex].keys.includes(\midinote)
+                            } {
+                                var tiedRhythmicValue = 0, velocityFactor = 1, waitTime;
+                                switch (entryCurrent[\slur],
+                                    \start, { slur = \on },
+                                    \stop, { slur = \off }
+                                );
+                                if (entryCurrent[\tie] == \start
+                                    &amp;&amp;  "^start".matchRegexp(entryPrevious[\tie].asString).not) {
+                                    var actualiseRhythmicValue;
+                                    actualiseRhythmicValue = { |testBar, testItemIdx, testItem|
+                                        var nextTestItemDetector, nextTestItem, nexttestItemIdx;
+                                            nextTestItemDetector = { |testBarNum|
+                                            ~ex_1[aPart][testBarNum][
+                                                ( "v" ++ thisVoiceIndex).asSymbol
+                                                ]
+                                            };
+
+                                        "\n\t* Checking the next tie status".postln;
+                                        (
+                                            "\n\t\t* nthBar:" + testBar ++
+                                            "; testItemIdx:" + testItemIdx ++
+                                            "; testItem[\dur]:" + testItem[\dur]
+                                            ).postln;
+                                        (
+                                            "\n\t\t* previous tiedRhythmicValue:"
+                                            + tiedRhythmicValue
+                                        ).postln;
+
+                                        tiedRhythmicValue = tiedRhythmicValue + testItem[\dur];
+
+                                        ("\t\t* updated tiedRhythmicValue:" + tiedRhythmicValue).postln;
+
+                                        if (testItemIdx &lt; (nextTestItemDetector.(testBar).size - 1)) {
+                                            nexttestItemIdx = testItemIdx + 1;
+                                            nextTestItem = nextTestItemDetector.(testBar)[nexttestItemIdx];
+                                        } {
+                                            testBar = testBar + 1;
+                                            nexttestItemIdx = 0;
+                                            nextTestItem = nextTestItemDetector.(testBar)[nexttestItemIdx];
+                                        };
+
+                                        ("\t\t* the nextTestItem['tie'] of the testItem" + testItemIdx ++ ":" + nextTestItem[\tie]).postln;
+                                        ("\t\t*" + "^stop".quote ++ ".matchRegexp(nextTestItem['tie'].asString): " + "^stop".matchRegexp(nextTestItem[\tie].asString)).postln;
+                                        if ("^stop".matchRegexp(testItem[\tie].asString)) {
+                                            "\t\t* no need to check the further ties\n".postln
+                                        } {
+                                            "\n\t* Checking the next tie status";
+                                            actualiseRhythmicValue.(testBar, nexttestItemIdx, nextTestItem);
+                                        }
+                                    };
+
+                                    actualiseRhythmicValue.(nthBarNum, thisVoiceItemIndex, entryCurrent);
+                                };
+
+                                ("\t* entryPrevious 'waitTimeCorrectionForTiedNote':"+ entryPrevious[\waitTimeCorrectionForTiedNote] ++ "\n").postln;
+                                if ("^start".matchRegexp(entryPrevious[\tie].asString)) {
+                                    entryCurrent.put(\waitTimeCorrectionForTiedNote, 0);
+                                    velocityFactor = 0
+                                };
+
+                                if ("^Rest".matchRegexp(entryCurrent[\midinote].asString)) {
+                                    velocityFactor = 0
+                                };
+
+                                entryCurrent.put(\tiedDur, tiedRhythmicValue);
+                                (
+                                    "\t* entryCurrent 'tiedDur':" + entryCurrent['tiedDur'] ++ ";"
+                                    "\t'dur':" + entryCurrent['dur'] ++ ";"
+                                    "\t'waitTimeCorrectionForTiedNote':" + entryCurrent['waitTimeCorrectionForTiedNote'] ++ ";\n"
+                                ).postln;
+                                eventPlayer.(entryCurrent, velocityFactor, slur, instrument);
+                                waitTime = if (entryCurrent[\waitTimeCorrectionForTiedNote] != nil) {
+                                    entryCurrent[\waitTimeCorrectionForTiedNote]
+                                } {
+                                    if (entryCurrent[\tiedDur] == 0) {
+                                        entryCurrent[\dur]
+                                    } {
+                                        entryCurrent[\tiedDur]
+                                    }
+                                };
+                                ("    * v" ++ thisVoiceIndex + "waitTime:" + waitTime).postln;
+                                waitTime.wait
+                            };
+                            ("    *" + (thisVoiceItemIndex) + "/" + (thisPartThisBarThisVoiceLastItemIndex) + "finished").postln;
+                            ("    * nth bar of total bars:" + nthBar + "/" + numBars).postln;
+                            if (thisVoiceItemIndex == thisPartThisBarThisVoiceLastItemIndex) {
+                                if (nthBar &lt; numBars) {
+                                    nthBar = nthBar + 1;
+                                    scorePlay.(nthBar)
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+            scorePlay.(nthBar)
+        }
+    }
+};
+~play.()
+)</textarea>
+</table>
+</table>
+<h2><a class='anchor' name='classmethods'>Class Methods</a></h2>
+<h3 class='method-code'><span class='method-prefix'>Notator.</span><a class='method-name' name='*notate' href='https://doc.sccode.org/Overviews/Methods.html#notate'>notate</a>(<span class='argstr'>score</span>, <span class='argstr'>musicXMLfilePath</span>, <span class='argstr'>app: "MuseScore 4"</span>)</h3>
+<div class='method'><h4>Arguments:</h4>
+<table class='arguments'>
+<tr><td class='argumentname'>score<td class='argumentdesc'>A unique construction of musical notation information in the form of arrays and events.<tr><td class='argumentname'>musicXMLfilePath<td class='argumentdesc'>
+<p>Path for musicXML file<tr><td class='argumentname'>app<td class='argumentdesc'>
+<p>Application that is launched when a musicXML file is saved.</table></div><h3><a class='anchor' name='Inherited%20class%20methods'>Inherited class methods</a></h3>
+<div id='inheritedclassmets'></div><h3><a class='anchor' name='Undocumented%20class%20methods'>Undocumented class methods</a></h3>
+<h3 class='method-code'><span class='method-prefix'>Notator.</span><a class='method-name' name='*parseStringAndSymbol' href='https://doc.sccode.org/Overviews/Methods.html#parseStringAndSymbol'>parseStringAndSymbol</a>(<span class='argstr'>stringOrSymbolOrArray</span>)</h3>
+<h3 class='method-code'><span class='method-prefix'>Notator.</span><a class='method-name' name='*stringToArray' href='https://doc.sccode.org/Overviews/Methods.html#stringToArray'>stringToArray</a>(<span class='argstr'>input</span>)</h3>
+<h2><a class='anchor' name='instancemethods'>Instance Methods</a></h2>
+<h3><a class='anchor' name='Inherited%20instance%20methods'>Inherited instance methods</a></h3>
+<div id='inheritedinstmets'></div><h2><a class='anchor' name='examples'>Examples</a></h2>
+<h3><a class='anchor' name='Eighth-tone%20Scale%20through%20algorithmic%20construction'>Eighth-tone Scale through algorithmic construction</a></h3>
+<table>
+<tr><td>The
+<p>desired
+<p>score<td><div class='image'><img src='resources\Eighth-tone_Scale.svg'/></div>
+<tr><td>Array
+<p><span class='soft'> </span>
+<p>per
+<p><span class='soft'> </span>
+<p>Entry
+<p><span class='soft'> </span>
+<p><span class='soft'> </span>
+<p>(Array-
+<p>in-
+<p>Array
+<p>Notation)<td><textarea class='editor'>(
+var title = "Eighth-tone Scale", score;
+score = [
+    (
+        title: title, composer: 'a composer', rights: '©'
+    ),
+    (
+        bar: 1, p1: (
+            lbl: \Violin,
+            atr: (key: [0, \none], time: [4, 4], staves: 1, clef: [[\g, 2]]),
+            v1: []
+        )
+    )
+];
+
+(0, 1/4 .. 12).mirror.clump(4).do { |notesInBar, index|
+    var bar = index + 1;
+    if (bar &gt; 1) { score = score.add((bar: bar, p1: (v1: []))) };
+    notesInBar.collect { |aNote|
+        score[bar][\p1][\v1] = score[bar][\p1][\v1].add([aNote + 60]) }
+};
+
+x = Notator.notate(
+    score,
+    ("~/Downloads/" ++ title ++ ".musicXML").standardizePath,
+    'MuseScore 4'
+)
+)</textarea>
+</table>
+<h3><a class='anchor' name='Twelve-tone%20matrix%20through%20algorithmic%20construction'>Twelve-tone matrix through algorithmic construction</a></h3>
+<table>
+<tr><td>A
+<p>possible
+<p>score<td><div class='image'><img src='resources/twelve-tone_seriesnotation.svg'/></div>
+<tr><td>Array
+<p><span class='soft'> </span>
+<p>per
+<p><span class='soft'> </span>
+<p>Entry
+<p><span class='soft'> </span>
+<p><span class='soft'> </span>
+<p>(Array-
+<p>in-
+<p>Array
+<p>Notation)<td><textarea class='editor'>(
+var title = "twelve-tone series", matrix_12tone;
+matrix_12tone = { |array|
+    var matrix = 12.collect { |i| array[i]; array - (array[i] % 12) };
+    matrix.do { |item| item.replace(11, \e).replace(10, \t).postln }
+};
+matrix_12tone = matrix_12tone.((0..11).scramble) + 72;
+
+(
+x = [(title: '12-tone series matrix', composer: 'randomised', rights: '©')] ++
+matrix_12tone.collect { |series, index|
+    if (index == 0) {
+        (
+            bar: index + 1,
+            p1: (
+                lbl: '',
+                atr: (key: [0, \none], time: \x, staves: 1, clef: [[\g, 2]]),
+                v1: series.collect { |aNote| [aNote, \w] }
+            )
+        )
+    } {
+        series.postln;
+        (
+            bar: index + 1,
+            p1: (v1: series.collect { |aNote| [aNote, \w] })
+        )
+    }
+}
+).notate(("~/Downloads/" ++ title ++ ".musicXML").standardizePath, 'MuseScore 4')
+)</textarea>
+</table>
+<h3><a class='anchor' name='Default%20staves%20and%20default%20instrument%20(piano)'>Default staves and default instrument (piano)</a></h3>
+<table>
+<tr><td>The
+<p>desired
+<p>score<td>In this examples, Dorico 4 is used to open musicXML since MuseScore does not correctly show nested tuplets staves.<table>
+<tr><td><div class='image'><img src='resources/default staves.svg'/></div>
+</table>
+<tr><td>Array
+<p><span class='soft'> </span>
+<p>per
+<p><span class='soft'> </span>
+<p>Entry
+<p><span class='soft'> </span>
+<p><span class='soft'> </span>
+<p>(Array-
+<p>in-
+<p>Array
+<p>Notation)<td><textarea class='editor'>(
+var title = 'default staves', score;
+score = [
+    (
+        title: title, composer: 'me', rights: '©'
+    ),
+    (
+        bar: 1,
+        p1: (
+            v1: [
+                [\t, \q, 120],
+                [[\a0, \a3, \a5, \c8], [\e, 3, 2], \p, \a, \u],
+                [$|, [[\x, 3, 2]], \f, \s],
+                [$|, [[\e, \]], \f, \S],
+                [$|, [5, \], \j],
+                [$|, [\De, 6, 4, \x], \J],
+                [$|, [\t], \sf, \O],
+                [$|, [\x], \sf, \o],
+                [$|, [4, \], \sf, \A],
+                [$|, [\de, 5, 4, \x]],
+                [\aqs4, [\e, \], \sf, \j],
+                [$|, [\de, 3, 2, \e], \J],
+                [$|, [\t, \], \s2, \j]
+            ]
+        )
+    ),
+    (
+        bar: 2,
+        p1: (
+            v1: [
+                [$|, [\e, 3, 2], \J],
+                [\s1],
+                [$|, [\e]],
+                [$|, [5, \]],
+                [\a4, [\x, 5, 4]],
+                [$|, [\x]],
+                [$\\],
+                [$|, [[\x, 3, 2]]],
+                [$|, [[\x]]],
+                [$|, [[\x, \], \]],
+                [$|, \dx],
+                [\a2, \t],
+                [$|, \Dx],
+                [$|, \i],
+                [$|, \Te],
+                [$|, \i, \U],
+            ]
+        )
+    )
+];
+
+x = Notator.notate(
+    score,
+    ("~/Downloads/" ++ title ++ ".musicXML").standardizePath,
+    'Dorico 4'
+)
+)</textarea>
+<tr><td>Symbol
+<p>(or string)
+<p><span class='soft'> </span>
+<p>per
+<p><span class='soft'> </span>
+<p>Entry
+<p><span class='soft'> </span>
+<p><span class='soft'> </span>
+<p>(Symbol-
+<p>in-
+<p>Array
+<p>Notation)<td><textarea class='editor'>(
+var title = 'default staves', score;
+score = [
+    (
+        title: title, composer: 'me', rights: '©'
+    ),
+    (
+        bar: 1,
+        p1: (
+            v1: [
+                "t q 120",
+                "&lt;a0 a3 a5 c8&gt; /8/3:2 p &gt; (",
+                "| //16/3:2 f .",
+                "| //8/ f !",
+                "| /8/ ~",
+                "| /8../6:4/x `",
+                "| /32 sf _",
+                "| /16 sf -",
+                "| /16/ sf ^",
+                "| /8./5:4/x",
+                "aqs4 /e/ sf ~",
+                "| /8./3:2/e `",
+                "| /32/ ff ~"
+            ]
+        )
+    ),
+    (
+        bar: 2,
+        p1: (
+            v1: [
+                'aqs4 /8/3/2 `',
+                \s1,
+                '| /8',
+                '| /8/',
+                'a4 /16/5/4',
+                '| /16',
+                '\\',
+                '| //16/3/2',
+                '| //16',
+                '| //16//',
+                '| 16.',
+                'a2 32',
+                '| 16..',
+                '| 64',
+                '| 8...',
+                '| 64 )'
+            ]
+        )
+    )
+];
+
+x = Notator.notate(
+    score,
+    ("~/Downloads/" ++ title ++ ".musicXML").standardizePath,
+    'Dorico 4'
+)
+)</textarea>
+<tr><td>String
+<p><span class='soft'> </span>
+<p>per
+<p><span class='soft'> </span>
+<p>Whole
+<p>Entries
+<p>per
+<p>Voice
+<p><span class='soft'> </span>
+<p><span class='soft'> </span>
+<p>(String Notation)<td><textarea class='editor'>(
+var title = 'default staves', score;
+score = [
+    (
+        title: title, composer: 'me', rights: '©'
+    ),
+    (
+        bar: 1,
+        p1: (
+            v1: "
+t_q_120
+&lt;a0_a3_a5_c8&gt;_/e/3:2_p_&gt;_(
+|_//16/3:2_f_.
+|_//8/_f_!
+|_/8/_~
+|_/8../6:4/16_`
+|_/32_sf__
+|_/16_sf_-
+|_/16/_sf_^
+|_/8./5:4/16
+aqs4_/8/_sf_~
+|_/8./3:2/8_`
+|_/32/_ff_~
+"
+        )
+    ),
+    (
+        bar: 2,
+        p1: (
+            v1: "
+aqs4_/8/3:2_`
+s1
+|_/8 |_/8/ a4_/16/5:4 |_/16 \\ |_//16/3:2 |_//16 |_//16//
+|_16. a2_32 |_16.. |_64 |_8... |_64_)
+"
+        )
+    )
+];
+
+x = Notator.notate(
+    score,
+    ("~/Downloads/" ++ title ++ ".musicXML").standardizePath,
+    'Dorico 4'
+)
+)</textarea>
+</table>
+<h3><a class='anchor' name='Nested%20tuplets%20and%20multiple%20voices'>Nested tuplets and multiple voices</a></h3>
+<table>
+<tr><td>The
+<p>desired
+<p>score<td><table>
+<tr><td>In this examples, Dorico 4 is used to open musicXML since MuseScore does not correctly show nested tuplets.<div class='image'><img src='resources/Nested_tuplets_and_multiple_voices dorico 4.svg'/></div>
+</table>
+
+<p><tr><td>Array
+<p><span class='soft'> </span>
+<p>per
+<p><span class='soft'> </span>
+<p>Entry
+<p><span class='soft'> </span>
+<p><span class='soft'> </span>
+<p>(Array-
+<p>in-
+<p>Array
+<p>Notation)<td><textarea class='editor'>(
+var title = 'Nested tuplets and multiple voices';
+x = [
+    (title: title, composer: 'randomised', rights: '©'),
+    (
+        bar: 1,
+        p1: (
+            v1: [
+                [[\a7, \a6], [\e, 3, 2, \e]],
+                [$|, [\e]],
+                [$|, [5, \]],
+                [[\af7, \as6], [\e, 3, 2, \e]],
+                [$|, [[\x, 3, 2, \x]]],
+                [$|, [[\x]]],
+                [$|, [[\x, \]]],
+                [$|, [\e, \]],
+                [$|, [\e, 5, 4, \e]],
+                [$|, [[\e, 3, 2, \e]]],
+                [$|, [[\q, \]]],
+                [$|, [\q, \]]
+            ],
+            v2: [
+                [[\a5, \a4], [\x, 5, 4, \x]],
+                [$|, [\x]],
+                [$|, [4]],
+                [$|, [\x]],
+                [$|, [4, \]],
+                [[\af5, \a4], [\x, 6, 4, \x]],
+                [$|, [\x]],
+                [$|, [5]],
+                [$|, [\x]],
+                [$|, [4, \]]
+            ],
+            v3:
+            [
+                [[\a3, \a2], 6]
+            ],
+            v4: [
+                [[\a1, \a0]]
+            ]
+        )
+    )
+].notate(("~/Downloads/" ++ title ++ ".musicXML").standardizePath, 'Dorico 4')
+)</textarea>
+<tr><td>Symbol
+<p>(or string)
+<p><span class='soft'> </span>
+<p>per
+<p><span class='soft'> </span>
+<p>Entry
+<p><span class='soft'> </span>
+<p><span class='soft'> </span>
+<p>(Symbol-
+<p>in-
+<p>Array
+<p>Notation)<td><textarea class='editor'>(
+var title = 'Nested tuplets and multiple voices';
+x = [
+    (title: title, composer: 'randomised', rights: '©'),
+    (
+        bar: 1,
+        p1: (
+            v1: [
+                '&lt;a7 a6&gt; /8/3:2', '| /8', '| /8/',
+                '&lt;af7 as6&gt; /8/3:2', '| //16/3:2', '| //16', '| //16/', '| /8/',
+                '| /8/5:4', '| //8/3:2', '| //4/', '| /4/'
+            ],
+            v2: [
+                '&lt;a5 a4&gt; /16/5:4', '| /16', '| /16', '| /16', '| /16/',
+                '&lt;af5 a4&gt; /16/6:4', '| /16', '| /8', '| /16', '| /16/'
+            ],
+            v3: ['&lt;a3 a2&gt; 4'],
+            v4: ['&lt;a1 a0&gt;']
+        )
+    )
+].notate(("~/Downloads/" ++ title ++ ".musicXML").standardizePath, 'Dorico 4')
+)</textarea>
+<tr><td>String
+<p><span class='soft'> </span>
+<p>per
+<p><span class='soft'> </span>
+<p>Whole
+<p>Entries
+<p>per
+<p>Voice
+<p><span class='soft'> </span>
+<p><span class='soft'> </span>
+<p>(String Notation)<td><textarea class='editor'>(
+var title = 'Nested tuplets and multiple voices';
+x = [
+    (title: title, composer: 'randomised', rights: '©'),
+    (
+        bar: 1,
+        p1: (
+            v1: "
+&lt;a7_a6&gt;_/8/3:2 |_/8 |_/8/
+&lt;af7_as6&gt;_/8/3:2 |_//16/3:2 |_//16 |_//16/ |_/8/ |_/8/5:4 |_//8/3:2 |_//4/ |_/4/",
+            v2: "
+&lt;a5_a4&gt;_/16/5:4 |_/16 |_/16 |_/16 |_/16/ &lt;af5_a4&gt;_/16/6:4 |_/16 |_/8 |_/16 |_/16/",
+            v3: "&lt;a3_a2&gt;_4",
+            v4: "&lt;a1_a0&gt;"
+        )
+    )
+].notate(("~/Downloads/" ++ title ++ ".musicXML").standardizePath, 'Dorico 4')
+)</textarea>
+</table>
+<div class='doclink'>helpfile source: <a href='file:///Users/prko/Library/Application Support/SuperCollider/downloaded-quarks/Notator/HelpSource/Classes/Notator.schelp'>/Users/prko/Library/Application Support/SuperCollider/downloaded-quarks/Notator/HelpSource/Classes/Notator.schelp</a><br>link::Classes/Notator::<br></div></div><script src='https://doc.sccode.org/editor.js' type='text/javascript'></script>
+</body></html>
