@@ -308,7 +308,7 @@ score = [
 			//         |    |                    |                                 |    |
 			//         |    slur start           slur end                      dynamic  |
 			//         dotted quarter note                                              |
-			//         dotted quarter note                                         staccatissimo
+			//                                                                     staccatissimo
 		)
 	),
 	(
