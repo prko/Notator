@@ -5,20 +5,20 @@ with support for pitch class set and scientific pith notation
 ---
 
 ### Table of Contents
+<small><i>(<a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a>)</i></small>
 - [1. How to Install](#1-how-to-install)
 - [2. Classes](#2-classes)
   * [2.1. Notator](#21-notator)
     + [2.1.1. Examples](#211-examples)
       - [Eighth-tone Scale through algorithmic construction](#eighth-tone-scale-through-algorithmic-construction)
       - [Twelve-tone matrix through algorithmic construction](#twelve-tone-matrix-through-algorithmic-construction)
-    + [2.1.2. Online Help Document](#212-online-help-document)
+    + [2.1.2. Preview of Online Help Document and Guideline](#212-preview-of-online-help-document-and-guideline)
   * [2.2. PitchClassSet](#22-pitchclassset)
     + [2.2.1. Examples](#221-examples)
-    + [2.2.2. Online Help Document](#222-online-help-document)
+    + [2.2.2. Preview of Online Help Document](#222-preview-of-online-help-document)
   * [2.3. SPN](#23-spn)
     + [2.3.1. Examples](#231-examples)
-    + [2.3.2. Online Help Document](#232-online-help-document)
-
+    + [2.3.2. Preview of Online Help Document](#232-preview-of-online-help-document)
 ---
 ---
 
@@ -67,7 +67,7 @@ The way musicXML is decoded varies from software to software, so a musicXML file
 |------|---------|
 |<pre>(<br>var title = "twelve-tone series", matrix_12tone;<br>matrix_12tone = { arg array;<br>    var matrix = 12.collect { arg i; array[i]; array - (array[i] % 12) };<br>    matrix.do { arg item; item.replace(11, \e).replace(10, \t).postln }<br>};<br>matrix_12tone = matrix_12tone.((0..11).scramble) + 72;<br>    <br>x = (<br>    [(title: '12-tone series matrix', composer: 'randomised', rights: '©')] ++<br>    matrix_12tone.collect { arg series, index; <br>        if (index == 0) {<br>            (<br>                bar: index + 1,<br>                p1: (<br>                    lbl: '',<br>                    atr: (key: [0, \none], time: \x, staves: 1, clef: [[\g, 2]]),<br>                    v1: series.collect { arg aNote; [aNote, \w] }<br>                )<br>            )<br>        } {<br>            series.postln;<br>            (<br>                bar: index + 1,<br>                p1: (v1: series.collect { arg aNote; [aNote, \w] })<br>            )<br>        }<br>    }<br>).notate(("~/Downloads/" ++ title ++ ".musicXML").standardizePath, 'MuseScore 4')<br>)</pre>|Score in MuseScore 4:<br />![twelve-tone_seriesnotation](https://github.com/prko/Notator/assets/416281/c87aeed7-bd9d-46b2-9641-0d37f7cd583d)[HelpSource/Classes/resources/twelve-tone_series.musicXML](https://github.com/prko/Notator/blob/9f2e211d292d38cf93b99cbcee6af2f0902cba5a/HelpSource/Classes/resources/twelve-tone_series.musicXML)<br /><br />SCD file: [HelpSource/Classes/resources/twelve-tone_series.scd](https://github.com/prko/Notator/blob/9f2e211d292d38cf93b99cbcee6af2f0902cba5a/HelpSource/Classes/resources/twelve-tone_series.scd)|
 
-##### 2.1.2. Online Help Document and Guideline
+##### 2.1.2. Preview of Online Help Document and Guideline
 - [Notator class](https://rawcdn.githack.com/prko/Notator/15d08873184c9ad81d8e558ca98875d5cc368de8/_Help%20(rendered%20HTML)/Classes/Notator.html)
   (Note: hyperlinks in the online help document do not work!)
 - [Score Guideline (needs further work)](https://rawcdn.githack.com/prko/Notator/e0bb6521e45af5d41259e67bcdf169f32f439b17/_Help%20(rendered%20HTML)/Reference/ScoreGuideline.html)
@@ -88,7 +88,7 @@ This is a Pitch Class Set implementation. Quarter tones are supported for the na
 9.pcname // -> [ a, gx, bff, a♮, g𝄪, b𝄫, an, a, gS, bF ]
 ```
 
-##### 2.2.2. Online Help Document
+##### 2.2.2. Preview of Online Help Document
 - [PitchClassSet class](https://rawcdn.githack.com/prko/Notator/15d08873184c9ad81d8e558ca98875d5cc368de8/_Help%20(rendered%20HTML)/Classes/PitchClassSet.html)
   (Note: hyperlinks in the online help document do not work!)
 
@@ -110,6 +110,6 @@ In scientific pitch notation, middle A at 440 Hz is defined as A4. It is identic
 440.cpsspn // -> [ a4, gx4, bff4 ]
 ```
 
-##### 2.3.2. Online Help Document
+##### 2.3.2. Preview of Online Help Document
 - [SPN class](https://rawcdn.githack.com/prko/Notator/15d08873184c9ad81d8e558ca98875d5cc368de8/_Help%20(rendered%20HTML)/Classes/SPN.html)
   (Note: hyperlinks in the online help document do not work!)
