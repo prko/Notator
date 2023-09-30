@@ -3,11 +3,11 @@ with support for pitch class set and scientific pith notation
 ---
 ---
 ### Table of Contents
-1. [How to Install](1._How_to_Install)
-2. [Classes](Classes
-   1. [Notator](2.1._Notator)
-   2. [PitchClassSet](2.2._PitchClassSet)
-   3. [SPN](2.3._SPN)
+1. [How to Install](###1._How_to_Install)
+2. [Classes](###2._Classes)
+   1. [Notator](####2.1._Notator)
+   2. [PitchClassSet](####2.2._PitchClassSet)
+   3. [SPN](####2.3._SPN)
 ---
 ---
 ### 1. How to Install
