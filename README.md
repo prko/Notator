@@ -3,7 +3,6 @@ with support for pitch class set and scientific pith notation
 ---
 ---
 ### Table of Contents
-- [Table of Contents](#table-of-contents)
 - [1. How to Install](#1-how-to-install)
 - [2. Classes](#2-classes)
   * [2.1. Notator](#21-notator)
