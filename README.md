@@ -1,7 +1,9 @@
 musicXML File Writer for SuperCollider with the rewrite feature of the given sclang code to play it via scserver
 with support for pitch class set and scientific pith notation
+
 ---
 ---
+
 ### Table of Contents
 - [1. How to Install](#1-how-to-install)
 - [2. Classes](#2-classes)
@@ -16,7 +18,10 @@ with support for pitch class set and scientific pith notation
   * [2.3. SPN](#23-spn)
     + [2.3.1. Examples](#231-examples)
     + [2.3.2. Online Help Document](#232-online-help-document)
+
 ---
+---
+
 ### 1. How to Install
 
 To install Notator Library, copy and paste the following code into the SC-IDE editor window, and evaluate it:
@@ -26,7 +31,10 @@ To install Notator Library, copy and paste the following code into the SC-IDE ed
 "https://github.com/prko/Notator".include
 )
 ```
+
 ---
+---
+
 ### 2. Classes
 ---
 #### 2.1. Notator
@@ -62,7 +70,9 @@ The way musicXML is decoded varies from software to software, so a musicXML file
 ##### 2.1.2. Online Help Document
 - [Notator class](https://rawcdn.githack.com/prko/Notator/15d08873184c9ad81d8e558ca98875d5cc368de8/_Help%20(rendered%20HTML)/Classes/Notator.html)
 - [Score Guideline (needs further work)](https://rawcdn.githack.com/prko/Notator/e0bb6521e45af5d41259e67bcdf169f32f439b17/_Help%20(rendered%20HTML)/Reference/ScoreGuideline.html)
+
 ---
+
 #### 2.2. PitchClassSet
 
 This is a Pitch Class Set implementation. Quarter tones are supported for the name system used in LilyPond and the musician-friendly naming convention. The sixteenth tones are supported for its own style \ez.
@@ -71,13 +81,16 @@ This is a Pitch Class Set implementation. Quarter tones are supported for the na
 ```
 \a.pitchClassNum // -> 9.0
 \a.pcnum // -> 9.0
+
 9.pitchClassName // -> [ a, gx, bff, a♮, g𝄪, b𝄫, an, a, gS, bF ]
 9.pcname // -> [ a, gx, bff, a♮, g𝄪, b𝄫, an, a, gS, bF ]
 ```
 
 ##### 2.2.2. Online Help Document
 - [PitchClassSet class](https://rawcdn.githack.com/prko/Notator/15d08873184c9ad81d8e558ca98875d5cc368de8/_Help%20(rendered%20HTML)/Classes/PitchClassSet.html)
+
 ---
+
 #### 2.3. SPN
 Scientific Pitch Notation
 
@@ -89,6 +102,9 @@ In scientific pitch notation, middle A at 440 Hz is defined as A4. It is identic
 ```
 \a4.midi // -> 69.0
 \a4.cps // -> 440.0
+
+69.midispn // -> [ a4, gx4, bff4 ]
+440.cpsspn // -> [ a4, gx4, bff4 ]
 ```
 
 ##### 2.3.2. Online Help Document
