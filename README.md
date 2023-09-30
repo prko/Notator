@@ -3,12 +3,20 @@ with support for pitch class set and scientific pith notation
 ---
 ---
 ### Table of Contents
-1. [How to Install](###1._How_to_Install)
-2. [Classes](###2._Classes)
-   1. [Notator](####2.1._Notator)
-   2. [PitchClassSet](####2.2._PitchClassSet)
-   3. [SPN](####2.3._SPN)
----
+- [Table of Contents](#table-of-contents)
+- [1. How to Install](#1-how-to-install)
+- [2. Classes](#2-classes)
+  * [2.1. Notator](#21-notator)
+    + [2.1.1. Examples](#211-examples)
+      - [Eighth-tone Scale through algorithmic construction](#eighth-tone-scale-through-algorithmic-construction)
+      - [Twelve-tone matrix through algorithmic construction](#twelve-tone-matrix-through-algorithmic-construction)
+    + [2.1.2. Online Help Document](#212-online-help-document)
+  * [2.2. PitchClassSet](#22-pitchclassset)
+    + [2.2.1. Examples](#221-examples)
+    + [2.2.2. Online Help Document](#222-online-help-document)
+  * [2.3. SPN](#23-spn)
+    + [2.3.1. Examples](#231-examples)
+    + [2.3.2. Online Help Document](#232-online-help-document)
 ---
 ### 1. How to Install
 
@@ -19,7 +27,6 @@ To install Notator Library, copy and paste the following code into the SC-IDE ed
 "https://github.com/prko/Notator".include
 )
 ```
----
 ---
 ### 2. Classes
 ---
