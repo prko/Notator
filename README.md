@@ -69,9 +69,9 @@ The way musicXML is decoded varies from software to software, so a musicXML file
 
 ##### 2.1.2. Preview of Online Help Document and Guideline
 - [Notator class](https://rawcdn.githack.com/prko/Notator/15d08873184c9ad81d8e558ca98875d5cc368de8/_Help%20(rendered%20HTML)/Classes/Notator.html)
-  (Note: hyperlinks in the online help document do not work!)
+  (Note: hyperlinks in the preview do not work!)
 - [Score Guideline (needs further work)](https://rawcdn.githack.com/prko/Notator/e0bb6521e45af5d41259e67bcdf169f32f439b17/_Help%20(rendered%20HTML)/Reference/ScoreGuideline.html)
-  (Note: hyperlinks in the online help document do not work!)
+  (Note: hyperlinks in the preview do not work!)
 
 ---
 
@@ -90,7 +90,7 @@ This is a Pitch Class Set implementation. Quarter tones are supported for the na
 
 ##### 2.2.2. Preview of Online Help Document
 - [PitchClassSet class](https://rawcdn.githack.com/prko/Notator/15d08873184c9ad81d8e558ca98875d5cc368de8/_Help%20(rendered%20HTML)/Classes/PitchClassSet.html)
-  (Note: hyperlinks in the online help document do not work!)
+  (Note: hyperlinks in the preview do not work!)
 
 ---
 
@@ -112,4 +112,4 @@ In scientific pitch notation, middle A at 440 Hz is defined as A4. It is identic
 
 ##### 2.3.2. Preview of Online Help Document
 - [SPN class](https://rawcdn.githack.com/prko/Notator/15d08873184c9ad81d8e558ca98875d5cc368de8/_Help%20(rendered%20HTML)/Classes/SPN.html)
-  (Note: hyperlinks in the online help document do not work!)
+  (Note: hyperlinks in the preview do not work!)
