@@ -1,5 +1,6 @@
-musicXML File Writer for SuperCollider with the rewrite feature of the given sclang code to play it via scserver
-with support for pitch class set and scientific pith notation
+musicXML file writer for SuperCollider: 
+- with the ability to rewrite own music notation, similar to LilyPond, into a standard SuperCollider code block for playback via scserver. 
+- The included Pitch Class Set and Scientific Pitch Notation classes allow you to get MIDI pitch numbers (MIDI notes) or frequencies from pitch names and vice versa.
 
 ---
 ---
