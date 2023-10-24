@@ -1,4 +1,5 @@
-musicXML file writer for SuperCollider with the ability to rewrite own music notation, similar to LilyPond, into a standard SuperCollider code block for playback via scserver. 
+musicXML File Writer for SuperCollider with own music notation, similar to LilyPond. 
+It converts its own custom music notation into a standard SuperCollider code block for playback via scserver.
 
 The included Pitch Class Set and Scientific Pitch Notation classes allow you to get MIDI pitch numbers (MIDI notes) or frequencies from pitch names and vice versa.
 
