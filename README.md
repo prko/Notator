@@ -2,6 +2,26 @@ musicXML File Writer for SuperCollider with its own music notation, similar to L
 
 The included Pitch Class Set and Scientific Pitch Notation classes allow you to get MIDI pitch numbers (MIDI notes) or frequencies from pitch names and vice versa.
 
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fprko%2FNotator&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+
+---
+---
+
+### Table of Contents
+<small><i>(<a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a>)</i></small>
+- [1. How to Install](#1-how-to-install)
+- [2. Classes](#2-classes)
+  * [2.1. Notator](#21-notator)
+    + [2.1.1. Examples](#211-examples)
+      - [2.1.1.1. Eighth-tone Scale through algorithmic construction](#2111-eighth-tone-scale-through-algorithmic-construction)
+      - [2.1.1.2. Twelve-tone matrix through algorithmic construction](#2112-twelve-tone-matrix-through-algorithmic-construction)
+    + [2.1.2. Preview of Online Help Document and Guideline](#212-preview-of-online-help-document-and-guideline)
+  * [2.2. PitchClassSet](#22-pitchclassset)
+    + [2.2.1. Examples](#221-examples)
+    + [2.2.2. Preview of Online Help Document](#222-preview-of-online-help-document)
+  * [2.3. SPN](#23-spn)
+    + [2.3.1. Examples](#231-examples)
+    + [2.3.2. Preview of Online Help Document](#232-preview-of-online-help-document)
 ---
 ---
 
