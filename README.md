@@ -2,26 +2,6 @@ musicXML File Writer for SuperCollider with its own music notation, similar to L
 
 The included Pitch Class Set and Scientific Pitch Notation classes allow you to get MIDI pitch numbers (MIDI notes) or frequencies from pitch names and vice versa.
 
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fprko%2FNotator&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
-
----
----
-
-### Table of Contents
-<small><i>(<a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a>)</i></small>
-- [1. How to Install](#1-how-to-install)
-- [2. Classes](#2-classes)
-  * [2.1. Notator](#21-notator)
-    + [2.1.1. Examples](#211-examples)
-      - [Eighth-tone Scale through algorithmic construction](#eighth-tone-scale-through-algorithmic-construction)
-      - [Twelve-tone matrix through algorithmic construction](#twelve-tone-matrix-through-algorithmic-construction)
-    + [2.1.2. Preview of Online Help Document and Guideline](#212-preview-of-online-help-document-and-guideline)
-  * [2.2. PitchClassSet](#22-pitchclassset)
-    + [2.2.1. Examples](#221-examples)
-    + [2.2.2. Preview of Online Help Document](#222-preview-of-online-help-document)
-  * [2.3. SPN](#23-spn)
-    + [2.3.1. Examples](#231-examples)
-    + [2.3.2. Preview of Online Help Document](#232-preview-of-online-help-document)
 ---
 ---
 
@@ -60,12 +40,12 @@ The way musicXML is decoded varies from software to software, so a musicXML file
 
 ##### 2.1.1. Examples
 
-###### Eighth-tone Scale through algorithmic construction
+###### 2.1.1.1. Eighth-tone Scale through algorithmic construction
 | Code | Results |
 |------|---------|
 |<pre>(<br>var title = "Eighth-tone Scale", score;<br>score = [<br>    (title: title, composer: 'a composer', right: '©'),<br>    (<br>        bar: 1, p1: (<br>            lbl: \Violin,<br>            atr: (key: [0, \none], time: [4, 4], staves: 1, clef: [[\g, 2]]),<br>            v1: []<br>        )<br>    )<br>];<br><br>(0, 1/4 .. 12).mirror.clump(4).do { arg notesInBar, index;<br>    var bar = index + 1;<br>    if (bar > 1) {<br>        score = score.add((bar: bar, p1: (v1: [])))<br>    };<br>    notesInBar.collect { arg aNote;<br>        score[bar][\p1][\v1] = score[bar][\p1][\v1].add([aNote + 60]) }<br>};<br><br>x = Notator.notate(<br>    score,<br>    ("~/Downloads/" ++ title ++ ".musicXML").standardizePath,<br>    'MuseScore 4'<br>)<br>)</pre>|Score in MuseScore 4:<br />![Eighth-tone_Scale-1](https://github.com/prko/Notator/assets/416281/b2928c56-a7a7-4ea5-b9c2-d6d3e5dbbd65)[HelpSource/Classes/resources/Eighth-tone_Scale.musicXML](https://github.com/prko/Notator/blob/9f2e211d292d38cf93b99cbcee6af2f0902cba5a/HelpSource/Classes/resources/Eighth-tone_Scale.musicXML)<br /><br />SCD file: [HelpSource/Classes/resources/Eighth-tone_Scale.scd](https://github.com/prko/Notator/blob/9f2e211d292d38cf93b99cbcee6af2f0902cba5a/HelpSource/Classes/resources/Eighth-tone_Scale.scd)|
 
-###### Twelve-tone matrix through algorithmic construction
+###### 2.1.1.2. Twelve-tone matrix through algorithmic construction
 | Code | Results |
 |------|---------|
 |<pre>(<br>var title = "twelve-tone series", matrix_12tone;<br>matrix_12tone = { arg array;<br>    var matrix = 12.collect { arg i; array[i]; array - (array[i] % 12) };<br>    matrix.do { arg item; item.replace(11, \e).replace(10, \t).postln }<br>};<br>matrix_12tone = matrix_12tone.((0..11).scramble) + 72;<br>    <br>x = (<br>    [(title: '12-tone series matrix', composer: 'randomised', rights: '©')] ++<br>    matrix_12tone.collect { arg series, index; <br>        if (index == 0) {<br>            (<br>                bar: index + 1,<br>                p1: (<br>                    lbl: '',<br>                    atr: (key: [0, \none], time: \x, staves: 1, clef: [[\g, 2]]),<br>                    v1: series.collect { arg aNote; [aNote, \w] }<br>                )<br>            )<br>        } {<br>            series.postln;<br>            (<br>                bar: index + 1,<br>                p1: (v1: series.collect { arg aNote; [aNote, \w] })<br>            )<br>        }<br>    }<br>).notate(("~/Downloads/" ++ title ++ ".musicXML").standardizePath, 'MuseScore 4')<br>)</pre>|Score in MuseScore 4:<br />![twelve-tone_seriesnotation](https://github.com/prko/Notator/assets/416281/c87aeed7-bd9d-46b2-9641-0d37f7cd583d)[HelpSource/Classes/resources/twelve-tone_series.musicXML](https://github.com/prko/Notator/blob/9f2e211d292d38cf93b99cbcee6af2f0902cba5a/HelpSource/Classes/resources/twelve-tone_series.musicXML)<br /><br />SCD file: [HelpSource/Classes/resources/twelve-tone_series.scd](https://github.com/prko/Notator/blob/9f2e211d292d38cf93b99cbcee6af2f0902cba5a/HelpSource/Classes/resources/twelve-tone_series.scd)|
