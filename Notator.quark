@@ -3,6 +3,7 @@
   summary: "musicXML File Writer for SuperCollider with the rewrite feature of the given sclang code to play it via scserver with support for pitch class set and scientific pith notation",
   version: "0.0.1",
   schelp: "Notator.schelp",
+  dependencies:["Strang"]
   license: "GPL3",
   copyright: "PyoungRyang Ko, 2023"
 )
