@@ -33,7 +33,7 @@ The included Pitch Class Set and Scientific Pitch Notation classes allow you to 
 To install Notator Library, copy and paste the following code into the SC-IDE editor window, and evaluate it:
 ```
 (
-"https://github.com/telephon/Strang".include;
+// "https://github.com/telephon/Strang".include; // It will be installed automatically.
 "https://github.com/prko/Notator".include
 )
 ```
