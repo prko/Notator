@@ -1,10 +1,13 @@
+> [WARNING]
+> This quark is still under test and is not listed in the Community Quark Directory for SuperColllider.
+> The feature, help documents and manual may be modified without a change log until it is listed in the Community Quark Directory.
+
 musicXML File Writer for SuperCollider with its own music notation, similar to LilyPond. When writing musicXML from the input music notation, it also writes an SCD file by converting the input into a standard SuperCollider code block, so that you can play it back via scserver.
 
 The included Pitch Class Set and Scientific Pitch Notation classes allow you to get MIDI pitch numbers (MIDI notes) or frequencies from pitch names and vice versa.
 
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fprko%2FNotator&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
----
 ---
 
 ### Table of Contents
@@ -22,7 +25,7 @@ The included Pitch Class Set and Scientific Pitch Notation classes allow you to 
   * [2.3. SPN](#23-spn)
     + [2.3.1. Examples](#231-examples)
     + [2.3.2. Preview of Online Help Document](#232-preview-of-online-help-document)
----
+
 ---
 
 ### 1. How to Install
@@ -36,10 +39,9 @@ To install Notator Library, copy and paste the following code into the SC-IDE ed
 ```
 
 ---
----
 
 ### 2. Classes
----
+
 #### 2.1. Notator
 Using the Notator class, you can play the score via the sc-server and create musicXML files to seamlessly edit the score created in sclang in your favourite music notation software that supports musicXML 4.0 (or higher) import. It provides the following automated functions:
 
@@ -76,8 +78,6 @@ The way musicXML is decoded varies from software to software, so a musicXML file
 - [Score Guideline (needs further work)](https://rawcdn.githack.com/prko/Notator/e0bb6521e45af5d41259e67bcdf169f32f439b17/_Help%20(rendered%20HTML)/Reference/ScoreGuideline.html)
   (Note: hyperlinks in the preview do not work!)
 
----
-
 #### 2.2. PitchClassSet
 
 This is a Pitch Class Set implementation. Quarter tones are supported for the name system used in LilyPond and the musician-friendly naming convention. The sixteenth tones are supported for its own style \ez.
@@ -94,8 +94,6 @@ This is a Pitch Class Set implementation. Quarter tones are supported for the na
 ##### 2.2.2. Preview of Online Help Document
 - [PitchClassSet class](https://rawcdn.githack.com/prko/Notator/15d08873184c9ad81d8e558ca98875d5cc368de8/_Help%20(rendered%20HTML)/Classes/PitchClassSet.html)
   (Note: hyperlinks in the preview do not work!)
-
----
 
 #### 2.3. SPN
 Scientific Pitch Notation
