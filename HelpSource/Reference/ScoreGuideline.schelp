@@ -1002,6 +1002,8 @@ in
 Dorico 4:
 
 ||image::resources/time signature - Dorico.svg::
+
+NOTE: The rest is automatically added by Dorico 4 Pro.
 ::
 ::
 
@@ -1031,134 +1033,236 @@ section::9. Adding a dynamic marking that is not attached to a note or chord
 To add a dynamic marking, insert a one-element array into a voice: the element could be one of the following:
 
 table::
-##symbols||corresponding dynamic marking
-##code::
+
+##Dynamic
+
+markings
+||
+Array-in-Array notation
+||
+Symbol-in-Array notation,
+
+String notation
+
+##emphasis::ffff::
+||
+code::
 \ffff
 ::
-
-
 code::
 \F4
 ::
-
 code::
-\s4 // \s stands for 'strong'
+\s4
 ::
-||emphasis::ffff::
-##code::
+code::\s:: stands for 'strong'.
+||
+code::
+ffff
+::
+code::
+F4
+::
+code::
+s4
+::
+code::\s:: stands for 'strong'.
+
+##emphasis::fff::
+||
+code::
 \fff
 ::
-
 code::
 \F3
 ::
-
 code::
 \s3
 ::
-||emphasis::fff::
-##code::
-\ff
+||
+code::
+fff
+::
+code::
+F3
+::
+code::
+s3
 ::
 
+##emphasis::ff::
+||
+code::
+\FF // ← It should be capitalised!
+::
 code::
 \F2
 ::
-
 code::
 \s2
 ::
-||emphasis::ff::
-##
+||
 code::
-\F // (should be capitalised!)
+FF // ← It should be capitalised!
+::
+code::
+F2
+::
+code::
+s2
 ::
 
+##emphasis::f::
+||
+code::
+\F // ← It should be capitalised!
+::
 code::
 \F1
 ::
 code::
 \s1
 ::
-||emphasis::f::
-##code::
-\mf
+||
+code::
+F // ← It should be capitalised!
+::
+code::
+F1
+::
+code::
+s1
 ::
 
+##emphasis::mf::
+||
+code::
+\mf
+::
 code::
 \F0
 ::
-
 code::
 \s0
 ::
 ||
-emphasis::mf::
-
-##code::
-\mp
+code::
+mf
+::
+code::
+F0
+::
+code::
+s0
 ::
 
+##emphasis::mp::
+||
+code::
+\mp
+::
 code::
 \p0
 ::
-
 code::
-\q0 // \q stands for 'quiet'
+\q0
 ::
+code::\q:: stands for 'quiet'.
 ||
-emphasis::mp::
-##code::
+code::
+mp
+::
+code::
+p0
+::
+code::
+q0
+::
+code::\q:: stands for 'quiet'.
+##emphasis::p::
+||
+code::
 \p
 ::
-
 code::
-
 \p1
 ::
-
 code::
 \q1
 ::
-||emphasis::p::
-##code::
+||
+code::
+p
+::
+code::
+p1
+::
+code::
+q1
+::
+##emphasis::pp::
+||
+code::
 \pp
 ::
-
 code::
-
 \p2
 ::
-
 code::
 \q2
 ::
 ||
-emphasis::pp::
-##code::
+code::
+pp
+::
+code::
+p2
+::
+code::
+q2
+::
+##emphasis::ppp::
+||
+code::
 \ppp
 ::
-
 code::
-
 \p3
 ::
-
 code::
 \q3
-::||emphasis::ppp::
-##code::
+::
+||
+code::
+ppp
+::
+code::
+p3
+::
+code::
+q3
+::
+##emphasis::pppp::
+||
+code::
 \pppp
 ::
-
 code::
-
 \p4
 ::
-
 code::
 \q4
-::||emphasis::pppp::
+::
+||
+code::
+pppp
+::
+code::
+p4
+::
+code::
+q4
+::
 ::
 
 table::
@@ -1268,6 +1372,8 @@ in
 Dorico 4:
 
 ||image::resources/dynamic - Dorico.svg::
+
+NOTE: The rest is automatically added by Dorico 4 Pro.
 ::
 ::
 
