@@ -25,6 +25,7 @@ The included Pitch Class Set and Scientific Pitch Notation classes allow you to 
   * [2.3. SPN](#23-spn)
     + [2.3.1. Examples](#231-examples)
     + [2.3.2. Preview of Online Help Document](#232-preview-of-online-help-document)
+  * [3. to do](#3-to-do)
 
 ---
 
@@ -114,3 +115,28 @@ In scientific pitch notation, middle A at 440 Hz is defined as A4. It is identic
 ##### 2.3.2. Preview of Online Help Document
 - [SPN class](https://rawcdn.githack.com/prko/Notator/15d08873184c9ad81d8e558ca98875d5cc368de8/_Help%20(rendered%20HTML)/Classes/SPN.html)
   (Note: hyperlinks in the preview do not work!)
+
+### 3. to do
+- implementing the following methods
+```
+\a4.pitchClassName
+\a4.pcname
+\aqf4.pitchClassNum
+\a4.pcnum
+\a4.octave
+
+//69.pitchClassName
+//69.pcname
+69.octave
+
+\a.pitchClassName
+\a.pcname
+//\a.pitchClassNum
+//\a.pcnum
+\a.octave
+
+//9.pitchClassName
+//9.pcname
+9.octave
+```
+- transcribing Chopin's piano prelude e-minor op. 28-4
