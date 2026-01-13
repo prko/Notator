@@ -460,9 +460,13 @@ Notator {
 		"  <part-list>\n";
 
 		{
-			var part1 = [], part2 = [], part3 = [];
-			score[1].keys.remove(\bar)
-			.do { |partName|
+			var removeKeyword_bar, part1 = [], part2 = [], part3 = [];
+			removeKeyword_bar = if (Main.versionAtLeast(3, 14, 0)) {
+				score[1].keys.remove(\p1)
+			} {
+				score[1].keys.remove(\bar)
+			};
+			removeKeyword_bar.do { |partName|
 				switch(partName.asString.size,
 					2, { part1 = part1.add(partName) },
 					3, { part2 = part2.add(partName) },
