@@ -7,7 +7,7 @@ DESCRIPTION::
 This is an implementation of emphasis::Scientific Pitch Notation:: (SPN).
 For the name system used in LilyPond (N.B.: the octave number follows the SPN.) and the musician-friendly naming convention, quarter tones are supported. For its own style \ez, sixteenth tones are supported.
 
-In scientific pitch notation, middle A at teletype::440 Hz:: is defined as teletype::A4::. It is identical to the teletype::middle A:: at teletype::440 Hz:: of teletype::A4:: on Roland instruments, but 1 octave higher than the teletype::middle A:: at teletype::440 Hz:: of teletype::A3:: on Yahaha instruments. A4 in scientific notation is identical to teletype::A1:: or teletype::A':: in emphasis::Helmholtz Pitch Notation::.
+In scientific pitch notation, middle A at teletype::440 Hz:: is defined as teletype::A4::. It is identical to the teletype::middle A:: at teletype::440 Hz:: of teletype::A4:: on Roland instruments, but 1 octave higher than the teletype::middle A:: at teletype::440 Hz:: of teletype::A3:: on Yamaha instruments. A4 in scientific notation is identical to teletype::A1:: or teletype::A':: in emphasis::Helmholtz Pitch Notation::.
 
 table::
 ##strong::References:::
@@ -2382,8 +2382,8 @@ note::
 Using the following shorcut is recommended:
 code::
 \a4.all  // -> ( 'midi': 69.0, 'cps': 440.0 )
-\a4.cps  // -> 261.6255653006
-\a4.midi // -> 60.0
+\a4.cps  // -> 440.0
+\a4.midi // -> 69.0
 ::
 ::
 
