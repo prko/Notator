@@ -113,7 +113,7 @@ In scientific pitch notation, middle A at 440 Hz is defined as A4. It is identic
 ```
 
 ##### 2.3.2. Preview of Online Help Document
-- [SPN class](https://rawcdn.githack.com/prko/Notator/15d08873184c9ad81d8e558ca98875d5cc368de8/_Help%20(rendered%20HTML)/Classes/SPN.html)
+- [SPN class](https://prko.github.io/Notator/_Help%20(rendered%20HTML)/Classes/SPN.html)
   (Note: hyperlinks in the preview do not work!)
 
 ### 3. to do
