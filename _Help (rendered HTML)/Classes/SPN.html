@@ -59,7 +59,7 @@ var scdoc_sc_version = '3.13.0';
 <h2><a class='anchor' name='description'>Description</a></h2>
 
 <p>This is an implementation of <em>Scientific Pitch Notation</em> (SPN). For the name system used in LilyPond (N.B.: the octave number follows the SPN.) and the musician-friendly naming convention, quarter tones are supported. For its own style \ez, sixteenth tones are supported.
-<p>In scientific pitch notation, middle A at <code>440 Hz</code> is defined as <code>A4</code>. It is identical to the <code>middle A</code> at <code>440 Hz</code> of <code>A4</code> on Roland instruments, but 1 octave higher than the <code>middle A</code> at <code>440 Hz</code> of <code>A3</code> on Yahaha instruments. A4 in scientific notation is identical to <code>A1</code> or <code>A'</code> in <em>Helmholtz Pitch Notation</em>.<table>
+<p>In scientific pitch notation, middle A at <code>440 Hz</code> is defined as <code>A4</code>. It is identical to the <code>middle A</code> at <code>440 Hz</code> of <code>A4</code> on Roland instruments, but 1 octave higher than the <code>middle A</code> at <code>440 Hz</code> of <code>A3</code> on Yamaha instruments. A4 in scientific notation is identical to <code>A1</code> or <code>A'</code> in <em>Helmholtz Pitch Notation</em>.<table>
 <tr><td><strong>References</strong>:<ul>
 <li><a href="https://en.wikipedia.org/wiki/Scientific_pitch_notation">https://en.wikipedia.org/wiki/Scientific_pitch_notation</a><textarea class='editor'>"https://en.wikipedia.org/wiki/Scientific_pitch_notation".openOS</textarea>
 
@@ -706,8 +706,8 @@ var scdoc_sc_version = '3.13.0';
 <p>Please refer to the same argument of the method <code>.cps</code>:</table></div><h3 class='method-code'><span class='method-prefix'>SPN.</span><a class='method-name' name='*getValue' href='https://doc.sccode.org/Overviews/Methods.html#getValue'>getValue</a>(<span class='argstr'>which: 'a4'</span>, <span class='argstr'>mappingSwitch: 'all'</span>)</h3>
 <div class='method'>
 <p>returns the corresponding MIDI pitch number, frequency in Hz or both from the given pitch name.<div class='note'><span class='notelabel'>NOTE:</span> Using the following shorcut is recommended:<textarea class='editor'>\a4.all  // -&gt; ( 'midi': 69.0, 'cps': 440.0 )
-\a4.cps  // -&gt; 261.6255653006
-\a4.midi // -&gt; 60.0</textarea>
+\a4.cps  // -&gt; 440.0
+\a4.midi // -&gt; 69.0</textarea>
 </div><h4>Arguments:</h4>
 <table class='arguments'>
 <tr><td class='argumentname'>which<td class='argumentdesc'>
